@@ -1,4 +1,4 @@
-package com.example;
+package com.goggaguys;
 
 import net.fabricmc.api.ModInitializer;
 

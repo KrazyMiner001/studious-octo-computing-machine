@@ -1,31 +1,34 @@
 {
 	"schemaVersion": 1,
-	"id": "modid",
+	"id": "octocomputer",
 	"version": "${version}",
-	"name": "Example mod",
+	"name": "Studious Octo Computing Machine",
 	"description": "This is an example description! Tell everyone what your mod is about!",
 	"authors": [
 		"Me!"
 	],
 	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"homepage": "https://wobbl.in",
+		"sources": "https://github.com/Radford-House/studious-octo-computing-machine"
 	},
 	"license": "CC0-1.0",
-	"icon": "assets/modid/icon.png",
+	"icon": "assets/octocomputing/icon.png",
 	"environment": "*",
 	"entrypoints": {
+		"fabric-datagen": [
+			"com.goggaguys.OctoComputingDataGenerator"
+		],
 		"main": [
-			"com.example.ExampleMod"
+			"com.goggaguys.OctoComputing"
 		],
 		"client": [
-			"com.example.ExampleModClient"
+			"com.goggaguys.OctoComputingClient"
 		]
 	},
 	"mixins": [
-		"modid.mixins.json",
+		"octocomputer.mixins.json",
 		{
-			"config": "modid.client.mixins.json",
+			"config": "octocomputer.client.mixins.json",
 			"environment": "client"
 		}
 	],
