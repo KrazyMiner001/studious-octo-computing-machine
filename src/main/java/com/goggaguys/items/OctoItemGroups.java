@@ -1,5 +1,7 @@
-package com.goggaguys.registries;
+package com.goggaguys.items;
 
+import com.goggaguys.OctoComputing;
+import com.goggaguys.blocks.OctoBlocks;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
@@ -13,10 +15,15 @@ public class OctoItemGroups {
             .icon(() -> new ItemStack(OctoItems.OAK_LEAF))
             .entries((context, entries) -> {
                 entries.add(OctoItems.OAK_LEAF);
+                entries.add(OctoItems.COMPRESSED_OAK_LEAF);
+                entries.add(OctoItems.DOUBLE_COMPRESSED_OAK_LEAF);
+                entries.add(OctoItems.FINNIAN_LEAF);
+
+                entries.add(OctoBlocks.FINNIAN_SAPLING);
             })
-            .displayName(Text.translatable("itemGroup.octocomputing.leaves"))
+            .displayName(Text.translatable("itemGroup.leaf_group"))
             .build();
-    public static void register() {
-        Registry.register(Registries.ITEM_GROUP, new Identifier("octocomputing", "leaf_group"), LEAF_GROUP);
+    public static void registerItemGroups() {
+        Registry.register(Registries.ITEM_GROUP, new Identifier(OctoComputing.MOD_ID, "leaf_group"), LEAF_GROUP);
     }
 }

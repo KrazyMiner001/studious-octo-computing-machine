@@ -1,3 +1,7 @@
 {
-  "item.octocomputing.oak_leaf": "Oak Leaf"
+  "item.octocomputing.oak_leaf": "Oak Leaf",
+  "item.octocomputing.compressed_oak_leaf":  "Compressed Oak Leaf",
+  "item.octocomputing.double_compressed_oak_leaf": "Double Compressed Oak Leaf",
+
+  "itemGroup.octocomputing.leaf_group": "Leaves"
 }
