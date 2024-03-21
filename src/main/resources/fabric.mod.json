@@ -15,14 +15,14 @@
 	"icon": "assets/octocomputing/icon.png",
 	"environment": "*",
 	"entrypoints": {
-		"fabric-datagen": [
-			"com.goggaguys.OctoComputingDataGenerator"
-		],
 		"main": [
 			"com.goggaguys.OctoComputing"
 		],
 		"client": [
 			"com.goggaguys.OctoComputingClient"
+		],
+		"fabric-datagen": [
+			"com.goggaguys.OctoComputingDataGenerator"
 		]
 	},
 	"mixins": [

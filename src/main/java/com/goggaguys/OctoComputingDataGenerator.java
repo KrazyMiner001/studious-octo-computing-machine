@@ -1,5 +1,7 @@
 package com.goggaguys;
 
+import com.goggaguys.datagen.ModLootTableProvider;
+import com.goggaguys.datagen.ModModelProvider;
 import com.goggaguys.datagen.ModWorldGenerator;
 import com.goggaguys.world.ModConfiguredFeatures;
 import com.goggaguys.world.ModPlacedFeatures;
@@ -14,6 +16,8 @@ public class OctoComputingDataGenerator implements DataGeneratorEntrypoint {
     public void onInitializeDataGenerator(FabricDataGenerator fabricDataGenerator) {
         FabricDataGenerator.Pack pack = fabricDataGenerator.createPack();
 
+        pack.addProvider(ModLootTableProvider::new);
+        pack.addProvider(ModModelProvider::new);
         pack.addProvider(ModWorldGenerator::new);
     }
 

@@ -1,4 +1,4 @@
-package com.goggaguys.items;
+package com.goggaguys.item;
 
 import com.goggaguys.OctoComputing;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
@@ -18,6 +18,6 @@ public class OctoItems {
     }
 
     public static void registerModItems() {
-
+        OctoComputing.LOGGER.info("Registering Items");
     }
 }

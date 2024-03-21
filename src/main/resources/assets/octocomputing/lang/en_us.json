@@ -2,6 +2,11 @@
   "item.octocomputing.oak_leaf": "Oak Leaf",
   "item.octocomputing.compressed_oak_leaf":  "Compressed Oak Leaf",
   "item.octocomputing.double_compressed_oak_leaf": "Double Compressed Oak Leaf",
+  "item.octocomputing.finnian_leaf":  "Finnian Leaf",
 
-  "itemGroup.octocomputing.leaf_group": "Leaves"
+  "block.octocomputing.finnian_sapling": "Finnian Sapling",
+  "block.octocomputing.leaf_ore": "Leaf Ore",
+  "block.octocomputing.deepslate_leaf_ore": "Deepslate Leaf Ore",
+
+  "itemGroup.leaf_group": "Leaves"
 }

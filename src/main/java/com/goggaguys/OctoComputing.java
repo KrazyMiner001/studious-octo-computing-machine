@@ -1,12 +1,13 @@
 package com.goggaguys;
 
-import com.goggaguys.blocks.OctoBlocks;
-import com.goggaguys.items.OctoItemGroups;
-import com.goggaguys.items.OctoItems;
+import com.goggaguys.block.OctoBlocks;
+import com.goggaguys.item.OctoItemGroups;
+import com.goggaguys.item.OctoItems;
 import com.goggaguys.world.gen.ModWorldGeneration;
 import net.fabricmc.api.ModInitializer;
 
 import net.fabricmc.fabric.api.loot.v2.LootTableEvents;
+import net.fabricmc.fabric.api.registry.FuelRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.enchantment.Enchantments;
@@ -37,11 +38,16 @@ public class OctoComputing implements ModInitializer {
 		OctoItems.registerModItems();
 		OctoItemGroups.registerItemGroups();
 		OctoBlocks.registerModBlocks();
-		ModWorldGeneration.generateModWorldGen();
 
 		leafLootTable(Blocks.OAK_LEAVES, OctoItems.OAK_LEAF);
 
+		FuelRegistry.INSTANCE.add(OctoItems.OAK_LEAF, 1);
+		FuelRegistry.INSTANCE.add(OctoItems.COMPRESSED_OAK_LEAF, 10);
+		FuelRegistry.INSTANCE.add(OctoItems.DOUBLE_COMPRESSED_OAK_LEAF, 100);
 
+		LOGGER.info("Mod Starting");
+
+		ModWorldGeneration.generateModWorldGen();
 	}
 
 	private static void leafLootTable(Block leafBlock, Item leafItem) {
