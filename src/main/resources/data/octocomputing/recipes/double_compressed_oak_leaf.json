@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {"item":  "octocomputing:compressed_oak_leaf"},
+    {"item":  "octocomputing:compressed_oak_leaf"},
+    {"item":  "octocomputing:compressed_oak_leaf"},
+    {"item":  "octocomputing:compressed_oak_leaf"},
+    {"item":  "octocomputing:compressed_oak_leaf"},
+    {"item":  "octocomputing:compressed_oak_leaf"},
+    {"item":  "octocomputing:compressed_oak_leaf"},
+    {"item":  "octocomputing:compressed_oak_leaf"},
+    {"item":  "octocomputing:compressed_oak_leaf"}
+  ],
+  "result": {
+    "item": "octocomputing:double_compressed_oak_leaf"
+  }
+}
