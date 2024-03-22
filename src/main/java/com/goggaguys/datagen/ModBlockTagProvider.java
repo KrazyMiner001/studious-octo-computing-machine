@@ -4,8 +4,11 @@ import com.goggaguys.block.ModBlocks;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.minecraft.block.Block;
+import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.registry.tag.BlockTags;
+import net.minecraft.registry.tag.ItemTags;
+import net.minecraft.registry.tag.TagKey;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -33,5 +36,14 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
 
         getOrCreateTagBuilder(BlockTags.NEEDS_DIAMOND_TOOL)
                 .add(ModBlocks.DEEPSLATE_LEAF_ORE);
+
+        getOrCreateTagBuilder(BlockTags.LOGS_THAT_BURN)
+                .add(ModBlocks.FINNIAN_LOG)
+                .add(ModBlocks.FINNIAN_WOOD)
+                .add(ModBlocks.STRIPPED_FINNIAN_LOG)
+                .add(ModBlocks.STRIPPED_FINNIAN_WOOD);
+
+        getOrCreateTagBuilder(BlockTags.PLANKS)
+                .add(ModBlocks.FINNIAN_PLANKS);
     }
 }

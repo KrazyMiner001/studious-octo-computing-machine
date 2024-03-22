@@ -19,6 +19,12 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.LEAF_ORE);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.DEEPSLATE_LEAF_ORE);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.LEAFSTONE_BLOCK);
+
+        blockStateModelGenerator.registerLog(ModBlocks.FINNIAN_LOG).log(ModBlocks.FINNIAN_LOG).wood(ModBlocks.FINNIAN_WOOD);
+        blockStateModelGenerator.registerLog(ModBlocks.STRIPPED_FINNIAN_LOG).log(ModBlocks.STRIPPED_FINNIAN_LOG).wood(ModBlocks.STRIPPED_FINNIAN_WOOD);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.FINNIAN_LEAVES);
+
+        BlockStateModelGenerator.BlockTexturePool finnian_pool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.FINNIAN_PLANKS);
     }
 
     @Override

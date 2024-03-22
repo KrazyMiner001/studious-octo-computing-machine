@@ -4,10 +4,7 @@ import com.goggaguys.OctoComputing;
 import com.goggaguys.world.tree.ModSaplingGenerators;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
-import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
-import net.minecraft.block.ExperienceDroppingBlock;
-import net.minecraft.block.SaplingBlock;
+import net.minecraft.block.*;
 import net.minecraft.item.BlockItem;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
@@ -23,6 +20,20 @@ public class ModBlocks {
     public static final Block DEEPSLATE_LEAF_ORE = registerBlock("deepslate_leaf_ore",
             new ExperienceDroppingBlock(UniformIntProvider.create(2, 5), FabricBlockSettings.copyOf(Blocks.DEEPSLATE).strength(3f)));
     public static final Block LEAFSTONE_BLOCK = registerBlock("leafstone_block", new Block(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK)));
+
+    public static final Block FINNIAN_LOG = registerBlock("finnian_log",
+            new PillarBlock(FabricBlockSettings.copyOf(Blocks.OAK_LOG).strength(4f)));
+    public static final Block FINNIAN_WOOD = registerBlock("finnian_wood",
+        new PillarBlock(FabricBlockSettings.copyOf(Blocks.OAK_WOOD).strength(4f)));
+    public static final Block STRIPPED_FINNIAN_LOG = registerBlock("stripped_finnian_log",
+            new PillarBlock(FabricBlockSettings.copyOf(Blocks.STRIPPED_OAK_LOG).strength(4f)));
+    public static final Block STRIPPED_FINNIAN_WOOD = registerBlock("stripped_finnian_wood",
+            new PillarBlock(FabricBlockSettings.copyOf(Blocks.STRIPPED_OAK_WOOD).strength(4f)));
+
+    public static final Block FINNIAN_PLANKS = registerBlock("finnian_planks",
+            new Block(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS).strength(4f)));
+    public static final Block FINNIAN_LEAVES = registerBlock("finnian_leaves",
+        new Block(FabricBlockSettings.copyOf(Blocks.OAK_LEAVES).strength(4f).nonOpaque()));
 
 
     private static Block registerBlock(String name, Block block) {

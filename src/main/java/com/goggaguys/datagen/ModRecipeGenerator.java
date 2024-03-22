@@ -1,6 +1,7 @@
 package com.goggaguys.datagen;
 
 import com.goggaguys.block.ModBlocks;
+import com.goggaguys.item.ModItemTags;
 import com.goggaguys.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
@@ -9,6 +10,9 @@ import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
 import net.minecraft.item.Item;
 import net.minecraft.item.Items;
 import net.minecraft.recipe.book.RecipeCategory;
+import net.minecraft.registry.RegistryKeys;
+import net.minecraft.registry.tag.ItemTags;
+import net.minecraft.registry.tag.TagKey;
 import net.minecraft.util.Identifier;
 
 public class ModRecipeGenerator extends FabricRecipeProvider {
@@ -30,6 +34,11 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
                 .criterion(hasItem(Items.STICK), conditionsFromItem(Items.STICK))
                 .criterion(hasItem(ModItems.FINNIAN_LEAF), conditionsFromItem(ModItems.FINNIAN_LEAF))
                 .offerTo(exporter, new Identifier(getRecipeName(ModBlocks.FINNIAN_SAPLING)));
+
+        offerBarkBlockRecipe(exporter, ModBlocks.FINNIAN_WOOD, ModBlocks.FINNIAN_LOG);
+        offerBarkBlockRecipe(exporter, ModBlocks.STRIPPED_FINNIAN_WOOD, ModBlocks.STRIPPED_FINNIAN_LOG);
+
+        offerPlanksRecipe(exporter, ModBlocks.FINNIAN_PLANKS, ModItemTags.finnian_logs, 4);
     }
 
     private static void reversibleCompactingRecipesBetter(RecipeExporter exporter, Item baseItem, Item compactItem)

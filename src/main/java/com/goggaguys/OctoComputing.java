@@ -8,6 +8,7 @@ import net.fabricmc.api.ModInitializer;
 
 import net.fabricmc.fabric.api.loot.v2.LootTableEvents;
 import net.fabricmc.fabric.api.registry.FuelRegistry;
+import net.fabricmc.fabric.api.registry.StrippableBlockRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.enchantment.Enchantments;
@@ -40,10 +41,20 @@ public class OctoComputing implements ModInitializer {
 		ModBlocks.registerModBlocks();
 
 		leafLootTable(Blocks.OAK_LEAVES, ModItems.OAK_LEAF);
+		leafLootTable(ModBlocks.FINNIAN_LEAVES, ModItems.FINNIAN_LEAF);
 
 		FuelRegistry.INSTANCE.add(ModItems.OAK_LEAF, 1);
 		FuelRegistry.INSTANCE.add(ModItems.COMPRESSED_OAK_LEAF, 10);
 		FuelRegistry.INSTANCE.add(ModItems.DOUBLE_COMPRESSED_OAK_LEAF, 100);
+		FuelRegistry.INSTANCE.add(ModBlocks.FINNIAN_LOG, 300);
+		FuelRegistry.INSTANCE.add(ModBlocks.FINNIAN_WOOD, 300);
+		FuelRegistry.INSTANCE.add(ModBlocks.STRIPPED_FINNIAN_LOG, 300);
+		FuelRegistry.INSTANCE.add(ModBlocks.STRIPPED_FINNIAN_WOOD, 300);
+		FuelRegistry.INSTANCE.add(ModBlocks.FINNIAN_PLANKS, 300);
+		FuelRegistry.INSTANCE.add(ModBlocks.FINNIAN_SAPLING, 100);
+
+		StrippableBlockRegistry.register(ModBlocks.FINNIAN_LOG, ModBlocks.STRIPPED_FINNIAN_LOG);
+		StrippableBlockRegistry.register(ModBlocks.FINNIAN_WOOD, ModBlocks.STRIPPED_FINNIAN_WOOD);
 
 		ModWorldGeneration.generateModWorldGen();
 

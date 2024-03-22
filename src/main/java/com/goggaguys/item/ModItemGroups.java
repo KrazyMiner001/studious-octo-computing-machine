@@ -24,6 +24,12 @@ public class ModItemGroups {
                 entries.add(ModBlocks.LEAF_ORE);
                 entries.add(ModBlocks.DEEPSLATE_LEAF_ORE);
                 entries.add(ModBlocks.LEAFSTONE_BLOCK);
+                entries.add(ModBlocks.FINNIAN_LOG);
+                entries.add(ModBlocks.FINNIAN_WOOD);
+                entries.add(ModBlocks.STRIPPED_FINNIAN_LOG);
+                entries.add(ModBlocks.STRIPPED_FINNIAN_WOOD);
+                entries.add(ModBlocks.FINNIAN_LEAVES);
+                entries.add(ModBlocks.FINNIAN_PLANKS);
             })
             .displayName(Text.translatable("itemgroup.leaf_group"))
             .build();

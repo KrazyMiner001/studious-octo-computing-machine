@@ -12,10 +12,13 @@ import net.minecraft.structure.rule.RuleTest;
 import net.minecraft.structure.rule.TagMatchRuleTest;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.intprovider.ConstantIntProvider;
+import net.minecraft.util.math.intprovider.UniformIntProvider;
 import net.minecraft.world.gen.feature.*;
 import net.minecraft.world.gen.feature.size.TwoLayersFeatureSize;
 import net.minecraft.world.gen.foliage.BlobFoliagePlacer;
+import net.minecraft.world.gen.foliage.CherryFoliagePlacer;
 import net.minecraft.world.gen.stateprovider.BlockStateProvider;
+import net.minecraft.world.gen.trunk.CherryTrunkPlacer;
 import net.minecraft.world.gen.trunk.StraightTrunkPlacer;
 
 import java.util.List;
@@ -38,14 +41,20 @@ public class ModConfiguredFeatures {
         register(context, LEAF_ORE_KEY, Feature.ORE, new OreFeatureConfig(overworldLeafOres, 12));
 
         register(context, FINNIAN_KEY, Feature.TREE, new TreeFeatureConfig.Builder(
-                BlockStateProvider.of(Blocks.CHERRY_LOG),
-                new StraightTrunkPlacer(5, 4, 3),
+                BlockStateProvider.of(ModBlocks.FINNIAN_LOG),
+                new CherryTrunkPlacer(5, 2, 4,
+                        UniformIntProvider.create(2, 3),
+                        UniformIntProvider.create(3, 5),
+                        UniformIntProvider.create(-2, -1),
+                        UniformIntProvider.create(-1, 0)),
 
-                BlockStateProvider.of(Blocks.JUNGLE_LEAVES),
-                new BlobFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(1), 2),
+                BlockStateProvider.of(ModBlocks.FINNIAN_LEAVES),
+                new CherryFoliagePlacer(UniformIntProvider.create(3, 5),
+                        ConstantIntProvider.create(0),
+                        UniformIntProvider.create(5, 7),
+                        0.25f, 0.25f, 0.25f, 0.25f),
 
                 new TwoLayersFeatureSize(1, 0, 2)).build());
-
     }
 
     public static RegistryKey<ConfiguredFeature<?, ?>> registerKey(String name) {

@@ -9,6 +9,12 @@
   "block.octocomputing.leaf_ore": "Leaf Ore",
   "block.octocomputing.deepslate_leaf_ore": "Deepslate Leaf Ore",
   "block.octocomputing.leafstone_block": "Leafstone Block",
+  "block.octocomputing.finnian_log": "Finnian Log",
+  "block.octocomputing.finnian_wood": "Finnian Wood",
+  "block.octocomputing.stripped_finnian_log": "Stripped Finnian Log",
+  "block.octocomputing.stripped_finnian_wood": "Stripped Finnian Wood",
+  "block.octocomputing.finnian_planks": "Finnian Planks",
+  "block.octocomputing.finnian_leaves": "Finnian Leaves",
 
   "itemgroup.leaf_group": "Leaves"
 }
