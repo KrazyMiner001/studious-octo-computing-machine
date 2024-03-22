@@ -34,5 +34,8 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(ModBlocks.FINNIAN_WOOD.asItem())
                 .add(ModBlocks.STRIPPED_FINNIAN_LOG.asItem())
                 .add(ModBlocks.STRIPPED_FINNIAN_WOOD.asItem());
+
+        getOrCreateTagBuilder(ItemTags.TRIMMABLE_ARMOR)
+                .add(ModItems.LEAF_HELMET, ModItems.LEAF_CHESTPLATE, ModItems.LEAF_LEGGINGS, ModItems.LEAF_BOOTS);
     }
 }

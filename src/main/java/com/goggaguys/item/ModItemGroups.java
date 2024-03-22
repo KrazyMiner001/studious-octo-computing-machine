@@ -19,6 +19,10 @@ public class ModItemGroups {
                 entries.add(ModItems.DOUBLE_COMPRESSED_OAK_LEAF);
                 entries.add(ModItems.FINNIAN_LEAF);
                 entries.add(ModItems.LEAFSTONE);
+                entries.add(ModItems.LEAF_HELMET);
+                entries.add(ModItems.LEAF_CHESTPLATE);
+                entries.add(ModItems.LEAF_LEGGINGS);
+                entries.add(ModItems.LEAF_BOOTS);
 
                 entries.add(ModBlocks.FINNIAN_SAPLING);
                 entries.add(ModBlocks.LEAF_ORE);

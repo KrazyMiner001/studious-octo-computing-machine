@@ -10,7 +10,7 @@ public class ModOrePlacement {
     }
 
     public static List<PlacementModifier> modifiersWithCount(int count, PlacementModifier heightModifier) {
-        return modifiers(CountPlacementModifier.of(count), heightModifier);
+        return modifiers(CountPlacementModifier.of(count), heightModifier); // Veins per Chunk
     }
 
     public static List<PlacementModifier> modifiersWithRarity(int chance, PlacementModifier heightModifier) {

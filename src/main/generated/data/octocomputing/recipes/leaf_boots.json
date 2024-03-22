@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "L": {
+      "item": "octocomputing:leafstone"
+    }
+  },
+  "pattern": [
+    "L L",
+    "L L"
+  ],
+  "result": {
+    "item": "octocomputing:leaf_boots"
+  }
+}

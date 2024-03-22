@@ -1,0 +1,22 @@
+{
+  "block.octocomputing.deepslate_leaf_ore": "Deepslate Leaf Ore",
+  "block.octocomputing.finnian_leaves": "Finnian Leaves",
+  "block.octocomputing.finnian_log": "Finnian Log",
+  "block.octocomputing.finnian_planks": "Finnian Planks",
+  "block.octocomputing.finnian_sapling": "Finnian Sapling",
+  "block.octocomputing.finnian_wood": "Finnian Wood",
+  "block.octocomputing.leaf_ore": "Leaf Ore",
+  "block.octocomputing.leafstone_block": "Leafstone Block",
+  "block.octocomputing.stripped_finnian_log": "Stripped Finnian Log",
+  "block.octocomputing.stripped_finnian_wood": "Stripped Finnian Wood",
+  "item.octocomputing.compressed_oak_leaf": "Compressed Oak Leaf",
+  "item.octocomputing.double_compressed_oak_leaf": "Double Compressed Oak Leaf",
+  "item.octocomputing.finnian_leaf": "Finnian Leaf",
+  "item.octocomputing.leaf_boots": "Leaf Boots",
+  "item.octocomputing.leaf_chestplate": "Leaf Chestplate",
+  "item.octocomputing.leaf_helmet": "Leaf Helmet",
+  "item.octocomputing.leaf_leggings": "Leaf Leggins",
+  "item.octocomputing.leafstone": "Leafstone",
+  "item.octocomputing.oak_leaf": "Oak Leaf",
+  "itemgroup.leaf_group": "Leaves"
+}

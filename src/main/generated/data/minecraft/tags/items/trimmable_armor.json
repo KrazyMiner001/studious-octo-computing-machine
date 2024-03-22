@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "octocomputing:leaf_helmet",
+    "octocomputing:leaf_chestplate",
+    "octocomputing:leaf_leggings",
+    "octocomputing:leaf_boots"
+  ]
+}

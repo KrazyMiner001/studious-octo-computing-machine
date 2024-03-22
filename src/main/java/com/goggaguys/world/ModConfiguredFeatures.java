@@ -38,7 +38,7 @@ public class ModConfiguredFeatures {
                 List.of(OreFeatureConfig.createTarget(stoneReplacables, ModBlocks.LEAF_ORE.getDefaultState()),
                         OreFeatureConfig.createTarget(deepslateReplacables, ModBlocks.DEEPSLATE_LEAF_ORE.getDefaultState()));
 
-        register(context, LEAF_ORE_KEY, Feature.ORE, new OreFeatureConfig(overworldLeafOres, 12));
+        register(context, LEAF_ORE_KEY, Feature.ORE, new OreFeatureConfig(overworldLeafOres, 3));
 
         register(context, FINNIAN_KEY, Feature.TREE, new TreeFeatureConfig.Builder(
                 BlockStateProvider.of(ModBlocks.FINNIAN_LOG),
