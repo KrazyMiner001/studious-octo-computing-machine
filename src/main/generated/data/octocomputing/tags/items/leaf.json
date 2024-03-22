@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "octocomputing:oak_leaf",
+    "octocomputing:compressed_oak_leaf",
+    "octocomputing:double_compressed_oak_leaf",
+    "octocomputing:finnian_leaf"
+  ]
+}
