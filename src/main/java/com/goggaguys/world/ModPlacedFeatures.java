@@ -18,7 +18,7 @@ import net.minecraft.world.gen.placementmodifier.PlacementModifier;
 import java.util.List;
 
 public class ModPlacedFeatures {
-    public static final RegistryKey<PlacedFeature> FINNIAN_TREE_PLACED_KEY = registerKey("finnian_tree_placed");
+    public static final RegistryKey<PlacedFeature> FINNIAN_PLACED_KEY = registerKey("finnian_placed");
 
     public static final RegistryKey<PlacedFeature> LEAF_ORE_PLACED_KEY = registerKey("leaf_ore_placed");
 
@@ -29,7 +29,7 @@ public class ModPlacedFeatures {
                 ModOrePlacement.modifiersWithCount(12,
                         HeightRangePlacementModifier.uniform(YOffset.fixed(-80), YOffset.fixed(80))));
 
-        register(context, FINNIAN_TREE_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.FINNIAN_TREE_KEY),
+        register(context, FINNIAN_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.FINNIAN_KEY),
                 VegetationPlacedFeatures.treeModifiersWithWouldSurvive(PlacedFeatures.createCountExtraModifier(2, 0.1f, 2),
                         OctoBlocks.FINNIAN_SAPLING));
     }

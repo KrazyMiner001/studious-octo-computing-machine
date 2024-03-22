@@ -45,9 +45,9 @@ public class OctoComputing implements ModInitializer {
 		FuelRegistry.INSTANCE.add(OctoItems.COMPRESSED_OAK_LEAF, 10);
 		FuelRegistry.INSTANCE.add(OctoItems.DOUBLE_COMPRESSED_OAK_LEAF, 100);
 
-		LOGGER.info("Mod Starting");
-
 		ModWorldGeneration.generateModWorldGen();
+
+		LOGGER.info("Mod Starting");
 	}
 
 	private static void leafLootTable(Block leafBlock, Item leafItem) {

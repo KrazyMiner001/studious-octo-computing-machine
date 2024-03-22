@@ -1,6 +1,0 @@
-{
-  "parent": "block/cross",
-  "textures": {
-    "cross": "octocomputing:block/finnian_sapling"
-  }
-}

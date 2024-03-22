@@ -1,5 +1,6 @@
 package com.goggaguys.world.gen;
 
+import com.goggaguys.OctoComputing;
 import com.goggaguys.world.ModOrePlacement;
 
 public class ModWorldGeneration {
@@ -7,5 +8,6 @@ public class ModWorldGeneration {
         ModOreGeneration.generateOres();
         ModTreeGeneration.generateTrees();
 
+        OctoComputing.LOGGER.info("Generating World Generation");
     }
 }

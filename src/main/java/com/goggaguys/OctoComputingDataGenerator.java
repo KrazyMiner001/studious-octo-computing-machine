@@ -1,8 +1,6 @@
 package com.goggaguys;
 
-import com.goggaguys.datagen.ModLootTableProvider;
-import com.goggaguys.datagen.ModModelProvider;
-import com.goggaguys.datagen.ModWorldGenerator;
+import com.goggaguys.datagen.*;
 import com.goggaguys.world.ModConfiguredFeatures;
 import com.goggaguys.world.ModPlacedFeatures;
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
