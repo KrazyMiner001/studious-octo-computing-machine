@@ -18,6 +18,7 @@ public class ModModelProvider extends FabricModelProvider {
 
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.LEAF_ORE);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.DEEPSLATE_LEAF_ORE);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.LEAFSTONE_BLOCK);
     }
 
     @Override
@@ -26,5 +27,7 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.DOUBLE_COMPRESSED_OAK_LEAF, Models.GENERATED);
         itemModelGenerator.register(ModItems.COMPRESSED_OAK_LEAF, Models.GENERATED);
         itemModelGenerator.register(ModItems.FINNIAN_LEAF, Models.GENERATED);
+        itemModelGenerator.register(ModItems.LEAFSTONE, Models.GENERATED);
+
     }
 }

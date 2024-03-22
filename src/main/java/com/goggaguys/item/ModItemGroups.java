@@ -23,6 +23,7 @@ public class ModItemGroups {
                 entries.add(ModBlocks.FINNIAN_SAPLING);
                 entries.add(ModBlocks.LEAF_ORE);
                 entries.add(ModBlocks.DEEPSLATE_LEAF_ORE);
+                entries.add(ModBlocks.LEAFSTONE_BLOCK);
             })
             .displayName(Text.translatable("itemgroup.leaf_group"))
             .build();
