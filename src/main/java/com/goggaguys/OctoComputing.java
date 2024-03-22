@@ -1,8 +1,8 @@
 package com.goggaguys;
 
-import com.goggaguys.block.OctoBlocks;
-import com.goggaguys.item.OctoItemGroups;
-import com.goggaguys.item.OctoItems;
+import com.goggaguys.block.ModBlocks;
+import com.goggaguys.item.ModItemGroups;
+import com.goggaguys.item.ModItems;
 import com.goggaguys.world.gen.ModWorldGeneration;
 import net.fabricmc.api.ModInitializer;
 
@@ -35,15 +35,15 @@ public class OctoComputing implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-		OctoItems.registerModItems();
-		OctoItemGroups.registerItemGroups();
-		OctoBlocks.registerModBlocks();
+		ModItems.registerModItems();
+		ModItemGroups.registerItemGroups();
+		ModBlocks.registerModBlocks();
 
-		leafLootTable(Blocks.OAK_LEAVES, OctoItems.OAK_LEAF);
+		leafLootTable(Blocks.OAK_LEAVES, ModItems.OAK_LEAF);
 
-		FuelRegistry.INSTANCE.add(OctoItems.OAK_LEAF, 1);
-		FuelRegistry.INSTANCE.add(OctoItems.COMPRESSED_OAK_LEAF, 10);
-		FuelRegistry.INSTANCE.add(OctoItems.DOUBLE_COMPRESSED_OAK_LEAF, 100);
+		FuelRegistry.INSTANCE.add(ModItems.OAK_LEAF, 1);
+		FuelRegistry.INSTANCE.add(ModItems.COMPRESSED_OAK_LEAF, 10);
+		FuelRegistry.INSTANCE.add(ModItems.DOUBLE_COMPRESSED_OAK_LEAF, 100);
 
 		ModWorldGeneration.generateModWorldGen();
 
@@ -64,7 +64,7 @@ public class OctoComputing implements ModInitializer {
 
 				LootPool.Builder finnianLeafPoolBuilder = LootPool.builder()
 						.rolls(ConstantLootNumberProvider.create(1))
-						.with(ItemEntry.builder(OctoItems.FINNIAN_LEAF))
+						.with(ItemEntry.builder(ModItems.FINNIAN_LEAF))
 						.conditionally(RandomChanceLootCondition.builder(0.01f))
 						.conditionally(MatchToolLootCondition.builder(ItemPredicate.Builder.create()
 								.enchantment(new EnchantmentPredicate(Enchantments.SILK_TOUCH, NumberRange.IntRange.ANY))).invert())

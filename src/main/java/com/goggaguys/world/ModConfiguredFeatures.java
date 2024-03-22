@@ -1,7 +1,7 @@
 package com.goggaguys.world;
 
 import com.goggaguys.OctoComputing;
-import com.goggaguys.block.OctoBlocks;
+import com.goggaguys.block.ModBlocks;
 import net.minecraft.block.Blocks;
 import net.minecraft.registry.Registerable;
 import net.minecraft.registry.RegistryKey;
@@ -32,8 +32,8 @@ public class ModConfiguredFeatures {
         RuleTest endReplacables = new BlockMatchRuleTest(Blocks.END_STONE);
 
         List<OreFeatureConfig.Target> overworldLeafOres =
-                List.of(OreFeatureConfig.createTarget(stoneReplacables, OctoBlocks.LEAF_ORE.getDefaultState()),
-                        OreFeatureConfig.createTarget(deepslateReplacables, OctoBlocks.DEEPSLATE_LEAF_ORE.getDefaultState()));
+                List.of(OreFeatureConfig.createTarget(stoneReplacables, ModBlocks.LEAF_ORE.getDefaultState()),
+                        OreFeatureConfig.createTarget(deepslateReplacables, ModBlocks.DEEPSLATE_LEAF_ORE.getDefaultState()));
 
         register(context, LEAF_ORE_KEY, Feature.ORE, new OreFeatureConfig(overworldLeafOres, 12));
 

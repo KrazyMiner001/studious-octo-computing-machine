@@ -1,7 +1,7 @@
 package com.goggaguys.world;
 
 import com.goggaguys.OctoComputing;
-import com.goggaguys.block.OctoBlocks;
+import com.goggaguys.block.ModBlocks;
 import net.minecraft.registry.Registerable;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
@@ -31,7 +31,7 @@ public class ModPlacedFeatures {
 
         register(context, FINNIAN_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.FINNIAN_KEY),
                 VegetationPlacedFeatures.treeModifiersWithWouldSurvive(PlacedFeatures.createCountExtraModifier(2, 0.1f, 2),
-                        OctoBlocks.FINNIAN_SAPLING));
+                        ModBlocks.FINNIAN_SAPLING));
     }
 
     public static RegistryKey<PlacedFeature> registerKey(String name) {

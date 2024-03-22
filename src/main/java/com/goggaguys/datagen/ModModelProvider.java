@@ -1,7 +1,7 @@
 package com.goggaguys.datagen;
 
-import com.goggaguys.block.OctoBlocks;
-import com.goggaguys.item.OctoItems;
+import com.goggaguys.block.ModBlocks;
+import com.goggaguys.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
 import net.minecraft.data.client.BlockStateModelGenerator;
@@ -14,17 +14,17 @@ public class ModModelProvider extends FabricModelProvider {
     }
     @Override
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
-        blockStateModelGenerator.registerTintableCross(OctoBlocks.FINNIAN_SAPLING, BlockStateModelGenerator.TintType.NOT_TINTED);
+        blockStateModelGenerator.registerTintableCross(ModBlocks.FINNIAN_SAPLING, BlockStateModelGenerator.TintType.NOT_TINTED);
 
-        blockStateModelGenerator.registerSimpleCubeAll(OctoBlocks.LEAF_ORE);
-        blockStateModelGenerator.registerSimpleCubeAll(OctoBlocks.DEEPSLATE_LEAF_ORE);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.LEAF_ORE);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.DEEPSLATE_LEAF_ORE);
     }
 
     @Override
     public void generateItemModels(ItemModelGenerator itemModelGenerator) {
-        itemModelGenerator.register(OctoItems.OAK_LEAF, Models.GENERATED);
-        itemModelGenerator.register(OctoItems.DOUBLE_COMPRESSED_OAK_LEAF, Models.GENERATED);
-        itemModelGenerator.register(OctoItems.COMPRESSED_OAK_LEAF, Models.GENERATED);
-        itemModelGenerator.register(OctoItems.FINNIAN_LEAF, Models.GENERATED);
+        itemModelGenerator.register(ModItems.OAK_LEAF, Models.GENERATED);
+        itemModelGenerator.register(ModItems.DOUBLE_COMPRESSED_OAK_LEAF, Models.GENERATED);
+        itemModelGenerator.register(ModItems.COMPRESSED_OAK_LEAF, Models.GENERATED);
+        itemModelGenerator.register(ModItems.FINNIAN_LEAF, Models.GENERATED);
     }
 }

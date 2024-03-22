@@ -15,14 +15,14 @@ import net.minecraft.util.Identifier;
 import net.minecraft.item.Item;
 import net.minecraft.util.math.intprovider.UniformIntProvider;
 
-public class OctoBlocks {
+public class ModBlocks {
     public static final Block FINNIAN_SAPLING = registerBlock("finnian_sapling",
             new SaplingBlock(ModSaplingGenerators.FINNIAN_TREE, FabricBlockSettings.copyOf(Blocks.OAK_SAPLING)));
-
     public static final Block LEAF_ORE = registerBlock("leaf_ore",
             new ExperienceDroppingBlock(UniformIntProvider.create(2, 5), FabricBlockSettings.copyOf(Blocks.STONE).strength(2f)));
     public static final Block DEEPSLATE_LEAF_ORE = registerBlock("deepslate_leaf_ore",
-            new ExperienceDroppingBlock(UniformIntProvider.create(2, 5), FabricBlockSettings.copyOf(Blocks.DEEPSLATE).strength(4f)));
+            new ExperienceDroppingBlock(UniformIntProvider.create(2, 5), FabricBlockSettings.copyOf(Blocks.DEEPSLATE).strength(3f)));
+    public static final Block LEAFSTONE_BLOCK = registerBlock("leafstone_block", new Block(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK)));
 
 
     private static Block registerBlock(String name, Block block) {
