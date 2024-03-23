@@ -10,8 +10,14 @@ import net.minecraft.sound.SoundEvents;
 import java.util.function.Supplier;
 
 public enum ModArmorMaterials implements ArmorMaterial {
-    LEAF("leaf", 25, new int[] {3, 8, 6, 3}, 19,
-    SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE, 2f, 0.1f, () -> Ingredient.ofItems(ModItems.LEAFSTONE));
+    LEAF("leaf", 1, new int[] {1, 1, 1, 1}, 20,
+    SoundEvents.BLOCK_AZALEA_PLACE, 0f, 0f, () -> Ingredient.fromTag(ModItemTags.leaf)),
+
+    COMPRESSED_LEAF("compressed_leaf", 2, new int[] {1, 3, 2, 1}, 30,
+    SoundEvents.BLOCK_AZALEA_PLACE, 0f, 0f, () -> Ingredient.fromTag(ModItemTags.leaf_compressed)),
+
+    DOUBLE_COMPRESSED_LEAF("double_compressed_leaf", 3, new int[] {2, 5, 3, 1}, 40,
+            SoundEvents.BLOCK_AZALEA_PLACE, 0f, 0f, () -> Ingredient.fromTag(ModItemTags.leaf_double_compressed));
     private final String name;
     private final int durabilityMultiplier;
     private final int[] protectionAmounts;

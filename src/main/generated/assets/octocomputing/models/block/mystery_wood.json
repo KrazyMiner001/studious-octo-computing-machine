@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "octocomputing:block/mystery_log",
+    "side": "octocomputing:block/mystery_log"
+  }
+}

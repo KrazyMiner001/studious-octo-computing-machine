@@ -13,26 +13,25 @@ import net.minecraft.item.Item;
 import net.minecraft.util.math.intprovider.UniformIntProvider;
 
 public class ModBlocks {
-    public static final Block FINNIAN_SAPLING = registerBlock("finnian_sapling",
-            new SaplingBlock(ModSaplingGenerators.FINNIAN_TREE, FabricBlockSettings.copyOf(Blocks.OAK_SAPLING)));
+    public static final Block MYSTERY_SAPLING = registerBlock("mystery_sapling",
+            new SaplingBlock(ModSaplingGenerators.MYSTERY_TREE, FabricBlockSettings.copyOf(Blocks.OAK_SAPLING)));
     public static final Block LEAF_ORE = registerBlock("leaf_ore",
             new ExperienceDroppingBlock(UniformIntProvider.create(2, 5), FabricBlockSettings.copyOf(Blocks.STONE).strength(2f)));
     public static final Block DEEPSLATE_LEAF_ORE = registerBlock("deepslate_leaf_ore",
             new ExperienceDroppingBlock(UniformIntProvider.create(2, 5), FabricBlockSettings.copyOf(Blocks.DEEPSLATE).strength(3f)));
     public static final Block LEAFSTONE_BLOCK = registerBlock("leafstone_block", new Block(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK)));
 
-    public static final Block FINNIAN_LOG = registerBlock("finnian_log",
+    public static final Block MYSTERY_LOG = registerBlock("mystery_log",
             new PillarBlock(FabricBlockSettings.copyOf(Blocks.OAK_LOG).strength(4f)));
-    public static final Block FINNIAN_WOOD = registerBlock("finnian_wood",
+    public static final Block MYSTERY_WOOD = registerBlock("mystery_wood",
         new PillarBlock(FabricBlockSettings.copyOf(Blocks.OAK_WOOD).strength(4f)));
-    public static final Block STRIPPED_FINNIAN_LOG = registerBlock("stripped_finnian_log",
+    public static final Block STRIPPED_MYSTERY_LOG = registerBlock("stripped_mystery_log",
             new PillarBlock(FabricBlockSettings.copyOf(Blocks.STRIPPED_OAK_LOG).strength(4f)));
-    public static final Block STRIPPED_FINNIAN_WOOD = registerBlock("stripped_finnian_wood",
+    public static final Block STRIPPED_MYSTERY_WOOD = registerBlock("stripped_mystery_wood",
             new PillarBlock(FabricBlockSettings.copyOf(Blocks.STRIPPED_OAK_WOOD).strength(4f)));
-
-    public static final Block FINNIAN_PLANKS = registerBlock("finnian_planks",
+    public static final Block MYSTERY_PLANKS = registerBlock("mystery_planks",
             new Block(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS).strength(4f)));
-    public static final Block FINNIAN_LEAVES = registerBlock("finnian_leaves",
+    public static final Block MYSTERY_LEAVES = registerBlock("mystery_leaves",
         new Block(FabricBlockSettings.copyOf(Blocks.OAK_LEAVES).strength(4f).nonOpaque()));
 
 

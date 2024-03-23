@@ -1,13 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_leafstone": {
+    "has_leaf": {
       "conditions": {
         "items": [
           {
-            "items": [
-              "octocomputing:leafstone"
-            ]
+            "tag": "octocomputing:leaf"
           }
         ]
       },
@@ -23,7 +21,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_leafstone"
+      "has_leaf"
     ]
   ],
   "rewards": {

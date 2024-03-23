@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "L": {
+      "tag": "octocomputing:leaf"
+    }
+  },
+  "pattern": [
+    "LLL",
+    "L L"
+  ],
+  "result": {
+    "item": "octocomputing:compressed_leaf_helmet"
+  }
+}

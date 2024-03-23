@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "octocomputing:oak_leaf"
+    },
+    {
+      "item": "octocomputing:spruce_leaf"
+    },
+    {
+      "item": "octocomputing:birch_leaf"
+    },
+    {
+      "item": "octocomputing:jungle_leaf"
+    },
+    {
+      "item": "octocomputing:acacia_leaf"
+    },
+    {
+      "item": "octocomputing:dark_oak_leaf"
+    },
+    {
+      "item": "octocomputing:azalea_leaf"
+    },
+    {
+      "item": "octocomputing:mangrove_leaf"
+    },
+    {
+      "item": "octocomputing:cherry_leaf"
+    }
+  ],
+  "result": {
+    "item": "octocomputing:mixed_leaf"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "octocomputing:compressed_mystery_leaf"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "octocomputing:mystery_leaf"
+  }
+}

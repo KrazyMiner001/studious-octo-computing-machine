@@ -15,18 +15,16 @@ import net.minecraft.util.math.intprovider.ConstantIntProvider;
 import net.minecraft.util.math.intprovider.UniformIntProvider;
 import net.minecraft.world.gen.feature.*;
 import net.minecraft.world.gen.feature.size.TwoLayersFeatureSize;
-import net.minecraft.world.gen.foliage.BlobFoliagePlacer;
 import net.minecraft.world.gen.foliage.CherryFoliagePlacer;
 import net.minecraft.world.gen.stateprovider.BlockStateProvider;
 import net.minecraft.world.gen.trunk.CherryTrunkPlacer;
-import net.minecraft.world.gen.trunk.StraightTrunkPlacer;
 
 import java.util.List;
 
 public class ModConfiguredFeatures {
     public static final RegistryKey<ConfiguredFeature<?, ?>> LEAF_ORE_KEY = registerKey("leaf_ore");
 
-    public static final RegistryKey<ConfiguredFeature<?, ?>> FINNIAN_KEY = registerKey("finnian");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> MYSTERY_KEY = registerKey("mystery");
 
     public static void bootstrap(Registerable<ConfiguredFeature<?, ?>> context) {
         RuleTest stoneReplacables = new TagMatchRuleTest(BlockTags.STONE_ORE_REPLACEABLES);
@@ -40,15 +38,15 @@ public class ModConfiguredFeatures {
 
         register(context, LEAF_ORE_KEY, Feature.ORE, new OreFeatureConfig(overworldLeafOres, 3));
 
-        register(context, FINNIAN_KEY, Feature.TREE, new TreeFeatureConfig.Builder(
-                BlockStateProvider.of(ModBlocks.FINNIAN_LOG),
+        register(context, MYSTERY_KEY, Feature.TREE, new TreeFeatureConfig.Builder(
+                BlockStateProvider.of(ModBlocks.MYSTERY_LOG),
                 new CherryTrunkPlacer(5, 2, 4,
                         UniformIntProvider.create(2, 3),
                         UniformIntProvider.create(3, 5),
                         UniformIntProvider.create(-2, -1),
                         UniformIntProvider.create(-1, 0)),
 
-                BlockStateProvider.of(ModBlocks.FINNIAN_LEAVES),
+                BlockStateProvider.of(ModBlocks.MYSTERY_LEAVES),
                 new CherryFoliagePlacer(UniformIntProvider.create(3, 5),
                         ConstantIntProvider.create(0),
                         UniformIntProvider.create(5, 7),

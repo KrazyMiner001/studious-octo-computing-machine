@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "octocomputing:item/double_compressed_mixed_leaf"
+  }
+}

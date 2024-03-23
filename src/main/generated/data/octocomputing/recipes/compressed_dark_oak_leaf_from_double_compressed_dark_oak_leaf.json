@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "octocomputing:double_compressed_dark_oak_leaf"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "octocomputing:compressed_dark_oak_leaf"
+  }
+}

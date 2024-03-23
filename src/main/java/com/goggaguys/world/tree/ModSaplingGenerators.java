@@ -7,11 +7,11 @@ import com.goggaguys.world.ModConfiguredFeatures;
 import java.util.Optional;
 
 public class ModSaplingGenerators {
-    public static final SaplingGenerator FINNIAN_TREE =
-            new SaplingGenerator("finnian", 0f,
+    public static final SaplingGenerator MYSTERY_TREE =
+            new SaplingGenerator("mystery", 0f,
                     Optional.empty(),
                     Optional.empty(),
-                    Optional.of(ModConfiguredFeatures.FINNIAN_KEY),
+                    Optional.of(ModConfiguredFeatures.MYSTERY_KEY),
                     Optional.empty(),
                     Optional.empty(),
                     Optional.empty());

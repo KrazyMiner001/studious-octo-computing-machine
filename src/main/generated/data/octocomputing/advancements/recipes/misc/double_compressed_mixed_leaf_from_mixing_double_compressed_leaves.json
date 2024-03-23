@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_double_compressed_leaf": {
+      "conditions": {
+        "items": [
+          {
+            "tag": "octocomputing:leaf_double_compressed"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:double_compressed_mixed_leaf_from_mixing_double_compressed_leaves"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_double_compressed_leaf"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:double_compressed_mixed_leaf_from_mixing_double_compressed_leaves"
+    ]
+  }
+}

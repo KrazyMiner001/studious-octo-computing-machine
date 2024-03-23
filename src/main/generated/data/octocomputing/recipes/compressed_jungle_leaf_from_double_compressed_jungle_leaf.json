@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "octocomputing:double_compressed_jungle_leaf"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "octocomputing:compressed_jungle_leaf"
+  }
+}
