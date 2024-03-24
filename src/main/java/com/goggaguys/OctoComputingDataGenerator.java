@@ -1,5 +1,6 @@
 package com.goggaguys;
 
+import com.goggaguys.damagetype.ModDamageTypes;
 import com.goggaguys.datagen.*;
 import com.goggaguys.world.ModConfiguredFeatures;
 import com.goggaguys.world.ModPlacedFeatures;
@@ -14,11 +15,14 @@ public class OctoComputingDataGenerator implements DataGeneratorEntrypoint {
     public void onInitializeDataGenerator(FabricDataGenerator fabricDataGenerator) {
         FabricDataGenerator.Pack pack = fabricDataGenerator.createPack();
 
+        pack.addProvider(ModDamageTypeProvider::new);
         pack.addProvider(ModBlockLootTableGenerator::new);
         pack.addProvider(ModModelProvider::new);
         pack.addProvider(ModRecipeGenerator::new);
         pack.addProvider(ModBlockTagProvider::new);
         pack.addProvider(ModItemTagProvider::new);
+        pack.addProvider(ModEntityTypeTagProvider::new);
+        pack.addProvider(ModDamageTypeTagProvider::new);
         pack.addProvider(ModEnglishLangProvider::new);
         pack.addProvider(ModWorldGenerator::new);
     }
@@ -27,5 +31,6 @@ public class OctoComputingDataGenerator implements DataGeneratorEntrypoint {
     public void buildRegistry(RegistryBuilder registryBuilder) {
         registryBuilder.addRegistry(RegistryKeys.CONFIGURED_FEATURE, ModConfiguredFeatures::bootstrap);
         registryBuilder.addRegistry(RegistryKeys.PLACED_FEATURE, ModPlacedFeatures::bootstrap);
+        registryBuilder.addRegistry(RegistryKeys.DAMAGE_TYPE, ModDamageTypes::bootstrap);
     }
 }

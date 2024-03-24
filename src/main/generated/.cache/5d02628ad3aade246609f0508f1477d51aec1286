@@ -1,8 +1,11 @@
-// 1.20.4	2024-03-23T10:59:33.9136745	Studious Octo Computing Machine/Tags for minecraft:block
+// 1.20.4	2024-03-24T08:30:54.2659789	Studious Octo Computing Machine/Tags for minecraft:block
 05ef49106c884119633e509b670bcd24cddde4ee data\minecraft\tags\blocks\beacon_base_blocks.json
 ba8bd478be475fa2f6851a60594f6bacb68efb93 data\minecraft\tags\blocks\saplings.json
 62c9ca87249f33269704ec6139128ee5459c40df data\minecraft\tags\blocks\needs_iron_tool.json
 24a6919d06ba5dda7c0a8c314145c31a32c6caca data\minecraft\tags\blocks\mineable\pickaxe.json
-c3de2fd84c21dcb7b3e2587ddb2a1db14cd599b4 data\minecraft\tags\blocks\needs_diamond_tool.json
 f79892d919a8891dc8946f9dfc69a06c6de917ae data\minecraft\tags\blocks\planks.json
+c3de2fd84c21dcb7b3e2587ddb2a1db14cd599b4 data\minecraft\tags\blocks\needs_diamond_tool.json
+97d1b5d083890bfa88274d9b24f6b68ea1945559 data\minecraft\tags\blocks\needs_stone_tool.json
 f41777d3e697c55755bf997a2f4b18f84d3f1352 data\minecraft\tags\blocks\logs_that_burn.json
+ec5b71bab97d650f1f8d3826680e3e7073416532 data\minecraft\tags\blocks\mineable\hoe.json
+4228455acf04c4fff332d5ae2f7ab0a488afc92d data\minecraft\tags\blocks\mineable\axe.json

@@ -17,7 +17,7 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
 
     @Override
     protected void configure(RegistryWrapper.WrapperLookup arg) {
-        getOrCreateTagBuilder(ModItemTags.leaf)
+        getOrCreateTagBuilder(ModItemTags.LEAF)
                 .add(ModItems.OAK_LEAF)
                 .add(ModItems.SPRUCE_LEAF)
                 .add(ModItems.BIRCH_LEAF)
@@ -30,7 +30,7 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(ModItems.MIXED_LEAF)
                 .add(ModItems.MYSTERY_LEAF);
 
-        getOrCreateTagBuilder(ModItemTags.leaf_compressed)
+        getOrCreateTagBuilder(ModItemTags.LEAF_COMPRESSED)
                 .add(ModItems.COMPRESSED_OAK_LEAF)
                 .add(ModItems.COMPRESSED_SPRUCE_LEAF)
                 .add(ModItems.COMPRESSED_BIRCH_LEAF)
@@ -43,7 +43,7 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(ModItems.COMPRESSED_MIXED_LEAF)
                 .add(ModItems.COMPRESSED_MYSTERY_LEAF);
 
-        getOrCreateTagBuilder(ModItemTags.leaf_double_compressed)
+        getOrCreateTagBuilder(ModItemTags.LEAF_DOUBLE_COMPRESSED)
                 .add(ModItems.DOUBLE_COMPRESSED_OAK_LEAF)
                 .add(ModItems.DOUBLE_COMPRESSED_SPRUCE_LEAF)
                 .add(ModItems.DOUBLE_COMPRESSED_BIRCH_LEAF)
@@ -59,7 +59,7 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
         getOrCreateTagBuilder(ItemTags.PLANKS)
                 .add(ModBlocks.MYSTERY_PLANKS.asItem());
 
-        getOrCreateTagBuilder(ModItemTags.mystery_logs)
+        getOrCreateTagBuilder(ModItemTags.MYSTERY_LOGS)
                 .add(ModBlocks.MYSTERY_LOG.asItem())
                 .add(ModBlocks.MYSTERY_WOOD.asItem())
                 .add(ModBlocks.STRIPPED_MYSTERY_LOG.asItem())

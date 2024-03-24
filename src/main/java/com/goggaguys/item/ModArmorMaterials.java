@@ -11,13 +11,13 @@ import java.util.function.Supplier;
 
 public enum ModArmorMaterials implements ArmorMaterial {
     LEAF("leaf", 1, new int[] {1, 1, 1, 1}, 20,
-    SoundEvents.BLOCK_AZALEA_PLACE, 0f, 0f, () -> Ingredient.fromTag(ModItemTags.leaf)),
+    SoundEvents.BLOCK_AZALEA_PLACE, 0f, 0f, () -> Ingredient.fromTag(ModItemTags.LEAF)),
 
     COMPRESSED_LEAF("compressed_leaf", 2, new int[] {1, 3, 2, 1}, 30,
-    SoundEvents.BLOCK_AZALEA_PLACE, 0f, 0f, () -> Ingredient.fromTag(ModItemTags.leaf_compressed)),
+    SoundEvents.BLOCK_AZALEA_PLACE, 0f, 0f, () -> Ingredient.fromTag(ModItemTags.LEAF_COMPRESSED)),
 
     DOUBLE_COMPRESSED_LEAF("double_compressed_leaf", 3, new int[] {2, 5, 3, 1}, 40,
-            SoundEvents.BLOCK_AZALEA_PLACE, 0f, 0f, () -> Ingredient.fromTag(ModItemTags.leaf_double_compressed));
+            SoundEvents.BLOCK_AZALEA_PLACE, 0f, 0f, () -> Ingredient.fromTag(ModItemTags.LEAF_DOUBLE_COMPRESSED));
     private final String name;
     private final int durabilityMultiplier;
     private final int[] protectionAmounts;

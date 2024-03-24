@@ -4,6 +4,8 @@ import com.goggaguys.block.ModBlocks;
 import com.goggaguys.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
+import net.minecraft.block.Blocks;
+import net.minecraft.data.server.loottable.BlockLootTableGenerator;
 
 public class ModBlockLootTableGenerator extends FabricBlockLootTableProvider {
     public ModBlockLootTableGenerator(FabricDataOutput dataOutput) {
@@ -21,6 +23,6 @@ public class ModBlockLootTableGenerator extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.LEAF_ORE, oreDrops(ModBlocks.LEAF_ORE, ModItems.LEAFSTONE));
         addDrop(ModBlocks.DEEPSLATE_LEAF_ORE, oreDrops(ModBlocks.DEEPSLATE_LEAF_ORE, ModItems.LEAFSTONE));
 
-        addDrop(ModBlocks.MYSTERY_LEAVES, leavesDrops(ModBlocks.MYSTERY_LEAVES, ModBlocks.MYSTERY_SAPLING, 0.0025f));
+        addDrop(ModBlocks.MYSTERY_LEAVES, leavesDrops(ModBlocks.MYSTERY_LEAVES, ModBlocks.MYSTERY_SAPLING, BlockLootTableGenerator.SAPLING_DROP_CHANCE));
     }
 }

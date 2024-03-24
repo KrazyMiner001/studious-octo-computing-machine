@@ -20,11 +20,29 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.LEAF_ORE)
                 .add(ModBlocks.DEEPSLATE_LEAF_ORE);
 
+        getOrCreateTagBuilder(BlockTags.HOE_MINEABLE)
+                .add(ModBlocks.MYSTERY_LEAVES);
+
+        getOrCreateTagBuilder(BlockTags.AXE_MINEABLE)
+                .add(ModBlocks.MYSTERY_LOG)
+                .add(ModBlocks.MYSTERY_WOOD)
+                .add(ModBlocks.STRIPPED_MYSTERY_LOG)
+                .add(ModBlocks.STRIPPED_MYSTERY_WOOD)
+                .add(ModBlocks.MYSTERY_PLANKS);
+
         getOrCreateTagBuilder(BlockTags.SAPLINGS)
                 .add(ModBlocks.MYSTERY_SAPLING);
 
         getOrCreateTagBuilder(BlockTags.BEACON_BASE_BLOCKS)
                 .add(ModBlocks.LEAFSTONE_BLOCK);
+
+        getOrCreateTagBuilder(BlockTags.NEEDS_STONE_TOOL)
+                .add(ModBlocks.MYSTERY_LEAVES)
+                .add(ModBlocks.MYSTERY_LOG)
+                .add(ModBlocks.MYSTERY_WOOD)
+                .add(ModBlocks.STRIPPED_MYSTERY_LOG)
+                .add(ModBlocks.STRIPPED_MYSTERY_WOOD)
+                .add(ModBlocks.MYSTERY_PLANKS);
 
         getOrCreateTagBuilder(BlockTags.NEEDS_IRON_TOOL)
                 .add(ModBlocks.LEAF_ORE)

@@ -1,6 +1,7 @@
 package com.goggaguys.datagen;
 
 import com.goggaguys.block.ModBlocks;
+import com.goggaguys.enchantments.ModEnchantments;
 import com.goggaguys.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
@@ -18,17 +19,17 @@ public class ModEnglishLangProvider extends FabricLanguageProvider {
 
         translationBuilder.add(ModItems.LEAF_HELMET, "Leaf Helmet");
         translationBuilder.add(ModItems.LEAF_CHESTPLATE, "Leaf Chestplate");
-        translationBuilder.add(ModItems.LEAF_LEGGINGS, "Leaf Leggins");
+        translationBuilder.add(ModItems.LEAF_LEGGINGS, "Leaf Leggings");
         translationBuilder.add(ModItems.LEAF_BOOTS, "Leaf Boots");
 
         translationBuilder.add(ModItems.COMPRESSED_LEAF_HELMET, "Compressed Leaf Helmet");
         translationBuilder.add(ModItems.COMPRESSED_LEAF_CHESTPLATE, "Compressed Leaf Chestplate");
-        translationBuilder.add(ModItems.COMPRESSED_LEAF_LEGGINGS, "Compressed Leaf Leggins");
+        translationBuilder.add(ModItems.COMPRESSED_LEAF_LEGGINGS, "Compressed Leaf Leggings");
         translationBuilder.add(ModItems.COMPRESSED_LEAF_BOOTS, "Compressed Leaf Boots");
 
         translationBuilder.add(ModItems.DOUBLE_COMPRESSED_LEAF_HELMET, "Double Compressed Leaf Helmet");
         translationBuilder.add(ModItems.DOUBLE_COMPRESSED_LEAF_CHESTPLATE, "Double Compressed Leaf Chestplate");
-        translationBuilder.add(ModItems.DOUBLE_COMPRESSED_LEAF_LEGGINGS, "Double Compressed Leaf Leggins");
+        translationBuilder.add(ModItems.DOUBLE_COMPRESSED_LEAF_LEGGINGS, "Double Compressed Leaf Leggings");
         translationBuilder.add(ModItems.DOUBLE_COMPRESSED_LEAF_BOOTS, "Double Compressed Leaf Boots");
 
         translationBuilder.add(ModBlocks.MYSTERY_SAPLING, "Mystery Sapling");
@@ -42,7 +43,12 @@ public class ModEnglishLangProvider extends FabricLanguageProvider {
         translationBuilder.add(ModBlocks.DEEPSLATE_LEAF_ORE, "Deepslate Leaf Ore");
         translationBuilder.add(ModBlocks.LEAFSTONE_BLOCK, "Leafstone Block");
 
+        translationBuilder.add(ModEnchantments.LEAF_PROTECTION, "Leaf Protection");
+        translationBuilder.add(ModEnchantments.GARDEN_SHEARS, "Garden Shears");
+
         translationBuilder.add(new Identifier("itemgroup", "leaf_group"), "Leaves");
+
+        translationBuilder.add(new Identifier("death.attack", "leaf"), "%1$s leafed too much");
     }
 
     private static void leafTranslations(TranslationBuilder translationBuilder) {

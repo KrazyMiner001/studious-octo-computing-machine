@@ -40,17 +40,17 @@ public class ModConfiguredFeatures {
 
         register(context, MYSTERY_KEY, Feature.TREE, new TreeFeatureConfig.Builder(
                 BlockStateProvider.of(ModBlocks.MYSTERY_LOG),
-                new CherryTrunkPlacer(5, 2, 4,
-                        UniformIntProvider.create(2, 3),
+                new CherryTrunkPlacer(6, 2, 4,
+                        UniformIntProvider.create(1, 2),
                         UniformIntProvider.create(3, 5),
                         UniformIntProvider.create(-2, -1),
                         UniformIntProvider.create(-1, 0)),
 
                 BlockStateProvider.of(ModBlocks.MYSTERY_LEAVES),
-                new CherryFoliagePlacer(UniformIntProvider.create(3, 5),
+                new CherryFoliagePlacer(UniformIntProvider.create(2, 4),
                         ConstantIntProvider.create(0),
-                        UniformIntProvider.create(5, 7),
-                        0.25f, 0.25f, 0.25f, 0.25f),
+                        UniformIntProvider.create(4, 6),
+                        0.25f, 0.25f, 0.5f, 0.25f),
 
                 new TwoLayersFeatureSize(1, 0, 2)).build());
     }

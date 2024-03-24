@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "octocomputing:mystery_leaves",
+    "octocomputing:mystery_log",
+    "octocomputing:mystery_wood",
+    "octocomputing:stripped_mystery_log",
+    "octocomputing:stripped_mystery_wood",
+    "octocomputing:mystery_planks"
+  ]
+}

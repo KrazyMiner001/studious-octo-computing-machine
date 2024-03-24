@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_mystery_leaf": {
+    "has_compressed_mystery_leaf": {
       "conditions": {
         "items": [
           {
             "items": [
-              "octocomputing:mystery_leaf"
+              "octocomputing:compressed_mystery_leaf"
             ]
           }
         ]
@@ -36,7 +36,7 @@
     [
       "has_the_recipe",
       "has_stick",
-      "has_mystery_leaf"
+      "has_compressed_mystery_leaf"
     ]
   ],
   "rewards": {

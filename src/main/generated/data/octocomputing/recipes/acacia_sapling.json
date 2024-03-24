@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "L": {
+      "item": "octocomputing:compressed_acacia_leaf"
+    },
+    "S": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    "LLL",
+    "LSL",
+    " S "
+  ],
+  "result": {
+    "item": "minecraft:acacia_sapling"
+  }
+}

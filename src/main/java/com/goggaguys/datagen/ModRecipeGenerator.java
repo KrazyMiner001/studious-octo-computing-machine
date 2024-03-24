@@ -5,6 +5,7 @@ import com.goggaguys.item.ModItemTags;
 import com.goggaguys.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
+import net.minecraft.block.Blocks;
 import net.minecraft.data.server.recipe.RecipeExporter;
 import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
 import net.minecraft.data.server.recipe.ShapelessRecipeJsonBuilder;
@@ -64,7 +65,7 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
                 .input(ModItems.AZALEA_LEAF)
                 .input(ModItems.MANGROVE_LEAF)
                 .input(ModItems.CHERRY_LEAF)
-                .criterion("has_leaf", conditionsFromTag(ModItemTags.leaf))
+                .criterion("has_leaf", conditionsFromTag(ModItemTags.LEAF))
                 .offerTo(exporter, new Identifier(getRecipeName(ModItems.MIXED_LEAF) + "_from_mixing_leaves"));
 
         ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.COMPRESSED_MIXED_LEAF)
@@ -77,7 +78,7 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
                 .input(ModItems.COMPRESSED_AZALEA_LEAF)
                 .input(ModItems.COMPRESSED_MANGROVE_LEAF)
                 .input(ModItems.COMPRESSED_CHERRY_LEAF)
-                .criterion("has_compressed_leaf", conditionsFromTag(ModItemTags.leaf_compressed))
+                .criterion("has_compressed_leaf", conditionsFromTag(ModItemTags.LEAF_COMPRESSED))
                 .offerTo(exporter, new Identifier(getRecipeName(ModItems.COMPRESSED_MIXED_LEAF) + "_from_mixing_compressed_leaves"));
 
         ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.DOUBLE_COMPRESSED_MIXED_LEAF)
@@ -90,41 +91,54 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
                 .input(ModItems.DOUBLE_COMPRESSED_AZALEA_LEAF)
                 .input(ModItems.DOUBLE_COMPRESSED_MANGROVE_LEAF)
                 .input(ModItems.DOUBLE_COMPRESSED_CHERRY_LEAF)
-                .criterion("has_double_compressed_leaf", conditionsFromTag(ModItemTags.leaf_double_compressed))
+                .criterion("has_double_compressed_leaf", conditionsFromTag(ModItemTags.LEAF_DOUBLE_COMPRESSED))
                 .offerTo(exporter, new Identifier(getRecipeName(ModItems.DOUBLE_COMPRESSED_MIXED_LEAF) + "_from_mixing_double_compressed_leaves"));
 
-        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModBlocks.MYSTERY_SAPLING)
-                .pattern("LLL")
-                .pattern("LSL")
-                .pattern(" S ")
-                .input('L', ModItems.MYSTERY_LEAF)
-                .input('S', Items.STICK)
-                .criterion(hasItem(Items.STICK), conditionsFromItem(Items.STICK))
-                .criterion(hasItem(ModItems.MYSTERY_LEAF), conditionsFromItem(ModItems.MYSTERY_LEAF))
-                .offerTo(exporter, new Identifier(getRecipeName(ModBlocks.MYSTERY_SAPLING)));
+        makeSaplingRecipe(exporter, ModBlocks.MYSTERY_SAPLING.asItem(), ModItems.COMPRESSED_MYSTERY_LEAF);
+        makeSaplingRecipe(exporter, Blocks.OAK_SAPLING.asItem(), ModItems.COMPRESSED_OAK_LEAF);
+        makeSaplingRecipe(exporter, Blocks.SPRUCE_SAPLING.asItem(), ModItems.COMPRESSED_SPRUCE_LEAF);
+        makeSaplingRecipe(exporter, Blocks.BIRCH_SAPLING.asItem(), ModItems.COMPRESSED_BIRCH_LEAF);
+        makeSaplingRecipe(exporter, Blocks.JUNGLE_SAPLING.asItem(), ModItems.COMPRESSED_JUNGLE_LEAF);
+        makeSaplingRecipe(exporter, Blocks.ACACIA_SAPLING.asItem(), ModItems.COMPRESSED_ACACIA_LEAF);
+        makeSaplingRecipe(exporter, Blocks.DARK_OAK_SAPLING.asItem(), ModItems.COMPRESSED_DARK_OAK_LEAF);
+        makeSaplingRecipe(exporter, Blocks.AZALEA.asItem(), ModItems.COMPRESSED_AZALEA_LEAF);
+        makeSaplingRecipe(exporter, Blocks.MANGROVE_PROPAGULE.asItem(), ModItems.COMPRESSED_MANGROVE_LEAF);
+        makeSaplingRecipe(exporter, Blocks.CHERRY_SAPLING.asItem(), ModItems.COMPRESSED_CHERRY_LEAF);
 
         offerBarkBlockRecipe(exporter, ModBlocks.MYSTERY_WOOD, ModBlocks.MYSTERY_LOG);
         offerBarkBlockRecipe(exporter, ModBlocks.STRIPPED_MYSTERY_WOOD, ModBlocks.STRIPPED_MYSTERY_LOG);
 
-        offerPlanksRecipe(exporter, ModBlocks.MYSTERY_PLANKS, ModItemTags.mystery_logs, 4);
+        offerPlanksRecipe(exporter, ModBlocks.MYSTERY_PLANKS, ModItemTags.MYSTERY_LOGS, 4);
 
-        armorRecipes(exporter, ModItemTags.leaf,
+        armorRecipes(exporter, ModItemTags.LEAF,
                 ModItems.LEAF_HELMET,
                 ModItems.LEAF_CHESTPLATE,
                 ModItems.LEAF_LEGGINGS,
                 ModItems.LEAF_BOOTS);
 
-        armorRecipes(exporter, ModItemTags.leaf,
+        armorRecipes(exporter, ModItemTags.LEAF,
                 ModItems.COMPRESSED_LEAF_HELMET,
                 ModItems.COMPRESSED_LEAF_CHESTPLATE,
                 ModItems.COMPRESSED_LEAF_LEGGINGS,
                 ModItems.COMPRESSED_LEAF_BOOTS);
 
-        armorRecipes(exporter, ModItemTags.leaf,
+        armorRecipes(exporter, ModItemTags.LEAF,
                 ModItems.DOUBLE_COMPRESSED_LEAF_HELMET,
                 ModItems.DOUBLE_COMPRESSED_LEAF_CHESTPLATE,
                 ModItems.DOUBLE_COMPRESSED_LEAF_LEGGINGS,
                 ModItems.DOUBLE_COMPRESSED_LEAF_BOOTS);
+    }
+
+    private static void makeSaplingRecipe(RecipeExporter exporter, Item sapling, Item leaf) {
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, sapling)
+                .pattern("LLL")
+                .pattern("LSL")
+                .pattern(" S ")
+                .input('L', leaf)
+                .input('S', Items.STICK)
+                .criterion(hasItem(Items.STICK), conditionsFromItem(Items.STICK))
+                .criterion(hasItem(leaf), conditionsFromItem(leaf))
+                .offerTo(exporter, new Identifier(getRecipeName(sapling)));
     }
 
     private static void reversibleCompactingRecipesBetter(RecipeExporter exporter, Item baseItem, Item compactItem)
