@@ -4,11 +4,10 @@ import com.goggaguys.block.ModBlocks;
 import com.goggaguys.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
-import net.minecraft.block.Blocks;
 import net.minecraft.data.server.loottable.BlockLootTableGenerator;
 
-public class ModBlockLootTableGenerator extends FabricBlockLootTableProvider {
-    public ModBlockLootTableGenerator(FabricDataOutput dataOutput) {
+public class ModBlockLootTableProvider extends FabricBlockLootTableProvider {
+    public ModBlockLootTableProvider(FabricDataOutput dataOutput) {
         super(dataOutput);
     }
     @Override

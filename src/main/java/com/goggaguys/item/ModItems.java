@@ -1,9 +1,11 @@
 package com.goggaguys.item;
 
 import com.goggaguys.OctoComputing;
+import com.goggaguys.entity.ModEntities;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.item.ArmorItem;
 import net.minecraft.item.Item;
+import net.minecraft.item.SpawnEggItem;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
@@ -81,6 +83,9 @@ public class ModItems {
             new ArmorItem(ModArmorMaterials.DOUBLE_COMPRESSED_LEAF, ArmorItem.Type.LEGGINGS, new FabricItemSettings()));
     public static final Item DOUBLE_COMPRESSED_LEAF_BOOTS = registerItem("double_compressed_leaf_boots",
             new ArmorItem(ModArmorMaterials.DOUBLE_COMPRESSED_LEAF, ArmorItem.Type.BOOTS, new FabricItemSettings()));
+
+    public static final Item LEAF_MONSTER_SPAWN_EGG = registerItem("leaf_spawn_egg",
+            new SpawnEggItem(ModEntities.LEAF_MONSTER_ENTITY, 0x0BA40B, 0x5D4A09, new FabricItemSettings()));
 
 
     private static Item registerItem(String name, Item item) {

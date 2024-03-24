@@ -33,6 +33,8 @@ public class ModItemGroups {
                 entries.add(ModItems.DOUBLE_COMPRESSED_LEAF_LEGGINGS);
                 entries.add(ModItems.DOUBLE_COMPRESSED_LEAF_BOOTS);
 
+                entries.add(ModItems.LEAF_MONSTER_SPAWN_EGG);
+
                 entries.add(ModBlocks.MYSTERY_SAPLING);
                 entries.add(ModBlocks.LEAF_ORE);
                 entries.add(ModBlocks.DEEPSLATE_LEAF_ORE);

@@ -2,7 +2,7 @@ package com.goggaguys;
 
 import com.goggaguys.block.ModBlocks;
 import com.goggaguys.enchantments.ModEnchantments;
-import com.goggaguys.entity.custom.LeafEntity;
+import com.goggaguys.entity.custom.LeafMonsterEntity;
 import com.goggaguys.entity.ModEntities;
 import com.goggaguys.item.ModItemGroups;
 import com.goggaguys.item.ModItemTags;
@@ -10,6 +10,7 @@ import com.goggaguys.item.ModItems;
 import com.goggaguys.world.gen.ModWorldGeneration;
 import net.fabricmc.api.ModInitializer;
 
+import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.fabricmc.fabric.api.loot.v2.LootTableEvents;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.fabricmc.fabric.api.registry.FuelRegistry;
@@ -43,6 +44,8 @@ public class OctoComputing implements ModInitializer {
 		ModEntities.registerModEntities();
 		ModEnchantments.registerModEnchantments();
 
+		ItemGroupEvents.modifyEntriesEvent(ItemGroups.SPAWN_EGGS).register(content -> content.add(ModItems.LEAF_MONSTER_SPAWN_EGG));
+
 		leafLootTable(Blocks.OAK_LEAVES, ModItems.OAK_LEAF);
 		leafLootTable(Blocks.SPRUCE_LEAVES, ModItems.SPRUCE_LEAF);
 		leafLootTable(Blocks.BIRCH_LEAVES, ModItems.BIRCH_LEAF);
@@ -64,7 +67,7 @@ public class OctoComputing implements ModInitializer {
 		FuelRegistry.INSTANCE.add(ModBlocks.MYSTERY_PLANKS, 300);
 		FuelRegistry.INSTANCE.add(ModBlocks.MYSTERY_SAPLING, 100);
 
-		FabricDefaultAttributeRegistry.register(ModEntities.LEAF_ENTITY, LeafEntity.createLeafAttributes());
+		FabricDefaultAttributeRegistry.register(ModEntities.LEAF_MONSTER_ENTITY, LeafMonsterEntity.createLeafAttributes());
 
 		StrippableBlockRegistry.register(ModBlocks.MYSTERY_LOG, ModBlocks.STRIPPED_MYSTERY_LOG);
 		StrippableBlockRegistry.register(ModBlocks.MYSTERY_WOOD, ModBlocks.STRIPPED_MYSTERY_WOOD);

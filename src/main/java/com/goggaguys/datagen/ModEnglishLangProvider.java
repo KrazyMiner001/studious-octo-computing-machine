@@ -2,6 +2,7 @@ package com.goggaguys.datagen;
 
 import com.goggaguys.block.ModBlocks;
 import com.goggaguys.enchantments.ModEnchantments;
+import com.goggaguys.entity.ModEntities;
 import com.goggaguys.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
@@ -16,6 +17,8 @@ public class ModEnglishLangProvider extends FabricLanguageProvider {
         leafTranslations(translationBuilder);
 
         translationBuilder.add(ModItems.LEAFSTONE, "Leafstone");
+
+        translationBuilder.add(ModItems.LEAF_MONSTER_SPAWN_EGG, "Leaf Monster Spawn Egg");
 
         translationBuilder.add(ModItems.LEAF_HELMET, "Leaf Helmet");
         translationBuilder.add(ModItems.LEAF_CHESTPLATE, "Leaf Chestplate");
@@ -45,6 +48,8 @@ public class ModEnglishLangProvider extends FabricLanguageProvider {
 
         translationBuilder.add(ModEnchantments.LEAF_PROTECTION, "Leaf Protection");
         translationBuilder.add(ModEnchantments.GARDEN_SHEARS, "Garden Shears");
+
+        translationBuilder.add(ModEntities.LEAF_MONSTER_ENTITY, "Leaf Monster");
 
         translationBuilder.add(new Identifier("itemgroup", "leaf_group"), "Leaves");
 

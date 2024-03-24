@@ -16,7 +16,8 @@ public class OctoComputingDataGenerator implements DataGeneratorEntrypoint {
         FabricDataGenerator.Pack pack = fabricDataGenerator.createPack();
 
         pack.addProvider(ModDamageTypeProvider::new);
-        pack.addProvider(ModBlockLootTableGenerator::new);
+        pack.addProvider(ModBlockLootTableProvider::new);
+        pack.addProvider(ModEntityLootTableProvider::new);
         pack.addProvider(ModModelProvider::new);
         pack.addProvider(ModRecipeGenerator::new);
         pack.addProvider(ModBlockTagProvider::new);

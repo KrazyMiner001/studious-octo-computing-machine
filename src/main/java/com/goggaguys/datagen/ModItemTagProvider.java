@@ -18,43 +18,13 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
     @Override
     protected void configure(RegistryWrapper.WrapperLookup arg) {
         getOrCreateTagBuilder(ModItemTags.LEAF)
-                .add(ModItems.OAK_LEAF)
-                .add(ModItems.SPRUCE_LEAF)
-                .add(ModItems.BIRCH_LEAF)
-                .add(ModItems.JUNGLE_LEAF)
-                .add(ModItems.ACACIA_LEAF)
-                .add(ModItems.DARK_OAK_LEAF)
-                .add(ModItems.AZALEA_LEAF)
-                .add(ModItems.MANGROVE_LEAF)
-                .add(ModItems.CHERRY_LEAF)
-                .add(ModItems.MIXED_LEAF)
-                .add(ModItems.MYSTERY_LEAF);
+                .add(ModItemTags.leaves);
 
         getOrCreateTagBuilder(ModItemTags.LEAF_COMPRESSED)
-                .add(ModItems.COMPRESSED_OAK_LEAF)
-                .add(ModItems.COMPRESSED_SPRUCE_LEAF)
-                .add(ModItems.COMPRESSED_BIRCH_LEAF)
-                .add(ModItems.COMPRESSED_JUNGLE_LEAF)
-                .add(ModItems.COMPRESSED_ACACIA_LEAF)
-                .add(ModItems.COMPRESSED_DARK_OAK_LEAF)
-                .add(ModItems.COMPRESSED_AZALEA_LEAF)
-                .add(ModItems.COMPRESSED_MANGROVE_LEAF)
-                .add(ModItems.COMPRESSED_CHERRY_LEAF)
-                .add(ModItems.COMPRESSED_MIXED_LEAF)
-                .add(ModItems.COMPRESSED_MYSTERY_LEAF);
+                .add(ModItemTags.compressedLeaves);
 
         getOrCreateTagBuilder(ModItemTags.LEAF_DOUBLE_COMPRESSED)
-                .add(ModItems.DOUBLE_COMPRESSED_OAK_LEAF)
-                .add(ModItems.DOUBLE_COMPRESSED_SPRUCE_LEAF)
-                .add(ModItems.DOUBLE_COMPRESSED_BIRCH_LEAF)
-                .add(ModItems.DOUBLE_COMPRESSED_JUNGLE_LEAF)
-                .add(ModItems.DOUBLE_COMPRESSED_ACACIA_LEAF)
-                .add(ModItems.DOUBLE_COMPRESSED_DARK_OAK_LEAF)
-                .add(ModItems.DOUBLE_COMPRESSED_AZALEA_LEAF)
-                .add(ModItems.DOUBLE_COMPRESSED_MANGROVE_LEAF)
-                .add(ModItems.DOUBLE_COMPRESSED_CHERRY_LEAF)
-                .add(ModItems.DOUBLE_COMPRESSED_MIXED_LEAF)
-                .add(ModItems.DOUBLE_COMPRESSED_MYSTERY_LEAF);
+                .add(ModItemTags.doubleCompressedLeaves);
 
         getOrCreateTagBuilder(ItemTags.PLANKS)
                 .add(ModBlocks.MYSTERY_PLANKS.asItem());
