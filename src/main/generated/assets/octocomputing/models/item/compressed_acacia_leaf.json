@@ -1,6 +1,7 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "octocomputing:item/compressed_acacia_leaf"
+    "layer0": "octocomputing:item/acacia_leaf",
+    "layer1": "octocomputing:item/compressed"
   }
 }

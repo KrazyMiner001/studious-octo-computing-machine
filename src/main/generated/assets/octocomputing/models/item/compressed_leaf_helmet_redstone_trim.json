@@ -1,7 +1,8 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "octocomputing:item/compressed_leaf_helmet",
-    "layer1": "minecraft:trims/items/helmet_trim_redstone"
+    "layer0": "octocomputing:item/leaf_helmet",
+    "layer1": "minecraft:trims/items/helmet_trim_redstone",
+    "layer2": "octocomputing:item/compressed"
   }
 }

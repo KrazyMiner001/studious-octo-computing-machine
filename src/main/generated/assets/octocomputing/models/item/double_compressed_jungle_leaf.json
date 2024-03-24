@@ -1,6 +1,7 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "octocomputing:item/double_compressed_jungle_leaf"
+    "layer0": "octocomputing:item/jungle_leaf",
+    "layer1": "octocomputing:item/double_compressed"
   }
 }

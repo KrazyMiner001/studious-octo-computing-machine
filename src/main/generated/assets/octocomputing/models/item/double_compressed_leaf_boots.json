@@ -63,6 +63,7 @@
     }
   ],
   "textures": {
-    "layer0": "octocomputing:item/double_compressed_leaf_boots"
+    "layer0": "octocomputing:item/leaf_boots",
+    "layer1": "octocomputing:item/double_compressed"
   }
 }

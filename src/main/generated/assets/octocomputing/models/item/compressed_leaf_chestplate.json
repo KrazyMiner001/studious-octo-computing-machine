@@ -63,6 +63,7 @@
     }
   ],
   "textures": {
-    "layer0": "octocomputing:item/compressed_leaf_chestplate"
+    "layer0": "octocomputing:item/leaf_chestplate",
+    "layer1": "octocomputing:item/compressed"
   }
 }

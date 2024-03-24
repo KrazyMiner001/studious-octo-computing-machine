@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "octocomputing:item/double_compressed_leaf_chestplate",
+    "layer0": "octocomputing:item/leaf_chestplate",
     "layer1": "minecraft:trims/items/chestplate_trim_iron"
   }
 }

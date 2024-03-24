@@ -63,6 +63,7 @@
     }
   ],
   "textures": {
-    "layer0": "octocomputing:item/double_compressed_leaf_helmet"
+    "layer0": "octocomputing:item/leaf_helmet",
+    "layer1": "octocomputing:item/double_compressed"
   }
 }
