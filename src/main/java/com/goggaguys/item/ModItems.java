@@ -3,9 +3,7 @@ package com.goggaguys.item;
 import com.goggaguys.OctoComputing;
 import com.goggaguys.entity.ModEntities;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
-import net.minecraft.item.ArmorItem;
-import net.minecraft.item.Item;
-import net.minecraft.item.SpawnEggItem;
+import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
@@ -83,6 +81,39 @@ public class ModItems {
             new ArmorItem(ModArmorMaterials.DOUBLE_COMPRESSED_LEAF, ArmorItem.Type.LEGGINGS, new FabricItemSettings()));
     public static final Item DOUBLE_COMPRESSED_LEAF_BOOTS = registerItem("double_compressed_leaf_boots",
             new ArmorItem(ModArmorMaterials.DOUBLE_COMPRESSED_LEAF, ArmorItem.Type.BOOTS, new FabricItemSettings()));
+
+    public static final Item LEAF_SWORD = registerItem("leaf_sword",
+            new SwordItem(ModToolMaterial.LEAF, 3, 100f, new FabricItemSettings()));
+    public static final Item LEAF_PICKAXE = registerItem("leaf_pickaxe",
+            new PickaxeItem(ModToolMaterial.LEAF, 1, 0f, new FabricItemSettings()));
+    public static final Item LEAF_AXE = registerItem("leaf_axe",
+            new AxeItem(ModToolMaterial.LEAF, 4, 20f, new FabricItemSettings()));
+    public static final Item LEAF_SHOVEL = registerItem("leaf_shovel",
+            new ShovelItem(ModToolMaterial.LEAF, 1, 0f, new FabricItemSettings()));
+    public static final Item LEAF_HOE = registerItem("leaf_hoe",
+            new HoeItem(ModToolMaterial.LEAF, 1, 0f, new FabricItemSettings()));
+
+    public static final Item COMPRESSED_LEAF_SWORD = registerItem("compressed_leaf_sword",
+            new SwordItem(ModToolMaterial.COMPRESSED_LEAF, 3, 200f, new FabricItemSettings()));
+    public static final Item COMPRESSED_LEAF_PICKAXE = registerItem("compressed_leaf_pickaxe",
+            new PickaxeItem(ModToolMaterial.COMPRESSED_LEAF, 1, 0f, new FabricItemSettings()));
+    public static final Item COMPRESSED_LEAF_AXE = registerItem("compressed_leaf_axe",
+            new AxeItem(ModToolMaterial.COMPRESSED_LEAF, 4, 40f, new FabricItemSettings()));
+    public static final Item COMPRESSED_LEAF_SHOVEL = registerItem("compressed_leaf_shovel",
+            new ShovelItem(ModToolMaterial.COMPRESSED_LEAF, 1, 0f, new FabricItemSettings()));
+    public static final Item COMPRESSED_LEAF_HOE = registerItem("compressed_leaf_hoe",
+            new HoeItem(ModToolMaterial.COMPRESSED_LEAF, 1, 0f, new FabricItemSettings()));
+
+    public static final Item DOUBLE_COMPRESSED_LEAF_SWORD = registerItem("double_compressed_leaf_sword",
+            new SwordItem(ModToolMaterial.DOUBLE_COMPRESSED_LEAF, 3, 300f, new FabricItemSettings()));
+    public static final Item DOUBLE_COMPRESSED_LEAF_PICKAXE = registerItem("double_compressed_leaf_pickaxe",
+            new PickaxeItem(ModToolMaterial.DOUBLE_COMPRESSED_LEAF, 1, 0f, new FabricItemSettings()));
+    public static final Item DOUBLE_COMPRESSED_LEAF_AXE = registerItem("double_compressed_leaf_axe",
+            new AxeItem(ModToolMaterial.DOUBLE_COMPRESSED_LEAF, 4, 60f, new FabricItemSettings()));
+    public static final Item DOUBLE_COMPRESSED_LEAF_SHOVEL = registerItem("double_compressed_leaf_shovel",
+            new ShovelItem(ModToolMaterial.DOUBLE_COMPRESSED_LEAF, 1, 0f, new FabricItemSettings()));
+    public static final Item DOUBLE_COMPRESSED_LEAF_HOE = registerItem("double_compressed_leaf_hoe",
+            new HoeItem(ModToolMaterial.DOUBLE_COMPRESSED_LEAF, 1, 0f, new FabricItemSettings()));
 
     public static final Item LEAF_MONSTER_SPAWN_EGG = registerItem("leaf_spawn_egg",
             new SpawnEggItem(ModEntities.LEAF_MONSTER_ENTITY, 0x0BA40B, 0x5D4A09, new FabricItemSettings()));

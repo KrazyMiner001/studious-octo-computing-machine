@@ -67,20 +67,11 @@ public class ModModelProvider extends FabricModelProvider {
                 (ArmorItem) ModItems.COMPRESSED_LEAF_BOOTS,
                 (ArmorItem) ModItems.DOUBLE_COMPRESSED_LEAF_BOOTS);
 
-//        itemModelGenerator.registerArmor((ArmorItem) ModItems.LEAF_HELMET);
-//        itemModelGenerator.registerArmor((ArmorItem) ModItems.LEAF_CHESTPLATE);
-//        itemModelGenerator.registerArmor((ArmorItem) ModItems.LEAF_LEGGINGS);
-//        itemModelGenerator.registerArmor((ArmorItem) ModItems.LEAF_BOOTS);
-//
-//        itemModelGenerator.registerArmor((ArmorItem) ModItems.COMPRESSED_LEAF_HELMET);
-//        itemModelGenerator.registerArmor((ArmorItem) ModItems.COMPRESSED_LEAF_CHESTPLATE);
-//        itemModelGenerator.registerArmor((ArmorItem) ModItems.COMPRESSED_LEAF_LEGGINGS);
-//        itemModelGenerator.registerArmor((ArmorItem) ModItems.COMPRESSED_LEAF_BOOTS);
-//
-//        itemModelGenerator.registerArmor((ArmorItem) ModItems.DOUBLE_COMPRESSED_LEAF_HELMET);
-//        itemModelGenerator.registerArmor((ArmorItem) ModItems.DOUBLE_COMPRESSED_LEAF_CHESTPLATE);
-//        itemModelGenerator.registerArmor((ArmorItem) ModItems.DOUBLE_COMPRESSED_LEAF_LEGGINGS);
-//        itemModelGenerator.registerArmor((ArmorItem) ModItems.DOUBLE_COMPRESSED_LEAF_BOOTS);
+        modItemModelGenerator.registerCompressedHandheldChain(ModItems.LEAF_SWORD, ModItems.COMPRESSED_LEAF_SWORD, ModItems.DOUBLE_COMPRESSED_LEAF_SWORD);
+        modItemModelGenerator.registerCompressedHandheldChain(ModItems.LEAF_PICKAXE, ModItems.COMPRESSED_LEAF_PICKAXE, ModItems.DOUBLE_COMPRESSED_LEAF_PICKAXE);
+        modItemModelGenerator.registerCompressedHandheldChain(ModItems.LEAF_AXE, ModItems.COMPRESSED_LEAF_AXE, ModItems.DOUBLE_COMPRESSED_LEAF_AXE);
+        modItemModelGenerator.registerCompressedHandheldChain(ModItems.LEAF_SHOVEL, ModItems.COMPRESSED_LEAF_SHOVEL, ModItems.DOUBLE_COMPRESSED_LEAF_SHOVEL);
+        modItemModelGenerator.registerCompressedHandheldChain(ModItems.LEAF_HOE, ModItems.COMPRESSED_LEAF_HOE, ModItems.DOUBLE_COMPRESSED_LEAF_HOE);
 
     }
 }

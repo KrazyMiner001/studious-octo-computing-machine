@@ -2,10 +2,7 @@ package com.goggaguys.model;
 
 import com.goggaguys.OctoComputing;
 import com.google.gson.JsonElement;
-import net.minecraft.data.client.ItemModelGenerator;
-import net.minecraft.data.client.ModelIds;
-import net.minecraft.data.client.Models;
-import net.minecraft.data.client.TextureMap;
+import net.minecraft.data.client.*;
 import net.minecraft.item.ArmorItem;
 import net.minecraft.item.ArmorMaterial;
 import net.minecraft.item.ArmorMaterials;
@@ -15,6 +12,7 @@ import net.minecraft.util.Identifier;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.function.BiConsumer;
 import java.util.function.Supplier;
 
@@ -30,6 +28,12 @@ public class ModItemModelGenerator extends ItemModelGenerator {
         super.register(baseItem, Models.GENERATED);
         Models.GENERATED_TWO_LAYERS.upload(ModelIds.getItemModelId(compressedItem), TextureMap.layered(TextureMap.getId(baseItem), COMPRESSED_OVERLAY), this.writer);
         Models.GENERATED_TWO_LAYERS.upload(ModelIds.getItemModelId(doubleCompressedItem), TextureMap.layered(TextureMap.getId(baseItem), DOUBLE_COMPRESSED_OVERLAY), this.writer);
+    }
+
+    public void registerCompressedHandheldChain(Item baseItem, Item compressedItem, Item doubleCompressedItem) {
+        super.register(baseItem, Models.HANDHELD);
+        HANDHELD_TWO_LAYERS.upload(ModelIds.getItemModelId(compressedItem), TextureMap.layered(TextureMap.getId(baseItem), COMPRESSED_OVERLAY), this.writer);
+        HANDHELD_TWO_LAYERS.upload(ModelIds.getItemModelId(doubleCompressedItem), TextureMap.layered(TextureMap.getId(baseItem), DOUBLE_COMPRESSED_OVERLAY), this.writer);
     }
 
     public final void registerCompressedArmorChain(ArmorItem armor, ArmorItem compressedArmor, ArmorItem doubleCompressedArmor) {
@@ -107,5 +111,11 @@ public class ModItemModelGenerator extends ItemModelGenerator {
         public Map<ArmorMaterial, String> overrideArmorMaterials() {
             return this.overrideArmorMaterials;
         }
+    }
+
+    public static final Model HANDHELD_TWO_LAYERS;
+
+    static {
+        HANDHELD_TWO_LAYERS = new Model(Optional.of(new Identifier("item/handheld")), Optional.empty(), TextureKey.LAYER0, TextureKey.LAYER1);
     }
 }
