@@ -17,6 +17,8 @@ public class ModEnglishLangProvider extends FabricLanguageProvider {
         leafTranslations(translationBuilder);
 
         translationBuilder.add(ModItems.LEAFSTONE, "Leafstone");
+        translationBuilder.add(ModItems.LEAF_CORE, "Leaf Core");
+        translationBuilder.add(ModItems.LEAFITE_UPGRADE_TEMPLATE, "Leafite Upgrade Template");
 
         translationBuilder.add(ModItems.LEAF_MONSTER_SPAWN_EGG, "Leaf Monster Spawn Egg");
 
@@ -24,21 +26,41 @@ public class ModEnglishLangProvider extends FabricLanguageProvider {
         translationBuilder.add(ModItems.LEAFITE_CHESTPLATE, "Leafite Chestplate");
         translationBuilder.add(ModItems.LEAFITE_LEGGINGS, "Leafite Leggings");
         translationBuilder.add(ModItems.LEAFITE_BOOTS, "Leafite Boots");
+        translationBuilder.add(ModItems.LEAFITE_SWORD, "Leafite Sword");
+        translationBuilder.add(ModItems.LEAFITE_PICKAXE, "Leafite Pickaxe");
+        translationBuilder.add(ModItems.LEAFITE_AXE, "Leafite Axe");
+        translationBuilder.add(ModItems.LEAFITE_SHOVEL, "Leafite Shovel");
+        translationBuilder.add(ModItems.LEAFITE_HOE, "Leafite Hoe");
 
         translationBuilder.add(ModItems.LEAF_HELMET, "Leaf Helmet");
         translationBuilder.add(ModItems.LEAF_CHESTPLATE, "Leaf Chestplate");
         translationBuilder.add(ModItems.LEAF_LEGGINGS, "Leaf Leggings");
         translationBuilder.add(ModItems.LEAF_BOOTS, "Leaf Boots");
+        translationBuilder.add(ModItems.LEAF_SWORD, "Leaf Sword");
+        translationBuilder.add(ModItems.LEAF_PICKAXE, "Leaf Pickaxe");
+        translationBuilder.add(ModItems.LEAF_AXE, "Leaf Axe");
+        translationBuilder.add(ModItems.LEAF_SHOVEL, "Leaf Shovel");
+        translationBuilder.add(ModItems.LEAF_HOE, "Leaf Hoe");
 
         translationBuilder.add(ModItems.COMPRESSED_LEAF_HELMET, "Compressed Leaf Helmet");
         translationBuilder.add(ModItems.COMPRESSED_LEAF_CHESTPLATE, "Compressed Leaf Chestplate");
         translationBuilder.add(ModItems.COMPRESSED_LEAF_LEGGINGS, "Compressed Leaf Leggings");
         translationBuilder.add(ModItems.COMPRESSED_LEAF_BOOTS, "Compressed Leaf Boots");
+        translationBuilder.add(ModItems.COMPRESSED_LEAF_SWORD, "Compressed Leaf Sword");
+        translationBuilder.add(ModItems.COMPRESSED_LEAF_PICKAXE, "Compressed Leaf Pickaxe");
+        translationBuilder.add(ModItems.COMPRESSED_LEAF_AXE, "Compressed Leaf Axe");
+        translationBuilder.add(ModItems.COMPRESSED_LEAF_SHOVEL, "Compressed Leaf Shovel");
+        translationBuilder.add(ModItems.COMPRESSED_LEAF_HOE, "Compressed Leaf Hoe");
 
         translationBuilder.add(ModItems.DOUBLE_COMPRESSED_LEAF_HELMET, "Double Compressed Leaf Helmet");
         translationBuilder.add(ModItems.DOUBLE_COMPRESSED_LEAF_CHESTPLATE, "Double Compressed Leaf Chestplate");
         translationBuilder.add(ModItems.DOUBLE_COMPRESSED_LEAF_LEGGINGS, "Double Compressed Leaf Leggings");
         translationBuilder.add(ModItems.DOUBLE_COMPRESSED_LEAF_BOOTS, "Double Compressed Leaf Boots");
+        translationBuilder.add(ModItems.DOUBLE_COMPRESSED_LEAF_SWORD, "Double Compressed Leaf Sword");
+        translationBuilder.add(ModItems.DOUBLE_COMPRESSED_LEAF_PICKAXE, "Double Compressed Leaf Pickaxe");
+        translationBuilder.add(ModItems.DOUBLE_COMPRESSED_LEAF_AXE, "Double Compressed Leaf Axe");
+        translationBuilder.add(ModItems.DOUBLE_COMPRESSED_LEAF_SHOVEL, "Double Compressed Leaf Shovel");
+        translationBuilder.add(ModItems.DOUBLE_COMPRESSED_LEAF_HOE, "Double Compressed Leaf Hoe");
 
         translationBuilder.add(ModBlocks.MYSTERY_SAPLING, "Mystery Sapling");
         translationBuilder.add(ModBlocks.MYSTERY_LOG, "Mystery Log");

@@ -45,6 +45,19 @@ public class OctoComputing implements ModInitializer {
 		ModEnchantments.registerModEnchantments();
 
 		ItemGroupEvents.modifyEntriesEvent(ItemGroups.SPAWN_EGGS).register(content -> content.add(ModItems.LEAF_MONSTER_SPAWN_EGG));
+		ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS).register(content ->
+				content.addAfter(Items.NETHERITE_HOE,
+						ModItems.LEAFITE_SHOVEL, ModItems.LEAFITE_PICKAXE,
+						ModItems.LEAFITE_AXE, ModItems.LEAFITE_HOE));
+
+		ItemGroupEvents.modifyEntriesEvent(ItemGroups.COMBAT).register(content -> {
+			content.addAfter(Items.NETHERITE_AXE, ModItems.LEAFITE_AXE);
+			content.addAfter(Items.NETHERITE_SWORD, ModItems.LEAFITE_SWORD);
+			content.addAfter(Items.NETHERITE_BOOTS, ModItems.LEAFITE_HELMET, ModItems.LEAFITE_CHESTPLATE, ModItems.LEAFITE_LEGGINGS, ModItems.LEAFITE_BOOTS);
+		});
+		ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(content ->
+				content.addAfter(Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE, ModItems.LEAFITE_UPGRADE_TEMPLATE)
+		);
 
 		leafLootTable(Blocks.OAK_LEAVES, ModItems.OAK_LEAF);
 		leafLootTable(Blocks.SPRUCE_LEAVES, ModItems.SPRUCE_LEAF);

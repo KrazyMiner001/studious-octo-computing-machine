@@ -57,17 +57,6 @@ public class ModItemGroups {
                 entries.add(ModItems.LEAF_CORE);
                 entries.add(ModItems.LEAFITE_UPGRADE_TEMPLATE);
 
-                entries.add(ModItems.LEAFITE_HELMET);
-                entries.add(ModItems.LEAFITE_CHESTPLATE);
-                entries.add(ModItems.LEAFITE_LEGGINGS);
-                entries.add(ModItems.LEAFITE_BOOTS);
-
-                entries.add(ModItems.LEAFITE_SWORD);
-                entries.add(ModItems.LEAFITE_PICKAXE);
-                entries.add(ModItems.LEAFITE_AXE);
-                entries.add(ModItems.LEAFITE_SHOVEL);
-                entries.add(ModItems.LEAFITE_HOE);
-
                 entries.add(ModItems.LEAF_MONSTER_SPAWN_EGG);
 
                 entries.add(ModBlocks.MYSTERY_SAPLING);
