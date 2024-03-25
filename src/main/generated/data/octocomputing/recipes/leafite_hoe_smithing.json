@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "octocomputing:leaf_core"
+  },
+  "base": {
+    "item": "minecraft:netherite_hoe"
+  },
+  "result": {
+    "item": "octocomputing:leafite_hoe"
+  },
+  "template": {
+    "item": "octocomputing:leafite_upgrade_template"
+  }
+}

@@ -118,6 +118,31 @@ public class ModItems {
     public static final Item LEAF_MONSTER_SPAWN_EGG = registerItem("leaf_spawn_egg",
             new SpawnEggItem(ModEntities.LEAF_MONSTER_ENTITY, 0x0BA40B, 0x5D4A09, new FabricItemSettings()));
 
+    public static final Item LEAF_CORE = registerItem("leaf_core",
+            new Item(new FabricItemSettings()));
+
+    public static final Item LEAFITE_UPGRADE_TEMPLATE = registerItem("leafite_upgrade_template",
+            new Item(new FabricItemSettings()));
+
+    public static final Item LEAFITE_HELMET = registerItem("leafite_helmet",
+            new ArmorItem(ModArmorMaterials.LEAFITE, ArmorItem.Type.HELMET, new FabricItemSettings()));
+    public static final Item LEAFITE_CHESTPLATE = registerItem("leafite_chestplate",
+            new ArmorItem(ModArmorMaterials.LEAFITE, ArmorItem.Type.CHESTPLATE, new FabricItemSettings()));
+    public static final Item LEAFITE_LEGGINGS = registerItem("leafite_leggings",
+            new ArmorItem(ModArmorMaterials.LEAFITE, ArmorItem.Type.LEGGINGS, new FabricItemSettings()));
+    public static final Item LEAFITE_BOOTS = registerItem("leafite_boots",
+            new ArmorItem(ModArmorMaterials.LEAFITE, ArmorItem.Type.BOOTS, new FabricItemSettings()));
+
+    public static final Item LEAFITE_SWORD = registerItem("leafite_sword",
+            new SwordItem(ModToolMaterial.LEAFITE, 5, -1.5f, new FabricItemSettings()));
+    public static final Item LEAFITE_PICKAXE = registerItem("leafite_pickaxe",
+            new PickaxeItem(ModToolMaterial.LEAFITE, 1, -2.0f, new FabricItemSettings()));
+    public static final Item LEAFITE_AXE = registerItem("leafite_axe",
+            new AxeItem(ModToolMaterial.LEAFITE, 7, -2.5f, new FabricItemSettings()));
+    public static final Item LEAFITE_SHOVEL = registerItem("leafite_shovel",
+            new ShovelItem(ModToolMaterial.LEAFITE, 1, -2.5f, new FabricItemSettings()));
+    public static final Item LEAFITE_HOE = registerItem("leafite_hoe",
+            new HoeItem(ModToolMaterial.LEAFITE, 1, 0.0f, new FabricItemSettings()));
 
     private static Item registerItem(String name, Item item) {
         return Registry.register(Registries.ITEM, new Identifier(OctoComputing.MOD_ID, name), item);

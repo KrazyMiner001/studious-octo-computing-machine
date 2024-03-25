@@ -9,8 +9,10 @@ import net.minecraft.block.Blocks;
 import net.minecraft.data.server.recipe.RecipeExporter;
 import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
 import net.minecraft.data.server.recipe.ShapelessRecipeJsonBuilder;
+import net.minecraft.data.server.recipe.SmithingTransformRecipeJsonBuilder;
 import net.minecraft.item.Item;
 import net.minecraft.item.Items;
+import net.minecraft.recipe.Ingredient;
 import net.minecraft.recipe.book.RecipeCategory;
 import net.minecraft.registry.tag.TagKey;
 import net.minecraft.util.Identifier;
@@ -127,6 +129,28 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
                 ModItems.DOUBLE_COMPRESSED_LEAF_CHESTPLATE,
                 ModItems.DOUBLE_COMPRESSED_LEAF_LEGGINGS,
                 ModItems.DOUBLE_COMPRESSED_LEAF_BOOTS);
+
+        offerLeafUpgradeRecipe(exporter, Items.NETHERITE_HELMET, ModItems.LEAFITE_HELMET, RecipeCategory.COMBAT);
+        offerLeafUpgradeRecipe(exporter, Items.NETHERITE_CHESTPLATE, ModItems.LEAFITE_CHESTPLATE, RecipeCategory.COMBAT);
+        offerLeafUpgradeRecipe(exporter, Items.NETHERITE_LEGGINGS, ModItems.LEAFITE_LEGGINGS, RecipeCategory.COMBAT);
+        offerLeafUpgradeRecipe(exporter, Items.NETHERITE_BOOTS, ModItems.LEAFITE_BOOTS, RecipeCategory.COMBAT);
+
+        offerLeafUpgradeRecipe(exporter, Items.NETHERITE_SWORD, ModItems.LEAFITE_SWORD, RecipeCategory.COMBAT);
+        offerLeafUpgradeRecipe(exporter, Items.NETHERITE_PICKAXE, ModItems.LEAFITE_PICKAXE, RecipeCategory.TOOLS);
+        offerLeafUpgradeRecipe(exporter, Items.NETHERITE_AXE, ModItems.LEAFITE_AXE, RecipeCategory.TOOLS);
+        offerLeafUpgradeRecipe(exporter, Items.NETHERITE_SHOVEL, ModItems.LEAFITE_SHOVEL, RecipeCategory.TOOLS);
+        offerLeafUpgradeRecipe(exporter, Items.NETHERITE_HOE, ModItems.LEAFITE_HOE, RecipeCategory.TOOLS);
+    }
+
+    private static void offerLeafUpgradeRecipe(RecipeExporter exporter, Item baseItem, Item resultItem, RecipeCategory category) {
+        SmithingTransformRecipeJsonBuilder.create(
+                Ingredient.ofItems(ModItems.LEAFITE_UPGRADE_TEMPLATE),
+                Ingredient.ofItems(baseItem),
+                Ingredient.ofItems(ModItems.LEAF_CORE),
+                category,
+                resultItem
+        ).criterion("has_leaf_core", conditionsFromItem(ModItems.LEAF_CORE))
+        .offerTo(exporter, getItemPath(resultItem) + "_smithing");
     }
 
     private static void makeSaplingRecipe(RecipeExporter exporter, Item sapling, Item leaf) {
@@ -177,4 +201,5 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
                 .criterion("has_" + armorIngredient.id().getPath(), conditionsFromTag(armorIngredient))
                 .offerTo(exporter, new Identifier(getRecipeName(boots)));
     }
+
 }

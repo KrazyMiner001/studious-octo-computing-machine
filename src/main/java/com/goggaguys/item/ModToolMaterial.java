@@ -11,7 +11,10 @@ public enum ModToolMaterial implements ToolMaterial {
     COMPRESSED_LEAF(2, 5, 60f, 1f, 30,
             () -> Ingredient.fromTag(ModItemTags.LEAF_COMPRESSED)),
     DOUBLE_COMPRESSED_LEAF(3, 15, 80f, 2f, 40,
-            () -> Ingredient.fromTag(ModItemTags.LEAF_DOUBLE_COMPRESSED));
+            () -> Ingredient.fromTag(ModItemTags.LEAF_DOUBLE_COMPRESSED)),
+
+    LEAFITE(5, 3000, 17f, 5f, 22,
+            () -> Ingredient.ofItems(ModItems.LEAF_CORE));
 
 
     private final int miningLevel;

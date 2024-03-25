@@ -67,6 +67,17 @@ public class ModModelProvider extends FabricModelProvider {
                 (ArmorItem) ModItems.COMPRESSED_LEAF_BOOTS,
                 (ArmorItem) ModItems.DOUBLE_COMPRESSED_LEAF_BOOTS);
 
+        itemModelGenerator.registerArmor((ArmorItem) ModItems.LEAFITE_HELMET);
+        itemModelGenerator.registerArmor((ArmorItem) ModItems.LEAFITE_CHESTPLATE);
+        itemModelGenerator.registerArmor((ArmorItem) ModItems.LEAFITE_LEGGINGS);
+        itemModelGenerator.registerArmor((ArmorItem) ModItems.LEAFITE_BOOTS);
+
+        itemModelGenerator.register(ModItems.LEAFITE_SWORD, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.LEAFITE_PICKAXE, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.LEAFITE_AXE, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.LEAFITE_SHOVEL, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.LEAFITE_HOE, Models.HANDHELD);
+
         modItemModelGenerator.registerCompressedHandheldChain(ModItems.LEAF_SWORD, ModItems.COMPRESSED_LEAF_SWORD, ModItems.DOUBLE_COMPRESSED_LEAF_SWORD);
         modItemModelGenerator.registerCompressedHandheldChain(ModItems.LEAF_PICKAXE, ModItems.COMPRESSED_LEAF_PICKAXE, ModItems.DOUBLE_COMPRESSED_LEAF_PICKAXE);
         modItemModelGenerator.registerCompressedHandheldChain(ModItems.LEAF_AXE, ModItems.COMPRESSED_LEAF_AXE, ModItems.DOUBLE_COMPRESSED_LEAF_AXE);

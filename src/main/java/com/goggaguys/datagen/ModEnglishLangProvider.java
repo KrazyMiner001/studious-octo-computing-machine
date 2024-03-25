@@ -20,6 +20,11 @@ public class ModEnglishLangProvider extends FabricLanguageProvider {
 
         translationBuilder.add(ModItems.LEAF_MONSTER_SPAWN_EGG, "Leaf Monster Spawn Egg");
 
+        translationBuilder.add(ModItems.LEAFITE_HELMET, "Leafite Helmet");
+        translationBuilder.add(ModItems.LEAFITE_CHESTPLATE, "Leafite Chestplate");
+        translationBuilder.add(ModItems.LEAFITE_LEGGINGS, "Leafite Leggings");
+        translationBuilder.add(ModItems.LEAFITE_BOOTS, "Leafite Boots");
+
         translationBuilder.add(ModItems.LEAF_HELMET, "Leaf Helmet");
         translationBuilder.add(ModItems.LEAF_CHESTPLATE, "Leaf Chestplate");
         translationBuilder.add(ModItems.LEAF_LEGGINGS, "Leaf Leggings");
