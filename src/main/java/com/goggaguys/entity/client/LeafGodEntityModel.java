@@ -20,9 +20,9 @@ public class LeafGodEntityModel<T extends LeafGodEntity> extends SinglePartEntit
 	public static TexturedModelData getTexturedModelData() {
 		ModelData modelData = new ModelData();
 		ModelPartData modelPartData = modelData.getRoot();
-		ModelPartData leaf_god = modelPartData.addChild("leaf_god", ModelPartBuilder.create(), ModelTransform.pivot(0.0F, 24.0F, 0.0F));
+		ModelPartData leaf_god = modelPartData.addChild("leaf_god", ModelPartBuilder.create(), ModelTransform.of(0.0F, -24.0F, 0.0F, 0.0F, 1.5708F, 0.0F));
 
-		ModelPartData central_core = leaf_god.addChild("central_core", ModelPartBuilder.create(), ModelTransform.pivot(0.0F, 0.0F, 0.0F));
+		ModelPartData central_core = leaf_god.addChild("central_core", ModelPartBuilder.create(), ModelTransform.pivot(0.0F, 48.0F, 0.0F));
 
 		ModelPartData core = central_core.addChild("core", ModelPartBuilder.create(), ModelTransform.pivot(0.0F, -48.0F, 0.0F));
 
@@ -108,7 +108,7 @@ public class LeafGodEntityModel<T extends LeafGodEntity> extends SinglePartEntit
 
 		ModelPartData right_r4 = front3.addChild("right_r4", ModelPartBuilder.create().uv(8, 44).cuboid(3.8381F, -0.5F, -1.8803F, 1.0F, 1.0F, 4.0F, new Dilation(0.0F)), ModelTransform.of(8.0537F, -17.9619F, -8.0F, 0.0F, -0.3927F, 0.0F));
 
-		ModelPartData outer_leaf_group_1 = leaf_god.addChild("outer_leaf_group_1", ModelPartBuilder.create(), ModelTransform.pivot(0.0F, -48.0F, 0.0F));
+		ModelPartData outer_leaf_group_1 = leaf_god.addChild("outer_leaf_group_1", ModelPartBuilder.create(), ModelTransform.pivot(0.0F, 0.0F, 0.0F));
 
 		ModelPartData outer_leaf_1 = outer_leaf_group_1.addChild("outer_leaf_1", ModelPartBuilder.create(), ModelTransform.of(0.0F, 10.0F, 0.0F, 3.1416F, 0.0F, 0.0F));
 
@@ -314,9 +314,9 @@ public class LeafGodEntityModel<T extends LeafGodEntity> extends SinglePartEntit
 
 		ModelPartData part_1_r16 = left_8.addChild("part_1_r16", ModelPartBuilder.create().uv(15, 11).cuboid(-0.5F, -6.2358F, -11.6915F, 1.0F, 1.0F, 5.0F, new Dilation(0.0F)), ModelTransform.of(0.0F, 3.2901F, 8.0377F, 0.6109F, 0.0F, 0.0F));
 
-		ModelPartData outer_leaf_group_2 = leaf_god.addChild("outer_leaf_group_2", ModelPartBuilder.create(), ModelTransform.of(-4.0F, -48.0F, 0.0F, 0.7854F, 0.0F, 0.0F));
+		ModelPartData outer_leaf_group_2 = leaf_god.addChild("outer_leaf_group_2", ModelPartBuilder.create(), ModelTransform.of(0.0F, 0.0F, 0.0F, 0.7854F, 0.0F, 0.0F));
 
-		ModelPartData outer_leaf_5 = outer_leaf_group_2.addChild("outer_leaf_5", ModelPartBuilder.create(), ModelTransform.of(0.0F, 10.0F, 0.0F, 3.1416F, 0.0F, 0.0F));
+		ModelPartData outer_leaf_5 = outer_leaf_group_2.addChild("outer_leaf_5", ModelPartBuilder.create(), ModelTransform.of(-4.0F, 10.0F, 0.0F, 3.1416F, 0.0F, 0.0F));
 
 		ModelPartData body5 = outer_leaf_5.addChild("body5", ModelPartBuilder.create(), ModelTransform.pivot(0.0F, 0.0F, 0.0F));
 
@@ -367,7 +367,7 @@ public class LeafGodEntityModel<T extends LeafGodEntity> extends SinglePartEntit
 
 		ModelPartData part_1_r20 = left_10.addChild("part_1_r20", ModelPartBuilder.create().uv(15, 11).cuboid(-0.5F, -6.2358F, -11.6915F, 1.0F, 1.0F, 5.0F, new Dilation(0.0F)), ModelTransform.of(0.0F, 3.2901F, 8.0377F, 0.6109F, 0.0F, 0.0F));
 
-		ModelPartData outer_leaf_6 = outer_leaf_group_2.addChild("outer_leaf_6", ModelPartBuilder.create(), ModelTransform.of(0.0F, 0.0F, -10.0F, 1.5708F, 0.0F, 0.0F));
+		ModelPartData outer_leaf_6 = outer_leaf_group_2.addChild("outer_leaf_6", ModelPartBuilder.create(), ModelTransform.of(-4.0F, 0.0F, -10.0F, 1.5708F, 0.0F, 0.0F));
 
 		ModelPartData body6 = outer_leaf_6.addChild("body6", ModelPartBuilder.create(), ModelTransform.pivot(0.0F, 0.0F, 0.0F));
 
@@ -418,7 +418,7 @@ public class LeafGodEntityModel<T extends LeafGodEntity> extends SinglePartEntit
 
 		ModelPartData part_1_r24 = left_12.addChild("part_1_r24", ModelPartBuilder.create().uv(15, 11).cuboid(-0.5F, -6.2358F, -11.6915F, 1.0F, 1.0F, 5.0F, new Dilation(0.0F)), ModelTransform.of(0.0F, 3.2901F, 8.0377F, 0.6109F, 0.0F, 0.0F));
 
-		ModelPartData outer_leaf_7 = outer_leaf_group_2.addChild("outer_leaf_7", ModelPartBuilder.create(), ModelTransform.pivot(0.0F, -11.0F, 0.0F));
+		ModelPartData outer_leaf_7 = outer_leaf_group_2.addChild("outer_leaf_7", ModelPartBuilder.create(), ModelTransform.pivot(-4.0F, -11.0F, 0.0F));
 
 		ModelPartData body7 = outer_leaf_7.addChild("body7", ModelPartBuilder.create(), ModelTransform.pivot(0.0F, 0.0F, 0.0F));
 
@@ -469,7 +469,7 @@ public class LeafGodEntityModel<T extends LeafGodEntity> extends SinglePartEntit
 
 		ModelPartData part_1_r28 = left_14.addChild("part_1_r28", ModelPartBuilder.create().uv(15, 11).cuboid(-0.5F, -6.2358F, -11.6915F, 1.0F, 1.0F, 5.0F, new Dilation(0.0F)), ModelTransform.of(0.0F, 3.2901F, 8.0377F, 0.6109F, 0.0F, 0.0F));
 
-		ModelPartData outer_leaf_8 = outer_leaf_group_2.addChild("outer_leaf_8", ModelPartBuilder.create(), ModelTransform.of(0.0F, 0.0F, 10.0F, -1.5708F, 0.0F, 0.0F));
+		ModelPartData outer_leaf_8 = outer_leaf_group_2.addChild("outer_leaf_8", ModelPartBuilder.create(), ModelTransform.of(-4.0F, 0.0F, 10.0F, -1.5708F, 0.0F, 0.0F));
 
 		ModelPartData body8 = outer_leaf_8.addChild("body8", ModelPartBuilder.create(), ModelTransform.pivot(0.0F, 0.0F, 0.0F));
 

@@ -20,7 +20,8 @@ public class ModEntities {
     public static final EntityType<LeafGodEntity> LEAF_GOD = Registry.register(Registries.ENTITY_TYPE,
             new Identifier(OctoComputing.MOD_ID, "leaf_god"),
             FabricEntityTypeBuilder.create(SpawnGroup.MISC, LeafGodEntity::new)
-                    .dimensions(EntityDimensions.fixed(2f, 4f)).build());
+                    .dimensions(EntityDimensions.fixed(2f, 6f))
+                    .build());
     public static void registerModEntities() {
         OctoComputing.LOGGER.info("Registering Entities for " + OctoComputing.MOD_ID);
 
