@@ -140,6 +140,89 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
         offerLeafUpgradeRecipe(exporter, Items.NETHERITE_AXE, ModItems.LEAFITE_AXE, RecipeCategory.TOOLS);
         offerLeafUpgradeRecipe(exporter, Items.NETHERITE_SHOVEL, ModItems.LEAFITE_SHOVEL, RecipeCategory.TOOLS);
         offerLeafUpgradeRecipe(exporter, Items.NETHERITE_HOE, ModItems.LEAFITE_HOE, RecipeCategory.TOOLS);
+
+        offerToolRecipes(exporter, ModItemTags.LEAF, ModItems.LEAF_SWORD, ModItems.LEAF_PICKAXE, ModItems.LEAF_AXE, ModItems.LEAF_SHOVEL, ModItems.LEAF_HOE);
+        offerToolRecipes(exporter, ModItemTags.LEAF_COMPRESSED, ModItems.COMPRESSED_LEAF_SWORD, ModItems.COMPRESSED_LEAF_PICKAXE, ModItems.COMPRESSED_LEAF_AXE, ModItems.COMPRESSED_LEAF_SHOVEL, ModItems.COMPRESSED_LEAF_HOE);
+        offerToolRecipes(exporter, ModItemTags.LEAF_DOUBLE_COMPRESSED, ModItems.DOUBLE_COMPRESSED_LEAF_SWORD, ModItems.DOUBLE_COMPRESSED_LEAF_PICKAXE, ModItems.DOUBLE_COMPRESSED_LEAF_AXE, ModItems.DOUBLE_COMPRESSED_LEAF_SHOVEL, ModItems.DOUBLE_COMPRESSED_LEAF_HOE);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.LEAF_CORE)
+                .pattern("ABA")
+                .pattern("BCB")
+                .pattern("ABA")
+                .input('A', ModItems.DOUBLE_COMPRESSED_MIXED_LEAF)
+                .input('B', ModBlocks.LEAFSTONE_BLOCK)
+                .input('C', ModItems.BROKEN_LEAF_CORE)
+                .criterion(hasItem(ModItems.DOUBLE_COMPRESSED_MIXED_LEAF), conditionsFromItem(ModItems.DOUBLE_COMPRESSED_MIXED_LEAF))
+                .criterion(hasItem(ModBlocks.LEAFSTONE_BLOCK), conditionsFromItem(ModBlocks.LEAFSTONE_BLOCK))
+                .criterion(hasItem(ModItems.BROKEN_LEAF_CORE), conditionsFromItem(ModItems.BROKEN_LEAF_CORE))
+                .offerTo(exporter, getItemPath(ModItems.LEAF_CORE));
+    }
+
+    private static void offerToolRecipes(RecipeExporter exporter, TagKey<Item> ingredient,
+                                         Item sword, Item pickaxe,
+                                         Item axe, Item shovel, Item hoe) {
+        ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, sword)
+                .pattern("I")
+                .pattern("I")
+                .pattern("S")
+                .input('I', ingredient)
+                .input('S', Items.STICK)
+                .criterion("has_item_from_tag_" + ingredient, conditionsFromTag(ingredient))
+                .offerTo(exporter, new Identifier(getRecipeName(sword)));
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, pickaxe)
+                .pattern("III")
+                .pattern(" S ")
+                .pattern(" S ")
+                .input('I', ingredient)
+                .input('S', Items.STICK)
+                .criterion("has_item_from_tag_" + ingredient, conditionsFromTag(ingredient))
+                .offerTo(exporter, new Identifier(getRecipeName(pickaxe)));
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, axe)
+                .pattern("II")
+                .pattern("IS")
+                .pattern(" S")
+                .input('I', ingredient)
+                .input('S', Items.STICK)
+                .criterion("has_item_from_tag_" + ingredient, conditionsFromTag(ingredient))
+                .offerTo(exporter, new Identifier(getRecipeName(axe) + "_left_side_ingredients"));
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, axe)
+                .pattern("II")
+                .pattern("SI")
+                .pattern("S ")
+                .input('I', ingredient)
+                .input('S', Items.STICK)
+                .criterion("has_item_from_tag_" + ingredient, conditionsFromTag(ingredient))
+                .offerTo(exporter, new Identifier(getRecipeName(axe) + "_right_side_ingredients"));
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, shovel)
+                .pattern("I")
+                .pattern("S")
+                .pattern("S")
+                .input('I', ingredient)
+                .input('S', Items.STICK)
+                .criterion("has_item_from_tag_" + ingredient, conditionsFromTag(ingredient))
+                .offerTo(exporter, new Identifier(getRecipeName(shovel)));
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, hoe)
+                .pattern("II")
+                .pattern(" S")
+                .pattern(" S")
+                .input('I', ingredient)
+                .input('S', Items.STICK)
+                .criterion("has_item_from_tag_" + ingredient, conditionsFromTag(ingredient))
+                .offerTo(exporter, new Identifier(getRecipeName(hoe) + "_left_side_ingredients"));
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, hoe)
+                .pattern("II")
+                .pattern("S ")
+                .pattern("S ")
+                .input('I', ingredient)
+                .input('S', Items.STICK)
+                .criterion("has_item_from_tag_" + ingredient, conditionsFromTag(ingredient))
+                .offerTo(exporter, new Identifier(getRecipeName(hoe) + "_right_side_ingredients"));
     }
 
     private static void offerLeafUpgradeRecipe(RecipeExporter exporter, Item baseItem, Item resultItem, RecipeCategory category) {

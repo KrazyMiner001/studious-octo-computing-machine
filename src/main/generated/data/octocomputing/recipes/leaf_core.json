@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "item": "octocomputing:double_compressed_mixed_leaf"
+    },
+    "B": {
+      "item": "octocomputing:leafstone_block"
+    },
+    "C": {
+      "item": "octocomputing:broken_leaf_core"
+    }
+  },
+  "pattern": [
+    "ABA",
+    "BCB",
+    "ABA"
+  ],
+  "result": {
+    "item": "octocomputing:leaf_core"
+  }
+}
