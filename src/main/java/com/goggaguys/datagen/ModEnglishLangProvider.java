@@ -76,7 +76,7 @@ public class ModEnglishLangProvider extends FabricLanguageProvider {
         translationBuilder.add(ModEnchantments.LEAF_PROTECTION, "Leaf Protection");
         translationBuilder.add(ModEnchantments.GARDEN_SHEARS, "Garden Shears");
 
-        translationBuilder.add(ModEntities.LEAF_MONSTER_ENTITY, "Leaf Monster");
+        translationBuilder.add(ModEntities.LEAF_MONSTER, "Leaf Monster");
 
         translationBuilder.add(new Identifier("itemgroup", "leaf_group"), "Leaves");
 

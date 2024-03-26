@@ -12,7 +12,7 @@ public class LeafMonsterEntityRenderer extends MobEntityRenderer<LeafMonsterEnti
     private static final Identifier TEXTURE = new Identifier(OctoComputing.MOD_ID, "textures/entity/leaf_monster.png");
 
     public LeafMonsterEntityRenderer(EntityRendererFactory.Context context) {
-        super(context, new LeafMonsterEntityModel<>(context.getPart(ModModelLayers.LEAF)), 0.6f);
+        super(context, new LeafMonsterEntityModel<>(context.getPart(ModModelLayers.LEAF_MONSTER)), 0.6f);
     }
 
     @Override
@@ -22,11 +22,7 @@ public class LeafMonsterEntityRenderer extends MobEntityRenderer<LeafMonsterEnti
 
     @Override
     public void render(LeafMonsterEntity mobEntity, float f, float g, MatrixStack matrixStack, VertexConsumerProvider vertexConsumerProvider, int i) {
-        if(mobEntity.isBaby()) {
-            matrixStack.scale(0.5f, 0.5f, 0.5f);
-        } else {
-            matrixStack.scale(1f, 1f, 1f);
-        }
+        matrixStack.scale(1f, 1f, 1f);
 
         super.render(mobEntity, f, g, matrixStack, vertexConsumerProvider, i);
     }

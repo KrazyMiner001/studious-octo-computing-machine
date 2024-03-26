@@ -1,12 +1,16 @@
 package com.goggaguys.item;
 
 import com.goggaguys.OctoComputing;
+import com.goggaguys.compat.Mods;
+import com.goggaguys.compat.geckolib.AnimatedItem;
 import com.goggaguys.entity.ModEntities;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
+
+import java.util.concurrent.atomic.AtomicReference;
 
 public class ModItems {
     public static final Item OAK_LEAF = registerItem("oak_leaf", new Item(new FabricItemSettings()));
@@ -116,9 +120,11 @@ public class ModItems {
             new HoeItem(ModToolMaterial.DOUBLE_COMPRESSED_LEAF, 1, 0f, new FabricItemSettings()));
 
     public static final Item LEAF_MONSTER_SPAWN_EGG = registerItem("leaf_spawn_egg",
-            new SpawnEggItem(ModEntities.LEAF_MONSTER_ENTITY, 0x0BA40B, 0x5D4A09, new FabricItemSettings()));
+            new SpawnEggItem(ModEntities.LEAF_MONSTER, 0x0BA40B, 0x5D4A09, new FabricItemSettings()));
 
     public static final Item LEAF_CORE = registerItem("leaf_core",
+            new Item(new FabricItemSettings()));
+    public static final Item BROKEN_LEAF_CORE = registerItem("broken_leaf_core",
             new Item(new FabricItemSettings()));
 
     public static final Item LEAFITE_UPGRADE_TEMPLATE = registerItem("leafite_upgrade_template",

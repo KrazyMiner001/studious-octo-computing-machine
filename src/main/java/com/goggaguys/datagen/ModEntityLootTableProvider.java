@@ -9,12 +9,10 @@ import net.minecraft.item.Item;
 import net.minecraft.loot.LootPool;
 import net.minecraft.loot.LootTable;
 import net.minecraft.loot.condition.RandomChanceLootCondition;
-import net.minecraft.loot.context.LootContextType;
 import net.minecraft.loot.context.LootContextTypes;
 import net.minecraft.loot.entry.ItemEntry;
 import net.minecraft.loot.provider.number.ConstantLootNumberProvider;
 import net.minecraft.loot.provider.number.LootNumberProvider;
-import net.minecraft.loot.provider.number.UniformLootNumberProvider;
 import net.minecraft.util.Identifier;
 
 import java.util.ArrayList;
@@ -29,7 +27,7 @@ public class ModEntityLootTableProvider extends SimpleFabricLootTableProvider {
 
     @Override
     public void accept(BiConsumer<Identifier, LootTable.Builder> exporter) {
-        exporter.accept(ModEntities.LEAF_MONSTER_ENTITY.getLootTableId(), LootTable.builder()
+        exporter.accept(ModEntities.LEAF_MONSTER.getLootTableId(), LootTable.builder()
                 .pool(poolFromList(combine3ItemArraysToList(ModItemTags.leaves, ModItemTags.compressedLeaves, ModItemTags.doubleCompressedLeaves), ConstantLootNumberProvider.create(1f), 1f))
                 .pool(LootPool.builder()
                         .rolls(ConstantLootNumberProvider.create(1))

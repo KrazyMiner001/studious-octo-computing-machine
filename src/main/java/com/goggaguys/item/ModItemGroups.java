@@ -55,6 +55,7 @@ public class ModItemGroups {
                 entries.add(ModItems.DOUBLE_COMPRESSED_LEAF_HOE);
 
                 entries.add(ModItems.LEAF_CORE);
+                entries.add(ModItems.BROKEN_LEAF_CORE);
                 entries.add(ModItems.LEAFITE_UPGRADE_TEMPLATE);
 
                 entries.add(ModItems.LEAF_MONSTER_SPAWN_EGG);

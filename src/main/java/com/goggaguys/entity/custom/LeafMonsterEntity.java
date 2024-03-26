@@ -17,7 +17,7 @@ public class LeafMonsterEntity extends HostileEntity {
         super(entityType, world);
     }
 
-    public static DefaultAttributeContainer.Builder createLeafAttributes() {
+    public static DefaultAttributeContainer.Builder createLeafMonsterAttributes() {
         return MobEntity.createMobAttributes()
                 .add(EntityAttributes.GENERIC_MAX_HEALTH, 15)
                 .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.5f)

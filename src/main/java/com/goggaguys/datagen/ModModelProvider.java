@@ -46,6 +46,7 @@ public class ModModelProvider extends FabricModelProvider {
         }
 
         itemModelGenerator.register(ModItems.LEAFSTONE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.LEAFITE_UPGRADE_TEMPLATE, Models.GENERATED);
 
         itemModelGenerator.register(ModItems.LEAF_MONSTER_SPAWN_EGG,
                 new Model(Optional.of(new Identifier("item/template_spawn_egg")), Optional.empty()));

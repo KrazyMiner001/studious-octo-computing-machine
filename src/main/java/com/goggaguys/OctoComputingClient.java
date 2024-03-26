@@ -2,9 +2,7 @@ package com.goggaguys;
 
 import com.goggaguys.block.ModBlocks;
 import com.goggaguys.entity.ModEntities;
-import com.goggaguys.entity.client.LeafMonsterEntityModel;
-import com.goggaguys.entity.client.LeafMonsterEntityRenderer;
-import com.goggaguys.entity.client.ModModelLayers;
+import com.goggaguys.entity.client.*;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry;
@@ -18,8 +16,11 @@ public class OctoComputingClient implements ClientModInitializer {
 		BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.MYSTERY_SAPLING, RenderLayer.getCutout());
 		BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.MYSTERY_LEAVES, RenderLayer.getCutout());
 
-		EntityRendererRegistry.register(ModEntities.LEAF_MONSTER_ENTITY, LeafMonsterEntityRenderer::new);
-		EntityModelLayerRegistry.registerModelLayer(ModModelLayers.LEAF, LeafMonsterEntityModel::getTexturedModelData);
+		EntityRendererRegistry.register(ModEntities.LEAF_MONSTER, LeafMonsterEntityRenderer::new);
+		EntityModelLayerRegistry.registerModelLayer(ModModelLayers.LEAF_MONSTER, LeafMonsterEntityModel::getTexturedModelData);
+
+		EntityRendererRegistry.register(ModEntities.LEAF_GOD, LeafGodEntityRenderer::new);
+		EntityModelLayerRegistry.registerModelLayer(ModModelLayers.LEAF_GOD, LeafGodEntityModel::getTexturedModelData);
 
 		OctoComputing.LOGGER.info("Initializing Client");
 	}

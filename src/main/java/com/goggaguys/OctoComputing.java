@@ -1,7 +1,10 @@
 package com.goggaguys;
 
 import com.goggaguys.block.ModBlocks;
+import com.goggaguys.compat.Mods;
+import com.goggaguys.compat.geckolib.GeckoLib;
 import com.goggaguys.enchantments.ModEnchantments;
+import com.goggaguys.entity.custom.LeafGodEntity;
 import com.goggaguys.entity.custom.LeafMonsterEntity;
 import com.goggaguys.entity.ModEntities;
 import com.goggaguys.item.ModItemGroups;
@@ -80,12 +83,15 @@ public class OctoComputing implements ModInitializer {
 		FuelRegistry.INSTANCE.add(ModBlocks.MYSTERY_PLANKS, 300);
 		FuelRegistry.INSTANCE.add(ModBlocks.MYSTERY_SAPLING, 100);
 
-		FabricDefaultAttributeRegistry.register(ModEntities.LEAF_MONSTER_ENTITY, LeafMonsterEntity.createLeafAttributes());
+		FabricDefaultAttributeRegistry.register(ModEntities.LEAF_MONSTER, LeafMonsterEntity.createLeafMonsterAttributes());
+		FabricDefaultAttributeRegistry.register(ModEntities.LEAF_GOD, LeafGodEntity.createLeafGodAttributes());
 
 		StrippableBlockRegistry.register(ModBlocks.MYSTERY_LOG, ModBlocks.STRIPPED_MYSTERY_LOG);
 		StrippableBlockRegistry.register(ModBlocks.MYSTERY_WOOD, ModBlocks.STRIPPED_MYSTERY_WOOD);
 
 		ModWorldGeneration.generateModWorldGen();
+
+		Mods.GECKOLIB.executeIfInstalled(() -> GeckoLib::init);
 
 		LOGGER.info("Mod Starting");
 	}
