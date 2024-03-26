@@ -14,10 +14,10 @@ import software.bernie.geckolib.util.RenderUtils;
 import java.util.function.Consumer;
 import java.util.function.Supplier;
 
-public class AnimatedItem extends Item implements GeoItem {
+public class AnimatedLeafCore extends Item implements GeoItem {
     private AnimatableInstanceCache cache = new SingletonAnimatableInstanceCache(this);
     private final Supplier<Object> renderProvider = GeoItem.makeRenderer(this);
-    public AnimatedItem(Settings settings) {
+    public AnimatedLeafCore(Settings settings) {
         super(settings);
     }
 
