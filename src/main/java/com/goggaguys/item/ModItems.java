@@ -4,14 +4,12 @@ import com.goggaguys.OctoComputing;
 import com.goggaguys.compat.Mods;
 import com.goggaguys.compat.geckolib.AnimatedLeafCore;
 import com.goggaguys.entity.ModEntities;
+import com.goggaguys.item.custom.TokenOfTheLeafGodItem;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
-import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
-
-import java.util.function.Supplier;
 
 public class ModItems {
     public static final Item OAK_LEAF = registerItem("oak_leaf", new Item(new FabricItemSettings()));
@@ -123,6 +121,9 @@ public class ModItems {
     public static final Item LEAF_MONSTER_SPAWN_EGG = registerItem("leaf_spawn_egg",
             new SpawnEggItem(ModEntities.LEAF_MONSTER, 0x0BA40B, 0x5D4A09, new FabricItemSettings()));
 
+    public static Item TOKEN_OF_THE_LEAF_GOD = registerItem("token_of_the_leaf_god",
+            new TokenOfTheLeafGodItem());
+
     public static final Item LEAF_CORE = registerLeafCore();
     private static Item registerLeafCore() {
         if (Mods.GECKOLIB.isLoaded()) {
@@ -162,6 +163,6 @@ public class ModItems {
     }
 
     public static void registerModItems() {
-        OctoComputing.LOGGER.info("Registering Items");
+        OctoComputing.LOGGER.info("Registering Items for " + OctoComputing.MOD_ID);
     }
 }

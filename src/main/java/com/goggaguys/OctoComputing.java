@@ -3,6 +3,7 @@ package com.goggaguys;
 import com.goggaguys.block.ModBlocks;
 import com.goggaguys.compat.Mods;
 import com.goggaguys.compat.geckolib.GeckoLib;
+import com.goggaguys.effects.ModStatusEffects;
 import com.goggaguys.enchantments.ModEnchantments;
 import com.goggaguys.entity.custom.LeafGodEntity;
 import com.goggaguys.entity.custom.LeafMonsterEntity;
@@ -46,6 +47,7 @@ public class OctoComputing implements ModInitializer {
 		ModBlocks.registerModBlocks();
 		ModEntities.registerModEntities();
 		ModEnchantments.registerModEnchantments();
+		ModStatusEffects.registerModStatusEffects();
 
 		ItemGroupEvents.modifyEntriesEvent(ItemGroups.SPAWN_EGGS).register(content -> content.add(ModItems.LEAF_MONSTER_SPAWN_EGG));
 		ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS).register(content ->

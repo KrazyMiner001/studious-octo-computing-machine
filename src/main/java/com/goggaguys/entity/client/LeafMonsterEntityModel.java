@@ -77,6 +77,7 @@ public class LeafMonsterEntityModel<T extends LeafMonsterEntity> extends SingleP
     public void setAngles(T entity, float limbAngle, float limbDistance, float animationProgress, float headYaw, float headPitch) {
     }
 
+
     @Override
     public ModelPart getPart() {
         return leafEntity;

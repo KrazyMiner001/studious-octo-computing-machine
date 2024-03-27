@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "item": "octocomputing:double_compressed_mixed_leaf"
+    },
+    "B": {
+      "item": "octocomputing:leafstone_block"
+    },
+    "C": {
+      "item": "minecraft:enchanted_golden_apple"
+    }
+  },
+  "pattern": [
+    "ABA",
+    "BCB",
+    "ABA"
+  ],
+  "result": {
+    "item": "octocomputing:token_of_the_leaf_god"
+  }
+}

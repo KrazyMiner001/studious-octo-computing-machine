@@ -129,14 +129,14 @@ public class LeafGodEntity extends HostileEntity implements RangedAttackMob {
         double distanceX = targetX - coreX;
         double distanceY = targetY - coreY;
         double distanceZ = targetZ - coreZ;
-        WitherSkullEntity witherSkullEntity = new WitherSkullEntity(this.getWorld(), this, distanceX, distanceY, distanceZ);
-        witherSkullEntity.setOwner(this);
+        LeafProjectileEntity leafProjectileEntity = new LeafProjectileEntity(this.getWorld(), this, distanceX, distanceY, distanceZ);
+        leafProjectileEntity.setOwner(this);
         if (charged) {
-            witherSkullEntity.setCharged(true);
+            leafProjectileEntity.setCharged(true);
         }
 
-        witherSkullEntity.setPos(coreX, coreY, coreZ);
-        this.getWorld().spawnEntity(witherSkullEntity);
+        leafProjectileEntity.setPos(coreX, coreY, coreZ);
+        this.getWorld().spawnEntity(leafProjectileEntity);
     }
 
     private void shootLeafAt(LivingEntity target) {

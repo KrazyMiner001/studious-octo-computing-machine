@@ -156,6 +156,18 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
                 .criterion(hasItem(ModBlocks.LEAFSTONE_BLOCK), conditionsFromItem(ModBlocks.LEAFSTONE_BLOCK))
                 .criterion(hasItem(ModItems.BROKEN_LEAF_CORE), conditionsFromItem(ModItems.BROKEN_LEAF_CORE))
                 .offerTo(exporter, getItemPath(ModItems.LEAF_CORE));
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.TOKEN_OF_THE_LEAF_GOD)
+                .pattern("ABA")
+                .pattern("BCB")
+                .pattern("ABA")
+                .input('A', ModItems.DOUBLE_COMPRESSED_MIXED_LEAF)
+                .input('B', ModBlocks.LEAFSTONE_BLOCK)
+                .input('C', Items.ENCHANTED_GOLDEN_APPLE)
+                .criterion(hasItem(ModItems.DOUBLE_COMPRESSED_MIXED_LEAF), conditionsFromItem(ModItems.DOUBLE_COMPRESSED_MIXED_LEAF))
+                .criterion(hasItem(ModBlocks.LEAFSTONE_BLOCK), conditionsFromItem(ModBlocks.LEAFSTONE_BLOCK))
+                .criterion(hasItem(Items.ENCHANTED_GOLDEN_APPLE), conditionsFromItem(Items.ENCHANTED_GOLDEN_APPLE))
+                .offerTo(exporter, getItemPath(ModItems.TOKEN_OF_THE_LEAF_GOD));
     }
 
     private static void offerToolRecipes(RecipeExporter exporter, TagKey<Item> ingredient,

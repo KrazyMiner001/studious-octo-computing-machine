@@ -1,6 +1,7 @@
 package com.goggaguys.datagen;
 
 import com.goggaguys.block.ModBlocks;
+import com.goggaguys.effects.ModStatusEffects;
 import com.goggaguys.enchantments.ModEnchantments;
 import com.goggaguys.entity.ModEntities;
 import com.goggaguys.item.ModItems;
@@ -62,6 +63,8 @@ public class ModEnglishLangProvider extends FabricLanguageProvider {
         translationBuilder.add(ModItems.DOUBLE_COMPRESSED_LEAF_SHOVEL, "Double Compressed Leaf Shovel");
         translationBuilder.add(ModItems.DOUBLE_COMPRESSED_LEAF_HOE, "Double Compressed Leaf Hoe");
 
+        translationBuilder.add(ModItems.TOKEN_OF_THE_LEAF_GOD, "Token of the Leaf God");
+
         translationBuilder.add(ModBlocks.MYSTERY_SAPLING, "Mystery Sapling");
         translationBuilder.add(ModBlocks.MYSTERY_LOG, "Mystery Log");
         translationBuilder.add(ModBlocks.MYSTERY_WOOD, "Mystery Wood");
@@ -76,7 +79,13 @@ public class ModEnglishLangProvider extends FabricLanguageProvider {
         translationBuilder.add(ModEnchantments.LEAF_PROTECTION, "Leaf Protection");
         translationBuilder.add(ModEnchantments.GARDEN_SHEARS, "Garden Shears");
 
+        translationBuilder.add(ModStatusEffects.LEAFED_EFFECT, "Leafed");
+
         translationBuilder.add(ModEntities.LEAF_MONSTER, "Leaf Monster");
+        translationBuilder.add(ModEntities.LEAF_GOD, "Leaf God");
+        translationBuilder.add(ModEntities.LEAF_PROJECTILE, "Leaf Projectile");
+
+        translationBuilder.add(new Identifier("item.octocomputing", "leaf_god_spawn_item.tooltip"), "Energy is charging through this");
 
         translationBuilder.add(new Identifier("itemgroup", "leaf_group"), "Leaves");
 

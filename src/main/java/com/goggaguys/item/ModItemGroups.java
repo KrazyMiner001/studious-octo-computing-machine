@@ -59,6 +59,7 @@ public class ModItemGroups {
                 entries.add(ModItems.LEAFITE_UPGRADE_TEMPLATE);
 
                 entries.add(ModItems.LEAF_MONSTER_SPAWN_EGG);
+                entries.add(ModItems.TOKEN_OF_THE_LEAF_GOD);
 
                 entries.add(ModBlocks.MYSTERY_SAPLING);
                 entries.add(ModBlocks.LEAF_ORE);
