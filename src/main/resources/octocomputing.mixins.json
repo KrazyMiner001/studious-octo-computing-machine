@@ -3,7 +3,8 @@
   "package": "com.goggaguys.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
-    "ExampleMixin"
+    "ExampleMixin",
+    "ItemDamageMixin"
   ],
   "injectors": {
     "defaultRequire": 1

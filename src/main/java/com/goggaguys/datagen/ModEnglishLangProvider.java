@@ -19,6 +19,8 @@ public class ModEnglishLangProvider extends FabricLanguageProvider {
 
         translationBuilder.add(ModItems.LEAFSTONE, "Leafstone");
         translationBuilder.add(ModItems.LEAF_CORE, "Leaf Core");
+        translationBuilder.add(ModItems.BROKEN_LEAF_CORE, "Broken Leaf Core");
+        translationBuilder.add(ModItems.TOKEN_OF_THE_LEAF_GOD, "Token of the Leaf God");
         translationBuilder.add(ModItems.LEAFITE_UPGRADE_TEMPLATE, "Leafite Upgrade Template");
 
         translationBuilder.add(ModItems.LEAF_MONSTER_SPAWN_EGG, "Leaf Monster Spawn Egg");
@@ -62,8 +64,6 @@ public class ModEnglishLangProvider extends FabricLanguageProvider {
         translationBuilder.add(ModItems.DOUBLE_COMPRESSED_LEAF_AXE, "Double Compressed Leaf Axe");
         translationBuilder.add(ModItems.DOUBLE_COMPRESSED_LEAF_SHOVEL, "Double Compressed Leaf Shovel");
         translationBuilder.add(ModItems.DOUBLE_COMPRESSED_LEAF_HOE, "Double Compressed Leaf Hoe");
-
-        translationBuilder.add(ModItems.TOKEN_OF_THE_LEAF_GOD, "Token of the Leaf God");
 
         translationBuilder.add(ModBlocks.MYSTERY_SAPLING, "Mystery Sapling");
         translationBuilder.add(ModBlocks.MYSTERY_LOG, "Mystery Log");

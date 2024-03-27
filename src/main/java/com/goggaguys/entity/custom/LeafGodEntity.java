@@ -2,10 +2,8 @@ package com.goggaguys.entity.custom;
 
 import com.goggaguys.damagetype.ModDamageTypeTags;
 import com.goggaguys.entity.ModEntityGroups;
-import net.minecraft.entity.AnimationState;
-import net.minecraft.entity.EntityGroup;
-import net.minecraft.entity.EntityType;
-import net.minecraft.entity.LivingEntity;
+import com.goggaguys.item.ModItems;
+import net.minecraft.entity.*;
 import net.minecraft.entity.ai.RangedAttackMob;
 import net.minecraft.entity.ai.TargetPredicate;
 import net.minecraft.entity.ai.control.FlightMoveControl;
@@ -26,6 +24,7 @@ import net.minecraft.entity.data.TrackedDataHandlerRegistry;
 import net.minecraft.entity.mob.HostileEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.WitherSkullEntity;
+import net.minecraft.item.Items;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.Text;
 import net.minecraft.util.math.MathHelper;
@@ -181,6 +180,15 @@ public class LeafGodEntity extends HostileEntity implements RangedAttackMob {
         leafGodNavigation.setCanSwim(true);
         leafGodNavigation.setCanEnterOpenDoors(true);
         return leafGodNavigation;
+    }
+
+    protected void dropEquipment(DamageSource source, int lootingMultiplier, boolean allowDrops) {
+        super.dropEquipment(source, lootingMultiplier, allowDrops);
+        ItemEntity itemEntity = this.dropItem(ModItems.BROKEN_LEAF_CORE);
+        if (itemEntity != null) {
+            itemEntity.setCovetedItem();
+        }
+
     }
 
     @Override
