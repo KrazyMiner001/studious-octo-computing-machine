@@ -1,9 +1,10 @@
-package com.goggaguys.datagen;
+package com.goggaguys.datagen.lang;
 
 import com.goggaguys.block.ModBlocks;
 import com.goggaguys.effects.ModStatusEffects;
 import com.goggaguys.enchantments.ModEnchantments;
 import com.goggaguys.entity.ModEntities;
+import com.goggaguys.item.ModItemTags;
 import com.goggaguys.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
@@ -90,6 +91,11 @@ public class ModEnglishLangProvider extends FabricLanguageProvider {
         translationBuilder.add(new Identifier("itemgroup", "leaf_group"), "Leaves");
 
         translationBuilder.add(new Identifier("death.attack", "leaf"), "%1$s leafed too much");
+
+        translationBuilder.add(ModItemTags.LEAF.id().toTranslationKey("tag"), "Leaves");
+        translationBuilder.add(ModItemTags.LEAF_COMPRESSED.id().toTranslationKey("tag"), "Compressed Leaves");
+        translationBuilder.add(ModItemTags.LEAF_DOUBLE_COMPRESSED.id().toTranslationKey("tag"), "Double Compressed Leaves");
+        translationBuilder.add(ModItemTags.MYSTERY_LOGS.id().toTranslationKey("tag"), "Mystery Logs");
     }
 
     private static void leafTranslations(TranslationBuilder translationBuilder) {

@@ -9,8 +9,9 @@ import java.util.Map;
 public class CompressedChainMap {
     public final Map<Item, Item> regularToCompressed = new HashMap<>();
     public final Map<Item, Item> compressedToDoubleCompressed = new HashMap<>();
+    public static final CompressedChainMap compressedChainMap = new CompressedChainMap();
 
-    public CompressedChainMap() {
+    private CompressedChainMap() {
         this.regularToCompressed.put(ModItems.OAK_LEAF, ModItems.COMPRESSED_OAK_LEAF);
         this.regularToCompressed.put(ModItems.SPRUCE_LEAF, ModItems.COMPRESSED_SPRUCE_LEAF);
         this.regularToCompressed.put(ModItems.BIRCH_LEAF, ModItems.COMPRESSED_BIRCH_LEAF);

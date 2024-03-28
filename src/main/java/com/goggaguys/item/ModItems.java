@@ -130,7 +130,6 @@ public class ModItems {
             return Registry.register(Registries.ITEM, new Identifier(OctoComputing.MOD_ID, "leaf_core"), new AnimatedLeafCore(new FabricItemSettings()));
         }
         return Registry.register(Registries.ITEM, new Identifier(OctoComputing.MOD_ID, "leaf_core"), new Item(new FabricItemSettings()));
-
     }
     public static final Item BROKEN_LEAF_CORE = registerItem("broken_leaf_core",
             new Item(new FabricItemSettings()));

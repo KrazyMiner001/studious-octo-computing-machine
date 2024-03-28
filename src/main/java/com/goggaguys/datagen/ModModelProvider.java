@@ -37,11 +37,9 @@ public class ModModelProvider extends FabricModelProvider {
 
         ModItemModelGenerator modItemModelGenerator = new ModItemModelGenerator(itemModelGenerator.writer);
 
-        CompressedChainMap compressedChainMap = new CompressedChainMap();
-
-        for (Item i : compressedChainMap.regularToCompressed.keySet()) {
-            Item compressed = compressedChainMap.regularToCompressed.get(i);
-            Item doubleCompressed = compressedChainMap.compressedToDoubleCompressed.get(compressed);
+        for (Item i : CompressedChainMap.compressedChainMap.regularToCompressed.keySet()) {
+            Item compressed = CompressedChainMap.compressedChainMap.regularToCompressed.get(i);
+            Item doubleCompressed = CompressedChainMap.compressedChainMap.compressedToDoubleCompressed.get(compressed);
             modItemModelGenerator.registerCompressedChain(i, compressed, doubleCompressed);
         }
 

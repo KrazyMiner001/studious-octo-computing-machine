@@ -9,7 +9,7 @@ import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 
 public class ModStatusEffects {
-    public static final StatusEffect LEAFED_EFFECT = registerEffect("leafed_effect",
+    public static final StatusEffect LEAFED_EFFECT = registerEffect("leafed",
             new LeafedStatusEffect());
 
     private static StatusEffect registerEffect(String name, StatusEffect effect) {

@@ -2,6 +2,7 @@ package com.goggaguys.item;
 
 import com.goggaguys.OctoComputing;
 import com.goggaguys.block.ModBlocks;
+import com.goggaguys.utilities.CompressedChainMap;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
@@ -15,9 +16,11 @@ public class ModItemGroups {
     private static final ItemGroup LEAF_GROUP = FabricItemGroup.builder()
             .icon(() -> new ItemStack(ModItems.MIXED_LEAF))
             .entries((context, entries) -> {
-                for (Item i : ModItemTags.leaves) entries.add(i);
-                for (Item i : ModItemTags.compressedLeaves) entries.add(i);
-                for (Item i : ModItemTags.doubleCompressedLeaves) entries.add(i);
+                for (Item i : CompressedChainMap.compressedChainMap.regularToCompressed.keySet()) {
+                    entries.add(i);
+                    entries.add(CompressedChainMap.compressedChainMap.regularToCompressed.get(i));
+                    entries.add(CompressedChainMap.compressedChainMap.compressedToDoubleCompressed.get(CompressedChainMap.compressedChainMap.regularToCompressed.get(i)));
+                }
 
                 entries.add(ModItems.LEAFSTONE);
 

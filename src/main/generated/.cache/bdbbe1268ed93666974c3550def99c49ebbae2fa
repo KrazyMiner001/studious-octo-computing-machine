@@ -1,5 +1,7 @@
-// 1.20.4	2024-03-27T15:09:57.0997706	Studious Octo Computing Machine/World Gen
-8adce42c89991253ee8cef33f99182138a72a31c data\octocomputing\worldgen\placed_feature\leaf_ore_placed.json
+// 1.20.4	2024-03-28T14:15:21.8993429	Studious Octo Computing Machine/World Gen
+a583d04010af1d9e71cbab9ae8a0f6865831014b data\octocomputing\worldgen\placed_feature\stone_leaf_ore_placed.json
+19cca8427b637b591bde6e27c74b420a5259b61d data\octocomputing\worldgen\configured_feature\stone_leaf_ore.json
 625c5beb6fe01a47670f3fbc89aaff063fb23d61 data\octocomputing\worldgen\placed_feature\mystery_placed.json
 ade8ee80083697a7081156645c025c98fe1abb95 data\octocomputing\worldgen\configured_feature\mystery.json
-e98f998252d6f130ef469ddb2280937ddebb5fbb data\octocomputing\worldgen\configured_feature\leaf_ore.json
+b9824eac8d0d9d890943631e2aca6a3d8d1c0e75 data\octocomputing\worldgen\placed_feature\deepslate_leaf_ore_placed.json
+2e3cffb3aa33a9b97ac58cbd159d46e72d981fdd data\octocomputing\worldgen\configured_feature\deepslate_leaf_ore.json

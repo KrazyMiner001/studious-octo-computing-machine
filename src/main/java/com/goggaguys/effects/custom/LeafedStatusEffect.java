@@ -20,6 +20,6 @@ public class LeafedStatusEffect extends StatusEffect {
 
     @Override
     public void applyUpdateEffect(LivingEntity entity, int amplifier) {
-        entity.damage(entity.getWorld().getDamageSources().create(ModDamageTypes.LEAF), 2 * amplifier);
+        entity.damage(entity.getWorld().getDamageSources().create(ModDamageTypes.LEAF), 1 << amplifier);
     }
 }

@@ -3,8 +3,10 @@ package com.goggaguys.datagen;
 import com.goggaguys.block.ModBlocks;
 import com.goggaguys.item.ModItemTags;
 import com.goggaguys.item.ModItems;
+import com.goggaguys.utilities.CompressedChainMap;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
+import net.minecraft.item.Item;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.registry.tag.ItemTags;
 
@@ -18,13 +20,13 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
     @Override
     protected void configure(RegistryWrapper.WrapperLookup arg) {
         getOrCreateTagBuilder(ModItemTags.LEAF)
-                .add(ModItemTags.leaves);
+                .add(CompressedChainMap.compressedChainMap.regularToCompressed.keySet().toArray(new Item[]{}));
 
         getOrCreateTagBuilder(ModItemTags.LEAF_COMPRESSED)
-                .add(ModItemTags.compressedLeaves);
+                .add(CompressedChainMap.compressedChainMap.regularToCompressed.values().toArray(new Item[]{}));
 
         getOrCreateTagBuilder(ModItemTags.LEAF_DOUBLE_COMPRESSED)
-                .add(ModItemTags.doubleCompressedLeaves);
+                .add(CompressedChainMap.compressedChainMap.compressedToDoubleCompressed.values().toArray(new Item[]{}));
 
         getOrCreateTagBuilder(ItemTags.PLANKS)
                 .add(ModBlocks.MYSTERY_PLANKS.asItem());

@@ -3,6 +3,7 @@ package com.goggaguys.datagen;
 import com.goggaguys.entity.ModEntities;
 import com.goggaguys.item.ModItemTags;
 import com.goggaguys.item.ModItems;
+import com.goggaguys.utilities.CompressedChainMap;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.SimpleFabricLootTableProvider;
 import net.minecraft.item.Item;
@@ -28,7 +29,10 @@ public class ModEntityLootTableProvider extends SimpleFabricLootTableProvider {
     @Override
     public void accept(BiConsumer<Identifier, LootTable.Builder> exporter) {
         exporter.accept(ModEntities.LEAF_MONSTER.getLootTableId(), LootTable.builder()
-                .pool(poolFromList(combine3ItemArraysToList(ModItemTags.leaves, ModItemTags.compressedLeaves, ModItemTags.doubleCompressedLeaves), ConstantLootNumberProvider.create(1f), 1f))
+                .pool(poolFromList(combine3ItemArraysToList(CompressedChainMap.compressedChainMap.regularToCompressed.keySet().toArray(new Item[0]),
+                                CompressedChainMap.compressedChainMap.regularToCompressed.values().toArray(new Item[0]),
+                                CompressedChainMap.compressedChainMap.compressedToDoubleCompressed.values().toArray(new Item[0])
+                        ), ConstantLootNumberProvider.create(1f), 1f))
                 .pool(LootPool.builder()
                         .rolls(ConstantLootNumberProvider.create(1))
                         .with(ItemEntry.builder(ModItems.LEAFITE_UPGRADE_TEMPLATE))

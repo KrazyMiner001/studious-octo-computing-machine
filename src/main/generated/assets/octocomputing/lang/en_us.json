@@ -10,7 +10,7 @@
   "block.octocomputing.stripped_mystery_log": "Stripped Mystery Log",
   "block.octocomputing.stripped_mystery_wood": "Stripped Mystery Wood",
   "death.attack.leaf": "%1$s leafed too much",
-  "effect.octocomputing.leafed_effect": "Leafed",
+  "effect.octocomputing.leafed": "Leafed",
   "enchantment.octocomputing.garden_shears": "Garden Shears",
   "enchantment.octocomputing.leaf_protection": "Leaf Protection",
   "entity.octocomputing.leaf_god": "Leaf God",
@@ -92,5 +92,9 @@
   "item.octocomputing.oak_leaf": "Oak Leaf",
   "item.octocomputing.spruce_leaf": "Spruce Leaf",
   "item.octocomputing.token_of_the_leaf_god": "Token of the Leaf God",
-  "itemgroup.leaf_group": "Leaves"
+  "itemgroup.leaf_group": "Leaves",
+  "tag.octocomputing.leaf": "Leaves",
+  "tag.octocomputing.leaf_compressed": "Compressed Leaves",
+  "tag.octocomputing.leaf_double_compressed": "Double Compressed Leaves",
+  "tag.octocomputing.mystery_logs": "Mystery Logs"
 }

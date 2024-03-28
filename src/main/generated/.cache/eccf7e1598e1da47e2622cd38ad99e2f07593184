@@ -1,4 +1,4 @@
-// 1.20.4	2024-03-27T15:09:57.0885303	Studious Octo Computing Machine/Model Definitions
+// 1.20.4	2024-03-28T14:15:21.8753114	Studious Octo Computing Machine/Model Definitions
 4a8e0062987b823942639e2cb896a838c9ea6ed1 assets\octocomputing\models\item\double_compressed_leaf_helmet.json
 a77358b05c2671de1d10885d7beaa90e3e1a24da assets\octocomputing\models\item\double_compressed_leaf_leggings_quartz_trim.json
 5f5fcc760f77cb6b98fe04ca61eae24caa590df5 assets\octocomputing\models\item\leafite_helmet_quartz_trim.json
@@ -206,8 +206,8 @@ b8f8d0f21f67f7f66575c4d3e1a4149c56b52d54 assets\octocomputing\models\item\double
 1770edf470fb27d2845ced6be148e363aa21f343 assets\octocomputing\models\item\leaf_chestplate_redstone_trim.json
 3eb8b383a6d3cceabbcb237d69b59270fcdb6ff6 assets\octocomputing\models\block\stripped_mystery_log_horizontal.json
 c8d56c07163cc252397ecc29d6a02b1a9c3384b3 assets\octocomputing\models\item\leafite_boots_gold_trim.json
-d4933723ceec6cf01d7edbea3210c1198faa392f assets\octocomputing\models\item\stripped_mystery_wood.json
 b6982ec5f635d947acc081712bd62bf4881a2332 assets\octocomputing\models\block\stripped_mystery_wood.json
+d4933723ceec6cf01d7edbea3210c1198faa392f assets\octocomputing\models\item\stripped_mystery_wood.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets\octocomputing\models\item\leaf_spawn_egg.json
 cf0f475a2445ab01b5118ae2c15d9bddb2e02ff7 assets\octocomputing\models\item\compressed_leaf_leggings_quartz_trim.json
 a0e818a281889e6b702b20bf3638362cec008423 assets\octocomputing\models\item\double_compressed_leaf_leggings.json

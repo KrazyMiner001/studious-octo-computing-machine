@@ -22,7 +22,8 @@ import net.minecraft.world.gen.trunk.CherryTrunkPlacer;
 import java.util.List;
 
 public class ModConfiguredFeatures {
-    public static final RegistryKey<ConfiguredFeature<?, ?>> LEAF_ORE_KEY = registerKey("leaf_ore");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> STONE_LEAF_ORE_KEY = registerKey("stone_leaf_ore");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> DEEPSLATE_LEAF_ORE_KEY = registerKey("deepslate_leaf_ore");
 
     public static final RegistryKey<ConfiguredFeature<?, ?>> MYSTERY_KEY = registerKey("mystery");
 
@@ -32,11 +33,14 @@ public class ModConfiguredFeatures {
         RuleTest netherReplacables = new TagMatchRuleTest(BlockTags.BASE_STONE_NETHER);
         RuleTest endReplacables = new BlockMatchRuleTest(Blocks.END_STONE);
 
-        List<OreFeatureConfig.Target> overworldLeafOres =
-                List.of(OreFeatureConfig.createTarget(stoneReplacables, ModBlocks.LEAF_ORE.getDefaultState()),
-                        OreFeatureConfig.createTarget(deepslateReplacables, ModBlocks.DEEPSLATE_LEAF_ORE.getDefaultState()));
+        List<OreFeatureConfig.Target> stoneLeafOres =
+                List.of(OreFeatureConfig.createTarget(stoneReplacables, ModBlocks.LEAF_ORE.getDefaultState()));
 
-        register(context, LEAF_ORE_KEY, Feature.ORE, new OreFeatureConfig(overworldLeafOres, 3));
+        List<OreFeatureConfig.Target> deepSlateLeafOres =
+                List.of(OreFeatureConfig.createTarget(deepslateReplacables, ModBlocks.DEEPSLATE_LEAF_ORE.getDefaultState()));
+
+        register(context, STONE_LEAF_ORE_KEY, Feature.ORE, new OreFeatureConfig(stoneLeafOres, 1));
+        register(context, DEEPSLATE_LEAF_ORE_KEY, Feature.ORE, new OreFeatureConfig(deepSlateLeafOres, 3));
 
         register(context, MYSTERY_KEY, Feature.TREE, new TreeFeatureConfig.Builder(
                 BlockStateProvider.of(ModBlocks.MYSTERY_LOG),
