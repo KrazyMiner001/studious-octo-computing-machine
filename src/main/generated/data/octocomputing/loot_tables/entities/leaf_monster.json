@@ -5,78 +5,14 @@
       "bonus_rolls": 0.0,
       "conditions": [
         {
-          "chance": 1.0,
+          "chance": 0.25,
           "condition": "minecraft:random_chance"
         }
       ],
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "octocomputing:mixed_leaf"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "octocomputing:birch_leaf"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "octocomputing:oak_leaf"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "octocomputing:dark_oak_leaf"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "octocomputing:cherry_leaf"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "octocomputing:azalea_leaf"
-        },
-        {
-          "type": "minecraft:item",
           "name": "octocomputing:mystery_leaf"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "octocomputing:acacia_leaf"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "octocomputing:mangrove_leaf"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "octocomputing:jungle_leaf"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "octocomputing:spruce_leaf"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "octocomputing:compressed_mixed_leaf"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "octocomputing:compressed_birch_leaf"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "octocomputing:compressed_oak_leaf"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "octocomputing:compressed_dark_oak_leaf"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "octocomputing:compressed_cherry_leaf"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "octocomputing:compressed_azalea_leaf"
         },
         {
           "type": "minecraft:item",
@@ -84,63 +20,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "octocomputing:compressed_acacia_leaf"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "octocomputing:compressed_mangrove_leaf"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "octocomputing:compressed_jungle_leaf"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "octocomputing:compressed_spruce_leaf"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "octocomputing:double_compressed_acacia_leaf"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "octocomputing:double_compressed_cherry_leaf"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "octocomputing:double_compressed_birch_leaf"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "octocomputing:double_compressed_dark_oak_leaf"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "octocomputing:double_compressed_mixed_leaf"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "octocomputing:double_compressed_azalea_leaf"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "octocomputing:double_compressed_spruce_leaf"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "octocomputing:double_compressed_mangrove_leaf"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "octocomputing:double_compressed_oak_leaf"
-        },
-        {
-          "type": "minecraft:item",
           "name": "octocomputing:double_compressed_mystery_leaf"
-        },
-        {
-          "type": "minecraft:item",
-          "name": "octocomputing:double_compressed_jungle_leaf"
         }
       ],
       "rolls": 1.0
