@@ -65,7 +65,7 @@ dependencies {
 	// Fabric API. This is technically optional, but you probably want it anyway.
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
-	modCompileOnly 'software.bernie.geckolib:geckolib-fabric-1.20.4:4.4.2'
+	modCompileOnly "software.bernie.geckolib:geckolib-fabric-1.20.4:${project.geckolib_version}"
 
 	
 	// Uncomment the following line to enable the deprecated Fabric API modules. 

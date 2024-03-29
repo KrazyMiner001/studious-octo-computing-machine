@@ -3,9 +3,9 @@
 	"id": "octocomputing",
 	"version": "${version}",
 	"name": "OctoComputing",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"description": "Adds more realistic leaf quantity drops from leaf blocks. As well as some \"related\" things.",
 	"authors": [
-		"Me!"
+		"KrazyMiner001"
 	],
 	"contact": {
 		"sources": "https://github.com/Radford-House/studious-octo-computing-machine"
