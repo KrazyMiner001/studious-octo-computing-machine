@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_item_from_tag_TagKey[minecraft:item / octocomputing:leaf_double_compressed]": {
+    "has_item_from_tag_TagKey[minecraft:item / octocomputing:leaf_compressed]": {
       "conditions": {
         "items": [
           {
-            "tag": "octocomputing:leaf_double_compressed"
+            "tag": "octocomputing:leaf_compressed"
           }
         ]
       },
@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:double_compressed_leaf_hoe_right_side_ingredients"
+        "recipe": "minecraft:compressed_leaf_axe"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -21,12 +21,12 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_item_from_tag_TagKey[minecraft:item / octocomputing:leaf_double_compressed]"
+      "has_item_from_tag_TagKey[minecraft:item / octocomputing:leaf_compressed]"
     ]
   ],
   "rewards": {
     "recipes": [
-      "minecraft:double_compressed_leaf_hoe_right_side_ingredients"
+      "minecraft:compressed_leaf_axe"
     ]
   }
 }

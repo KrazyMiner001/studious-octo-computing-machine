@@ -200,16 +200,7 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
                 .input('I', ingredient)
                 .input('S', Items.STICK)
                 .criterion("has_item_from_tag_" + ingredient, conditionsFromTag(ingredient))
-                .offerTo(exporter, new Identifier(getRecipeName(axe) + "_left_side_ingredients"));
-
-        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, axe)
-                .pattern("II")
-                .pattern("SI")
-                .pattern("S ")
-                .input('I', ingredient)
-                .input('S', Items.STICK)
-                .criterion("has_item_from_tag_" + ingredient, conditionsFromTag(ingredient))
-                .offerTo(exporter, new Identifier(getRecipeName(axe) + "_right_side_ingredients"));
+                .offerTo(exporter, new Identifier(getRecipeName(axe)));
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, shovel)
                 .pattern("I")
@@ -227,16 +218,7 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
                 .input('I', ingredient)
                 .input('S', Items.STICK)
                 .criterion("has_item_from_tag_" + ingredient, conditionsFromTag(ingredient))
-                .offerTo(exporter, new Identifier(getRecipeName(hoe) + "_left_side_ingredients"));
-
-        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, hoe)
-                .pattern("II")
-                .pattern("S ")
-                .pattern("S ")
-                .input('I', ingredient)
-                .input('S', Items.STICK)
-                .criterion("has_item_from_tag_" + ingredient, conditionsFromTag(ingredient))
-                .offerTo(exporter, new Identifier(getRecipeName(hoe) + "_right_side_ingredients"));
+                .offerTo(exporter, new Identifier(getRecipeName(hoe)));
     }
 
     private static void offerLeafUpgradeRecipe(RecipeExporter exporter, Item baseItem, Item resultItem, RecipeCategory category) {
@@ -267,7 +249,7 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
         offerReversibleCompactingRecipes(exporter, RecipeCategory.MISC, baseItem, RecipeCategory.MISC, compactItem, getRecipeName(compactItem) + "_from_" + getRecipeName(baseItem), null, getRecipeName(baseItem) + "_from_" + getRecipeName(compactItem), null);
     }
 
-    private static void armorRecipes(RecipeExporter exporter, TagKey armorIngredient, Item helmet, Item chestplate, Item leggings, Item boots) {
+    private static void armorRecipes(RecipeExporter exporter, TagKey<Item> armorIngredient, Item helmet, Item chestplate, Item leggings, Item boots) {
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, helmet)
                 .pattern("LLL")
                 .pattern("L L")

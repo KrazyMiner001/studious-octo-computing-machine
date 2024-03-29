@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:leaf_hoe_right_side_ingredients"
+        "recipe": "minecraft:leaf_axe"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:leaf_hoe_right_side_ingredients"
+      "minecraft:leaf_axe"
     ]
   }
 }
