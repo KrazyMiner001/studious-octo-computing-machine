@@ -168,6 +168,8 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
                 .criterion(hasItem(ModBlocks.LEAFSTONE_BLOCK), conditionsFromItem(ModBlocks.LEAFSTONE_BLOCK))
                 .criterion(hasItem(Items.ENCHANTED_GOLDEN_APPLE), conditionsFromItem(Items.ENCHANTED_GOLDEN_APPLE))
                 .offerTo(exporter, getItemPath(ModItems.TOKEN_OF_THE_LEAF_GOD));
+
+        offerSmithingTemplateCopyingRecipe(exporter, ModItems.LEAFITE_UPGRADE_TEMPLATE, ModItems.DOUBLE_COMPRESSED_MYSTERY_LEAF);
     }
 
     private static void offerToolRecipes(RecipeExporter exporter, TagKey<Item> ingredient,

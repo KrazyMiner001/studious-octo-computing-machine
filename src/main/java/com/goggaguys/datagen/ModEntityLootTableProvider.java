@@ -10,6 +10,7 @@ import net.minecraft.item.Item;
 import net.minecraft.loot.LootPool;
 import net.minecraft.loot.LootTable;
 import net.minecraft.loot.condition.RandomChanceLootCondition;
+import net.minecraft.loot.condition.RandomChanceWithLootingLootCondition;
 import net.minecraft.loot.context.LootContextTypes;
 import net.minecraft.loot.entry.ItemEntry;
 import net.minecraft.loot.provider.number.ConstantLootNumberProvider;
@@ -34,26 +35,10 @@ public class ModEntityLootTableProvider extends SimpleFabricLootTableProvider {
                         .with(ItemEntry.builder(ModItems.MYSTERY_LEAF))
                         .with(ItemEntry.builder(ModItems.COMPRESSED_MYSTERY_LEAF))
                         .with(ItemEntry.builder(ModItems.DOUBLE_COMPRESSED_MYSTERY_LEAF))
-                        .conditionally(RandomChanceLootCondition.builder(0.25f)))
+                        .conditionally(RandomChanceLootCondition.builder(1f)))
                 .pool(LootPool.builder()
                         .rolls(ConstantLootNumberProvider.create(1))
                         .with(ItemEntry.builder(ModItems.LEAFITE_UPGRADE_TEMPLATE))
-                        .conditionally(RandomChanceLootCondition.builder(0.0025f))));
-    }
-
-    private LootPool.Builder poolFromList (List<Item> itemList, LootNumberProvider rolls, float chance) {
-        LootPool.Builder pool = new LootPool.Builder().rolls(rolls);
-        for (Item i : itemList) {
-            pool.with(ItemEntry.builder(i));
-        }
-        return pool.conditionally(RandomChanceLootCondition.builder(chance));
-    }
-
-    private List<Item> combine3ItemArraysToList(Item[] array1, Item[] array2, Item[] array3) {
-        List<Item> combinedList = new ArrayList<>(){};
-        combinedList.addAll(Arrays.stream(array1).toList());
-        combinedList.addAll(Arrays.stream(array2).toList());
-        combinedList.addAll(Arrays.stream(array3).toList());
-        return combinedList;
+                        .conditionally(RandomChanceWithLootingLootCondition.builder(0.01f, 3))));
     }
 }

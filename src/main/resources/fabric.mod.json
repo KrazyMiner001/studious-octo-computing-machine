@@ -8,10 +8,9 @@
 		"Me!"
 	],
 	"contact": {
-		"homepage": "https://wobbl.in",
 		"sources": "https://github.com/Radford-House/studious-octo-computing-machine"
 	},
-	"license": "CC0-1.0",
+	"license": "MIT",
 	"icon": "assets/octocomputing/icon.png",
 	"environment": "*",
 	"entrypoints": {
