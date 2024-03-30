@@ -57,6 +57,8 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
         reversibleCompactingRecipesBetter(exporter, ModItems.MYSTERY_LEAF, ModItems.COMPRESSED_MYSTERY_LEAF);
         reversibleCompactingRecipesBetter(exporter, ModItems.COMPRESSED_MYSTERY_LEAF, ModItems.DOUBLE_COMPRESSED_MYSTERY_LEAF);
 
+        offerReversibleCompactingRecipes(exporter, RecipeCategory.MISC, ModItems.LEAFSTONE, RecipeCategory.MISC, ModBlocks.LEAFSTONE_BLOCK);
+
         ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.MIXED_LEAF)
                 .input(ModItems.OAK_LEAF)
                 .input(ModItems.SPRUCE_LEAF)
