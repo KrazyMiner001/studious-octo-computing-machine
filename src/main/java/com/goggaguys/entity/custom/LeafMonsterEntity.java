@@ -2,6 +2,7 @@ package com.goggaguys.entity.custom;
 
 import com.goggaguys.entity.ModEntityGroups;
 import com.goggaguys.entity.ai.LeafMonsterAttackGoal;
+import com.goggaguys.item.custom.LeafiteSword;
 import net.minecraft.client.gl.Uniform;
 import net.minecraft.entity.EntityGroup;
 import net.minecraft.entity.EntityType;
@@ -10,6 +11,7 @@ import net.minecraft.entity.ai.goal.*;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
 import net.minecraft.entity.attribute.EntityAttributeInstance;
 import net.minecraft.entity.attribute.EntityAttributes;
+import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.mob.Angerable;
 import net.minecraft.entity.mob.HostileEntity;
 import net.minecraft.entity.mob.MobEntity;
@@ -84,5 +86,15 @@ public class LeafMonsterEntity extends HostileEntity implements Angerable {
     @Override
     public void chooseRandomAngerTime() {
         this.setAngerTime(ANGER_TIME_RANGE.get(this.random));
+    }
+
+    @Override
+    public boolean damage(DamageSource source, float amount) {
+        if (source.getAttacker() instanceof PlayerEntity player) {
+            if (player.getMainHandStack().getItem() instanceof LeafiteSword) {
+                return super.damage(source, amount * 1.1f);
+            }
+        }
+        return super.damage(source, amount);
     }
 }

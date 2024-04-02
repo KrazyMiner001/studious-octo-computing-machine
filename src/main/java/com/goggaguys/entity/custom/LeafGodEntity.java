@@ -3,6 +3,7 @@ package com.goggaguys.entity.custom;
 import com.goggaguys.damagetype.ModDamageTypeTags;
 import com.goggaguys.entity.ModEntityGroups;
 import com.goggaguys.item.ModItems;
+import com.goggaguys.item.custom.LeafiteSword;
 import net.minecraft.entity.*;
 import net.minecraft.entity.ai.RangedAttackMob;
 import net.minecraft.entity.ai.TargetPredicate;
@@ -159,6 +160,11 @@ public class LeafGodEntity extends HostileEntity implements RangedAttackMob {
         if (source.isIn(ModDamageTypeTags.LEAF_GOD_IMMUNE)) {
             return false;
         }
+        if (source.getAttacker() instanceof PlayerEntity player) {
+            if (player.getMainHandStack().getItem() instanceof LeafiteSword) {
+                return super.damage(source, amount * 1.1f);
+            }
+        }
         return super.damage(source, amount);
     }
 
@@ -188,7 +194,6 @@ public class LeafGodEntity extends HostileEntity implements RangedAttackMob {
         if (itemEntity != null) {
             itemEntity.setCovetedItem();
         }
-
     }
 
     @Override

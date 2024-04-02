@@ -4,6 +4,8 @@ import com.goggaguys.OctoComputing;
 import com.goggaguys.compat.Mods;
 import com.goggaguys.compat.geckolib.AnimatedLeafCore;
 import com.goggaguys.entity.ModEntities;
+import com.goggaguys.item.custom.LeafiteArmor;
+import com.goggaguys.item.custom.LeafiteSword;
 import com.goggaguys.item.custom.TokenOfTheLeafGodItem;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.item.*;
@@ -138,16 +140,16 @@ public class ModItems {
             new Item(new FabricItemSettings()));
 
     public static final Item LEAFITE_HELMET = registerItem("leafite_helmet",
-            new ArmorItem(ModArmorMaterials.LEAFITE, ArmorItem.Type.HELMET, new FabricItemSettings()));
+            new LeafiteArmor(ModArmorMaterials.LEAFITE, ArmorItem.Type.HELMET, new FabricItemSettings()));
     public static final Item LEAFITE_CHESTPLATE = registerItem("leafite_chestplate",
-            new ArmorItem(ModArmorMaterials.LEAFITE, ArmorItem.Type.CHESTPLATE, new FabricItemSettings()));
+            new LeafiteArmor(ModArmorMaterials.LEAFITE, ArmorItem.Type.CHESTPLATE, new FabricItemSettings()));
     public static final Item LEAFITE_LEGGINGS = registerItem("leafite_leggings",
-            new ArmorItem(ModArmorMaterials.LEAFITE, ArmorItem.Type.LEGGINGS, new FabricItemSettings()));
+            new LeafiteArmor(ModArmorMaterials.LEAFITE, ArmorItem.Type.LEGGINGS, new FabricItemSettings()));
     public static final Item LEAFITE_BOOTS = registerItem("leafite_boots",
-            new ArmorItem(ModArmorMaterials.LEAFITE, ArmorItem.Type.BOOTS, new FabricItemSettings()));
+            new LeafiteArmor(ModArmorMaterials.LEAFITE, ArmorItem.Type.BOOTS, new FabricItemSettings()));
 
     public static final Item LEAFITE_SWORD = registerItem("leafite_sword",
-            new SwordItem(ModToolMaterial.LEAFITE, 5, -1.5f, new FabricItemSettings()));
+            new LeafiteSword(ModToolMaterial.LEAFITE, 5, -1.5f, new FabricItemSettings()));
     public static final Item LEAFITE_PICKAXE = registerItem("leafite_pickaxe",
             new PickaxeItem(ModToolMaterial.LEAFITE, 1, -2.0f, new FabricItemSettings()));
     public static final Item LEAFITE_AXE = registerItem("leafite_axe",
