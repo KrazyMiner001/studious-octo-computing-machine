@@ -1,5 +1,8 @@
 package com.goggaguys.datagen;
 
+import com.goggaguys.world.noise.ModDensityFunctions;
+import com.goggaguys.world.noise.ModNoiseSettings;
+import com.goggaguys.world.noise.ModNoises;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricDynamicRegistryProvider;
 import net.minecraft.registry.RegistryKeys;
@@ -17,6 +20,9 @@ public class ModWorldGenerator extends FabricDynamicRegistryProvider {
         entries.addAll(registries.getWrapperOrThrow(RegistryKeys.PLACED_FEATURE));
         entries.addAll(registries.getWrapperOrThrow(RegistryKeys.BIOME));
         entries.addAll(registries.getWrapperOrThrow(RegistryKeys.DIMENSION_TYPE));
+        entries.addAll(registries.getWrapperOrThrow(RegistryKeys.NOISE_PARAMETERS));
+        entries.addAll(registries.getWrapperOrThrow(RegistryKeys.DENSITY_FUNCTION));
+        entries.addAll(registries.getWrapperOrThrow(RegistryKeys.CHUNK_GENERATOR_SETTINGS));
     }
 
     @Override

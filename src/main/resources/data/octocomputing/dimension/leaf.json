@@ -1,0 +1,11 @@
+{
+  "type": "octocomputing:leaf_type",
+  "generator": {
+    "type": "minecraft:noise",
+    "settings": "octocomputing:leafy",
+    "biome_source": {
+      "type": "minecraft:fixed",
+      "biome": "octocomputing:leaf_biome"
+    }
+  }
+}

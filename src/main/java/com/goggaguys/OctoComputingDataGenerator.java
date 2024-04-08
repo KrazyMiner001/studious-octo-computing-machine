@@ -5,6 +5,11 @@ import com.goggaguys.datagen.*;
 import com.goggaguys.datagen.lang.ModEnglishLangProvider;
 import com.goggaguys.world.ModConfiguredFeatures;
 import com.goggaguys.world.ModPlacedFeatures;
+import com.goggaguys.world.biome.ModBiomes;
+import com.goggaguys.world.dimension.ModDimensions;
+import com.goggaguys.world.noise.ModDensityFunctions;
+import com.goggaguys.world.noise.ModNoiseSettings;
+import com.goggaguys.world.noise.ModNoises;
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.minecraft.registry.RegistryBuilder;
@@ -34,5 +39,10 @@ public class OctoComputingDataGenerator implements DataGeneratorEntrypoint {
         registryBuilder.addRegistry(RegistryKeys.CONFIGURED_FEATURE, ModConfiguredFeatures::bootstrap);
         registryBuilder.addRegistry(RegistryKeys.PLACED_FEATURE, ModPlacedFeatures::bootstrap);
         registryBuilder.addRegistry(RegistryKeys.DAMAGE_TYPE, ModDamageTypes::bootstrap);
+        registryBuilder.addRegistry(RegistryKeys.DIMENSION_TYPE, ModDimensions::bootstrapType);
+        registryBuilder.addRegistry(RegistryKeys.BIOME, ModBiomes::bootstrap);
+        registryBuilder.addRegistry(RegistryKeys.NOISE_PARAMETERS, ModNoises::bootstrap);
+        registryBuilder.addRegistry(RegistryKeys.DENSITY_FUNCTION, ModDensityFunctions::bootstrap);
+        registryBuilder.addRegistry(RegistryKeys.CHUNK_GENERATOR_SETTINGS, ModNoiseSettings::bootstrap);
     }
 }

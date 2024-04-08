@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_leafstone": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "octocomputing:leafstone"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:leafstone_block"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_leafstone"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:leafstone_block"
+    ]
+  }
+}
