@@ -28,6 +28,7 @@ public class OctoComputingDataGenerator implements DataGeneratorEntrypoint {
         pack.addProvider(ModRecipeGenerator::new);
         pack.addProvider(ModBlockTagProvider::new);
         pack.addProvider(ModItemTagProvider::new);
+        pack.addProvider(ModBiomeTagProvider::new);
         pack.addProvider(ModEntityTypeTagProvider::new);
         pack.addProvider(ModDamageTypeTagProvider::new);
         pack.addProvider(ModEnglishLangProvider::new);

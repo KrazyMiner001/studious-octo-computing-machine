@@ -21,7 +21,7 @@ public class ModBiomes {
         context.register(LEAF_BIOME, leafBiome(context));
     }
 
-    public static void globalOverworldGeneration(GenerationSettings.LookupBackedBuilder builder) {
+    private static void globalOverworldGeneration(GenerationSettings.LookupBackedBuilder builder) {
         DefaultBiomeFeatures.addLandCarvers(builder);
         DefaultBiomeFeatures.addAmethystGeodes(builder);
         DefaultBiomeFeatures.addDungeons(builder);
@@ -30,7 +30,7 @@ public class ModBiomes {
         DefaultBiomeFeatures.addFrozenTopLayer(builder);
     }
 
-    public static Biome leafBiome(Registerable<Biome> context) {
+    private static Biome leafBiome(Registerable<Biome> context) {
         SpawnSettings.Builder spawnBuilder = new SpawnSettings.Builder();
         spawnBuilder.spawn(SpawnGroup.MONSTER, new SpawnSettings.SpawnEntry(ModEntities.LEAF_MONSTER, 1, 2, 4));
 
