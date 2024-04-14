@@ -22,7 +22,7 @@ public class ModNoiseBuilders {
 
     public static ChunkGeneratorSettings leafyChunkSettings(RegistryEntryLookup<DensityFunction> densityFunctions, RegistryEntryLookup<DoublePerlinNoiseSampler.NoiseParameters> noise) {
         return new ChunkGeneratorSettings(
-                new GenerationShapeConfig(0, 128, 2 ,1),
+                new GenerationShapeConfig(320, 128, 2 ,1),
                 Blocks.STONE.getDefaultState(),
                 Blocks.WATER.getDefaultState(),
                 makeNoiseRouter(densityFunctions, noise),
@@ -78,7 +78,7 @@ public class ModNoiseBuilders {
     private static DensityFunction buildFinalDensity(RegistryEntryLookup<DensityFunction> densityFunctions) {
         DensityFunction density = getFunction(densityFunctions, RegistryKey.of(RegistryKeys.DENSITY_FUNCTION, new Identifier(OctoComputing.MOD_ID,"base_3d_noise_leafy")));
         density = DensityFunctionTypes.add(density, DensityFunctionTypes.constant(-0.13));
-        density = slide(density, 0, 128, 72, 0, -0.2, 8, 40, -0.1);
+        density = slide(density, 320, 576, 72, 0, -0.2, 8, 40, -0.1);
         density = DensityFunctionTypes.add(density, DensityFunctionTypes.constant(-0.05));
         density = DensityFunctionTypes.blendDensity(density);
         density = DensityFunctionTypes.interpolated(density);
