@@ -2,6 +2,7 @@ package com.goggaguys.world.biome;
 
 import com.goggaguys.OctoComputing;
 import com.goggaguys.entity.ModEntities;
+import com.goggaguys.world.ModPlacedFeatures;
 import net.minecraft.entity.SpawnGroup;
 import net.minecraft.registry.Registerable;
 import net.minecraft.registry.RegistryKey;
@@ -11,6 +12,7 @@ import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.BiomeEffects;
 import net.minecraft.world.biome.GenerationSettings;
 import net.minecraft.world.biome.SpawnSettings;
+import net.minecraft.world.gen.GenerationStep;
 import net.minecraft.world.gen.feature.DefaultBiomeFeatures;
 
 public class ModBiomes {
@@ -35,10 +37,12 @@ public class ModBiomes {
         spawnBuilder.spawn(SpawnGroup.MONSTER, new SpawnSettings.SpawnEntry(ModEntities.LEAF_MONSTER, 1, 2, 4));
 
         GenerationSettings.LookupBackedBuilder biomeBuilder =
-                new GenerationSettings.LookupBackedBuilder(context.getRegistryLookup(RegistryKeys.PLACED_FEATURE),
+                new GenerationSettings.LookupBackedBuilder(
+                        context.getRegistryLookup(RegistryKeys.PLACED_FEATURE),
                         context.getRegistryLookup(RegistryKeys.CONFIGURED_CARVER));
 
         globalOverworldGeneration(biomeBuilder);
+        biomeBuilder.feature(GenerationStep.Feature.UNDERGROUND_ORES, ModPlacedFeatures.LEAF_DIMENSION_LEAF_ORE_PLACED_KEY);
 
         return new Biome.Builder()
                 .precipitation(true)

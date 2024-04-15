@@ -24,6 +24,8 @@ import java.util.List;
 public class ModConfiguredFeatures {
     public static final RegistryKey<ConfiguredFeature<?, ?>> STONE_LEAF_ORE_KEY = registerKey("stone_leaf_ore");
     public static final RegistryKey<ConfiguredFeature<?, ?>> DEEPSLATE_LEAF_ORE_KEY = registerKey("deepslate_leaf_ore");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> LEAF_DIMENSION_LEAF_ORE_KEY = registerKey("leaf_dimension_leaf_ore");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> EXTRATERRESTRIAL_LEAF_DEBRIS_KEY = registerKey("extraterrestrial_leaf_debris");
 
     public static final RegistryKey<ConfiguredFeature<?, ?>> MYSTERY_KEY = registerKey("mystery");
 
@@ -36,11 +38,16 @@ public class ModConfiguredFeatures {
         List<OreFeatureConfig.Target> stoneLeafOres =
                 List.of(OreFeatureConfig.createTarget(stoneReplacables, ModBlocks.LEAF_ORE.getDefaultState()));
 
+        List<OreFeatureConfig.Target> extraterrestrialDebris =
+                List.of(OreFeatureConfig.createTarget(stoneReplacables, ModBlocks.EXTRATERRESTRIAL_LEAF_DEBRIS.getDefaultState()));
+
         List<OreFeatureConfig.Target> deepSlateLeafOres =
                 List.of(OreFeatureConfig.createTarget(deepslateReplacables, ModBlocks.DEEPSLATE_LEAF_ORE.getDefaultState()));
 
         register(context, STONE_LEAF_ORE_KEY, Feature.ORE, new OreFeatureConfig(stoneLeafOres, 1));
         register(context, DEEPSLATE_LEAF_ORE_KEY, Feature.ORE, new OreFeatureConfig(deepSlateLeafOres, 3));
+        register(context, LEAF_DIMENSION_LEAF_ORE_KEY, Feature.ORE, new OreFeatureConfig(stoneLeafOres, 5));
+        register(context, EXTRATERRESTRIAL_LEAF_DEBRIS_KEY, Feature.SCATTERED_ORE, new OreFeatureConfig(extraterrestrialDebris, 1, 0.5f));
 
         register(context, MYSTERY_KEY, Feature.TREE, new TreeFeatureConfig.Builder(
                 BlockStateProvider.of(ModBlocks.MYSTERY_LOG),

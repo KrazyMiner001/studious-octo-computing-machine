@@ -18,6 +18,7 @@ public class ModBlockLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.STRIPPED_MYSTERY_LOG);
         addDrop(ModBlocks.STRIPPED_MYSTERY_WOOD);
         addDrop(ModBlocks.LEAFSTONE_BLOCK);
+        addDrop(ModBlocks.EXTRATERRESTRIAL_LEAF_DEBRIS);
 
         addDrop(ModBlocks.LEAF_ORE, oreDrops(ModBlocks.LEAF_ORE, ModItems.LEAFSTONE));
         addDrop(ModBlocks.DEEPSLATE_LEAF_ORE, oreDrops(ModBlocks.DEEPSLATE_LEAF_ORE, ModItems.LEAFSTONE));

@@ -22,7 +22,7 @@ public class ModNoiseBuilders {
 
     public static ChunkGeneratorSettings leafyChunkSettings(RegistryEntryLookup<DensityFunction> densityFunctions, RegistryEntryLookup<DoublePerlinNoiseSampler.NoiseParameters> noise) {
         return new ChunkGeneratorSettings(
-                new GenerationShapeConfig(320, 128, 2 ,1),
+                new GenerationShapeConfig(320, 256, 2 ,1),
                 Blocks.STONE.getDefaultState(),
                 Blocks.WATER.getDefaultState(),
                 makeNoiseRouter(densityFunctions, noise),
@@ -46,7 +46,7 @@ public class ModNoiseBuilders {
     }
 
     private static DensityFunction slide(DensityFunction density, int minY, int maxY, int fromYTop, int toYTop, double offset1, int fromYBottom, int toYBottom, double offset2) {
-        DensityFunction topSlide = DensityFunctionTypes.yClampedGradient(minY + maxY - fromYTop, minY + maxY - toYTop, 1, 0);
+        DensityFunction topSlide = DensityFunctionTypes.yClampedGradient(maxY + minY - fromYTop, maxY + minY - toYTop, 1, 0);
         density = DensityFunctionTypes.lerp(topSlide, offset1, density);
         DensityFunction bottomSlide = DensityFunctionTypes.yClampedGradient(minY + fromYBottom, minY + toYBottom, 0, 1);
         return DensityFunctionTypes.lerp(bottomSlide, offset2, density);

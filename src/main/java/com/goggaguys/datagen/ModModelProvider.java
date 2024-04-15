@@ -29,6 +29,8 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerLog(ModBlocks.STRIPPED_MYSTERY_LOG).log(ModBlocks.STRIPPED_MYSTERY_LOG).wood(ModBlocks.STRIPPED_MYSTERY_WOOD);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.MYSTERY_LEAVES);
 
+        blockStateModelGenerator.registerSingleton(ModBlocks.EXTRATERRESTRIAL_LEAF_DEBRIS, TexturedModel.CUBE_COLUMN);
+
         BlockStateModelGenerator.BlockTexturePool mystery_pool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.MYSTERY_PLANKS);
     }
 

@@ -19,6 +19,8 @@ public class ModBlocks {
             new ExperienceDroppingBlock(UniformIntProvider.create(2, 5), FabricBlockSettings.copyOf(Blocks.STONE).strength(2f)));
     public static final Block DEEPSLATE_LEAF_ORE = registerBlock("deepslate_leaf_ore",
             new ExperienceDroppingBlock(UniformIntProvider.create(2, 5), FabricBlockSettings.copyOf(Blocks.DEEPSLATE).strength(3f)));
+    public static final Block EXTRATERRESTRIAL_LEAF_DEBRIS = registerBlock("extraterrestrial_leaf_debris",
+            new Block(FabricBlockSettings.copyOf(Blocks.ANCIENT_DEBRIS)));
     public static final Block LEAFSTONE_BLOCK = registerBlock("leafstone_block", new Block(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK)));
 
     public static final Block MYSTERY_LOG = registerBlock("mystery_log",
