@@ -62,6 +62,7 @@ public class ModItemGroups {
                 entries.add(ModItems.CHLOROPHYTE_INGOT);
                 entries.add(ModItems.BROKEN_LEAF_CORE);
                 entries.add(ModItems.LEAFITE_UPGRADE_SMITHING_TEMPLATE);
+                entries.add(ModItems.CHLOROPHYTE_UPGRADE_SMITHING_TEMPLATE);
 
                 entries.add(ModItems.LEAF_MONSTER_SPAWN_EGG);
                 entries.add(ModItems.TOKEN_OF_THE_LEAF_GOD);

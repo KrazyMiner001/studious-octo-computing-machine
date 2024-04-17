@@ -208,7 +208,7 @@ public class ModItems {
     public static final Item CHLOROPHYTE_PICKAXE = registerItem("chlorophyte_pickaxe",
             new PickaxeItem(ModToolMaterial.CHLOROPHYTE, 1, -1.5f, new FabricItemSettings()));
     public static final Item CHLOROPHYTE_AXE = registerItem("chlorophyte_axe",
-            new AxeItem(ModToolMaterial.CHLOROPHYTE, 7, -2.0f, new FabricItemSettings()));
+            new ChlorophyteAxe());
     public static final Item CHLOROPHYTE_SHOVEL = registerItem("chlorophyte_shovel",
             new ShovelItem(ModToolMaterial.CHLOROPHYTE, 1, -2.0f, new FabricItemSettings()));
     public static final Item CHLOROPHYTE_HOE = registerItem("chlorophyte_hoe",
