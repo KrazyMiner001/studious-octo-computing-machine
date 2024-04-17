@@ -51,6 +51,8 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.CHLOROPHYTE_INGOT, Models.GENERATED);
         itemModelGenerator.register(ModItems.LEAFITE_UPGRADE_SMITHING_TEMPLATE, Models.GENERATED);
 
+        itemModelGenerator.register(ModItems.LEAF_PICKER, Models.HANDHELD);
+
         itemModelGenerator.register(ModItems.LEAF_MONSTER_SPAWN_EGG,
                 new Model(Optional.of(new Identifier("item/template_spawn_egg")), Optional.empty()));
 

@@ -29,11 +29,13 @@ import net.minecraft.entity.SpawnRestriction;
 import net.minecraft.entity.mob.HostileEntity;
 import net.minecraft.item.*;
 import net.minecraft.loot.LootPool;
+import net.minecraft.loot.condition.MatchToolLootCondition;
 import net.minecraft.loot.condition.RandomChanceLootCondition;
 import net.minecraft.loot.entry.ItemEntry;
 import net.minecraft.loot.function.SetCountLootFunction;
 import net.minecraft.loot.provider.number.BinomialLootNumberProvider;
 import net.minecraft.loot.provider.number.ConstantLootNumberProvider;
+import net.minecraft.predicate.item.ItemPredicate;
 import net.minecraft.world.Heightmap;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -118,14 +120,14 @@ public class OctoComputing implements ModInitializer {
 				LootPool.Builder leafPoolBuilder = LootPool.builder()
 						.rolls(BinomialLootNumberProvider.create(125, 0.2f))
 						.with(ItemEntry.builder(leafItem))
-						.conditionally(BlockLootTableGenerator.WITHOUT_SILK_TOUCH_NOR_SHEARS)
+						.conditionally(MatchToolLootCondition.builder(ItemPredicate.Builder.create().items(ModItems.LEAF_PICKER)))
 						.apply(SetCountLootFunction.builder(ConstantLootNumberProvider.create(5)));
 
 				LootPool.Builder mysteryLeafPoolBuilder = LootPool.builder()
 						.rolls(ConstantLootNumberProvider.create(1))
 						.with(ItemEntry.builder(ModItems.MYSTERY_LEAF))
 						.conditionally(RandomChanceLootCondition.builder(0.001f))
-						.conditionally(BlockLootTableGenerator.WITHOUT_SILK_TOUCH_NOR_SHEARS);
+						.conditionally(MatchToolLootCondition.builder(ItemPredicate.Builder.create().items(ModItems.LEAF_PICKER)));
 
 				tableBuilder.pool(leafPoolBuilder);
 				tableBuilder.pool(mysteryLeafPoolBuilder);
