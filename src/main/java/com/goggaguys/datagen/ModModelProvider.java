@@ -30,6 +30,7 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.MYSTERY_LEAVES);
 
         blockStateModelGenerator.registerSingleton(ModBlocks.EXTRATERRESTRIAL_LEAF_DEBRIS, TexturedModel.CUBE_COLUMN);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.CHLOROPHYTE_BLOCK);
 
         BlockStateModelGenerator.BlockTexturePool mystery_pool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.MYSTERY_PLANKS);
     }
@@ -46,7 +47,9 @@ public class ModModelProvider extends FabricModelProvider {
         }
 
         itemModelGenerator.register(ModItems.LEAFSTONE, Models.GENERATED);
-        itemModelGenerator.register(ModItems.LEAFITE_UPGRADE_TEMPLATE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.CHLOROPHYTE_DEBRIS, Models.GENERATED);
+        itemModelGenerator.register(ModItems.CHLOROPHYTE_INGOT, Models.GENERATED);
+        itemModelGenerator.register(ModItems.LEAFITE_UPGRADE_SMITHING_TEMPLATE, Models.GENERATED);
 
         itemModelGenerator.register(ModItems.LEAF_MONSTER_SPAWN_EGG,
                 new Model(Optional.of(new Identifier("item/template_spawn_egg")), Optional.empty()));
@@ -73,11 +76,22 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.registerArmor((ArmorItem) ModItems.LEAFITE_LEGGINGS);
         itemModelGenerator.registerArmor((ArmorItem) ModItems.LEAFITE_BOOTS);
 
+        itemModelGenerator.registerArmor((ArmorItem) ModItems.CHLOROPHYTE_HELMET);
+        itemModelGenerator.registerArmor((ArmorItem) ModItems.CHLOROPHYTE_CHESTPLATE);
+        itemModelGenerator.registerArmor((ArmorItem) ModItems.CHLOROPHYTE_LEGGINGS);
+        itemModelGenerator.registerArmor((ArmorItem) ModItems.CHLOROPHYTE_BOOTS);
+
         itemModelGenerator.register(ModItems.LEAFITE_SWORD, Models.HANDHELD);
         itemModelGenerator.register(ModItems.LEAFITE_PICKAXE, Models.HANDHELD);
         itemModelGenerator.register(ModItems.LEAFITE_AXE, Models.HANDHELD);
         itemModelGenerator.register(ModItems.LEAFITE_SHOVEL, Models.HANDHELD);
         itemModelGenerator.register(ModItems.LEAFITE_HOE, Models.HANDHELD);
+
+        itemModelGenerator.register(ModItems.CHLOROPHYTE_SWORD, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.CHLOROPHYTE_PICKAXE, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.CHLOROPHYTE_AXE, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.CHLOROPHYTE_SHOVEL, Models.HANDHELD);
+        itemModelGenerator.register(ModItems.CHLOROPHYTE_HOE, Models.HANDHELD);
 
         modItemModelGenerator.registerCompressedHandheldChain(ModItems.LEAF_SWORD, ModItems.COMPRESSED_LEAF_SWORD, ModItems.DOUBLE_COMPRESSED_LEAF_SWORD);
         modItemModelGenerator.registerCompressedHandheldChain(ModItems.LEAF_PICKAXE, ModItems.COMPRESSED_LEAF_PICKAXE, ModItems.DOUBLE_COMPRESSED_LEAF_PICKAXE);

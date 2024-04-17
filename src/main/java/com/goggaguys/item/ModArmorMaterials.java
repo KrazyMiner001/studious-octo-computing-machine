@@ -20,7 +20,9 @@ public enum ModArmorMaterials implements ArmorMaterial {
             SoundEvents.BLOCK_AZALEA_PLACE, 0f, 0f, () -> Ingredient.fromTag(ModItemTags.LEAF_DOUBLE_COMPRESSED)),
 
     LEAFITE("leafite", 50, new int[] {5, 10, 7, 4}, 25,
-            SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE, 4f, 0.2f, () -> Ingredient.ofItems(ModItems.LEAF_CORE));
+            SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE, 4f, 0.2f, () -> Ingredient.ofItems(ModItems.LEAF_CORE)),
+    CHLOROPHYTE("chlorophyte", 75, new int[] {7, 12, 9, 6}, 32,
+            SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE, 6f, 0.25f, () -> Ingredient.ofItems(ModItems.CHLOROPHYTE_INGOT));
     private final String name;
     private final int durabilityMultiplier;
     private final int[] protectionAmounts;

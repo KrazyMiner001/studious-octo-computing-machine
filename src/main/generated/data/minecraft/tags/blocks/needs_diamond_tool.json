@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "octocomputing:deepslate_leaf_ore"
+    "octocomputing:leaf_ore",
+    "octocomputing:leafstone_block"
   ]
 }

@@ -14,6 +14,8 @@ public enum ModToolMaterial implements ToolMaterial {
             () -> Ingredient.fromTag(ModItemTags.LEAF_DOUBLE_COMPRESSED)),
 
     LEAFITE(5, 3000, 17f, 5f, 22,
+            () -> Ingredient.ofItems(ModItems.LEAF_CORE)),
+    CHLOROPHYTE(6, 5000, 21f, 7f, 30,
             () -> Ingredient.ofItems(ModItems.LEAF_CORE));
 
 

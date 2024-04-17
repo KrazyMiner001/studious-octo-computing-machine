@@ -37,7 +37,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "octocomputing:leafite_upgrade_template"
+          "name": "octocomputing:leafite_upgrade_smithing_template"
         }
       ],
       "rolls": 1.0

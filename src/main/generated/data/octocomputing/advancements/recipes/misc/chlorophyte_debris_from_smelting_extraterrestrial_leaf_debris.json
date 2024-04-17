@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_leafite_upgrade_template": {
+    "has_extraterrestrial_leaf_debris": {
       "conditions": {
         "items": [
           {
             "items": [
-              "octocomputing:leafite_upgrade_template"
+              "octocomputing:extraterrestrial_leaf_debris"
             ]
           }
         ]
@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "octocomputing:leafite_upgrade_template"
+        "recipe": "minecraft:chlorophyte_debris_from_smelting_extraterrestrial_leaf_debris"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -23,12 +23,12 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_leafite_upgrade_template"
+      "has_extraterrestrial_leaf_debris"
     ]
   ],
   "rewards": {
     "recipes": [
-      "octocomputing:leafite_upgrade_template"
+      "minecraft:chlorophyte_debris_from_smelting_extraterrestrial_leaf_debris"
     ]
   }
 }

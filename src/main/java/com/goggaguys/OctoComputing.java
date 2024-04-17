@@ -11,7 +11,6 @@ import com.goggaguys.entity.ModEntities;
 import com.goggaguys.item.ModItemGroups;
 import com.goggaguys.item.ModItemTags;
 import com.goggaguys.item.ModItems;
-import com.goggaguys.utilities.CompressedChainMap;
 import com.goggaguys.world.gen.ModWorldGeneration;
 import net.fabricmc.api.ModInitializer;
 
@@ -36,7 +35,6 @@ import net.minecraft.loot.function.SetCountLootFunction;
 import net.minecraft.loot.provider.number.BinomialLootNumberProvider;
 import net.minecraft.loot.provider.number.ConstantLootNumberProvider;
 import net.minecraft.world.Heightmap;
-import net.minecraft.world.biome.BiomeKeys;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -61,15 +59,19 @@ public class OctoComputing implements ModInitializer {
 		ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS).register(content ->
 				content.addAfter(Items.NETHERITE_HOE,
 						ModItems.LEAFITE_SHOVEL, ModItems.LEAFITE_PICKAXE,
-						ModItems.LEAFITE_AXE, ModItems.LEAFITE_HOE));
+						ModItems.LEAFITE_AXE, ModItems.LEAFITE_HOE,
+						ModItems.CHLOROPHYTE_SHOVEL, ModItems.CHLOROPHYTE_PICKAXE,
+						ModItems.CHLOROPHYTE_AXE, ModItems.CHLOROPHYTE_HOE));
 
 		ItemGroupEvents.modifyEntriesEvent(ItemGroups.COMBAT).register(content -> {
-			content.addAfter(Items.NETHERITE_AXE, ModItems.LEAFITE_AXE);
-			content.addAfter(Items.NETHERITE_SWORD, ModItems.LEAFITE_SWORD);
-			content.addAfter(Items.NETHERITE_BOOTS, ModItems.LEAFITE_HELMET, ModItems.LEAFITE_CHESTPLATE, ModItems.LEAFITE_LEGGINGS, ModItems.LEAFITE_BOOTS);
+			content.addAfter(Items.NETHERITE_AXE, ModItems.LEAFITE_AXE, ModItems.CHLOROPHYTE_AXE);
+			content.addAfter(Items.NETHERITE_SWORD, ModItems.LEAFITE_SWORD, ModItems.CHLOROPHYTE_SWORD);
+			content.addAfter(Items.NETHERITE_BOOTS,
+					ModItems.LEAFITE_HELMET, ModItems.LEAFITE_CHESTPLATE, ModItems.LEAFITE_LEGGINGS, ModItems.LEAFITE_BOOTS,
+					ModItems.CHLOROPHYTE_HELMET, ModItems.CHLOROPHYTE_CHESTPLATE, ModItems.CHLOROPHYTE_LEGGINGS, ModItems.CHLOROPHYTE_BOOTS);
 		});
 		ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(content ->
-				content.addAfter(Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE, ModItems.LEAFITE_UPGRADE_TEMPLATE)
+				content.addAfter(Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE, ModItems.LEAFITE_UPGRADE_SMITHING_TEMPLATE)
 		);
 
 		leafLootTable(Blocks.OAK_LEAVES, ModItems.OAK_LEAF);

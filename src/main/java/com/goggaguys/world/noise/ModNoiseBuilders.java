@@ -22,7 +22,7 @@ public class ModNoiseBuilders {
 
     public static ChunkGeneratorSettings leafyChunkSettings(RegistryEntryLookup<DensityFunction> densityFunctions, RegistryEntryLookup<DoublePerlinNoiseSampler.NoiseParameters> noise) {
         return new ChunkGeneratorSettings(
-                new GenerationShapeConfig(320, 256, 2 ,1),
+                new GenerationShapeConfig(320, 128, 2 ,1),
                 Blocks.STONE.getDefaultState(),
                 Blocks.WATER.getDefaultState(),
                 makeNoiseRouter(densityFunctions, noise),

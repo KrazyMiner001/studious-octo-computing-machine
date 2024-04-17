@@ -58,8 +58,10 @@ public class ModItemGroups {
                 entries.add(ModItems.DOUBLE_COMPRESSED_LEAF_HOE);
 
                 entries.add(ModItems.LEAF_CORE);
+                entries.add(ModItems.CHLOROPHYTE_DEBRIS);
+                entries.add(ModItems.CHLOROPHYTE_INGOT);
                 entries.add(ModItems.BROKEN_LEAF_CORE);
-                entries.add(ModItems.LEAFITE_UPGRADE_TEMPLATE);
+                entries.add(ModItems.LEAFITE_UPGRADE_SMITHING_TEMPLATE);
 
                 entries.add(ModItems.LEAF_MONSTER_SPAWN_EGG);
                 entries.add(ModItems.TOKEN_OF_THE_LEAF_GOD);
@@ -67,7 +69,9 @@ public class ModItemGroups {
                 entries.add(ModBlocks.MYSTERY_SAPLING);
                 entries.add(ModBlocks.LEAF_ORE);
                 entries.add(ModBlocks.DEEPSLATE_LEAF_ORE);
+                entries.add(ModBlocks.EXTRATERRESTRIAL_LEAF_DEBRIS);
                 entries.add(ModBlocks.LEAFSTONE_BLOCK);
+                entries.add(ModBlocks.CHLOROPHYTE_BLOCK);
                 entries.add(ModBlocks.MYSTERY_LOG);
                 entries.add(ModBlocks.MYSTERY_WOOD);
                 entries.add(ModBlocks.STRIPPED_MYSTERY_LOG);

@@ -22,6 +22,8 @@ public class ModBlocks {
     public static final Block EXTRATERRESTRIAL_LEAF_DEBRIS = registerBlock("extraterrestrial_leaf_debris",
             new Block(FabricBlockSettings.copyOf(Blocks.ANCIENT_DEBRIS)));
     public static final Block LEAFSTONE_BLOCK = registerBlock("leafstone_block", new Block(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK)));
+    public static final Block CHLOROPHYTE_BLOCK = registerBlock("chlorophyte_block",
+            new Block(FabricBlockSettings.copyOf(Blocks.NETHERITE_BLOCK)));
 
     public static final Block MYSTERY_LOG = registerBlock("mystery_log",
             new PillarBlock(FabricBlockSettings.copyOf(Blocks.OAK_LOG).strength(4f)));

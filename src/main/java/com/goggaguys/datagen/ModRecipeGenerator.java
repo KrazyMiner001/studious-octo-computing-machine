@@ -17,6 +17,8 @@ import net.minecraft.recipe.book.RecipeCategory;
 import net.minecraft.registry.tag.TagKey;
 import net.minecraft.util.Identifier;
 
+import java.util.List;
+
 public class ModRecipeGenerator extends FabricRecipeProvider {
     public ModRecipeGenerator(FabricDataOutput output) {
         super(output);
@@ -58,6 +60,8 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
         reversibleCompactingRecipesBetter(exporter, ModItems.COMPRESSED_MYSTERY_LEAF, ModItems.DOUBLE_COMPRESSED_MYSTERY_LEAF);
 
         offerReversibleCompactingRecipes(exporter, RecipeCategory.MISC, ModItems.LEAFSTONE, RecipeCategory.MISC, ModBlocks.LEAFSTONE_BLOCK);
+
+        reversibleCompactingRecipesBetter(exporter, ModItems.CHLOROPHYTE_INGOT, ModBlocks.CHLOROPHYTE_BLOCK.asItem());
 
         ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.MIXED_LEAF)
                 .input(ModItems.OAK_LEAF)
@@ -171,7 +175,22 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
                 .criterion(hasItem(Items.ENCHANTED_GOLDEN_APPLE), conditionsFromItem(Items.ENCHANTED_GOLDEN_APPLE))
                 .offerTo(exporter, getItemPath(ModItems.TOKEN_OF_THE_LEAF_GOD));
 
-        offerSmithingTemplateCopyingRecipe(exporter, ModItems.LEAFITE_UPGRADE_TEMPLATE, ModItems.DOUBLE_COMPRESSED_MYSTERY_LEAF);
+        offerSmithingTemplateCopyingRecipe(exporter, ModItems.LEAFITE_UPGRADE_SMITHING_TEMPLATE, ModItems.DOUBLE_COMPRESSED_MYSTERY_LEAF);
+
+        offerSmelting(exporter, List.of(ModBlocks.EXTRATERRESTRIAL_LEAF_DEBRIS), RecipeCategory.MISC, ModItems.CHLOROPHYTE_DEBRIS, 2, 200, "");
+        offerBlasting(exporter, List.of(ModBlocks.EXTRATERRESTRIAL_LEAF_DEBRIS), RecipeCategory.MISC, ModItems.CHLOROPHYTE_DEBRIS, 2, 100, "");
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.CHLOROPHYTE_INGOT)
+                .pattern("ABA")
+                .pattern("BCB")
+                .pattern("ABA")
+                .input('A', ModItems.CHLOROPHYTE_DEBRIS)
+                .input('B', Items.NETHERITE_INGOT)
+                .input('C', ModItems.LEAF_CORE)
+                .criterion(hasItem(ModItems.CHLOROPHYTE_INGOT), conditionsFromItem(ModItems.CHLOROPHYTE_INGOT))
+                .criterion(hasItem(Items.NETHERITE_INGOT), conditionsFromItem(Items.NETHERITE_INGOT))
+                .criterion(hasItem(ModItems.LEAF_CORE), conditionsFromItem(ModItems.LEAF_CORE))
+                .offerTo(exporter, getItemPath(ModItems.CHLOROPHYTE_INGOT));
     }
 
     private static void offerToolRecipes(RecipeExporter exporter, TagKey<Item> ingredient,
@@ -225,7 +244,7 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
 
     private static void offerLeafUpgradeRecipe(RecipeExporter exporter, Item baseItem, Item resultItem, RecipeCategory category) {
         SmithingTransformRecipeJsonBuilder.create(
-                Ingredient.ofItems(ModItems.LEAFITE_UPGRADE_TEMPLATE),
+                Ingredient.ofItems(ModItems.LEAFITE_UPGRADE_SMITHING_TEMPLATE),
                 Ingredient.ofItems(baseItem),
                 Ingredient.ofItems(ModItems.LEAF_CORE),
                 category,

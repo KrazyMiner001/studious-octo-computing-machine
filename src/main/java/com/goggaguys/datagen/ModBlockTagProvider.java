@@ -23,7 +23,8 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.LEAFSTONE_BLOCK)
                 .add(ModBlocks.LEAF_ORE)
                 .add(ModBlocks.DEEPSLATE_LEAF_ORE)
-                .add(ModBlocks.EXTRATERRESTRIAL_LEAF_DEBRIS);
+                .add(ModBlocks.EXTRATERRESTRIAL_LEAF_DEBRIS)
+                .add(ModBlocks.CHLOROPHYTE_BLOCK);
 
         getOrCreateTagBuilder(BlockTags.HOE_MINEABLE)
                 .add(ModBlocks.MYSTERY_LEAVES);
@@ -50,13 +51,18 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.MYSTERY_PLANKS);
 
         getOrCreateTagBuilder(BlockTags.NEEDS_IRON_TOOL)
+                ;
+
+        getOrCreateTagBuilder(BlockTags.NEEDS_DIAMOND_TOOL)
                 .add(ModBlocks.LEAF_ORE)
                 .add(ModBlocks.LEAFSTONE_BLOCK);
 
-        getOrCreateTagBuilder(BlockTags.NEEDS_DIAMOND_TOOL)
+        getOrCreateTagBuilder(TagKey.of(RegistryKeys.BLOCK, new Identifier("fabric", "needs_tool_level_4")))
                 .add(ModBlocks.DEEPSLATE_LEAF_ORE);
 
-        getOrCreateTagBuilder(TagKey.of(RegistryKeys.BLOCK, new Identifier("fabric", "needs_tool_level_4")));
+        getOrCreateTagBuilder(TagKey.of(RegistryKeys.BLOCK, new Identifier("fabric", "needs_tool_level_5")))
+                .add(ModBlocks.EXTRATERRESTRIAL_LEAF_DEBRIS)
+                .add(ModBlocks.CHLOROPHYTE_BLOCK);
 
         getOrCreateTagBuilder(BlockTags.LOGS_THAT_BURN)
                 .add(ModBlocks.MYSTERY_LOG)

@@ -48,7 +48,8 @@
       "minecraft:spring_lava"
     ],
     [
-      "minecraft:glow_lichen"
+      "minecraft:glow_lichen",
+      "octocomputing:mystery_placed"
     ],
     [
       "minecraft:freeze_top_layer"

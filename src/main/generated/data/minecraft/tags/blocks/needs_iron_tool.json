@@ -1,7 +1,4 @@
 {
   "replace": false,
-  "values": [
-    "octocomputing:leaf_ore",
-    "octocomputing:leafstone_block"
-  ]
+  "values": []
 }

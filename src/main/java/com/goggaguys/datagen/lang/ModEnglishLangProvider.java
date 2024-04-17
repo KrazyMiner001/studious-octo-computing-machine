@@ -1,5 +1,6 @@
 package com.goggaguys.datagen.lang;
 
+import com.goggaguys.OctoComputing;
 import com.goggaguys.block.ModBlocks;
 import com.goggaguys.effects.ModStatusEffects;
 import com.goggaguys.enchantments.ModEnchantments;
@@ -9,6 +10,7 @@ import com.goggaguys.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.Util;
 
 public class ModEnglishLangProvider extends FabricLanguageProvider {
     public ModEnglishLangProvider(FabricDataOutput dataGenerator) {
@@ -22,7 +24,8 @@ public class ModEnglishLangProvider extends FabricLanguageProvider {
         translationBuilder.add(ModItems.LEAF_CORE, "Leaf Core");
         translationBuilder.add(ModItems.BROKEN_LEAF_CORE, "Broken Leaf Core");
         translationBuilder.add(ModItems.TOKEN_OF_THE_LEAF_GOD, "Token of the Leaf God");
-        translationBuilder.add(ModItems.LEAFITE_UPGRADE_TEMPLATE, "Leafite Upgrade Template");
+        translationBuilder.add(ModItems.LEAFITE_UPGRADE_SMITHING_TEMPLATE, "Smithing Template");
+        translationBuilder.add(ModItems.CHLOROPHYTE_UPGRADE_SMITHING_TEMPLATE, "Smithing Template");
 
         translationBuilder.add(ModItems.LEAF_MONSTER_SPAWN_EGG, "Leaf Monster Spawn Egg");
 
@@ -96,6 +99,18 @@ public class ModEnglishLangProvider extends FabricLanguageProvider {
         translationBuilder.add(ModItemTags.LEAF_COMPRESSED.id().toTranslationKey("tag"), "Compressed Leaves");
         translationBuilder.add(ModItemTags.LEAF_DOUBLE_COMPRESSED.id().toTranslationKey("tag"), "Double Compressed Leaves");
         translationBuilder.add(ModItemTags.MYSTERY_LOGS.id().toTranslationKey("tag"), "Mystery Logs");
+
+        translationBuilder.add(Util.createTranslationKey("item", new Identifier(OctoComputing.MOD_ID, "smithing_template.leafite_upgrade.applies_to")), "Netherite Equipment");
+        translationBuilder.add(Util.createTranslationKey("item", new Identifier(OctoComputing.MOD_ID, "smithing_template.leafite_upgrade.ingredients")), "Leaf Core");
+        translationBuilder.add(Util.createTranslationKey("upgrade", new Identifier(OctoComputing.MOD_ID, "leafite_upgrade")), "Leafite Upgrade");
+        translationBuilder.add(Util.createTranslationKey("item", new Identifier(OctoComputing.MOD_ID ,"smithing_template.leafite_upgrade.base_slot_description")), "Add netherite armor, weapon, or tool");
+        translationBuilder.add(Util.createTranslationKey("item", new Identifier(OctoComputing.MOD_ID ,"smithing_template.leafite_upgrade.additions_slot_description")),"Add Leaf Core");
+
+        translationBuilder.add(Util.createTranslationKey("item", new Identifier(OctoComputing.MOD_ID, "smithing_template.chlorophyte_upgrade.applies_to")), "Leafite Equipment");
+        translationBuilder.add(Util.createTranslationKey("item", new Identifier(OctoComputing.MOD_ID, "smithing_template.chlorophyte_upgrade.ingredients")), "Chlorophyte Ingot");
+        translationBuilder.add(Util.createTranslationKey("upgrade", new Identifier(OctoComputing.MOD_ID, "chlorophyte_upgrade")), "Chlorophyte Upgrade");
+        translationBuilder.add(Util.createTranslationKey("item", new Identifier(OctoComputing.MOD_ID ,"smithing_template.chlorophyte_upgrade.base_slot_description")), "Add leafite armor, weapon, or tool");
+        translationBuilder.add(Util.createTranslationKey("item", new Identifier(OctoComputing.MOD_ID ,"smithing_template.chlorophyte_upgrade.additions_slot_description")),"Add Chlorophyte ingot");
     }
 
     private static void leafTranslations(TranslationBuilder translationBuilder) {
