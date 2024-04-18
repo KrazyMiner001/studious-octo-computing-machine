@@ -1,13 +1,13 @@
-// 1.20.4	2024-04-17T15:55:39.347441	OctoComputing/Tags for minecraft:block
-c3de2fd84c21dcb7b3e2587ddb2a1db14cd599b4 data\fabric\tags\blocks\needs_tool_level_4.json
-ba8bd478be475fa2f6851a60594f6bacb68efb93 data\minecraft\tags\blocks\saplings.json
-8a23702b05296c8af5014d6aa6e9265ded85c7d9 data\minecraft\tags\blocks\needs_iron_tool.json
-fcd94ec24fd2ae98ee7f3f18e325a5e0f6fe9381 data\minecraft\tags\blocks\mineable\pickaxe.json
-62c9ca87249f33269704ec6139128ee5459c40df data\minecraft\tags\blocks\needs_diamond_tool.json
+// 1.20.4	2024-04-18T14:18:48.7950684	OctoComputing/Tags for minecraft:block
 97d1b5d083890bfa88274d9b24f6b68ea1945559 data\minecraft\tags\blocks\needs_stone_tool.json
-ec5b71bab97d650f1f8d3826680e3e7073416532 data\minecraft\tags\blocks\mineable\hoe.json
-4228455acf04c4fff332d5ae2f7ab0a488afc92d data\minecraft\tags\blocks\mineable\axe.json
-05ef49106c884119633e509b670bcd24cddde4ee data\minecraft\tags\blocks\beacon_base_blocks.json
+f41777d3e697c55755bf997a2f4b18f84d3f1352 data\minecraft\tags\blocks\logs_that_burn.json
+62c9ca87249f33269704ec6139128ee5459c40df data\minecraft\tags\blocks\needs_diamond_tool.json
+ba8bd478be475fa2f6851a60594f6bacb68efb93 data\minecraft\tags\blocks\saplings.json
 3c4a5759ca7ac077889e96f07d97ed0198f2a5bb data\fabric\tags\blocks\needs_tool_level_5.json
 f79892d919a8891dc8946f9dfc69a06c6de917ae data\minecraft\tags\blocks\planks.json
-f41777d3e697c55755bf997a2f4b18f84d3f1352 data\minecraft\tags\blocks\logs_that_burn.json
+4228455acf04c4fff332d5ae2f7ab0a488afc92d data\minecraft\tags\blocks\mineable\axe.json
+ec5b71bab97d650f1f8d3826680e3e7073416532 data\minecraft\tags\blocks\mineable\hoe.json
+05ef49106c884119633e509b670bcd24cddde4ee data\minecraft\tags\blocks\beacon_base_blocks.json
+8a23702b05296c8af5014d6aa6e9265ded85c7d9 data\minecraft\tags\blocks\needs_iron_tool.json
+fcd94ec24fd2ae98ee7f3f18e325a5e0f6fe9381 data\minecraft\tags\blocks\mineable\pickaxe.json
+c3de2fd84c21dcb7b3e2587ddb2a1db14cd599b4 data\fabric\tags\blocks\needs_tool_level_4.json

@@ -1,7 +1,7 @@
-// 1.20.4	2024-04-17T15:55:39.3494423	OctoComputing/Tags for minecraft:item
+// 1.20.4	2024-04-18T14:18:48.8000478	OctoComputing/Tags for minecraft:item
 f79892d919a8891dc8946f9dfc69a06c6de917ae data\minecraft\tags\items\planks.json
-093977a8448d5d9a5021f7c92a0c81086c26c1b9 data\octocomputing\tags\items\leaf_compressed.json
-789d30d22e90a27133f5b4f8ef7642a5a2d0642a data\octocomputing\tags\items\leaf.json
-9eb6aa461606170a22ebefb09edee56ddf064d36 data\minecraft\tags\items\trimmable_armor.json
+9109d759cc1c8f8574f3bdec5fc24fd866e91720 data\octocomputing\tags\items\leaf_double_compressed.json
+65893c868a2dc6bce24b754ce3adf655e6c25a87 data\octocomputing\tags\items\leaf_compressed.json
 f41777d3e697c55755bf997a2f4b18f84d3f1352 data\octocomputing\tags\items\mystery_logs.json
-ff2e90fcdd070323e2b6d4cc35d28eadd811a85a data\octocomputing\tags\items\leaf_double_compressed.json
+d4539f7806df92b9bb264bdabc13a9935f393111 data\octocomputing\tags\items\leaf.json
+9eb6aa461606170a22ebefb09edee56ddf064d36 data\minecraft\tags\items\trimmable_armor.json

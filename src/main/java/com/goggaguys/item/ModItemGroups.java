@@ -23,6 +23,7 @@ public class ModItemGroups {
                 }
 
                 entries.add(ModItems.LEAFSTONE);
+                entries.add(ModItems.LEAF_PICKER);
 
                 entries.add(ModItems.LEAF_HELMET);
                 entries.add(ModItems.LEAF_CHESTPLATE);
