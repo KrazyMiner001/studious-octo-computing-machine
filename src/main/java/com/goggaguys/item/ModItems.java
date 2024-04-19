@@ -12,6 +12,7 @@ import net.minecraft.registry.Registry;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.Rarity;
 import net.minecraft.util.Util;
 
 import java.util.List;
@@ -143,16 +144,16 @@ public class ModItems {
     public static final Item LEAF_CORE = registerLeafCore();
     private static Item registerLeafCore() {
         if (Mods.GECKOLIB.isLoaded()) {
-            return Registry.register(Registries.ITEM, new Identifier(OctoComputing.MOD_ID, "leaf_core"), new AnimatedLeafCore(new FabricItemSettings()));
+            return Registry.register(Registries.ITEM, new Identifier(OctoComputing.MOD_ID, "leaf_core"), new AnimatedLeafCore(new FabricItemSettings().rarity(Rarity.RARE)));
         }
-        return Registry.register(Registries.ITEM, new Identifier(OctoComputing.MOD_ID, "leaf_core"), new Item(new FabricItemSettings()));
+        return Registry.register(Registries.ITEM, new Identifier(OctoComputing.MOD_ID, "leaf_core"), new Item(new FabricItemSettings().rarity(Rarity.RARE)));
     }
     public static final Item CHLOROPHYTE_DEBRIS = registerItem("chlorophyte_debris",
             new Item(new FabricItemSettings()));
     public static final Item CHLOROPHYTE_INGOT = registerItem("chlorophyte_ingot",
             new Item(new FabricItemSettings()));
     public static final Item BROKEN_LEAF_CORE = registerItem("broken_leaf_core",
-            new Item(new FabricItemSettings()));
+            new Item(new FabricItemSettings().rarity(Rarity.UNCOMMON)));
 
     public static final Item LEAFITE_UPGRADE_SMITHING_TEMPLATE = registerItem("leafite_upgrade_smithing_template",
             new SmithingTemplateItem(
@@ -196,23 +197,23 @@ public class ModItems {
             new HoeItem(ModToolMaterial.LEAFITE, 1, 0.0f, new FabricItemSettings()));
 
     public static final Item CHLOROPHYTE_HELMET = registerItem("chlorophyte_helmet",
-            new ChlorophiteArmor(ArmorItem.Type.HELMET));
+            new ChlorophyteArmor(ArmorItem.Type.HELMET));
     public static final Item CHLOROPHYTE_CHESTPLATE = registerItem("chlorophyte_chestplate",
-            new ChlorophiteArmor(ArmorItem.Type.CHESTPLATE));
+            new ChlorophyteArmor(ArmorItem.Type.CHESTPLATE));
     public static final Item CHLOROPHYTE_LEGGINGS = registerItem("chlorophyte_leggings",
-            new ChlorophiteArmor(ArmorItem.Type.LEGGINGS));
+            new ChlorophyteArmor(ArmorItem.Type.LEGGINGS));
     public static final Item CHLOROPHYTE_BOOTS = registerItem("chlorophyte_boots",
-            new ChlorophiteArmor(ArmorItem.Type.BOOTS));
+            new ChlorophyteArmor(ArmorItem.Type.BOOTS));
     public static final Item CHLOROPHYTE_SWORD = registerItem("chlorophyte_sword",
-            new ChlorophiteSword());
+            new ChlorophyteSword());
     public static final Item CHLOROPHYTE_PICKAXE = registerItem("chlorophyte_pickaxe",
-            new PickaxeItem(ModToolMaterial.CHLOROPHYTE, 1, -1.5f, new FabricItemSettings()));
+            new ChloropytePickaxe());
     public static final Item CHLOROPHYTE_AXE = registerItem("chlorophyte_axe",
             new ChlorophyteAxe());
     public static final Item CHLOROPHYTE_SHOVEL = registerItem("chlorophyte_shovel",
-            new ShovelItem(ModToolMaterial.CHLOROPHYTE, 1, -2.0f, new FabricItemSettings()));
+            new ChlorophyteShovel());
     public static final Item CHLOROPHYTE_HOE = registerItem("chlorophyte_hoe",
-            new HoeItem(ModToolMaterial.CHLOROPHYTE, 1, 0.5f, new FabricItemSettings()));
+            new ChlorophyteHoe());
     public static final Item LEAF_PICKER = registerItem("leaf_picker",
             new LeafPicker());
 

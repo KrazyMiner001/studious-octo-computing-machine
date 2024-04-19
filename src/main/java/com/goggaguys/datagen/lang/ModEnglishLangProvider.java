@@ -39,6 +39,16 @@ public class ModEnglishLangProvider extends FabricLanguageProvider {
         translationBuilder.add(ModItems.LEAFITE_SHOVEL, "Leafite Shovel");
         translationBuilder.add(ModItems.LEAFITE_HOE, "Leafite Hoe");
 
+        translationBuilder.add(ModItems.CHLOROPHYTE_HELMET, "Chlorophyte Helmet");
+        translationBuilder.add(ModItems.CHLOROPHYTE_CHESTPLATE, "Chlorophyte Chestplate");
+        translationBuilder.add(ModItems.CHLOROPHYTE_LEGGINGS, "Chlorophyte Leggings");
+        translationBuilder.add(ModItems.CHLOROPHYTE_BOOTS, "Chlorophyte Boots");
+        translationBuilder.add(ModItems.CHLOROPHYTE_SWORD, "Chlorophyte Sword");
+        translationBuilder.add(ModItems.CHLOROPHYTE_PICKAXE, "Chlorophyte Pickaxe");
+        translationBuilder.add(ModItems.CHLOROPHYTE_AXE, "Chlorophyte Axe");
+        translationBuilder.add(ModItems.CHLOROPHYTE_SHOVEL, "Chlorophyte Shovel");
+        translationBuilder.add(ModItems.CHLOROPHYTE_HOE, "Chlorophyte Hoe");
+
         translationBuilder.add(ModItems.LEAF_HELMET, "Leaf Helmet");
         translationBuilder.add(ModItems.LEAF_CHESTPLATE, "Leaf Chestplate");
         translationBuilder.add(ModItems.LEAF_LEGGINGS, "Leaf Leggings");
@@ -89,7 +99,24 @@ public class ModEnglishLangProvider extends FabricLanguageProvider {
         translationBuilder.add(ModEntities.LEAF_GOD, "Leaf God");
         translationBuilder.add(ModEntities.LEAF_PROJECTILE, "Leaf Projectile");
 
-        translationBuilder.add(new Identifier("item.octocomputing", "leaf_god_spawn_item.tooltip"), "Energy is charging through this");
+        translationBuilder.add("item.octocomputing.leaf_god_spawn_item.tooltip", "Energy is charging through this");
+
+        translationBuilder.add("item.octocomputing.chlorophyte.chlorophyte_sword.tooltip", "Deals extra damage to leafy monsters");
+        translationBuilder.add("item.octocomputing.leafite_sword.tooltip", "Deals extra damage to leafy monsters");
+
+        translationBuilder.add("item.octocomputing.chlorophyte.toggleable_ability", "Sneak and use to toggle abilities");
+
+        translationBuilder.add("item.octocomputing.chlorophyte.chlorophyte_axe.treecapitator_ability.disabled", "[§4✘§r] Treecapitator");
+        translationBuilder.add("item.octocomputing.chlorophyte.chlorophyte_axe.treecapitator_ability.enabled", "[§2✔§r] Treecapitator");
+
+        translationBuilder.add("item.octocomputing.chlorophyte.chlorophyte_pickaxe.3x3_ability.disabled", "[§4✘§r] 3x3 Mining");
+        translationBuilder.add("item.octocomputing.chlorophyte.chlorophyte_pickaxe.3x3_ability.enabled", "[§2✔§r] 3x3 Mining");
+
+        translationBuilder.add("item.octocomputing.chlorophyte.chlorophyte_shovel.3x3_ability.disabled", "[§4✘§r] 3x3 Digging");
+        translationBuilder.add("item.octocomputing.chlorophyte.chlorophyte_shovel.3x3_ability.enabled", "[§2✔§r] 3x3 Digging");
+
+        translationBuilder.add("item.octocomputing.chlorophyte.chlorophyte_hoe.3x3_ability.disabled", "[§4✘§r] 3x3 Tilling");
+        translationBuilder.add("item.octocomputing.chlorophyte.chlorophyte_hoe.3x3_ability.enabled", "[§2✔§r] 3x3 Tilling");
 
         translationBuilder.add(new Identifier("itemgroup", "leaf_group"), "Leaves");
 
@@ -140,7 +167,7 @@ public class ModEnglishLangProvider extends FabricLanguageProvider {
 
         translationBuilder.add(ModItems.AZALEA_LEAF, "Azalea Leaf");
         translationBuilder.add(ModItems.COMPRESSED_AZALEA_LEAF, "Compressed Azalea Leaf");
-        translationBuilder.add(ModItems.DOUBLE_COMPRESSED_AZALEA_LEAF, "Double Compressed AzalMangroveLeaf");
+        translationBuilder.add(ModItems.DOUBLE_COMPRESSED_AZALEA_LEAF, "Double Compressed Azalea Leaf");
 
         translationBuilder.add(ModItems.MANGROVE_LEAF, "Mangrove Leaf");
         translationBuilder.add(ModItems.COMPRESSED_MANGROVE_LEAF, "Compressed Mangrove Leaf");

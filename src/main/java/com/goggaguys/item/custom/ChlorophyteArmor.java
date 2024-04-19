@@ -8,16 +8,15 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ArmorItem;
-import net.minecraft.item.ArmorMaterial;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
 
-public class ChlorophiteArmor extends ArmorItem {
+public class ChlorophyteArmor extends ArmorItem {
     private boolean hasFlightBuff = false;
-    public ChlorophiteArmor(Type type) {
+    public ChlorophyteArmor(Type type) {
         super(ModArmorMaterials.CHLOROPHYTE, type, new FabricItemSettings());
     }
 
@@ -49,7 +48,7 @@ public class ChlorophiteArmor extends ArmorItem {
     private boolean hasFullArmorSet(PlayerEntity player) {
         int armorPieces = 0;
         for (ItemStack armorPiece : player.getInventory().armor) {
-            if (armorPiece.getItem() instanceof ChlorophiteArmor) {
+            if (armorPiece.getItem() instanceof ChlorophyteArmor) {
                 armorPieces++;
             }
         }

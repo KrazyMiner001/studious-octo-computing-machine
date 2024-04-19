@@ -6,6 +6,7 @@ import com.goggaguys.enchantments.ModEnchantments;
 import com.goggaguys.entity.ModEntityGroups;
 import com.goggaguys.entity.custom.LeafGodEntity;
 import com.goggaguys.entity.custom.LeafMonsterEntity;
+import net.minecraft.client.item.TooltipContext;
 import net.minecraft.enchantment.DamageEnchantment;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
@@ -25,6 +26,9 @@ import net.minecraft.util.ClickType;
 import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
+import org.jetbrains.annotations.Nullable;
+
+import java.util.List;
 
 public class LeafiteSword extends SwordItem {
     public LeafiteSword(ToolMaterial toolMaterial, int attackDamage, float attackSpeed, Settings settings) {
@@ -39,5 +43,10 @@ public class LeafiteSword extends SwordItem {
                             attacker), 5);
         }
         return super.postHit(stack, target, attacker);
+    }
+
+    @Override
+    public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
+        tooltip.add(1, Text.translatable("item.octocomputing.leafite_sword.tooltip"));
     }
 }
