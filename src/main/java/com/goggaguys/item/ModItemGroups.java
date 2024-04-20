@@ -83,6 +83,8 @@ public class ModItemGroups {
 
                 entries.add(ModBlocks.ETERNALWOOD);
                 entries.add(ModBlocks.ETERNALLEAVES);
+
+                entries.add(ModBlocks.LEAF_PEDESTAL);
             })
             .displayName(Text.translatable("itemgroup.leaf_group"))
             .build();

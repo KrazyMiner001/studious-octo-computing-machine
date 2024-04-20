@@ -35,6 +35,9 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerLog(ModBlocks.ETERNALWOOD).wood(ModBlocks.ETERNALWOOD);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.ETERNALLEAVES);
 
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.LEAF_PORTAL);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.LEAF_PEDESTAL);
+
         BlockStateModelGenerator.BlockTexturePool mystery_pool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.MYSTERY_PLANKS);
     }
 

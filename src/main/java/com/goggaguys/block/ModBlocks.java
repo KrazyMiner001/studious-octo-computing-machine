@@ -1,7 +1,9 @@
 package com.goggaguys.block;
 
 import com.goggaguys.OctoComputing;
+import com.goggaguys.block.custom.LeafPortalBlock;
 import com.goggaguys.block.custom.LightNotBlockingBlock;
+import com.goggaguys.block.custom.PortalPedestalBlock;
 import com.goggaguys.world.tree.ModSaplingGenerators;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
@@ -44,9 +46,19 @@ public class ModBlocks {
     public static final Block ETERNALLEAVES = registerBlock("eternalleaves",
             new LightNotBlockingBlock(FabricBlockSettings.copyOf(Blocks.OAK_LEAVES).strength(-1.0F, 3600000.0F).dropsNothing().allowsSpawning(Blocks::never).luminance(7).nonOpaque().notSolid().blockVision(Blocks::never)));
 
+    public static final Block LEAF_PORTAL = registerBlock("leaf_portal",
+            new LeafPortalBlock(FabricBlockSettings.copyOf(Blocks.NETHER_PORTAL)));
+    public static final Block LEAF_PEDESTAL = registerBlock("leaf_pedestal",
+            new PortalPedestalBlock(FabricBlockSettings.copyOf(Blocks.END_PORTAL_FRAME)));
+
+
 
     private static Block registerBlock(String name, Block block) {
         registerBlockItem(name, block);
+        return Registry.register(Registries.BLOCK, new Identifier(OctoComputing.MOD_ID, name), block);
+    }
+
+    private static Block registerBlockWithoutItem(String name, Block block) {
         return Registry.register(Registries.BLOCK, new Identifier(OctoComputing.MOD_ID, name), block);
     }
 
