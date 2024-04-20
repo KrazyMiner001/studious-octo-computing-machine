@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "octocomputing:block/eternalwood",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "octocomputing:block/eternalwood"
+    },
+    "axis=z": {
+      "model": "octocomputing:block/eternalwood",
+      "x": 90
+    }
+  }
+}

@@ -37,6 +37,10 @@ import net.minecraft.loot.provider.number.BinomialLootNumberProvider;
 import net.minecraft.loot.provider.number.ConstantLootNumberProvider;
 import net.minecraft.predicate.item.ItemPredicate;
 import net.minecraft.world.Heightmap;
+import net.minecraft.world.World;
+import net.minecraft.world.biome.OverworldBiomeCreator;
+import net.minecraft.world.dimension.DimensionOptions;
+import net.minecraft.world.dimension.DimensionTypes;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

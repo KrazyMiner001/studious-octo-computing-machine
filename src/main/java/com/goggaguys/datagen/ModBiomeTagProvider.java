@@ -9,7 +9,9 @@ import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.RegistryWrapper;
+import net.minecraft.registry.tag.BiomeTags;
 import net.minecraft.world.biome.Biome;
+import net.minecraft.world.biome.BiomeKeys;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -22,5 +24,27 @@ public class ModBiomeTagProvider extends FabricTagProvider<Biome> {
     protected void configure(RegistryWrapper.WrapperLookup arg) {
         getOrCreateTagBuilder(ModBiomeTags.FALL_TO_OVERWORLD)
                 .add(ModBiomes.LEAF_BIOME);
+
+        getOrCreateTagBuilder(ModBiomeTags.HAS_ETERNALWOOD_TREE)
+                .add(BiomeKeys.CHERRY_GROVE)
+                .add(BiomeKeys.WINDSWEPT_FOREST)
+                .add(BiomeKeys.FOREST)
+                .add(BiomeKeys.FLOWER_FOREST)
+                .add(BiomeKeys.TAIGA)
+                .add(BiomeKeys.OLD_GROWTH_PINE_TAIGA)
+                .add(BiomeKeys.OLD_GROWTH_SPRUCE_TAIGA)
+                .add(BiomeKeys.SNOWY_TAIGA)
+                .add(BiomeKeys.BIRCH_FOREST)
+                .add(BiomeKeys.OLD_GROWTH_BIRCH_FOREST)
+                .add(BiomeKeys.DARK_FOREST)
+                .add(BiomeKeys.JUNGLE)
+                .add(BiomeKeys.SPARSE_JUNGLE)
+                .add(BiomeKeys.BAMBOO_JUNGLE)
+                .add(BiomeKeys.SWAMP)
+                .add(BiomeKeys.MANGROVE_SWAMP)
+                .add(BiomeKeys.SAVANNA)
+                .add(BiomeKeys.SAVANNA_PLATEAU)
+                .add(BiomeKeys.WINDSWEPT_SAVANNA)
+                .add(BiomeKeys.WOODED_BADLANDS);
     }
 }

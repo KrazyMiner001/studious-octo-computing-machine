@@ -1,6 +1,7 @@
 package com.goggaguys.block;
 
 import com.goggaguys.OctoComputing;
+import com.goggaguys.block.custom.LightNotBlockingBlock;
 import com.goggaguys.world.tree.ModSaplingGenerators;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
@@ -38,6 +39,11 @@ public class ModBlocks {
     public static final Block MYSTERY_LEAVES = registerBlock("mystery_leaves",
         new Block(FabricBlockSettings.copyOf(Blocks.OAK_LEAVES).strength(4f).nonOpaque()));
 
+    public static final Block ETERNALWOOD = registerBlock("eternalwood",
+            new PillarBlock(FabricBlockSettings.copyOf(Blocks.OAK_WOOD).strength(-1.0F, 3600000.0F).dropsNothing().allowsSpawning(Blocks::never).luminance(7)));
+    public static final Block ETERNALLEAVES = registerBlock("eternalleaves",
+            new LightNotBlockingBlock(FabricBlockSettings.copyOf(Blocks.OAK_LEAVES).strength(-1.0F, 3600000.0F).dropsNothing().allowsSpawning(Blocks::never).luminance(7).nonOpaque().notSolid().blockVision(Blocks::never)));
+
 
     private static Block registerBlock(String name, Block block) {
         registerBlockItem(name, block);
@@ -50,6 +56,6 @@ public class ModBlocks {
     }
 
     public static void registerModBlocks() {
-        OctoComputing.LOGGER.info("Registering Blocks");
+        OctoComputing.LOGGER.info("Registering Blocks for " + OctoComputing.MOD_ID);
     }
 }

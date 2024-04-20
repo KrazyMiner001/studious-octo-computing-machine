@@ -1,0 +1,16 @@
+{
+  "structures": [
+    {
+      "structure":"octocomputing:eternalwood_tree",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:concentric_rings",
+    "distance": 24,
+    "count": 128,
+    "preferred_biomes": "#octocomputing:has_structure/eternalwood_tree",
+    "spread": 3,
+    "salt": 756372523
+  }
+}

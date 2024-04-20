@@ -80,12 +80,15 @@ public class ModItemGroups {
                 entries.add(ModBlocks.STRIPPED_MYSTERY_WOOD);
                 entries.add(ModBlocks.MYSTERY_LEAVES);
                 entries.add(ModBlocks.MYSTERY_PLANKS);
+
+                entries.add(ModBlocks.ETERNALWOOD);
+                entries.add(ModBlocks.ETERNALLEAVES);
             })
             .displayName(Text.translatable("itemgroup.leaf_group"))
             .build();
 
     public static void registerItemGroups() {
         Registry.register(Registries.ITEM_GROUP, new Identifier(OctoComputing.MOD_ID, "leaf_group"), LEAF_GROUP);
-        OctoComputing.LOGGER.info("Registering Item Groups");
+        OctoComputing.LOGGER.info("Registering Item Groups for " + OctoComputing.MOD_ID);
     }
 }

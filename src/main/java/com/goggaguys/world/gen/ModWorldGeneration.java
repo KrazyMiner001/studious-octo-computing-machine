@@ -8,6 +8,8 @@ public class ModWorldGeneration {
         ModOreGeneration.generateOres();
         ModTreeGeneration.generateTrees();
 
-        OctoComputing.LOGGER.info("Generating World Generation");
+
+
+        OctoComputing.LOGGER.info("Generating World Generation for " + OctoComputing.MOD_ID);
     }
 }

@@ -8,4 +8,7 @@ import net.minecraft.world.biome.Biome;
 
 public class ModBiomeTags {
     public static TagKey<Biome> FALL_TO_OVERWORLD = TagKey.of(RegistryKeys.BIOME, new Identifier(OctoComputing.MOD_ID, "fall_to_overworld"));
+
+    public static TagKey<Biome> HAS_ETERNALWOOD_TREE = TagKey.of(RegistryKeys.BIOME,
+            new Identifier(OctoComputing.MOD_ID, "has_structure/eternalwood_tree"));
 }
