@@ -4,9 +4,9 @@
     {
       "weight": 1,
       "element": {
-        "element_type": "minecraft:single_pool_element",
-        "location": "octocomputing:eternalwood_tree",
         "projection": "rigid",
+        "element_type": "single_pool_element",
+        "location": "octocomputing:eternalwood_tree/portalroom",
         "processors": "minecraft:empty"
       }
     }
