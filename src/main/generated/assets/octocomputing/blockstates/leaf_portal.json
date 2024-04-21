@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "octocomputing:block/leaf_portal_x"
+    },
+    "axis=z": {
+      "model": "octocomputing:block/leaf_portal_z"
+    }
+  }
+}

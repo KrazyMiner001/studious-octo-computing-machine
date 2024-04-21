@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "activated=false": {
+      "model": "octocomputing:block/leaf_pedestal"
+    },
+    "activated=true": {
+      "model": "octocomputing:block/leaf_pedestal_activated"
+    }
+  }
+}

@@ -1,17 +1,28 @@
 package com.goggaguys.datagen;
 
+import com.goggaguys.OctoComputing;
 import com.goggaguys.block.ModBlocks;
+import com.goggaguys.block.ModProperties;
 import com.goggaguys.item.ModItems;
 import com.goggaguys.model.ModItemModelGenerator;
 import com.goggaguys.utilities.CompressedChainMap;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
+import net.minecraft.block.Blocks;
 import net.minecraft.data.client.*;
 import net.minecraft.item.ArmorItem;
 import net.minecraft.item.Item;
+import net.minecraft.state.property.BooleanProperty;
+import net.minecraft.state.property.IntProperty;
+import net.minecraft.state.property.Properties;
+import net.minecraft.state.property.Property;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.math.Direction;
 
 import java.util.Optional;
+
+import static net.minecraft.data.client.BlockStateModelGenerator.createAxisRotatedBlockState;
+import static net.minecraft.data.client.BlockStateModelGenerator.createSouthDefaultHorizontalRotationStates;
 
 public class ModModelProvider extends FabricModelProvider {
     public ModModelProvider(FabricDataOutput output) {
@@ -35,8 +46,21 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerLog(ModBlocks.ETERNALWOOD).wood(ModBlocks.ETERNALWOOD);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.ETERNALLEAVES);
 
-        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.LEAF_PORTAL);
-        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.LEAF_PEDESTAL);
+        blockStateModelGenerator.blockStateCollector.
+                accept(VariantsBlockStateSupplier.create(ModBlocks.LEAF_PORTAL)
+                        .coordinate(BlockStateVariantMap.create(Properties.HORIZONTAL_AXIS)
+                                .register(Direction.Axis.X, BlockStateVariant.create().put(VariantSettings.MODEL, ModelIds.getBlockSubModelId(ModBlocks.LEAF_PORTAL, "_x")))
+                                .register(Direction.Axis.Z, BlockStateVariant.create().put(VariantSettings.MODEL, ModelIds.getBlockSubModelId(ModBlocks.LEAF_PORTAL, "_z")))
+                        )
+                );
+
+        blockStateModelGenerator.blockStateCollector
+                .accept(VariantsBlockStateSupplier.create(ModBlocks.LEAF_PEDESTAL)
+                                .coordinate(BlockStateVariantMap.create(ModProperties.ACTIVATED)
+                                                .register(false, BlockStateVariant.create().put(VariantSettings.MODEL, ModelIds.getBlockModelId(ModBlocks.LEAF_PEDESTAL)))
+                                                .register(true, BlockStateVariant.create().put(VariantSettings.MODEL, ModelIds.getBlockSubModelId(ModBlocks.LEAF_PEDESTAL, "_activated")))
+                                )
+                );
 
         BlockStateModelGenerator.BlockTexturePool mystery_pool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.MYSTERY_PLANKS);
     }
@@ -107,5 +131,20 @@ public class ModModelProvider extends FabricModelProvider {
         modItemModelGenerator.registerCompressedHandheldChain(ModItems.LEAF_SHOVEL, ModItems.COMPRESSED_LEAF_SHOVEL, ModItems.DOUBLE_COMPRESSED_LEAF_SHOVEL);
         modItemModelGenerator.registerCompressedHandheldChain(ModItems.LEAF_HOE, ModItems.COMPRESSED_LEAF_HOE, ModItems.DOUBLE_COMPRESSED_LEAF_HOE);
 
+    }
+
+    private void registerLeafPedestal(BlockStateModelGenerator blockStateModelGenerator) {
+        Identifier leafPedestalModelId = ModelIds.getBlockModelId(ModBlocks.LEAF_PEDESTAL);
+        Identifier leafPedestalFilledModelId = ModelIds.getBlockSubModelId(ModBlocks.LEAF_PEDESTAL, "_activated");
+        blockStateModelGenerator.blockStateCollector
+                .accept(
+                        VariantsBlockStateSupplier.create(ModBlocks.LEAF_PEDESTAL)
+                                .coordinate(
+                                        BlockStateVariantMap.create(BooleanProperty.of("activated"))
+                                                .register(false, BlockStateVariant.create().put(VariantSettings.MODEL, leafPedestalModelId))
+                                                .register(true, BlockStateVariant.create().put(VariantSettings.MODEL, leafPedestalFilledModelId))
+                                )
+                                .coordinate(createSouthDefaultHorizontalRotationStates())
+                );
     }
 }

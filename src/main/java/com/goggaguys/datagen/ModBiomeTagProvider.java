@@ -45,6 +45,7 @@ public class ModBiomeTagProvider extends FabricTagProvider<Biome> {
                 .add(BiomeKeys.SAVANNA)
                 .add(BiomeKeys.SAVANNA_PLATEAU)
                 .add(BiomeKeys.WINDSWEPT_SAVANNA)
-                .add(BiomeKeys.WOODED_BADLANDS);
+                .add(BiomeKeys.WOODED_BADLANDS)
+                .add(ModBiomes.LEAF_BIOME);
     }
 }
