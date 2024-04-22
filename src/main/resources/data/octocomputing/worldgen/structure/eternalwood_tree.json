@@ -1,6 +1,6 @@
 {
   "type": "minecraft:jigsaw",
-  "biomes": "#octocomputing:eternalwood_tree_preferred",
+  "biomes": "#octocomputing:has_structure/eternalwood_tree",
   "step": "strongholds",
   "spawn_overrides": {},
   "start_pool": "octocomputing:eternalwood_tree/portalroom",
