@@ -65,7 +65,7 @@ public class LeafPortalBlock extends Block {
             RegistryKey<World> currentWorldKey = world.getRegistryKey();
             if (currentWorldKey == World.OVERWORLD) {
                 if (!entity.hasPortalCooldown()) {
-                    entity.resetPortalCooldown();
+                    entity.setPortalCooldown(entity.getDefaultPortalCooldown() * 2);
 
                     // => teleport to Leaf Dimension
                     ServerWorld targetWorld = ((ServerWorld) world).getServer().getWorld(ModDimensions.LEAF_LEVEL_KEY);
@@ -79,12 +79,12 @@ public class LeafPortalBlock extends Block {
 
                         }
                         FabricDimensions.teleport(entity, targetWorld, new TeleportTarget(Vec3d.ofCenter(portalPos), Vec3d.ZERO, entity.getYaw(), entity.getPitch()));
-                        entity.resetPortalCooldown();
+                        entity.setPortalCooldown(entity.getDefaultPortalCooldown() * 2);
                     }
                 }
             } else {
                 if (!entity.hasPortalCooldown()) {
-                    entity.resetPortalCooldown();
+                    entity.setPortalCooldown(entity.getDefaultPortalCooldown() * 2);
 
                     // => teleport to Overworld
                     ServerWorld targetWorld = ((ServerWorld) world).getServer().getWorld(World.OVERWORLD);
@@ -95,7 +95,7 @@ public class LeafPortalBlock extends Block {
                         }
 
                         FabricDimensions.teleport(entity, targetWorld, new TeleportTarget(Vec3d.ofCenter(portalPos), Vec3d.ZERO, entity.getYaw(), entity.getPitch()));
-                        entity.resetPortalCooldown();
+                        entity.setPortalCooldown(entity.getDefaultPortalCooldown() * 2);
                     }
                 }
             }
