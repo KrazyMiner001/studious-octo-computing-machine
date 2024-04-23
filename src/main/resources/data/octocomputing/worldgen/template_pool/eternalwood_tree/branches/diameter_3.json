@@ -6,7 +6,7 @@
       "element": {
         "projection": "rigid",
         "element_type": "single_pool_element",
-        "location": "octocomputing:eternalwood_tree/trunks/trunk_1",
+        "location": "octocomputing:eternalwood_tree/branches/diameter_3/branch_1",
         "processors": "minecraft:empty"
       }
     }

@@ -6,9 +6,15 @@
       "element": {
         "projection": "rigid",
         "element_type": "single_pool_element",
-        "location": "octocomputing:eternalwood_tree/trunks/trunk_1",
+        "location": "octocomputing:eternalwood_tree/branch_connectors/diameter_3",
         "processors": "minecraft:empty"
       }
+    },
+    {
+      "element": {
+        "element_type": "minecraft:empty_pool_element"
+      },
+      "weight": 4
     }
   ]
 }
