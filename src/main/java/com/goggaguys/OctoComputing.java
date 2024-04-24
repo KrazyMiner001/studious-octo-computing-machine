@@ -1,6 +1,7 @@
 package com.goggaguys;
 
 import com.goggaguys.block.ModBlocks;
+import com.goggaguys.commands.ModCommands;
 import com.goggaguys.compat.Mods;
 import com.goggaguys.compat.geckolib.GeckoLib;
 import com.goggaguys.effects.ModStatusEffects;
@@ -16,6 +17,7 @@ import net.fabricmc.api.ModInitializer;
 
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
 import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
+import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.fabricmc.fabric.api.loot.v2.LootTableEvents;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
@@ -39,6 +41,8 @@ import net.minecraft.world.Heightmap;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.util.ArrayList;
+
 public class OctoComputing implements ModInitializer {
 	// This logger is used to write text to the console and the log file.
 	// It is considered best practice to use your mod id as the logger's name.
@@ -49,12 +53,14 @@ public class OctoComputing implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
+
 		ModItems.registerModItems();
 		ModItemGroups.registerItemGroups();
 		ModBlocks.registerModBlocks();
 		ModEntities.registerModEntities();
 		ModEnchantments.registerModEnchantments();
 		ModStatusEffects.registerModStatusEffects();
+		ModCommands.register();
 
 		ItemGroupEvents.modifyEntriesEvent(ItemGroups.SPAWN_EGGS).register(content -> content.add(ModItems.LEAF_MONSTER_SPAWN_EGG));
 		ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS).register(content ->
