@@ -1,6 +1,7 @@
 package com.goggaguys.commands;
 
 import com.goggaguys.OctoComputing;
+import com.goggaguys.proceduralTreeGen.AttractingPoint;
 import com.goggaguys.proceduralTreeGen.TreeGenerator;
 import com.goggaguys.shapes.TruncatedCone;
 import com.mojang.brigadier.tree.LiteralCommandNode;
@@ -28,34 +29,42 @@ public class ModCommands {
                     .executes(context -> {
                         World world = context.getSource().getWorld();
                         Position pos = context.getSource().getPosition();
-                        TreeGenerator treeGenerator = new TreeGenerator(
-                                1,
-                                TreeGenerator.pointCloudGenerator(
-                                        new Vec3d(0, 10, 0),
-                                        7.5,
-                                        20,
-                                        0.5,
-                                        false,
-                                        8),
-                                0.5
+                        List<AttractingPoint> pointCloud = TreeGenerator.pointCloudGenerator(
+                                new Vec3d(0, 50, 0),
+                                20,
+                                20,
+                                10,
+                                false,
+                                30
                         );
-                        for (int i = 0; i < 5; i++) {
+                        pointCloud.addAll(List.of(
+                                new AttractingPoint(new Vec3d(0, 5, 0), 5, 3, false),
+                                new AttractingPoint(new Vec3d(0, 8, 0), 5, 3, false),
+                                new AttractingPoint(new Vec3d(0, 11, 0), 5, 3, false),
+                                new AttractingPoint(new Vec3d(0, 17, 0), 5, 3, false)
+                        ));
+                        TreeGenerator treeGenerator = new TreeGenerator(
+                                7,
+                                pointCloud, 5
+                        );
+                        for (int i = 0; i < 10; i++) {
                             treeGenerator.growTree();
                         }
                         List<TruncatedCone> treeCones = treeGenerator.treeNodesAsTruncatedCones();
                         Set<BlockPos> treeBlocks = new HashSet<>();
-                        for (int x = -10; x < 10; x++) {
-                            for (int y = -10; y < 10; y++) {
-                                for (int z = -10; z < 10; z++) {
+                        for (int x = -30; x < 30; x++) {
+                            for (int y = 0; y < 60; y++) {
+                                for (int z = -30; z < 30; z++) {
                                     Vec3d testPos = new Vec3d(x, y, z);
                                     boolean hasBlock = false;
                                     for (TruncatedCone truncatedCone : treeCones) {
                                         if (truncatedCone.containsPoint(testPos)) {
                                             hasBlock = true;
+                                            break;
                                         }
                                     }
                                     if (hasBlock) {
-                                        treeBlocks.add(new BlockPos(x, y, z));
+                                        treeBlocks.add(new BlockPos(x, y, z).add((int) pos.getX(), (int) pos.getY(), (int) pos.getZ()));
                                     }
                                 }
                             }

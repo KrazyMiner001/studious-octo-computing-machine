@@ -76,6 +76,7 @@ public class TreeGenerator {
             growDirection = growDirection.add(influencingNodes.getPosition().subtract(oldTreeNode.getPosition()).normalize());
         }
         growDirection = growDirection.normalize();
+        growDirection = growDirection.add(Math.random()-0.5, Math.random()-0.5, Math.random()-0.5);
         return new TreeNode(oldTreeNode.getPosition().add(growDirection.multiply(this.segmentSize)), oldTreeNode);
     }
 
@@ -86,7 +87,7 @@ public class TreeGenerator {
             Vec3d point = new Vec3d(0, 0, 0);
             point = point.addRandom(random, (float) diameter);
             point = point.add(center);
-            pointCloud.add(new AttractingPoint(point, random.nextBetween(10, 20), 2, true));
+            pointCloud.add(new AttractingPoint(point, radiusOfInfluence, killDistance, leafGenerating));
         }
         return pointCloud;
     }

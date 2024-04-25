@@ -21,11 +21,10 @@ public class TruncatedCone {
         Vec3d shortestLineToCylinder = (point.subtract(pos1)).subtract(cylinderLineVector.multiply((point.subtract(pos1)).dotProduct(cylinderLineVector)));
         double pointDistance = shortestLineToCylinder.length();
         Vec3d pointOnCylinderLine = point.add(shortestLineToCylinder);
-        boolean pointIsBetweenCylinderPoints = ((point.x - pos1.x)/(pos2.x-pos1.x) == (point.y - pos1.y)/(pos2.y-pos1.y) && (point.y - pos1.y)/(pos2.y-pos1.y) == (point.z - pos1.z)/(pos2.z-pos1.z));
-        if (!pointIsBetweenCylinderPoints) {
+        double pointPortionUpLine = pointOnCylinderLine.subtract(pos1).length()/pos2.subtract(pos1).length();
+        if (pointPortionUpLine > 1 || pointPortionUpLine < 0) {
             return false;
         }
-        double pointPortionUpLine = pointOnCylinderLine.subtract(pos1).length()/pos2.subtract(pos1).length();
         double radiusAtPoint = (endThickness - startThickness) * pointPortionUpLine + startThickness;
         return !(pointDistance > radiusAtPoint);
     }
