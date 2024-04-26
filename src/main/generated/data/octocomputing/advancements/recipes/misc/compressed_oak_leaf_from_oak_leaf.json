@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "octocomputing:oak_leaf"
-            ]
+            "items": "octocomputing:oak_leaf"
           }
         ]
       },

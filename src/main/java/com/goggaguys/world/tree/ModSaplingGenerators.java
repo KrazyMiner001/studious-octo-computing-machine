@@ -1,8 +1,7 @@
 package com.goggaguys.world.tree;
 
-import net.minecraft.block.SaplingGenerator;
-
 import com.goggaguys.world.ModConfiguredFeatures;
+import net.minecraft.block.SaplingGenerator;
 
 import java.util.Optional;
 

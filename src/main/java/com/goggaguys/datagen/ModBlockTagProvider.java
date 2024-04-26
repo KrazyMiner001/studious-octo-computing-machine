@@ -3,7 +3,6 @@ package com.goggaguys.datagen;
 import com.goggaguys.block.ModBlocks;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
-import net.fabricmc.fabric.api.mininglevel.v1.FabricMineableTags;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.registry.tag.BlockTags;

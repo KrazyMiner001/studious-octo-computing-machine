@@ -1,28 +1,26 @@
 package com.goggaguys.item.custom;
 
-import com.goggaguys.entity.ModEntityGroups;
+import com.goggaguys.entity.ModEntityTypeTags;
 import com.goggaguys.item.ModToolMaterial;
-import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
-import net.minecraft.client.item.TooltipContext;
+import net.minecraft.client.item.TooltipType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.damage.DamageTypes;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.SwordItem;
 import net.minecraft.text.Text;
-import net.minecraft.world.World;
-import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
 public class ChlorophyteSword extends SwordItem {
     public ChlorophyteSword() {
-        super(ModToolMaterial.CHLOROPHYTE, 7, -1, new FabricItemSettings());
+        super(ModToolMaterial.CHLOROPHYTE, new Item.Settings().attributeModifiers(SwordItem.createAttributeModifiers(ModToolMaterial.CHLOROPHYTE, 7, -1)));
     }
 
     @Override
     public boolean postHit(ItemStack stack, LivingEntity target, LivingEntity attacker) {
-        if (target.getGroup().equals(ModEntityGroups.LEAFY)) {
+        if (target.getType().isIn(ModEntityTypeTags.LEAFY)) {
             target.damage(attacker.getWorld().getDamageSources().create(
                     attacker instanceof PlayerEntity ? DamageTypes.PLAYER_ATTACK : DamageTypes.MOB_ATTACK,
                     attacker), 8);
@@ -31,7 +29,7 @@ public class ChlorophyteSword extends SwordItem {
     }
 
     @Override
-    public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
+    public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
         tooltip.add(1, Text.translatable("item.octocomputing.chlorophyte.chlorophyte_sword.tooltip"));
     }
 }

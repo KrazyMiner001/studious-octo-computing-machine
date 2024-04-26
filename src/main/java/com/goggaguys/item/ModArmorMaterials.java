@@ -3,86 +3,97 @@ package com.goggaguys.item;
 import com.goggaguys.OctoComputing;
 import net.minecraft.item.ArmorItem;
 import net.minecraft.item.ArmorMaterial;
+import net.minecraft.item.ArmorMaterials;
 import net.minecraft.recipe.Ingredient;
+import net.minecraft.registry.Registries;
+import net.minecraft.registry.Registry;
+import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
+import net.minecraft.util.Identifier;
+import net.minecraft.util.Util;
 
+import java.util.EnumMap;
+import java.util.List;
 import java.util.function.Supplier;
 
-public enum ModArmorMaterials implements ArmorMaterial {
-    LEAF("leaf", 1, new int[] {1, 1, 1, 1}, 20,
-    SoundEvents.BLOCK_AZALEA_PLACE, 0f, 0f, () -> Ingredient.fromTag(ModItemTags.LEAF)),
+public class ModArmorMaterials extends ArmorMaterials {
+    public static final RegistryEntry<ArmorMaterial> LEAF;
+    public static final RegistryEntry<ArmorMaterial> COMPRESSED_LEAF;
+    public static final RegistryEntry<ArmorMaterial> DOUBLE_COMPRESSED_LEAF;
+    public static final RegistryEntry<ArmorMaterial> LEAFITE;
+    public static final RegistryEntry<ArmorMaterial> CHLOROPHYTE;
 
-    COMPRESSED_LEAF("compressed_leaf", 2, new int[] {1, 3, 2, 1}, 30,
-    SoundEvents.BLOCK_AZALEA_PLACE, 0f, 0f, () -> Ingredient.fromTag(ModItemTags.LEAF_COMPRESSED)),
-
-    DOUBLE_COMPRESSED_LEAF("double_compressed_leaf", 3, new int[] {2, 5, 3, 1}, 40,
-            SoundEvents.BLOCK_AZALEA_PLACE, 0f, 0f, () -> Ingredient.fromTag(ModItemTags.LEAF_DOUBLE_COMPRESSED)),
-
-    LEAFITE("leafite", 50, new int[] {5, 10, 7, 4}, 25,
-            SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE, 4f, 0.2f, () -> Ingredient.ofItems(ModItems.LEAF_CORE)),
-    CHLOROPHYTE("chlorophyte", 75, new int[] {7, 12, 9, 6}, 32,
-            SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE, 6f, 0.25f, () -> Ingredient.ofItems(ModItems.CHLOROPHYTE_INGOT));
-    private final String name;
-    private final int durabilityMultiplier;
-    private final int[] protectionAmounts;
-    private final int enchantability;
-    private final SoundEvent equipSound;
-    private final float toughness;
-    private final float knockbackResistance;
-    private final Supplier<Ingredient> repairIngredient;
-
-    private static final int[] BASE_DURABILITY = {11, 16, 15, 13};
-
-    ModArmorMaterials(String name, int durabilityMultiplier, int[] protectionAmounts, int enchantability, SoundEvent equipSound,
-                      float toughness, float knockbackResistance, Supplier<Ingredient> repairIngredient) {
-        this.name = name;
-        this.durabilityMultiplier = durabilityMultiplier;
-        this.protectionAmounts = protectionAmounts;
-        this.enchantability = enchantability;
-        this.equipSound = equipSound;
-        this.toughness = toughness;
-        this.knockbackResistance = knockbackResistance;
-        this.repairIngredient = repairIngredient;
+    private static RegistryEntry<ArmorMaterial> register(String id, EnumMap<ArmorItem.Type, Integer> defense, int enchantability, RegistryEntry<SoundEvent> equipSound, float toughness, float knockbackResistance, Supplier<Ingredient> repairIngredient) {
+        List<ArmorMaterial.Layer> list = List.of(new ArmorMaterial.Layer(new Identifier(id)));
+        return register(id, defense, enchantability, equipSound, toughness, knockbackResistance, repairIngredient, list);
     }
 
-    @Override
-    public int getDurability(ArmorItem.Type type) {
-        return BASE_DURABILITY[type.ordinal()] * this.durabilityMultiplier;
+    private static RegistryEntry<ArmorMaterial> register(String id, EnumMap<ArmorItem.Type, Integer> defense, int enchantability, RegistryEntry<SoundEvent> equipSound, float toughness, float knockbackResistance, Supplier<Ingredient> repairIngredient, List<ArmorMaterial.Layer> layers) {
+        EnumMap<ArmorItem.Type, Integer> enumMap = new EnumMap(ArmorItem.Type.class);
+        ArmorItem.Type[] values = ArmorItem.Type.values();
+
+        for (ArmorItem.Type type : values) {
+            enumMap.put(type, defense.get(type));
+        }
+
+        return Registry.registerReference(Registries.ARMOR_MATERIAL, new Identifier(OctoComputing.MOD_ID, id), new ArmorMaterial(enumMap, enchantability, equipSound, repairIngredient, layers, toughness, knockbackResistance));
     }
 
-    @Override
-    public int getProtection(ArmorItem.Type type) {
-        return protectionAmounts[type.ordinal()];
-    }
+    static {
+        LEAF = register("leaf", Util.make(new EnumMap(ArmorItem.Type.class), (map) -> {
+            map.put(ArmorItem.Type.BOOTS, 1);
+            map.put(ArmorItem.Type.LEGGINGS, 1);
+            map.put(ArmorItem.Type.CHESTPLATE, 1);
+            map.put(ArmorItem.Type.HELMET, 1);
+            map.put(ArmorItem.Type.BODY, 1);
+        }), 20,
+                SoundEvents.ITEM_ARMOR_EQUIP_GENERIC,
+                0.0F, 0.0F,
+                () -> Ingredient.fromTag(ModItemTags.LEAF));
 
-    @Override
-    public int getEnchantability() {
-        return this.enchantability;
-    }
+        COMPRESSED_LEAF = register("compressed_leaf", Util.make(new EnumMap(ArmorItem.Type.class), (map) -> {
+                    map.put(ArmorItem.Type.BOOTS, 1);
+                    map.put(ArmorItem.Type.LEGGINGS, 2);
+                    map.put(ArmorItem.Type.CHESTPLATE, 3);
+                    map.put(ArmorItem.Type.HELMET, 1);
+                    map.put(ArmorItem.Type.BODY, 4);
+                }), 30,
+                SoundEvents.ITEM_ARMOR_EQUIP_GENERIC,
+                0.0F, 0.0F,
+                () -> Ingredient.fromTag(ModItemTags.LEAF_COMPRESSED));
 
-    @Override
-    public SoundEvent getEquipSound() {
-        return this.equipSound;
-    }
+        DOUBLE_COMPRESSED_LEAF = register("double_compressed_leaf", Util.make(new EnumMap(ArmorItem.Type.class), (map) -> {
+                    map.put(ArmorItem.Type.BOOTS, 1);
+                    map.put(ArmorItem.Type.LEGGINGS, 3);
+                    map.put(ArmorItem.Type.CHESTPLATE, 5);
+                    map.put(ArmorItem.Type.HELMET, 2);
+                    map.put(ArmorItem.Type.BODY, 4);
+                }), 40,
+                SoundEvents.ITEM_ARMOR_EQUIP_GENERIC,
+                0.0F, 0.0F,
+                () -> Ingredient.fromTag(ModItemTags.LEAF_DOUBLE_COMPRESSED));
 
-    @Override
-    public Ingredient getRepairIngredient() {
-        return this.repairIngredient.get();
-    }
+        LEAFITE = register("leafite", Util.make(new EnumMap(ArmorItem.Type.class), (map) -> {
+                    map.put(ArmorItem.Type.BOOTS, 4);
+                    map.put(ArmorItem.Type.LEGGINGS, 7);
+                    map.put(ArmorItem.Type.CHESTPLATE, 10);
+                    map.put(ArmorItem.Type.HELMET, 5);
+                    map.put(ArmorItem.Type.BODY, 4);
+                }), 25,
+                SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE,
+                4.0F, 0.2F,
+                () -> Ingredient.ofItems(ModItems.LEAF_CORE));
 
-    @Override
-    public String getName() {
-        return OctoComputing.MOD_ID + ":" + this.name;
-    }
-
-    @Override
-    public float getToughness() {
-        return this.toughness;
-    }
-
-    @Override
-    public float getKnockbackResistance() {
-        return this.knockbackResistance;
+        CHLOROPHYTE = register("chlorophyte", Util.make(new EnumMap(ArmorItem.Type.class), (map) -> {
+                    map.put(ArmorItem.Type.BOOTS, 6);
+                    map.put(ArmorItem.Type.LEGGINGS, 9);
+                    map.put(ArmorItem.Type.CHESTPLATE, 12);
+                    map.put(ArmorItem.Type.HELMET, 7);
+                    map.put(ArmorItem.Type.BODY, 4);
+                }), 32,
+                SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE,
+                6.0F, 0.25F,
+                () -> Ingredient.ofItems(ModItems.CHLOROPHYTE_INGOT));
     }
 }

@@ -14,14 +14,16 @@ import net.minecraft.item.Item;
 import net.minecraft.item.Items;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.recipe.book.RecipeCategory;
+import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.registry.tag.TagKey;
 import net.minecraft.util.Identifier;
 
 import java.util.List;
+import java.util.concurrent.CompletableFuture;
 
 public class ModRecipeGenerator extends FabricRecipeProvider {
-    public ModRecipeGenerator(FabricDataOutput output) {
-        super(output);
+    public ModRecipeGenerator(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> registriesFuture) {
+        super(output, registriesFuture);
     }
 
     @Override

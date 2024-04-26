@@ -2,24 +2,14 @@ package com.goggaguys.enchantments;
 
 import com.goggaguys.damagetype.ModDamageTypeTags;
 import net.minecraft.enchantment.Enchantment;
-import net.minecraft.enchantment.EnchantmentTarget;
-import net.minecraft.enchantment.Enchantments;
 import net.minecraft.enchantment.ProtectionEnchantment;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.damage.DamageSource;
+import net.minecraft.registry.tag.ItemTags;
 
 public class LeafProtectionEnchantment extends Enchantment {
     protected LeafProtectionEnchantment() {
-        super(Rarity.RARE, EnchantmentTarget.ARMOR, new EquipmentSlot[]{EquipmentSlot.HEAD, EquipmentSlot.CHEST, EquipmentSlot.LEGS, EquipmentSlot.FEET});
-    }
-    @Override
-    public int getMinPower(int level) {
-        return 10 * level;
-    }
-
-    @Override
-    public int getMaxLevel() {
-        return 4;
+        super(Enchantment.properties(ItemTags.WEAPON_ENCHANTABLE, ItemTags.SWORD_ENCHANTABLE, 5, 4, Enchantment.leveledCost(5, 10), Enchantment.leveledCost(25, 8), 2, EquipmentSlot.HEAD, EquipmentSlot.FEET, EquipmentSlot.LEGS, EquipmentSlot.HEAD));
     }
 
     @Override

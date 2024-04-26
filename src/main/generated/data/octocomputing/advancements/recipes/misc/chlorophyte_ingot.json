@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "octocomputing:chlorophyte_ingot"
-            ]
+            "items": "octocomputing:chlorophyte_ingot"
           }
         ]
       },
@@ -17,9 +15,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "octocomputing:leaf_core"
-            ]
+            "items": "octocomputing:leaf_core"
           }
         ]
       },
@@ -29,9 +25,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "minecraft:netherite_ingot"
-            ]
+            "items": "minecraft:netherite_ingot"
           }
         ]
       },

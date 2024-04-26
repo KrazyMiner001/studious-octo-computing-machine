@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "octocomputing:compressed_oak_leaf"
-            ]
+            "items": "octocomputing:compressed_oak_leaf"
           }
         ]
       },
@@ -17,9 +15,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "minecraft:stick"
-            ]
+            "items": "minecraft:stick"
           }
         ]
       },

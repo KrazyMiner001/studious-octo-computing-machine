@@ -5,7 +5,7 @@
       "conditions": {
         "items": [
           {
-            "tag": "octocomputing:leaf_double_compressed"
+            "items": "#octocomputing:leaf_double_compressed"
           }
         ]
       },

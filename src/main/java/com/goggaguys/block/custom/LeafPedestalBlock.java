@@ -12,18 +12,15 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.util.ActionResult;
-import net.minecraft.util.Hand;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
-import net.minecraft.util.shape.SimpleVoxelShape;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class LeafPedestalBlock extends Block {
     public static final MapCodec<LeafPedestalBlock> CODEC = createCodec(LeafPedestalBlock::new);
@@ -53,7 +50,7 @@ public class LeafPedestalBlock extends Block {
     }
 
     @Override
-    public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
+    protected ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, BlockHitResult hit) {
         if (player.getMainHandStack().getItem() == ModItems.LEAF_CORE /*Todo:make not placeholder*/ && spaceForPortal(world, pos) && !world.getBlockState(pos).get(ACTIVATED)) {
             if (!player.isCreative()) {
                 player.getMainHandStack().setCount(player.getMainHandStack().getCount() - 1);

@@ -11,17 +11,20 @@ import net.minecraft.loot.condition.RandomChanceWithLootingLootCondition;
 import net.minecraft.loot.context.LootContextTypes;
 import net.minecraft.loot.entry.ItemEntry;
 import net.minecraft.loot.provider.number.ConstantLootNumberProvider;
+import net.minecraft.registry.RegistryKey;
+import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.util.Identifier;
 
+import java.util.concurrent.CompletableFuture;
 import java.util.function.BiConsumer;
 
 public class ModEntityLootTableProvider extends SimpleFabricLootTableProvider {
-    public ModEntityLootTableProvider(FabricDataOutput output) {
-        super(output, LootContextTypes.ENTITY);
+    public ModEntityLootTableProvider(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> registryLookup) {
+        super(output, registryLookup, LootContextTypes.ENTITY);
     }
 
     @Override
-    public void accept(BiConsumer<Identifier, LootTable.Builder> exporter) {
+    public void accept(RegistryWrapper.WrapperLookup registryLookup, BiConsumer<RegistryKey<LootTable>, LootTable.Builder> exporter) {
         exporter.accept(ModEntities.LEAF_MONSTER.getLootTableId(), LootTable.builder()
                 .pool(LootPool.builder().
                         rolls(ConstantLootNumberProvider.create(1))

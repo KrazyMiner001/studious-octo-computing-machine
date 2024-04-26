@@ -1,16 +1,14 @@
 package com.goggaguys.entity.custom;
 
-import com.goggaguys.entity.ModEntityGroups;
 import com.goggaguys.entity.ai.LeafMonsterAttackGoal;
 import com.goggaguys.item.custom.LeafiteSword;
-import net.minecraft.client.gl.Uniform;
-import net.minecraft.entity.EntityGroup;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.SpawnReason;
-import net.minecraft.entity.ai.goal.*;
+import net.minecraft.entity.ai.goal.LookAroundGoal;
+import net.minecraft.entity.ai.goal.RevengeGoal;
+import net.minecraft.entity.ai.goal.SwimGoal;
+import net.minecraft.entity.ai.goal.WanderAroundFarGoal;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
-import net.minecraft.entity.attribute.EntityAttributeInstance;
 import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.mob.Angerable;
@@ -18,10 +16,7 @@ import net.minecraft.entity.mob.HostileEntity;
 import net.minecraft.entity.mob.MobEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.TimeHelper;
-import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.intprovider.UniformIntProvider;
-import net.minecraft.util.math.random.Random;
-import net.minecraft.world.ServerWorldAccess;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
@@ -43,11 +38,6 @@ public class LeafMonsterEntity extends HostileEntity implements Angerable {
                 .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.5f)
                 .add(EntityAttributes.GENERIC_ARMOR, 1f)
                 .add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 5);
-    }
-
-    @Override
-    public EntityGroup getGroup() {
-        return ModEntityGroups.LEAFY;
     }
 
     @Override

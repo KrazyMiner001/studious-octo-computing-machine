@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "octocomputing:chlorophyte_block"
-            ]
+            "items": "octocomputing:chlorophyte_block"
           }
         ]
       },

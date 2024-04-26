@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "octocomputing:extraterrestrial_leaf_debris"
-            ]
+            "items": "octocomputing:extraterrestrial_leaf_debris"
           }
         ]
       },

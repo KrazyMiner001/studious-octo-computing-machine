@@ -9,7 +9,6 @@ import net.minecraft.item.ArmorMaterials;
 import net.minecraft.item.Item;
 import net.minecraft.util.Identifier;
 
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -67,7 +66,7 @@ public class ModItemModelGenerator extends ItemModelGenerator {
 
     private void trimArmor(ArmorItem armor, Identifier armorModelId, Identifier armorTextureId) {
         for (TrimMaterial trimMaterial : TRIM_MATERIALS) {
-            String trimMaterialAppliedName = trimMaterial.getAppliedName(armor.getMaterial());
+            String trimMaterialAppliedName = trimMaterial.getAppliedName(armor.getMaterial().value());
             Identifier trimId = this.suffixTrim(armorModelId, trimMaterialAppliedName);
             String armorTrimmedName = armor.getType().getName() + "_trim_" + trimMaterialAppliedName;
             Identifier armorTrimmedId = (new Identifier(armorTrimmedName)).withPrefixedPath("trims/items/");
@@ -77,7 +76,7 @@ public class ModItemModelGenerator extends ItemModelGenerator {
 
     private void trimArmor(ArmorItem armor, Identifier armorModelId, Identifier armorTextureId, Identifier overlayId) {
         for (TrimMaterial trimMaterial : TRIM_MATERIALS) {
-            String trimMaterialAppliedName = trimMaterial.getAppliedName(armor.getMaterial());
+            String trimMaterialAppliedName = trimMaterial.getAppliedName(armor.getMaterial().value());
             Identifier trimId = this.suffixTrim(armorModelId, trimMaterialAppliedName);
             String armorTrimmedName = armor.getType().getName() + "_trim_" + trimMaterialAppliedName;
             Identifier armorTrimmedId = (new Identifier(armorTrimmedName)).withPrefixedPath("trims/items/");
@@ -86,7 +85,7 @@ public class ModItemModelGenerator extends ItemModelGenerator {
     }
 
     static {
-        TRIM_MATERIALS = List.of(new TrimMaterial("quartz", 0.1F, Map.of()), new TrimMaterial("iron", 0.2F, Map.of(ArmorMaterials.IRON, "iron_darker")), new TrimMaterial("netherite", 0.3F, Map.of(ArmorMaterials.NETHERITE, "netherite_darker")), new TrimMaterial("redstone", 0.4F, Map.of()), new TrimMaterial("copper", 0.5F, Map.of()), new TrimMaterial("gold", 0.6F, Map.of(ArmorMaterials.GOLD, "gold_darker")), new TrimMaterial("emerald", 0.7F, Map.of()), new TrimMaterial("diamond", 0.8F, Map.of(ArmorMaterials.DIAMOND, "diamond_darker")), new TrimMaterial("lapis", 0.9F, Map.of()), new TrimMaterial("amethyst", 1.0F, Map.of()));
+        TRIM_MATERIALS = List.of(new TrimMaterial("quartz", 0.1F, Map.of()), new TrimMaterial("iron", 0.2F, Map.of(ArmorMaterials.IRON.value(), "iron_darker")), new TrimMaterial("netherite", 0.3F, Map.of(ArmorMaterials.NETHERITE.value(), "netherite_darker")), new TrimMaterial("redstone", 0.4F, Map.of()), new TrimMaterial("copper", 0.5F, Map.of()), new TrimMaterial("gold", 0.6F, Map.of(ArmorMaterials.GOLD.value(), "gold_darker")), new TrimMaterial("emerald", 0.7F, Map.of()), new TrimMaterial("diamond", 0.8F, Map.of(ArmorMaterials.DIAMOND.value(), "diamond_darker")), new TrimMaterial("lapis", 0.9F, Map.of()), new TrimMaterial("amethyst", 1.0F, Map.of()));
     }
 
     private record TrimMaterial(String name, float itemModelIndex, Map<ArmorMaterial, String> overrideArmorMaterials) {

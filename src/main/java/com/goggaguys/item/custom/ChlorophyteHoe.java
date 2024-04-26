@@ -2,20 +2,12 @@ package com.goggaguys.item.custom;
 
 import com.goggaguys.item.ModToolMaterial;
 import com.mojang.datafixers.util.Pair;
-import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
-import net.minecraft.block.Block;
-import net.minecraft.client.MinecraftClient;
-import net.minecraft.client.item.TooltipContext;
-import net.minecraft.client.network.ClientPlayerEntity;
-import net.minecraft.client.world.ClientWorld;
+import net.minecraft.client.item.TooltipType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.HoeItem;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemUsageContext;
-import net.minecraft.item.ToolMaterial;
-import net.minecraft.registry.tag.BlockTags;
-import net.minecraft.sound.SoundCategory;
-import net.minecraft.sound.SoundEvents;
 import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Formatting;
@@ -23,11 +15,8 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.Direction;
 import net.minecraft.world.World;
-import org.jetbrains.annotations.Nullable;
 
-import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -36,7 +25,7 @@ import java.util.function.Predicate;
 
 public class ChlorophyteHoe extends HoeItem implements ActivatableItem {
     public ChlorophyteHoe() {
-        super(ModToolMaterial.CHLOROPHYTE, 1, 0.5f, new FabricItemSettings());
+        super(ModToolMaterial.CHLOROPHYTE, new Item.Settings().attributeModifiers(HoeItem.createAttributeModifiers(ModToolMaterial.CHLOROPHYTE, 1, 0.5f)));
     }
 
     private static Set<BlockPos> getNearbyBlocks(World world, BlockPos pos) {
@@ -104,7 +93,7 @@ public class ChlorophyteHoe extends HoeItem implements ActivatableItem {
     }
 
     @Override
-    public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
+    public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
         tooltip.add(1, Text.translatable("item.octocomputing.chlorophyte.toggleable_ability"));
         if (ActivatableItem.isActivated(stack)) {
             tooltip.add(2, Text.translatable("item.octocomputing.chlorophyte.chlorophyte_hoe.3x3_ability.enabled").formatted(Formatting.GRAY));
@@ -112,4 +101,5 @@ public class ChlorophyteHoe extends HoeItem implements ActivatableItem {
             tooltip.add(2, Text.translatable("item.octocomputing.chlorophyte.chlorophyte_hoe.3x3_ability.disabled").formatted(Formatting.GRAY));
         }
     }
+
 }

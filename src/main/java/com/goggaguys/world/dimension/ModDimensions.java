@@ -1,28 +1,20 @@
 package com.goggaguys.world.dimension;
 
 import com.goggaguys.OctoComputing;
-import com.goggaguys.world.biome.ModBiomes;
-import com.goggaguys.world.noise.ModNoiseSettings;
-import com.ibm.icu.impl.CollectionSet;
-import net.minecraft.entity.damage.DamageType;
 import net.minecraft.registry.Registerable;
-import net.minecraft.registry.RegistryEntryLookup;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.intprovider.UniformIntProvider;
 import net.minecraft.world.World;
-import net.minecraft.world.biome.Biome;
-import net.minecraft.world.biome.source.BiomeSource;
-import net.minecraft.world.biome.source.FixedBiomeSource;
 import net.minecraft.world.dimension.DimensionOptions;
 import net.minecraft.world.dimension.DimensionType;
 import net.minecraft.world.dimension.DimensionTypes;
-import net.minecraft.world.gen.chunk.ChunkGeneratorSettings;
-import net.minecraft.world.gen.chunk.NoiseChunkGenerator;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.OptionalLong;
 
 public class ModDimensions {
     private static final Map<RegistryKey<DimensionOptions>, DimensionOptions> DIMENSION_OPTIONS = new HashMap<>();

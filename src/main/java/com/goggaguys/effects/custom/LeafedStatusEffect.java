@@ -5,9 +5,6 @@ import com.goggaguys.effects.ModStatusEffects;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectCategory;
-import net.minecraft.entity.player.PlayerEntity;
-
-import java.awt.*;
 
 public class LeafedStatusEffect extends StatusEffect {
     public LeafedStatusEffect() {
@@ -20,11 +17,12 @@ public class LeafedStatusEffect extends StatusEffect {
     }
 
     @Override
-    public void applyUpdateEffect(LivingEntity entity, int amplifier) {
+    public boolean applyUpdateEffect(LivingEntity entity, int amplifier) {
         int leafedResistanceAmplifier = entity.getActiveStatusEffects().containsKey(ModStatusEffects.LEAFED_RESISTANCE_EFFECT) ?
                 entity.getStatusEffect(ModStatusEffects.LEAFED_RESISTANCE_EFFECT).getAmplifier() + 1 :
                 0;
 
         entity.damage(entity.getWorld().getDamageSources().create(ModDamageTypes.LEAF), (float) ((1 << amplifier) * Math.pow(0.75, leafedResistanceAmplifier)));
+        return super.applyUpdateEffect(entity, amplifier);
     }
 }

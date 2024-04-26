@@ -18,7 +18,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import static net.minecraft.server.command.CommandManager.*;
+import static net.minecraft.server.command.CommandManager.literal;
 
 public class ModCommands {
     public static void register() {

@@ -12,6 +12,7 @@
     "###"
   ],
   "result": {
-    "item": "octocomputing:double_compressed_mixed_leaf"
+    "count": 1,
+    "id": "octocomputing:double_compressed_mixed_leaf"
   }
 }

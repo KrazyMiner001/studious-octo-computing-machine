@@ -1,43 +1,25 @@
 package com.goggaguys.item.custom;
 
-import com.goggaguys.damagetype.ModDamageTypes;
-import com.goggaguys.effects.ModStatusEffects;
-import com.goggaguys.enchantments.ModEnchantments;
-import com.goggaguys.entity.ModEntityGroups;
-import com.goggaguys.entity.custom.LeafGodEntity;
-import com.goggaguys.entity.custom.LeafMonsterEntity;
-import net.minecraft.client.item.TooltipContext;
-import net.minecraft.enchantment.DamageEnchantment;
-import net.minecraft.enchantment.Enchantment;
-import net.minecraft.enchantment.EnchantmentHelper;
-import net.minecraft.enchantment.Enchantments;
+import com.goggaguys.entity.ModEntityTypeTags;
+import net.minecraft.client.item.TooltipType;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.damage.DamageTypes;
-import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.inventory.StackReference;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.SwordItem;
 import net.minecraft.item.ToolMaterial;
-import net.minecraft.screen.slot.Slot;
 import net.minecraft.text.Text;
-import net.minecraft.util.ClickType;
-import net.minecraft.util.Hand;
-import net.minecraft.util.TypedActionResult;
-import net.minecraft.world.World;
-import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
 public class LeafiteSword extends SwordItem {
-    public LeafiteSword(ToolMaterial toolMaterial, int attackDamage, float attackSpeed, Settings settings) {
-        super(toolMaterial, attackDamage, attackSpeed, settings);
+    public LeafiteSword(ToolMaterial toolMaterial, Settings settings) {
+        super(toolMaterial, settings);
     }
 
     @Override
     public boolean postHit(ItemStack stack, LivingEntity target, LivingEntity attacker) {
-        if (target.getGroup().equals(ModEntityGroups.LEAFY)) {
+        if (target.getType().isIn(ModEntityTypeTags.LEAFY)) {
             target.damage(attacker.getWorld().getDamageSources().create(
                     attacker instanceof PlayerEntity ? DamageTypes.PLAYER_ATTACK : DamageTypes.MOB_ATTACK,
                             attacker), 5);
@@ -46,7 +28,7 @@ public class LeafiteSword extends SwordItem {
     }
 
     @Override
-    public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
+    public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
         tooltip.add(1, Text.translatable("item.octocomputing.leafite_sword.tooltip"));
     }
 }

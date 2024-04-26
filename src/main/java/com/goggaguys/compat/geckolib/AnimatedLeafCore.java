@@ -2,44 +2,38 @@ package com.goggaguys.compat.geckolib;
 
 import net.minecraft.client.render.item.BuiltinModelItemRenderer;
 import net.minecraft.item.Item;
+import org.jetbrains.annotations.Nullable;
+import software.bernie.geckolib.animatable.GeoAnimatable;
 import software.bernie.geckolib.animatable.GeoItem;
-import software.bernie.geckolib.animatable.client.RenderProvider;
-import software.bernie.geckolib.core.animatable.GeoAnimatable;
-import software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache;
-import software.bernie.geckolib.core.animatable.instance.SingletonAnimatableInstanceCache;
-import software.bernie.geckolib.core.animation.*;
-import software.bernie.geckolib.core.object.PlayState;
-import software.bernie.geckolib.util.RenderUtils;
+import software.bernie.geckolib.animatable.client.GeoRenderProvider;
+import software.bernie.geckolib.animatable.instance.AnimatableInstanceCache;
+import software.bernie.geckolib.animatable.instance.SingletonAnimatableInstanceCache;
+import software.bernie.geckolib.animation.*;
+import software.bernie.geckolib.util.RenderUtil;
 
 import java.util.function.Consumer;
-import java.util.function.Supplier;
 
 public class AnimatedLeafCore extends Item implements GeoItem {
     private AnimatableInstanceCache cache = new SingletonAnimatableInstanceCache(this);
-    private final Supplier<Object> renderProvider = GeoItem.makeRenderer(this);
     public AnimatedLeafCore(Settings settings) {
         super(settings);
     }
 
     @Override
-    public void createRenderer(Consumer<Object> consumer) {
-        consumer.accept(new RenderProvider() {
+    public void createGeoRenderer(Consumer<GeoRenderProvider> consumer) {
+        consumer.accept(new GeoRenderProvider() {
             private final AnimatedLeafCoreRenderer renderer = new AnimatedLeafCoreRenderer();
+
             @Override
-            public BuiltinModelItemRenderer getCustomRenderer() {
+            public @Nullable BuiltinModelItemRenderer getGeoItemRenderer() {
                 return this.renderer;
             }
         });
     }
 
     @Override
-    public Supplier<Object> getRenderProvider() {
-        return renderProvider;
-    }
-
-    @Override
     public double getTick(Object itemStack) {
-        return RenderUtils.getCurrentTick();
+        return RenderUtil.getCurrentTick();
     }
 
     @Override

@@ -5,7 +5,7 @@
       "conditions": {
         "items": [
           {
-            "tag": "octocomputing:leaf"
+            "items": "#octocomputing:leaf"
           }
         ]
       },

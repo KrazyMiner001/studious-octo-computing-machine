@@ -1,8 +1,5 @@
 package com.goggaguys.datagen;
 
-import com.goggaguys.world.noise.ModDensityFunctions;
-import com.goggaguys.world.noise.ModNoiseSettings;
-import com.goggaguys.world.noise.ModNoises;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricDynamicRegistryProvider;
 import net.minecraft.registry.RegistryKeys;

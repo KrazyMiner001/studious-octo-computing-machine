@@ -1,10 +1,12 @@
 package com.goggaguys.entity.custom;
 
 import com.goggaguys.damagetype.ModDamageTypeTags;
-import com.goggaguys.entity.ModEntityGroups;
 import com.goggaguys.item.ModItems;
 import com.goggaguys.item.custom.LeafiteSword;
-import net.minecraft.entity.*;
+import net.minecraft.entity.AnimationState;
+import net.minecraft.entity.EntityType;
+import net.minecraft.entity.ItemEntity;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.ai.RangedAttackMob;
 import net.minecraft.entity.ai.TargetPredicate;
 import net.minecraft.entity.ai.control.FlightMoveControl;
@@ -15,17 +17,12 @@ import net.minecraft.entity.attribute.DefaultAttributeContainer;
 import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.boss.BossBar;
 import net.minecraft.entity.boss.ServerBossBar;
-import net.minecraft.entity.boss.WitherEntity;
 import net.minecraft.entity.damage.DamageSource;
-import net.minecraft.entity.damage.DamageSources;
-import net.minecraft.entity.damage.DamageTypes;
 import net.minecraft.entity.data.DataTracker;
 import net.minecraft.entity.data.TrackedData;
 import net.minecraft.entity.data.TrackedDataHandlerRegistry;
 import net.minecraft.entity.mob.HostileEntity;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.projectile.WitherSkullEntity;
-import net.minecraft.item.Items;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.Text;
 import net.minecraft.util.math.MathHelper;
@@ -33,7 +30,6 @@ import net.minecraft.world.Difficulty;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.List;
 import java.util.function.Predicate;
 
 public class LeafGodEntity extends HostileEntity implements RangedAttackMob {
@@ -172,11 +168,6 @@ public class LeafGodEntity extends HostileEntity implements RangedAttackMob {
     public void setCustomName(@Nullable Text name) {
         super.setCustomName(name);
         this.bossBar.setName(this.getDisplayName());
-    }
-
-    @Override
-    public EntityGroup getGroup() {
-        return ModEntityGroups.LEAFY;
     }
 
     @Override

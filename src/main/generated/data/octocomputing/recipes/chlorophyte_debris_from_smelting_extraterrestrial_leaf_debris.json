@@ -6,5 +6,7 @@
   "ingredient": {
     "item": "octocomputing:extraterrestrial_leaf_debris"
   },
-  "result": "octocomputing:chlorophyte_debris"
+  "result": {
+    "id": "octocomputing:chlorophyte_debris"
+  }
 }

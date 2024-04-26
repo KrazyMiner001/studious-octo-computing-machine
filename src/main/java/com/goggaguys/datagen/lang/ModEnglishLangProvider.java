@@ -9,15 +9,18 @@ import com.goggaguys.item.ModItemTags;
 import com.goggaguys.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
+import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.Util;
 
+import java.util.concurrent.CompletableFuture;
+
 public class ModEnglishLangProvider extends FabricLanguageProvider {
-    public ModEnglishLangProvider(FabricDataOutput dataGenerator) {
-        super(dataGenerator, "en_us");
+    public ModEnglishLangProvider(FabricDataOutput dataGenerator, CompletableFuture<RegistryWrapper.WrapperLookup> registryLookup) {
+        super(dataGenerator, "en_us", registryLookup);
     }
     @Override
-    public void generateTranslations(TranslationBuilder translationBuilder) {
+    public void generateTranslations(RegistryWrapper.WrapperLookup registryLookup, TranslationBuilder translationBuilder) {
         leafTranslations(translationBuilder);
 
         translationBuilder.add(ModItems.LEAFSTONE, "Leafstone");
@@ -93,7 +96,7 @@ public class ModEnglishLangProvider extends FabricLanguageProvider {
         translationBuilder.add(ModEnchantments.LEAF_PROTECTION, "Leaf Protection");
         translationBuilder.add(ModEnchantments.GARDEN_SHEARS, "Garden Shears");
 
-        translationBuilder.add(ModStatusEffects.LEAFED_EFFECT, "Leafed");
+
 
         translationBuilder.add(ModEntities.LEAF_MONSTER, "Leaf Monster");
         translationBuilder.add(ModEntities.LEAF_GOD, "Leaf God");

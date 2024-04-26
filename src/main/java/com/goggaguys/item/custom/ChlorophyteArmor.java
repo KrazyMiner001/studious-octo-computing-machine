@@ -3,7 +3,6 @@ package com.goggaguys.item.custom;
 import com.goggaguys.effects.ModStatusEffects;
 import com.goggaguys.item.ModArmorMaterials;
 import com.goggaguys.utilities.LeafResistancePotency;
-import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.player.PlayerEntity;
@@ -17,7 +16,7 @@ import net.minecraft.world.World;
 public class ChlorophyteArmor extends ArmorItem {
     private boolean hasFlightBuff = false;
     public ChlorophyteArmor(Type type) {
-        super(ModArmorMaterials.CHLOROPHYTE, type, new FabricItemSettings());
+        super(ModArmorMaterials.CHLOROPHYTE, type, new Item.Settings().maxDamage(type.getMaxDamage(75)));
     }
 
     @Override

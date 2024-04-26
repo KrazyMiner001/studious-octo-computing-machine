@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "octocomputing:stripped_mystery_log"
-            ]
+            "items": "octocomputing:stripped_mystery_log"
           }
         ]
       },

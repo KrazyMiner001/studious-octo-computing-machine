@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "octocomputing:double_compressed_mixed_leaf"
-            ]
+            "items": "octocomputing:double_compressed_mixed_leaf"
           }
         ]
       },
@@ -17,9 +15,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "minecraft:enchanted_golden_apple"
-            ]
+            "items": "minecraft:enchanted_golden_apple"
           }
         ]
       },
@@ -29,9 +25,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "octocomputing:leafstone_block"
-            ]
+            "items": "octocomputing:leafstone_block"
           }
         ]
       },

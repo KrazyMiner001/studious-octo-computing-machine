@@ -7,7 +7,8 @@
     "item": "minecraft:netherite_boots"
   },
   "result": {
-    "item": "octocomputing:leafite_boots"
+    "count": 1,
+    "id": "octocomputing:leafite_boots"
   },
   "template": {
     "item": "octocomputing:leafite_upgrade_smithing_template"

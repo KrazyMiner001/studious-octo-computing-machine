@@ -5,9 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "octocomputing:broken_leaf_core"
-            ]
+            "items": "octocomputing:broken_leaf_core"
           }
         ]
       },
@@ -17,9 +15,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "octocomputing:double_compressed_mixed_leaf"
-            ]
+            "items": "octocomputing:double_compressed_mixed_leaf"
           }
         ]
       },
@@ -29,9 +25,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "octocomputing:leafstone_block"
-            ]
+            "items": "octocomputing:leafstone_block"
           }
         ]
       },

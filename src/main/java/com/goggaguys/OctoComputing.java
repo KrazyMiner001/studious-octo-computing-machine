@@ -6,18 +6,17 @@ import com.goggaguys.compat.Mods;
 import com.goggaguys.compat.geckolib.GeckoLib;
 import com.goggaguys.effects.ModStatusEffects;
 import com.goggaguys.enchantments.ModEnchantments;
+import com.goggaguys.entity.ModEntities;
 import com.goggaguys.entity.custom.LeafGodEntity;
 import com.goggaguys.entity.custom.LeafMonsterEntity;
-import com.goggaguys.entity.ModEntities;
+import com.goggaguys.item.ModDataComponentTypes;
 import com.goggaguys.item.ModItemGroups;
 import com.goggaguys.item.ModItemTags;
 import com.goggaguys.item.ModItems;
 import com.goggaguys.world.gen.ModWorldGeneration;
 import net.fabricmc.api.ModInitializer;
-
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
 import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
-import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.fabricmc.fabric.api.loot.v2.LootTableEvents;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
@@ -26,9 +25,12 @@ import net.fabricmc.fabric.api.registry.StrippableBlockRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.SpawnGroup;
+import net.minecraft.entity.SpawnLocationTypes;
 import net.minecraft.entity.SpawnRestriction;
 import net.minecraft.entity.mob.HostileEntity;
-import net.minecraft.item.*;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemGroups;
+import net.minecraft.item.Items;
 import net.minecraft.loot.LootPool;
 import net.minecraft.loot.condition.MatchToolLootCondition;
 import net.minecraft.loot.condition.RandomChanceLootCondition;
@@ -40,8 +42,6 @@ import net.minecraft.predicate.item.ItemPredicate;
 import net.minecraft.world.Heightmap;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import java.util.ArrayList;
 
 public class OctoComputing implements ModInitializer {
 	// This logger is used to write text to the console and the log file.
@@ -61,6 +61,7 @@ public class OctoComputing implements ModInitializer {
 		ModEnchantments.registerModEnchantments();
 		ModStatusEffects.registerModStatusEffects();
 		ModCommands.register();
+		ModDataComponentTypes.register();
 
 		ItemGroupEvents.modifyEntriesEvent(ItemGroups.SPAWN_EGGS).register(content -> content.add(ModItems.LEAF_MONSTER_SPAWN_EGG));
 		ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS).register(content ->
@@ -105,7 +106,7 @@ public class OctoComputing implements ModInitializer {
 		FabricDefaultAttributeRegistry.register(ModEntities.LEAF_MONSTER, LeafMonsterEntity.createLeafMonsterAttributes());
 		FabricDefaultAttributeRegistry.register(ModEntities.LEAF_GOD, LeafGodEntity.createLeafGodAttributes());
 
-		SpawnRestriction.register(ModEntities.LEAF_MONSTER, SpawnRestriction.Location.ON_GROUND, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, HostileEntity::canSpawnIgnoreLightLevel);
+		SpawnRestriction.register(ModEntities.LEAF_MONSTER, SpawnLocationTypes.ON_GROUND, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, HostileEntity::canSpawnIgnoreLightLevel);
 
 		StrippableBlockRegistry.register(ModBlocks.MYSTERY_LOG, ModBlocks.STRIPPED_MYSTERY_LOG);
 		StrippableBlockRegistry.register(ModBlocks.MYSTERY_WOOD, ModBlocks.STRIPPED_MYSTERY_WOOD);
@@ -120,8 +121,8 @@ public class OctoComputing implements ModInitializer {
 	}
 
 	private static void leafLootTable(Block leafBlock, Item leafItem) {
-		LootTableEvents.MODIFY.register((resourceManager, lootManager, id, tableBuilder, source) -> {
-			if (source.isBuiltin() && leafBlock.getLootTableId().equals(id)) {
+		LootTableEvents.MODIFY.register((lootTableRegistryKey, builder, source) -> {
+			if (source.isBuiltin() && leafBlock.getLootTableKey() == lootTableRegistryKey) {
 				LootPool.Builder leafPoolBuilder = LootPool.builder()
 						.rolls(BinomialLootNumberProvider.create(125, 0.2f))
 						.with(ItemEntry.builder(leafItem))
@@ -134,8 +135,8 @@ public class OctoComputing implements ModInitializer {
 						.conditionally(RandomChanceLootCondition.builder(0.001f))
 						.conditionally(MatchToolLootCondition.builder(ItemPredicate.Builder.create().items(ModItems.LEAF_PICKER)));
 
-				tableBuilder.pool(leafPoolBuilder);
-				tableBuilder.pool(mysteryLeafPoolBuilder);
+				builder.pool(leafPoolBuilder);
+				builder.pool(mysteryLeafPoolBuilder);
 			}
 		});
 	}

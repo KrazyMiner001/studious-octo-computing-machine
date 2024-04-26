@@ -7,7 +7,8 @@
     "item": "minecraft:netherite_pickaxe"
   },
   "result": {
-    "item": "octocomputing:leafite_pickaxe"
+    "count": 1,
+    "id": "octocomputing:leafite_pickaxe"
   },
   "template": {
     "item": "octocomputing:leafite_upgrade_smithing_template"

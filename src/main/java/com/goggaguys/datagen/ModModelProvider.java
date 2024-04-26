@@ -1,6 +1,5 @@
 package com.goggaguys.datagen;
 
-import com.goggaguys.OctoComputing;
 import com.goggaguys.block.ModBlocks;
 import com.goggaguys.block.ModProperties;
 import com.goggaguys.item.ModItems;
@@ -8,20 +7,16 @@ import com.goggaguys.model.ModItemModelGenerator;
 import com.goggaguys.utilities.CompressedChainMap;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
-import net.minecraft.block.Blocks;
 import net.minecraft.data.client.*;
 import net.minecraft.item.ArmorItem;
 import net.minecraft.item.Item;
 import net.minecraft.state.property.BooleanProperty;
-import net.minecraft.state.property.IntProperty;
 import net.minecraft.state.property.Properties;
-import net.minecraft.state.property.Property;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.Direction;
 
 import java.util.Optional;
 
-import static net.minecraft.data.client.BlockStateModelGenerator.createAxisRotatedBlockState;
 import static net.minecraft.data.client.BlockStateModelGenerator.createSouthDefaultHorizontalRotationStates;
 
 public class ModModelProvider extends FabricModelProvider {

@@ -4,14 +4,8 @@ import com.goggaguys.OctoComputing;
 import net.minecraft.registry.Registerable;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
-import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.noise.DoublePerlinNoiseSampler;
-import net.minecraft.world.gen.feature.ConfiguredFeature;
-import net.minecraft.world.gen.feature.PlacedFeature;
-import net.minecraft.world.gen.placementmodifier.PlacementModifier;
-
-import java.util.List;
 
 public class ModNoises {
     public static final RegistryKey<DoublePerlinNoiseSampler.NoiseParameters> TEMPERATURE = registerKey("temperature");

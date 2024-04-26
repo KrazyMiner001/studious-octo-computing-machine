@@ -1,31 +1,23 @@
 package com.goggaguys.mixin;
 
 import com.goggaguys.world.biome.ModBiomeTags;
-import com.goggaguys.world.biome.ModBiomes;
-import com.goggaguys.world.dimension.ModDimensions;
 import com.google.common.collect.ImmutableList;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.ItemEntity;
 import net.minecraft.entity.Saddleable;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.ProjectileEntity;
-import net.minecraft.network.packet.s2c.play.PositionFlag;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.server.MinecraftServer;
-import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
-import net.minecraft.util.Identifier;
 import net.minecraft.world.World;
-import net.minecraft.world.dimension.DimensionTypes;
 import org.jetbrains.annotations.Nullable;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
-import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
-
-import net.minecraft.entity.Entity;
 
 import java.util.HashSet;
 import java.util.List;
