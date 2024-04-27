@@ -17,6 +17,7 @@ import net.minecraft.util.TypedActionResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -29,7 +30,7 @@ public class ChlorophyteAxe extends AxeItem implements ActivatableItem {
     @Override
     public boolean postMine(ItemStack stack, World world, BlockState state, BlockPos pos, LivingEntity miner) {
         if (miner instanceof PlayerEntity playerEntity && ActivatableItem.isActivated(stack)) {
-            Set<BlockPos> treeBlocks = getTreeBlocks(world, state.getBlock(), pos, new HashSet<>());
+            List<BlockPos> treeBlocks = getTreeBlocks(world, state.getBlock(), pos, new ArrayList<>());
 
             for (BlockPos treeBlock : treeBlocks) {
                 if (!playerEntity.isCreative()) {
@@ -63,11 +64,11 @@ public class ChlorophyteAxe extends AxeItem implements ActivatableItem {
         }
     }
 
-    private Set<BlockPos> getTreeBlocks (World world, Block blockType , BlockPos pos, Set<BlockPos> ignoredBlocks) {
+    private List<BlockPos> getTreeBlocks (World world, Block blockType , BlockPos pos, List<BlockPos> ignoredBlocks) {
         if (!blockType.getDefaultState().isIn(BlockTags.LOGS)) {
-            return new HashSet<>();
+            return new ArrayList<>();
         }
-        Set<BlockPos> treeBlocks = new HashSet<>();
+        List<BlockPos> treeBlocks = new ArrayList<>();
         int posX = pos.getX();
         int posY = pos.getY();
         int posZ = pos.getZ();
@@ -78,7 +79,7 @@ public class ChlorophyteAxe extends AxeItem implements ActivatableItem {
 
                     BlockPos testPos = new BlockPos(x, y, z);
                     if (!ignoredBlocks.contains(testPos)) {
-                        Set<BlockPos> checkedBlocks = new HashSet<>(treeBlocks);
+                        List<BlockPos> checkedBlocks = new ArrayList<>(treeBlocks);
                         checkedBlocks.addAll(ignoredBlocks);
                         checkedBlocks.add(testPos);
                         if (world.getBlockState(testPos).getBlock() == blockType) {
