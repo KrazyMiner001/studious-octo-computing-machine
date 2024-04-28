@@ -15,10 +15,13 @@ import net.minecraft.world.gen.feature.VegetationPlacedFeatures;
 import net.minecraft.world.gen.placementmodifier.HeightRangePlacementModifier;
 import net.minecraft.world.gen.placementmodifier.PlacementModifier;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ModPlacedFeatures {
     public static final RegistryKey<PlacedFeature> MYSTERY_PLACED_KEY = registerKey("mystery_placed");
+
+    public static final RegistryKey<PlacedFeature> CUSTOM_TREE_FEATURE_PLACED_KEY = registerKey("custom_tree_feature_placed");
 
     public static final RegistryKey<PlacedFeature> STONE_LEAF_ORE_PLACED_KEY = registerKey("stone_leaf_ore_placed");
     public static final RegistryKey<PlacedFeature> DEEPSLATE_LEAF_ORE_PLACED_KEY = registerKey("deepslate_leaf_ore_placed");
@@ -46,6 +49,9 @@ public class ModPlacedFeatures {
         register(context, MYSTERY_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.MYSTERY_KEY),
                 VegetationPlacedFeatures.treeModifiersWithWouldSurvive(PlacedFeatures.createCountExtraModifier(2, 0.1f, 2),
                         ModBlocks.MYSTERY_SAPLING));
+
+        register(context, CUSTOM_TREE_FEATURE_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.CUSTOM_TREE_FEATURE_KEY),
+                new ArrayList<>());
     }
 
     public static RegistryKey<PlacedFeature> registerKey(String name) {

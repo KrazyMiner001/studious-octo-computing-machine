@@ -2,6 +2,8 @@ package com.goggaguys.world;
 
 import com.goggaguys.OctoComputing;
 import com.goggaguys.block.ModBlocks;
+import com.goggaguys.world.customFeatures.CustomTreeFeatureConfig;
+import com.goggaguys.world.customFeatures.ModFeatures;
 import net.minecraft.block.Blocks;
 import net.minecraft.registry.Registerable;
 import net.minecraft.registry.RegistryKey;
@@ -26,6 +28,8 @@ public class ModConfiguredFeatures {
     public static final RegistryKey<ConfiguredFeature<?, ?>> DEEPSLATE_LEAF_ORE_KEY = registerKey("deepslate_leaf_ore");
     public static final RegistryKey<ConfiguredFeature<?, ?>> LEAF_DIMENSION_LEAF_ORE_KEY = registerKey("leaf_dimension_leaf_ore");
     public static final RegistryKey<ConfiguredFeature<?, ?>> EXTRATERRESTRIAL_LEAF_DEBRIS_KEY = registerKey("extraterrestrial_leaf_debris");
+
+    public static final RegistryKey<ConfiguredFeature<?, ?>> CUSTOM_TREE_FEATURE_KEY = registerKey("custom_tree_feature");
 
     public static final RegistryKey<ConfiguredFeature<?, ?>> MYSTERY_KEY = registerKey("mystery");
 
@@ -64,6 +68,14 @@ public class ModConfiguredFeatures {
                         0.25f, 0.25f, 0.5f, 0.25f),
 
                 new TwoLayersFeatureSize(1, 0, 2)).build());
+
+        register(context, CUSTOM_TREE_FEATURE_KEY, ModFeatures.CUSTOM_TREE_FEATURE, new CustomTreeFeatureConfig(
+                200,
+                5,
+                6,
+                new Identifier(OctoComputing.MOD_ID, "eternalwood"),
+                new Identifier(OctoComputing.MOD_ID, "eternalleaves")
+        ));
     }
 
     public static RegistryKey<ConfiguredFeature<?, ?>> registerKey(String name) {

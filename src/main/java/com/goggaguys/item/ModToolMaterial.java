@@ -1,5 +1,6 @@
 package com.goggaguys.item;
 
+import com.goggaguys.block.ModBlockTags;
 import com.google.common.base.Suppliers;
 import net.minecraft.block.Block;
 import net.minecraft.item.ToolMaterial;
@@ -18,9 +19,9 @@ public enum ModToolMaterial implements ToolMaterial {
     DOUBLE_COMPRESSED_LEAF(BlockTags.INCORRECT_FOR_IRON_TOOL, 15, 80f, 2f, 40,
             () -> Ingredient.fromTag(ModItemTags.LEAF_DOUBLE_COMPRESSED)),
 
-    LEAFITE(BlockTags.INCORRECT_FOR_NETHERITE_TOOL, 3000, 17f, 5f, 22,
+    LEAFITE(ModBlockTags.INCORRECT_FOR_LEAFITE_TOOL, 3000, 17f, 5f, 22,
             () -> Ingredient.ofItems(ModItems.LEAF_CORE)),
-    CHLOROPHYTE(BlockTags.INCORRECT_FOR_NETHERITE_TOOL, 5000, 21F,
+    CHLOROPHYTE(ModBlockTags.INCORRECT_FOR_CHLOROPHYTE_TOOL, 5000, 21F,
             7F, 30,
             () -> Ingredient.ofItems(ModItems.CHLOROPHYTE_INGOT));
 

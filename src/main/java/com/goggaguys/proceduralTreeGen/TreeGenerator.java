@@ -1,6 +1,7 @@
 package com.goggaguys.proceduralTreeGen;
 
 import com.goggaguys.shapes.TruncatedCone;
+import net.minecraft.util.math.Position;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.math.random.Random;
 
@@ -12,10 +13,12 @@ public class TreeGenerator {
     private final List<TreeNode> treeNodes;
     private final List<AttractingPoint> pointCloud;
     private final List<TreeNode> trunkNodes;
+    private final List<Vec3d> leafPositions;
 
     public TreeGenerator(double segmentSize, List<AttractingPoint> pointCloud, double initialThickness) {
         this.segmentSize = segmentSize;
         this.pointCloud = pointCloud;
+        this.leafPositions = new ArrayList<>();
         this.treeNodes = new ArrayList<>();
         this.trunkNodes = new ArrayList<>();
 
@@ -67,7 +70,7 @@ public class TreeGenerator {
     }
 
     private void spawnLeaf(Vec3d position) {
-        //Todo
+        this.leafPositions.add(position);
     }
     
     private TreeNode addNewTreeNode(TreeNode oldTreeNode) {
@@ -101,5 +104,9 @@ public class TreeGenerator {
             }
         }
         return truncatedConeList;
+    }
+
+    public List<Vec3d> getLeafPositions() {
+        return leafPositions;
     }
 }
