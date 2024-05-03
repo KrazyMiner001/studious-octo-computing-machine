@@ -1,0 +1,71 @@
+{
+  "parent": "octocomputing:investigation/root",
+  "criteria": {
+    "compressed_leaf_armor": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "octocomputing:compressed_leaf_helmet",
+              "octocomputing:compressed_leaf_chestplate",
+              "octocomputing:compressed_leaf_leggings",
+              "octocomputing:compressed_leaf_boots"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "double_compressed_leaf_armor": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "octocomputing:double_compressed_leaf_helmet",
+              "octocomputing:double_compressed_leaf_chestplate",
+              "octocomputing:double_compressed_leaf_leggings",
+              "octocomputing:double_compressed_leaf_boots"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "leaf_armor": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "octocomputing:leaf_helmet",
+              "octocomputing:leaf_chestplate",
+              "octocomputing:leaf_leggings",
+              "octocomputing:leaf_boots"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "advancements.octocomputing.leaf_armor.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "octocomputing:leaf_chestplate"
+    },
+    "show_toast": false,
+    "title": {
+      "translate": "advancements.octocomputing.leaf_armor.title"
+    }
+  },
+  "requirements": [
+    [
+      "leaf_armor",
+      "compressed_leaf_armor",
+      "double_compressed_leaf_armor"
+    ]
+  ]
+}

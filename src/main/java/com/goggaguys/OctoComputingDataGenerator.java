@@ -33,6 +33,7 @@ public class OctoComputingDataGenerator implements DataGeneratorEntrypoint {
         pack.addProvider(ModDamageTypeTagProvider::new);
         pack.addProvider(ModEnglishLangProvider::new);
         pack.addProvider(ModWorldGenerator::new);
+        pack.addProvider(ModAdvancementProvider::new);
     }
 
     @Override

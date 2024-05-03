@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "octocomputing:block/endergleam_log_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "octocomputing:block/endergleam_log"
+    },
+    "axis=z": {
+      "model": "octocomputing:block/endergleam_log_horizontal",
+      "x": 90
+    }
+  }
+}

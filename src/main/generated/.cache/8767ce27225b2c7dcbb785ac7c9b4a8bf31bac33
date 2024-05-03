@@ -1,7 +1,15 @@
-// 1.20.5	2024-04-28T20:54:39.9542278	OctoComputing/Tags for minecraft:item
-cc6c1b8697ae32ffa702dbdc89e61f9857952fdb data\minecraft\tags\items\planks.json
-4169cc01b35f61b424d17f817cecb75429c5e7e0 data\octocomputing\tags\items\leaf_compressed.json
-51710e985a73477a9db156fb9dd302c3e5bbdb92 data\octocomputing\tags\items\leaf.json
-74ebf0087ba678b104b96cc358f6e69b3db03899 data\minecraft\tags\items\trimmable_armor.json
+// 1.20.6	2024-05-02T20:13:30.2917518	OctoComputing/Tags for minecraft:item
+a1040edd23a550580fc31d231daf4144f9bc8be0 data\minecraft\tags\items\saplings.json
+ed6b7339f98495cd0ab1fbb338ba08e67f84b6ce data\minecraft\tags\items\swords.json
+05489b34792091b5f80abbf586305e11c07cce1e data\octocomputing\tags\items\leaf_compressed.json
+b655efb05ac1e8febce8460b9265affd31323550 data\octocomputing\tags\items\leaf.json
+6a7e8e1c27a11d25860038e890ed7be2ee9dbdb3 data\minecraft\tags\items\trimmable_armor.json
 e0826adab2d1abcd07aa4492a56d78a519e784a4 data\octocomputing\tags\items\mystery_logs.json
-915fc7d09df9bac45eae49eee2cb0d1918d6ac2b data\octocomputing\tags\items\leaf_double_compressed.json
+4de5c5199de6cb9fc5939be6237b55d589af2bf3 data\minecraft\tags\items\axes.json
+8c6dbb0c28d1653af22303904ba510f0556c3ce2 data\minecraft\tags\items\head_armor.json
+4ff9babbaf1f9bc46396210f10b1160b25a454eb data\minecraft\tags\items\leg_armor.json
+0b8f956facba79223c3232dab09970ada8f3c601 data\octocomputing\tags\items\leaf_double_compressed.json
+03e59321ae105b6bb6f56ab56876f2daac1116c8 data\minecraft\tags\items\foot_armor.json
+cd74afc9d08ce2e2eca4bbd44ae4d3f9648f18b9 data\minecraft\tags\items\enchantable\durability.json
+cc6c1b8697ae32ffa702dbdc89e61f9857952fdb data\minecraft\tags\items\planks.json
+746fa2be1e78e7e661251edae5ebc013e2c46fab data\minecraft\tags\items\chest_armor.json

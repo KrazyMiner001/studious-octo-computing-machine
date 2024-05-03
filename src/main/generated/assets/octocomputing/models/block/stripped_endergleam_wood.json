@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "octocomputing:block/stripped_endergleam_log",
+    "side": "octocomputing:block/stripped_endergleam_log"
+  }
+}

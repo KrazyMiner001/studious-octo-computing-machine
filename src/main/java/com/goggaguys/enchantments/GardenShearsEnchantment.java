@@ -15,7 +15,10 @@ public class GardenShearsEnchantment extends Enchantment {
 
     @Override
     public float getAttackDamage(int level, @Nullable EntityType<?> entityType) {
-        return entityType.isIn(ModEntityTypeTags.LEAFY) ? level * 2.5f : 0.0f;
+        if (entityType != null) {
+            return entityType.isIn(ModEntityTypeTags.LEAFY) ? level * 2.5f : 0.0f;
+        }
+        return 0f;
     }
 
     @Override

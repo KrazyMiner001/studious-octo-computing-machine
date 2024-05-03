@@ -37,7 +37,8 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.MYSTERY_PLANKS);
 
         getOrCreateTagBuilder(BlockTags.SAPLINGS)
-                .add(ModBlocks.MYSTERY_SAPLING);
+                .add(ModBlocks.MYSTERY_SAPLING)
+                .add(ModBlocks.TRANSIENTWOOD_SAPLING);
 
         getOrCreateTagBuilder(BlockTags.BEACON_BASE_BLOCKS)
                 .add(ModBlocks.LEAFSTONE_BLOCK);

@@ -39,6 +39,38 @@ public class ModBlocks {
     public static final Block MYSTERY_LEAVES = registerBlockAndItem("mystery_leaves",
         new Block(Block.Settings.copy(Blocks.OAK_LEAVES).strength(4f).nonOpaque()));
 
+    public static final Block TRANSIENTWOOD_SAPLING = registerBlockAndItem("transientwood_sapling",
+            new SaplingBlock(ModSaplingGenerators.TRANSIENTWOOD_TREE, Block.Settings.copy(Blocks.OAK_SAPLING)));
+
+    public static final Block TRANSIENTWOOD_LOG = registerBlockAndItem("transientwood_log",
+            new PillarBlock(Block.Settings.copy(Blocks.OAK_LOG).strength(4f)));
+    public static final Block TRANSIENTWOOD = registerBlockAndItem("transientwood",
+            new PillarBlock(Block.Settings.copy(Blocks.OAK_WOOD).strength(4f)));
+    public static final Block STRIPPED_TRANSIENTWOOD_LOG = registerBlockAndItem("stripped_transientwood_log",
+            new PillarBlock(Block.Settings.copy(Blocks.STRIPPED_OAK_LOG).strength(4f)));
+    public static final Block STRIPPED_TRANSIENTWOOD = registerBlockAndItem("stripped_transientwood",
+            new PillarBlock(Block.Settings.copy(Blocks.STRIPPED_OAK_WOOD).strength(4f)));
+    public static final Block TRANSIENTWOOD_PLANKS = registerBlockAndItem("transientwood_planks",
+            new Block(Block.Settings.copy(Blocks.OAK_PLANKS).strength(4f)));
+    public static final Block TRANSIENTWOOD_LEAVES = registerBlockAndItem("transientwood_leaves",
+            new Block(Block.Settings.copy(Blocks.OAK_LEAVES).strength(4f).nonOpaque()));
+
+    public static final Block ENDERGLEAM_SAPLING = registerBlockAndItem("endergleam_sapling",
+            new SaplingBlock(ModSaplingGenerators.ENDERGLEAM_TREE, Block.Settings.copy(Blocks.OAK_SAPLING)));
+
+    public static final Block ENDERGLEAM_LOG = registerBlockAndItem("endergleam_log",
+            new PillarBlock(Block.Settings.copy(Blocks.OAK_LOG).strength(4f)));
+    public static final Block ENDERGLEAM_WOOD = registerBlockAndItem("endergleam_wood",
+            new PillarBlock(Block.Settings.copy(Blocks.OAK_WOOD).strength(4f)));
+    public static final Block STRIPPED_ENDERGLEAM_LOG = registerBlockAndItem("stripped_endergleam_log",
+            new PillarBlock(Block.Settings.copy(Blocks.STRIPPED_OAK_LOG).strength(4f)));
+    public static final Block STRIPPED_ENDERGLEAM_WOOD = registerBlockAndItem("stripped_endergleam_wood",
+            new PillarBlock(Block.Settings.copy(Blocks.STRIPPED_OAK_WOOD).strength(4f)));
+    public static final Block ENDERGLEAM_PLANKS = registerBlockAndItem("endergleam_planks",
+            new Block(Block.Settings.copy(Blocks.OAK_PLANKS).strength(4f)));
+    public static final Block ENDERGLEAM_LEAVES = registerBlockAndItem("endergleam_leaves",
+            new Block(Block.Settings.copy(Blocks.OAK_LEAVES).strength(4f).nonOpaque()));
+
     public static final Block ETERNALWOOD = registerBlockAndItem("eternalwood",
             new PillarBlock(Block.Settings.copy(Blocks.OAK_WOOD).strength(-1.0F, 3600000.0F).dropsNothing().allowsSpawning(Blocks::never).luminance((state) -> 7)));
     public static final Block ETERNALLEAVES = registerBlockAndItem("eternalleaves",

@@ -198,6 +198,12 @@ public class LeafGodEntity extends HostileEntity implements RangedAttackMob {
     }
 
     @Override
+    protected void initDataTracker(DataTracker.Builder builder) {
+        super.initDataTracker(builder);
+        builder.add(TRACKED_ENTITY_ID, 0);
+    }
+
+    @Override
     public void onStartedTrackingBy(ServerPlayerEntity player) {
         super.onStartedTrackingBy(player);
         this.bossBar.addPlayer(player);

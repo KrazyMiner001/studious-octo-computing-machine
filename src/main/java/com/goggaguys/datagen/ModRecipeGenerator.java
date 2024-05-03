@@ -126,13 +126,13 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
                 ModItems.LEAF_LEGGINGS,
                 ModItems.LEAF_BOOTS);
 
-        armorRecipes(exporter, ModItemTags.LEAF,
+        armorRecipes(exporter, ModItemTags.LEAF_COMPRESSED,
                 ModItems.COMPRESSED_LEAF_HELMET,
                 ModItems.COMPRESSED_LEAF_CHESTPLATE,
                 ModItems.COMPRESSED_LEAF_LEGGINGS,
                 ModItems.COMPRESSED_LEAF_BOOTS);
 
-        armorRecipes(exporter, ModItemTags.LEAF,
+        armorRecipes(exporter, ModItemTags.LEAF_DOUBLE_COMPRESSED,
                 ModItems.DOUBLE_COMPRESSED_LEAF_HELMET,
                 ModItems.DOUBLE_COMPRESSED_LEAF_CHESTPLATE,
                 ModItems.DOUBLE_COMPRESSED_LEAF_LEGGINGS,

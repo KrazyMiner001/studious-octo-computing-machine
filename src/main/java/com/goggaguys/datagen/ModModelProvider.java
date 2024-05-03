@@ -26,6 +26,8 @@ public class ModModelProvider extends FabricModelProvider {
     @Override
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
         blockStateModelGenerator.registerTintableCross(ModBlocks.MYSTERY_SAPLING, BlockStateModelGenerator.TintType.NOT_TINTED);
+        blockStateModelGenerator.registerTintableCross(ModBlocks.TRANSIENTWOOD_SAPLING, BlockStateModelGenerator.TintType.NOT_TINTED);
+        blockStateModelGenerator.registerTintableCross(ModBlocks.ENDERGLEAM_SAPLING, BlockStateModelGenerator.TintType.NOT_TINTED);
 
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.LEAF_ORE);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.DEEPSLATE_LEAF_ORE);
@@ -34,6 +36,14 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerLog(ModBlocks.MYSTERY_LOG).log(ModBlocks.MYSTERY_LOG).wood(ModBlocks.MYSTERY_WOOD);
         blockStateModelGenerator.registerLog(ModBlocks.STRIPPED_MYSTERY_LOG).log(ModBlocks.STRIPPED_MYSTERY_LOG).wood(ModBlocks.STRIPPED_MYSTERY_WOOD);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.MYSTERY_LEAVES);
+
+        blockStateModelGenerator.registerLog(ModBlocks.TRANSIENTWOOD_LOG).log(ModBlocks.TRANSIENTWOOD_LOG).wood(ModBlocks.TRANSIENTWOOD);
+        blockStateModelGenerator.registerLog(ModBlocks.STRIPPED_TRANSIENTWOOD_LOG).log(ModBlocks.STRIPPED_TRANSIENTWOOD_LOG).wood(ModBlocks.STRIPPED_TRANSIENTWOOD);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.TRANSIENTWOOD_LEAVES);
+
+        blockStateModelGenerator.registerLog(ModBlocks.ENDERGLEAM_LOG).log(ModBlocks.ENDERGLEAM_LOG).wood(ModBlocks.ENDERGLEAM_WOOD);
+        blockStateModelGenerator.registerLog(ModBlocks.STRIPPED_ENDERGLEAM_LOG).log(ModBlocks.STRIPPED_ENDERGLEAM_LOG).wood(ModBlocks.STRIPPED_ENDERGLEAM_WOOD);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.ENDERGLEAM_LEAVES);
 
         blockStateModelGenerator.registerSingleton(ModBlocks.EXTRATERRESTRIAL_LEAF_DEBRIS, TexturedModel.CUBE_COLUMN);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.CHLOROPHYTE_BLOCK);
@@ -58,6 +68,8 @@ public class ModModelProvider extends FabricModelProvider {
                 );
 
         BlockStateModelGenerator.BlockTexturePool mystery_pool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.MYSTERY_PLANKS);
+        BlockStateModelGenerator.BlockTexturePool transientwood_pool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.TRANSIENTWOOD_PLANKS);
+        BlockStateModelGenerator.BlockTexturePool endergleam_pool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.ENDERGLEAM_PLANKS);
     }
 
     @Override

@@ -25,6 +25,10 @@ public class LeafProjectileEntity extends ExplosiveProjectileEntity {
     public LeafProjectileEntity(World world, LivingEntity owner, double directionX, double directionY, double directionZ) {
         super(ModEntities.LEAF_PROJECTILE, owner, directionX, directionY, directionZ, world);
     }
+//
+//    public LeafProjectileEntity(EntityType<? extends LeafProjectileEntity> entityType, World world) {
+//        super(entityType, world);
+//    }
 
     @Override
     protected void onCollision(HitResult hitResult) {

@@ -26,7 +26,9 @@ public class TokenOfTheLeafGodItem extends Item {
     @Override
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
         if (world instanceof ServerWorld serverWorld) {
-            user.getStackInHand(hand).setCount(user.getMainHandStack().getCount() - 1);
+            if (!user.isCreative()) {
+                user.getStackInHand(hand).setCount(user.getMainHandStack().getCount() - 1);
+            }
             Position pos = user.getPos();
             Entity entity = ModEntities.LEAF_GOD.spawnFromItemStack(serverWorld, user.getMainHandStack(), user, new BlockPos((int) pos.getX(), (int) (pos.getY() + 10), (int) pos.getZ()), SpawnReason.SPAWN_EGG, false, false);
             return TypedActionResult.consume(user.getStackInHand(hand));

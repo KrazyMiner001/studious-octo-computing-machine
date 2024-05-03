@@ -1,0 +1,44 @@
+{
+  "parent": "octocomputing:investigation/root",
+  "criteria": {
+    "killed_leaf_god": {
+      "conditions": {
+        "entity": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type": "octocomputing:leaf_god"
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:entity_killed_player"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "advancements.octocomputing.kill_leaf_god.description"
+    },
+    "frame": "challenge",
+    "hidden": true,
+    "icon": {
+      "count": 1,
+      "id": "octocomputing:leaf_core"
+    },
+    "show_toast": false,
+    "title": {
+      "translate": "advancements.octocomputing.kill_leaf_god.title"
+    }
+  },
+  "requirements": [
+    [
+      "killed_leaf_god"
+    ]
+  ],
+  "rewards": {
+    "experience": 10
+  },
+  "sends_telemetry_event": true
+}

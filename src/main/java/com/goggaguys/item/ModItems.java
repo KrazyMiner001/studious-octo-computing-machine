@@ -214,8 +214,11 @@ public class ModItems {
             new ChlorophyteShovel());
     public static final Item CHLOROPHYTE_HOE = registerItem("chlorophyte_hoe",
             new ChlorophyteHoe());
+
     public static final Item LEAF_PICKER = registerItem("leaf_picker",
             new LeafPicker());
+
+
 
     private static Item registerItem(String name, Item item) {
         return Registry.register(Registries.ITEM, new Identifier(OctoComputing.MOD_ID, name), item);

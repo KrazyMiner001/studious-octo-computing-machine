@@ -43,7 +43,7 @@ public class ModBiomes {
 
         globalOverworldGeneration(biomeBuilder);
         biomeBuilder.feature(GenerationStep.Feature.UNDERGROUND_ORES, ModPlacedFeatures.LEAF_DIMENSION_LEAF_ORE_PLACED_KEY);
-        biomeBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.MYSTERY_PLACED_KEY);
+        biomeBuilder.feature(GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.MYSTERY_TREE_PLACED_KEY);
 
         return new Biome.Builder()
                 .precipitation(true)

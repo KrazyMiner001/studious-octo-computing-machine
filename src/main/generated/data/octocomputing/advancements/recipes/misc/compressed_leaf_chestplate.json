@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_leaf": {
+    "has_leaf_compressed": {
       "conditions": {
         "items": [
           {
-            "items": "#octocomputing:leaf"
+            "items": "#octocomputing:leaf_compressed"
           }
         ]
       },
@@ -21,7 +21,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_leaf"
+      "has_leaf_compressed"
     ]
   ],
   "rewards": {

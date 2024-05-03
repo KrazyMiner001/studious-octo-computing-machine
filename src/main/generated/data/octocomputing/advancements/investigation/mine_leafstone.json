@@ -1,0 +1,32 @@
+{
+  "parent": "octocomputing:investigation/root",
+  "criteria": {
+    "leafstone": {
+      "conditions": {
+        "items": [
+          {
+            "items": "octocomputing:leafstone"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.octocomputing.mine_leafstone.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "octocomputing:leafstone"
+    },
+    "title": {
+      "translate": "advancements.octocomputing.mine_leafstone.title"
+    }
+  },
+  "requirements": [
+    [
+      "leafstone"
+    ]
+  ]
+}

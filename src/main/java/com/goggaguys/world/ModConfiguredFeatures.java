@@ -8,6 +8,7 @@ import net.minecraft.block.Blocks;
 import net.minecraft.registry.Registerable;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
+import net.minecraft.registry.entry.RegistryEntryList;
 import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.structure.rule.BlockMatchRuleTest;
 import net.minecraft.structure.rule.RuleTest;
@@ -17,9 +18,11 @@ import net.minecraft.util.math.intprovider.ConstantIntProvider;
 import net.minecraft.util.math.intprovider.UniformIntProvider;
 import net.minecraft.world.gen.feature.*;
 import net.minecraft.world.gen.feature.size.TwoLayersFeatureSize;
+import net.minecraft.world.gen.foliage.BlobFoliagePlacer;
 import net.minecraft.world.gen.foliage.CherryFoliagePlacer;
 import net.minecraft.world.gen.stateprovider.BlockStateProvider;
 import net.minecraft.world.gen.trunk.CherryTrunkPlacer;
+import net.minecraft.world.gen.trunk.UpwardsBranchingTrunkPlacer;
 
 import java.util.List;
 
@@ -31,7 +34,9 @@ public class ModConfiguredFeatures {
 
     public static final RegistryKey<ConfiguredFeature<?, ?>> CUSTOM_TREE_FEATURE_KEY = registerKey("custom_tree_feature");
 
-    public static final RegistryKey<ConfiguredFeature<?, ?>> MYSTERY_KEY = registerKey("mystery");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> MYSTERY_TREE_KEY = registerKey("mystery_tree");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> TRANSIENTWOOD_TREE_KEY = registerKey("transientwood_tree");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> ENDERGLEAM_TREE_KEY = registerKey("endergleam_tree");
 
     public static void bootstrap(Registerable<ConfiguredFeature<?, ?>> context) {
         RuleTest stoneReplacables = new TagMatchRuleTest(BlockTags.STONE_ORE_REPLACEABLES);
@@ -53,7 +58,7 @@ public class ModConfiguredFeatures {
         register(context, LEAF_DIMENSION_LEAF_ORE_KEY, Feature.ORE, new OreFeatureConfig(stoneLeafOres, 5));
         register(context, EXTRATERRESTRIAL_LEAF_DEBRIS_KEY, Feature.SCATTERED_ORE, new OreFeatureConfig(extraterrestrialDebris, 1, 0.5f));
 
-        register(context, MYSTERY_KEY, Feature.TREE, new TreeFeatureConfig.Builder(
+        register(context, MYSTERY_TREE_KEY, Feature.TREE, new TreeFeatureConfig.Builder(
                 BlockStateProvider.of(ModBlocks.MYSTERY_LOG),
                 new CherryTrunkPlacer(6, 2, 4,
                         UniformIntProvider.create(1, 2),
@@ -66,6 +71,48 @@ public class ModConfiguredFeatures {
                         ConstantIntProvider.create(0),
                         UniformIntProvider.create(4, 6),
                         0.25f, 0.25f, 0.5f, 0.25f),
+
+                new TwoLayersFeatureSize(1, 0, 2)).build());
+
+        register(context, TRANSIENTWOOD_TREE_KEY, Feature.TREE, new TreeFeatureConfig.Builder(
+                BlockStateProvider.of(ModBlocks.TRANSIENTWOOD_LOG),
+                new UpwardsBranchingTrunkPlacer(
+                        6,
+                        2,
+                        4,
+                        UniformIntProvider.create(2, 4),
+                        0.25f,
+                        UniformIntProvider.create(1, 3),
+                        RegistryEntryList.empty()
+                ),
+
+                BlockStateProvider.of(ModBlocks.TRANSIENTWOOD_LEAVES),
+                new BlobFoliagePlacer(
+                        UniformIntProvider.create(2, 3),
+                        UniformIntProvider.create(1, 2),
+                        3
+                ),
+
+                new TwoLayersFeatureSize(1, 0, 2)).build());
+
+        register(context, ENDERGLEAM_TREE_KEY, Feature.TREE, new TreeFeatureConfig.Builder(
+                BlockStateProvider.of(ModBlocks.ENDERGLEAM_LOG),
+                new UpwardsBranchingTrunkPlacer(
+                        12,
+                        3,
+                        6,
+                        UniformIntProvider.create(3, 5),
+                        0.25f,
+                        UniformIntProvider.create(2, 5),
+                        RegistryEntryList.empty()
+                ),
+
+                BlockStateProvider.of(ModBlocks.ENDERGLEAM_LEAVES),
+                new BlobFoliagePlacer(
+                        UniformIntProvider.create(1, 2),
+                        UniformIntProvider.create(1, 2),
+                        2
+                ),
 
                 new TwoLayersFeatureSize(1, 0, 2)).build());
 

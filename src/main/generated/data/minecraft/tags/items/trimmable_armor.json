@@ -1,8 +1,12 @@
 {
   "values": [
-    "octocomputing:leaf_helmet",
-    "octocomputing:leaf_chestplate",
-    "octocomputing:leaf_leggings",
-    "octocomputing:leaf_boots"
+    "octocomputing:leafite_helmet",
+    "octocomputing:leafite_chestplate",
+    "octocomputing:leafite_leggings",
+    "octocomputing:leafite_boots",
+    "octocomputing:chlorophyte_helmet",
+    "octocomputing:chlorophyte_chestplate",
+    "octocomputing:chlorophyte_leggings",
+    "octocomputing:chlorophyte_boots"
   ]
 }
