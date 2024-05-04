@@ -1,6 +1,7 @@
 package com.goggaguys;
 
 import com.goggaguys.block.ModBlocks;
+import com.goggaguys.blockentity.ModBlockEntities;
 import com.goggaguys.commands.ModCommands;
 import com.goggaguys.compat.Mods;
 import com.goggaguys.compat.geckolib.GeckoLib;
@@ -64,6 +65,7 @@ public class OctoComputing implements ModInitializer {
 		ModCommands.register();
 		ModDataComponentTypes.register();
 		ModFeatures.registerModFeatures();
+		ModBlockEntities.registerModBlocksEntities();
 
 		ItemGroupEvents.modifyEntriesEvent(ItemGroups.SPAWN_EGGS).register(content -> content.add(ModItems.LEAF_MONSTER_SPAWN_EGG));
 		ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS).register(content ->

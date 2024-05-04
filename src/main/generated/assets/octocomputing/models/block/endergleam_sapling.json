@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "octocomputing:block/endergleam_sapling"
+  }
+}

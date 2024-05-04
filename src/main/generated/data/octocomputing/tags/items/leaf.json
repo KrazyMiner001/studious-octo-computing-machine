@@ -1,15 +1,15 @@
 {
   "values": [
-    "octocomputing:jungle_leaf",
-    "octocomputing:mangrove_leaf",
-    "octocomputing:azalea_leaf",
-    "octocomputing:dark_oak_leaf",
-    "octocomputing:spruce_leaf",
-    "octocomputing:mixed_leaf",
-    "octocomputing:mystery_leaf",
-    "octocomputing:oak_leaf",
-    "octocomputing:acacia_leaf",
     "octocomputing:cherry_leaf",
-    "octocomputing:birch_leaf"
+    "octocomputing:mystery_leaf",
+    "octocomputing:mangrove_leaf",
+    "octocomputing:mixed_leaf",
+    "octocomputing:oak_leaf",
+    "octocomputing:birch_leaf",
+    "octocomputing:azalea_leaf",
+    "octocomputing:spruce_leaf",
+    "octocomputing:jungle_leaf",
+    "octocomputing:acacia_leaf",
+    "octocomputing:dark_oak_leaf"
   ]
 }

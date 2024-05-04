@@ -1,9 +1,7 @@
 package com.goggaguys.block;
 
 import com.goggaguys.OctoComputing;
-import com.goggaguys.block.custom.LeafPedestalBlock;
-import com.goggaguys.block.custom.LeafPortalBlock;
-import com.goggaguys.block.custom.LightNotBlockingBlock;
+import com.goggaguys.block.custom.*;
 import com.goggaguys.world.tree.ModSaplingGenerators;
 import net.minecraft.block.*;
 import net.minecraft.item.BlockItem;
@@ -59,17 +57,17 @@ public class ModBlocks {
             new SaplingBlock(ModSaplingGenerators.ENDERGLEAM_TREE, Block.Settings.copy(Blocks.OAK_SAPLING)));
 
     public static final Block ENDERGLEAM_LOG = registerBlockAndItem("endergleam_log",
-            new PillarBlock(Block.Settings.copy(Blocks.OAK_LOG).strength(4f)));
+            new EndergleamPillarBlock(Block.Settings.copy(Blocks.OAK_LOG).strength(4f)));
     public static final Block ENDERGLEAM_WOOD = registerBlockAndItem("endergleam_wood",
-            new PillarBlock(Block.Settings.copy(Blocks.OAK_WOOD).strength(4f)));
+            new EndergleamPillarBlock(Block.Settings.copy(Blocks.OAK_WOOD).strength(4f)));
     public static final Block STRIPPED_ENDERGLEAM_LOG = registerBlockAndItem("stripped_endergleam_log",
-            new PillarBlock(Block.Settings.copy(Blocks.STRIPPED_OAK_LOG).strength(4f)));
+            new EndergleamPillarBlock(Block.Settings.copy(Blocks.STRIPPED_OAK_LOG).strength(4f)));
     public static final Block STRIPPED_ENDERGLEAM_WOOD = registerBlockAndItem("stripped_endergleam_wood",
-            new PillarBlock(Block.Settings.copy(Blocks.STRIPPED_OAK_WOOD).strength(4f)));
+            new EndergleamPillarBlock(Block.Settings.copy(Blocks.STRIPPED_OAK_WOOD).strength(4f)));
     public static final Block ENDERGLEAM_PLANKS = registerBlockAndItem("endergleam_planks",
-            new Block(Block.Settings.copy(Blocks.OAK_PLANKS).strength(4f)));
+            new EndergleamBlock(Block.Settings.copy(Blocks.OAK_PLANKS).strength(4f)));
     public static final Block ENDERGLEAM_LEAVES = registerBlockAndItem("endergleam_leaves",
-            new Block(Block.Settings.copy(Blocks.OAK_LEAVES).strength(4f).nonOpaque()));
+            new EndergleamBlock(Block.Settings.copy(Blocks.OAK_LEAVES).strength(4f).nonOpaque()));
 
     public static final Block ETERNALWOOD = registerBlockAndItem("eternalwood",
             new PillarBlock(Block.Settings.copy(Blocks.OAK_WOOD).strength(-1.0F, 3600000.0F).dropsNothing().allowsSpawning(Blocks::never).luminance((state) -> 7)));
