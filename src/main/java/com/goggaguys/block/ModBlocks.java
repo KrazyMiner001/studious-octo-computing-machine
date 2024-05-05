@@ -72,12 +72,15 @@ public class ModBlocks {
     public static final Block ETERNALWOOD = registerBlockAndItem("eternalwood",
             new PillarBlock(Block.Settings.copy(Blocks.OAK_WOOD).strength(-1.0F, 3600000.0F).dropsNothing().allowsSpawning(Blocks::never).luminance((state) -> 7)));
     public static final Block ETERNALLEAVES = registerBlockAndItem("eternalleaves",
-            new LightNotBlockingBlock(Block.Settings.copy(Blocks.OAK_LEAVES).strength(-1.0F, 3600000.0F).dropsNothing().allowsSpawning(Blocks::never).luminance((state) -> 7).nonOpaque().notSolid().blockVision(Blocks::never)));
+            new LightNotBlockingBlock(Block.Settings.copy(Blocks.OAK_LEAVES).strength(-1.0F, 3600000.0F).dropsNothing().allowsSpawning(Blocks::never).luminance((state) -> 7).nonOpaque().solidBlock(Blocks::never).blockVision(Blocks::never)));
 
     public static final Block LEAF_PORTAL = registerBlock("leaf_portal",
             new LeafPortalBlock(Block.Settings.copy(Blocks.NETHER_PORTAL)));
     public static final Block LEAF_PEDESTAL = registerBlockAndItem("leaf_pedestal",
             new LeafPedestalBlock(Block.Settings.copy(Blocks.END_PORTAL_FRAME)));
+
+    public static final Block LEAF_SHRINE = registerBlockAndItem("leaf_shrine",
+            new LeafShrineBlock(Block.Settings.copy(Blocks.DEEPSLATE).solidBlock(Blocks::never)));
 
 
 

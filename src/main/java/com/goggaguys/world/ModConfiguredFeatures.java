@@ -109,8 +109,8 @@ public class ModConfiguredFeatures {
 
                 BlockStateProvider.of(ModBlocks.ENDERGLEAM_LEAVES),
                 new BlobFoliagePlacer(
-                        UniformIntProvider.create(1, 2),
-                        UniformIntProvider.create(1, 2),
+                        UniformIntProvider.create(2, 4),
+                        UniformIntProvider.create(2, 4),
                         2
                 ),
 

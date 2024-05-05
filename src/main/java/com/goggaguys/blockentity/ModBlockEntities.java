@@ -3,6 +3,7 @@ package com.goggaguys.blockentity;
 import com.goggaguys.OctoComputing;
 import com.goggaguys.block.ModBlocks;
 import com.goggaguys.blockentity.custom.EndergleamBlockEntity;
+import com.goggaguys.blockentity.custom.LeafShrineBlockEntity;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.registry.Registries;
@@ -18,6 +19,10 @@ public class ModBlockEntities {
                     ModBlocks.ENDERGLEAM_WOOD,
                     ModBlocks.STRIPPED_ENDERGLEAM_LOG,
                     ModBlocks.STRIPPED_ENDERGLEAM_WOOD).build());
+
+    public static BlockEntityType<LeafShrineBlockEntity> LEAF_SHRINE_BLOCK_ENTITY = registerBlockEntityType("leaf_shrine",
+            BlockEntityType.Builder.create(LeafShrineBlockEntity::new,
+                    ModBlocks.LEAF_SHRINE).build());
 
     private static <T extends BlockEntity> BlockEntityType<T> registerBlockEntityType(String name, BlockEntityType<T> block) {
         return Registry.register(Registries.BLOCK_ENTITY_TYPE, new Identifier(OctoComputing.MOD_ID, name), block);

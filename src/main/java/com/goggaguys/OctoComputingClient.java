@@ -3,6 +3,7 @@ package com.goggaguys;
 import com.goggaguys.block.ModBlocks;
 import com.goggaguys.blockentity.ModBlockEntities;
 import com.goggaguys.blockentity.renderers.EndergleamBlockEntityRenderer;
+import com.goggaguys.blockentity.renderers.LeafShrineBlockEntityRenderer;
 import com.goggaguys.entity.ModEntities;
 import com.goggaguys.entity.client.*;
 import net.fabricmc.api.ClientModInitializer;
@@ -22,21 +23,28 @@ public class OctoComputingClient implements ClientModInitializer {
 	@Override
 	public void onInitializeClient() {
 		// This entrypoint is suitable for setting up client-specific logic, such as rendering.
-		BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.MYSTERY_SAPLING, RenderLayer.getCutout());
-		BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.MYSTERY_LEAVES, RenderLayer.getCutout());
-		BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.TRANSIENTWOOD_SAPLING, RenderLayer.getCutout());
-		BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.TRANSIENTWOOD_LEAVES, RenderLayer.getCutout());
-		BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.ENDERGLEAM_SAPLING, RenderLayer.getCutout());
-		BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.ENDERGLEAM_LEAVES, RenderLayer.getCutout());
-		BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.ENDERGLEAM_LOG, RenderLayer.getCutout());
-		BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.ENDERGLEAM_WOOD, RenderLayer.getCutout());
-		BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.STRIPPED_ENDERGLEAM_LOG, RenderLayer.getCutout());
-		BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.STRIPPED_ENDERGLEAM_WOOD, RenderLayer.getCutout());
-		BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.ETERNALLEAVES, RenderLayer.getCutout());
-		BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.LEAF_PEDESTAL, RenderLayer.getCutout());
-		BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.LEAF_PORTAL, RenderLayer.getCutout());
+		BlockRenderLayerMap.INSTANCE.putBlocks(
+				RenderLayer.getCutout(),
+				
+				ModBlocks.MYSTERY_SAPLING,
+				ModBlocks.MYSTERY_LEAVES,
+				ModBlocks.TRANSIENTWOOD_SAPLING,
+				ModBlocks.TRANSIENTWOOD_LEAVES,
+				ModBlocks.ENDERGLEAM_SAPLING,
+				ModBlocks.ENDERGLEAM_LEAVES,
+				ModBlocks.ENDERGLEAM_LOG,
+				ModBlocks.ENDERGLEAM_WOOD,
+				ModBlocks.ENDERGLEAM_PLANKS,
+				ModBlocks.STRIPPED_ENDERGLEAM_LOG,
+				ModBlocks.STRIPPED_ENDERGLEAM_WOOD,
+				ModBlocks.ETERNALLEAVES,
+				ModBlocks.LEAF_PEDESTAL,
+				ModBlocks.LEAF_PORTAL,
+				ModBlocks.LEAF_SHRINE
+		);
 
 		BlockEntityRendererFactories.register(ModBlockEntities.ENDERGLEAM_BLOCK_ENTITY, EndergleamBlockEntityRenderer::new);
+		BlockEntityRendererFactories.register(ModBlockEntities.LEAF_SHRINE_BLOCK_ENTITY, LeafShrineBlockEntityRenderer::new);
 
 		EntityRendererRegistry.register(ModEntities.LEAF_MONSTER, LeafMonsterEntityRenderer::new);
 		EntityModelLayerRegistry.registerModelLayer(ModModelLayers.LEAF_MONSTER, LeafMonsterEntityModel::getTexturedModelData);

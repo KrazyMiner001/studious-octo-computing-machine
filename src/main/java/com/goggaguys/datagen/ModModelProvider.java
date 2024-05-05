@@ -1,5 +1,6 @@
 package com.goggaguys.datagen;
 
+import com.goggaguys.OctoComputing;
 import com.goggaguys.block.ModBlocks;
 import com.goggaguys.block.ModProperties;
 import com.goggaguys.item.ModItems;
@@ -17,6 +18,7 @@ import net.minecraft.util.math.Direction;
 
 import java.util.Optional;
 
+import static net.minecraft.data.client.BlockStateModelGenerator.createSingletonBlockState;
 import static net.minecraft.data.client.BlockStateModelGenerator.createSouthDefaultHorizontalRotationStates;
 
 public class ModModelProvider extends FabricModelProvider {
@@ -66,6 +68,10 @@ public class ModModelProvider extends FabricModelProvider {
                                                 .register(true, BlockStateVariant.create().put(VariantSettings.MODEL, ModelIds.getBlockSubModelId(ModBlocks.LEAF_PEDESTAL, "_activated")))
                                 )
                 );
+
+        blockStateModelGenerator.blockStateCollector
+                .accept(createSingletonBlockState(ModBlocks.LEAF_SHRINE,
+                        ModelIds.getBlockModelId(ModBlocks.LEAF_SHRINE)));
 
         BlockStateModelGenerator.BlockTexturePool mystery_pool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.MYSTERY_PLANKS);
         BlockStateModelGenerator.BlockTexturePool transientwood_pool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.TRANSIENTWOOD_PLANKS);

@@ -1,15 +1,15 @@
 {
   "values": [
+    "octocomputing:compressed_acacia_leaf",
+    "octocomputing:compressed_mixed_leaf",
     "octocomputing:compressed_cherry_leaf",
     "octocomputing:compressed_mystery_leaf",
-    "octocomputing:compressed_mangrove_leaf",
-    "octocomputing:compressed_mixed_leaf",
     "octocomputing:compressed_oak_leaf",
+    "octocomputing:compressed_dark_oak_leaf",
+    "octocomputing:compressed_mangrove_leaf",
     "octocomputing:compressed_birch_leaf",
-    "octocomputing:compressed_azalea_leaf",
     "octocomputing:compressed_spruce_leaf",
-    "octocomputing:compressed_jungle_leaf",
-    "octocomputing:compressed_acacia_leaf",
-    "octocomputing:compressed_dark_oak_leaf"
+    "octocomputing:compressed_azalea_leaf",
+    "octocomputing:compressed_jungle_leaf"
   ]
 }
