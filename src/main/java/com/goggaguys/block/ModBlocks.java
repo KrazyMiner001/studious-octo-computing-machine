@@ -80,7 +80,7 @@ public class ModBlocks {
             new LeafPedestalBlock(Block.Settings.copy(Blocks.END_PORTAL_FRAME)));
 
     public static final Block LEAF_SHRINE = registerBlockAndItem("leaf_shrine",
-            new LeafShrineBlock(Block.Settings.copy(Blocks.DEEPSLATE).solidBlock(Blocks::never)));
+            new LeafShrineBlock(Block.Settings.copy(Blocks.DEEPSLATE).solidBlock(Blocks::never).nonOpaque()));
 
 
 

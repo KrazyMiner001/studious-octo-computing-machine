@@ -22,27 +22,20 @@ import net.minecraft.item.Items;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.RotationAxis;
 
-public class LeafShrineBlockEntityRenderer implements BlockEntityRenderer<LeafShrineBlockEntity> {
-    private static ItemStack stack = new ItemStack(Items.AIR, 1);
-
+public class LeafShrineBlockEntityRenderer <T extends LeafShrineBlockEntity> implements BlockEntityRenderer<T> {
     public LeafShrineBlockEntityRenderer(BlockEntityRendererFactory.Context context) {
     }
 
     @Override
-    public void render(LeafShrineBlockEntity entity, float tickDelta, MatrixStack matrices, VertexConsumerProvider vertexConsumers, int light, int overlay) {
+    public void render(T entity, float tickDelta, MatrixStack matrices, VertexConsumerProvider vertexConsumers, int light, int overlay) {
         matrices.push();
-        // Calculate the current offset in the y value
-        double offset = Math.sin((entity.getWorld().getTime() + tickDelta) / 8.0) / 4.0;
         // Move the item
-        matrices.translate(0.5, 1.25 + offset, 0.5);
+        double offset = Math.sin((entity.getWorld().getTime() + tickDelta) / 8.0) / 4.0;
+        matrices.translate(0.5, 1 + offset, 0.5);
 
-        // Rotate the item
         matrices.multiply(RotationAxis.POSITIVE_Y.rotationDegrees((entity.getWorld().getTime() + tickDelta) * 4));
 
-        int lightAbove = WorldRenderer.getLightmapCoordinates(entity.getWorld(), entity.getPos().up());
-        if (!((Inventory) entity).getStack(0).isEmpty()) {
-            MinecraftClient.getInstance().getItemRenderer().renderItem(((Inventory) entity).getStack(0), ModelTransformationMode.GROUND, lightAbove, overlay, matrices, vertexConsumers, entity.getWorld(), 0);
-        }
+        MinecraftClient.getInstance().getItemRenderer().renderItem(((Inventory) entity).getStack(0), ModelTransformationMode.GROUND, light, overlay, matrices, vertexConsumers, entity.getWorld(), 0);
 
         // Mandatory call after GL calls
         matrices.pop();

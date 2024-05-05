@@ -34,6 +34,14 @@ public class LeafShrineBlockEntity extends BlockEntity implements ImplementedInv
     }
 
     @Override
+    public ItemStack getStack(int slot) {
+        if (slot != 0) {
+            return ItemStack.EMPTY;
+        }
+        return inventory.get(slot);
+    }
+
+    @Override
     public void readNbt(NbtCompound nbt, RegistryWrapper.WrapperLookup registryLookup) {
         super.readNbt(nbt, registryLookup);
         Inventories.readNbt(nbt, inventory, registryLookup);
