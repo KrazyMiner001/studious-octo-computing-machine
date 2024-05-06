@@ -121,7 +121,13 @@ public class ModEnglishLangProvider extends FabricLanguageProvider {
         translationBuilder.add("item.octocomputing.chlorophyte.chlorophyte_hoe.3x3_ability.disabled", "[§4✘§r] 3x3 Tilling");
         translationBuilder.add("item.octocomputing.chlorophyte.chlorophyte_hoe.3x3_ability.enabled", "[§2✔§r] 3x3 Tilling");
 
-        translationBuilder.add(new Identifier("itemgroup", "leaf_group"), "Leaves");
+        translationBuilder.add("itemGroup.octocomputing.main", "OctoComputing");
+        translationBuilder.add("itemGroup.octocomputing.leaves", "Leaves");
+        translationBuilder.add("itemGroup.octocomputing.equipment", "Equipment");
+        translationBuilder.add("itemGroup.octocomputing.resources", "Resources");
+        translationBuilder.add("itemGroup.octocomputing.natural", "Natural");
+        translationBuilder.add("itemGroup.octocomputing.functional", "Functional");
+        translationBuilder.add("itemGroup.octocomputing.blocks", "Blocks");
 
         translationBuilder.add(new Identifier("death.attack", "leaf"), "%1$s leafed too much");
 
