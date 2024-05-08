@@ -15,6 +15,7 @@ import net.minecraft.particle.SculkChargeParticleEffect;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.util.ActionResult;
+import net.minecraft.util.ItemScatterer;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.random.Random;
@@ -71,6 +72,19 @@ public class LeafShrineBlock extends BlockWithEntity {
                 return ActionResult.SUCCESS;
             } else {
                 return ActionResult.PASS;
+            }
+        }
+    }
+
+    @Override
+    protected void onStateReplaced(BlockState state, World world, BlockPos pos, BlockState newState, boolean moved) {
+        super.onStateReplaced(state, world, pos, newState, moved);
+        if (state.hasBlockEntity() && !state.isOf(newState.getBlock())) {
+            Block block = world.getBlockState(pos).getBlock();
+            BlockEntity blockEntity = world.getBlockEntity(pos);
+            if (blockEntity instanceof Inventory inventory) {
+                ItemScatterer.spawn(world, pos, inventory);
+                world.updateComparators(pos, block);
             }
         }
     }

@@ -2,9 +2,9 @@ package com.goggaguys.blockentity.custom;
 
 import com.goggaguys.blockentity.ImplementedInventory;
 import com.goggaguys.blockentity.ModBlockEntities;
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
-import net.minecraft.client.world.ClientWorld;
 import net.minecraft.inventory.Inventories;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
@@ -15,7 +15,6 @@ import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.ChunkPos;
 import org.jetbrains.annotations.Nullable;
 
 public class LeafShrineBlockEntity extends BlockEntity implements ImplementedInventory {
@@ -71,7 +70,7 @@ public class LeafShrineBlockEntity extends BlockEntity implements ImplementedInv
         super.markDirty();
         if (world != null) {
             BlockState state = world.getBlockState(getPos());
-            world.updateListeners(pos, state, state, 3);
+            world.updateListeners(pos, state, state, Block.NOTIFY_LISTENERS);
             if (!world.isClient) {
                 updateInClientWorld();
             }
