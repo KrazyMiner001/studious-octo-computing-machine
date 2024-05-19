@@ -5,6 +5,8 @@ import com.goggaguys.proceduralTreeGen.TreeGenerator;
 import com.goggaguys.shapes.TruncatedCone;
 import com.mojang.serialization.Codec;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
+import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.registry.Registries;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
@@ -40,24 +42,34 @@ public class CustomTreeFeature extends Feature<CustomTreeFeatureConfig> {
         if (woodBlockState == null) throw new IllegalStateException(woodBlockId + " could not be parsed to a valid block identifier!");
         if (leafBlockId == null) throw new IllegalStateException(leafBlockState + " could not be parsed to a valid block identifier!");
 
+        // Define the number of points for the trunk and branches
+        int trunkPointsCount = 10; // Adjust as needed
+        int branchPointsCount = 25; // Adjust as needed
+
+        // Generate points for the trunk
         List<AttractingPoint> trunkPoints = new ArrayList<>();
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < trunkPointsCount; i++) {
             trunkPoints.add(new AttractingPoint(
-                    new Vec3d(0, i*((double) height /20), 0).addRandom(random, (float) height /40),
-                    (double) height/10,
-                    (double) height /50,
-                    false
+                    new Vec3d(0, i * ((double) height / 20), 0).addRandom(random, (float) height / 40),
+                    (double) height / 10,
+                    (double) height / 50,
+                    false // Trunk points do not have leaves
             ));
         }
+
+        // Generate points for the branches
         List<AttractingPoint> branchPoints = TreeGenerator.pointCloudGenerator(
-                new Vec3d(0, 0.75*height, 0),
-                0.6*height,
-                25,
-                (double) height /25,
-                true,
-                (double) height /12
+                new Vec3d(0, 0.75 * height, 0),
+                0.6 * height,
+                branchPointsCount,
+                (double) height / 25,
+                true, // Branch points have leaves
+                (double) height / 12
         );
-        List<AttractingPoint> attractingPoints = trunkPoints;
+
+        // Combine the trunk points and branch points
+        List<AttractingPoint> attractingPoints = new ArrayList<>();
+        attractingPoints.addAll(trunkPoints);
         attractingPoints.addAll(branchPoints);
 
         TreeGenerator treeGenerator = new TreeGenerator(
@@ -85,7 +97,7 @@ public class CustomTreeFeature extends Feature<CustomTreeFeatureConfig> {
         }
 
         for (BlockPos blockPos : leafBlockPositions) {
-            world.setBlockState(blockPos, leafBlockState, 0);
+            world.setBlockState(blockPos, leafBlockState, 3);
         }
 
         List<TruncatedCone> truncatedConeList = treeGenerator.treeNodesAsTruncatedCones();
@@ -110,7 +122,7 @@ public class CustomTreeFeature extends Feature<CustomTreeFeatureConfig> {
         }
 
         for (BlockPos pos : woodBlocks) {
-            world.setBlockState(pos, woodBlockState, 0);
+            world.setBlockState(pos, woodBlockState, 3);
         }
 
         return true;

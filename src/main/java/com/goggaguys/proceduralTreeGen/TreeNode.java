@@ -4,6 +4,8 @@ import net.minecraft.util.math.Vec3d;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Consumer;
+import java.util.function.Supplier;
 
 public class TreeNode {
     private final Vec3d position;
@@ -31,7 +33,13 @@ public class TreeNode {
     public TreeNode(Vec3d position, double thickness) {
         this(position, null);
         this.thickness = thickness;
-        this.endThickness = 0.9 * thickness;
+        this.endThickness = 0.7 * thickness;
+    }
+
+    public TreeNode(Vec3d position, double thickness, double thicknessMultiplier) {
+        this(position, null);
+        this.thickness = thickness;
+        this.endThickness = thicknessMultiplier * thickness;
     }
     
     public TreeNode(double x, double y, double z, TreeNode parentNode) {

@@ -117,9 +117,9 @@ public class ModConfiguredFeatures {
                 new TwoLayersFeatureSize(1, 0, 2)).build());
 
         register(context, CUSTOM_TREE_FEATURE_KEY, ModFeatures.CUSTOM_TREE_FEATURE, new CustomTreeFeatureConfig(
-                200,
-                5,
-                6,
+                150,
+                8,
+                7,
                 new Identifier(OctoComputing.MOD_ID, "eternalwood"),
                 new Identifier(OctoComputing.MOD_ID, "eternalleaves")
         ));

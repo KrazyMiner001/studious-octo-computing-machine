@@ -15,6 +15,7 @@ import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.event.GameEvent;
 import org.jetbrains.annotations.Nullable;
 
 public class LeafShrineBlockEntity extends BlockEntity implements ImplementedInventory {
@@ -70,7 +71,10 @@ public class LeafShrineBlockEntity extends BlockEntity implements ImplementedInv
         super.markDirty();
         if (world != null) {
             BlockState state = world.getBlockState(getPos());
-            world.updateListeners(pos, state, state, Block.NOTIFY_LISTENERS);
+            world.setBlockState(getPos(), state, Block.NOTIFY_ALL);
+            world.updateListeners(pos, state, state, Block.NOTIFY_ALL);
+            world.emitGameEvent(GameEvent.BLOCK_CHANGE, getPos(), GameEvent.Emitter.of(state));
+            world.updateNeighborsAlways(pos, state.getBlock());
             if (!world.isClient) {
                 updateInClientWorld();
             }
