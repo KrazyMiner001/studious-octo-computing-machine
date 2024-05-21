@@ -4,8 +4,6 @@ import net.minecraft.util.math.Vec3d;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Consumer;
-import java.util.function.Supplier;
 
 public class TreeNode {
     private final Vec3d position;
@@ -15,6 +13,7 @@ public class TreeNode {
     private double thickness;
     private double endThickness;
     private final List<TreeNode> children;
+    private final int nodeDepth;
     
     public TreeNode(Vec3d position, TreeNode parentNode) {
         this.position = position;
@@ -28,6 +27,7 @@ public class TreeNode {
         this.children = new ArrayList<>();
 
         this.rootNode = parentNode == null;
+        this.nodeDepth = parentNode == null ? 0 : parentNode.nodeDepth + 1;
     }
 
     public TreeNode(Vec3d position, double thickness) {
@@ -36,10 +36,25 @@ public class TreeNode {
         this.endThickness = 0.7 * thickness;
     }
 
-    public TreeNode(Vec3d position, double thickness, double thicknessMultiplier) {
+    public TreeNode(Vec3d position, double thickness, DoubleToDoubleFunction thicknessMethod) {
         this(position, null);
         this.thickness = thickness;
-        this.endThickness = thicknessMultiplier * thickness;
+        this.endThickness = thicknessMethod.apply(thickness);
+    }
+
+    public TreeNode(Vec3d position, TreeNode parentNode, DoubleToDoubleFunction thicknessMethod) {
+        this.position = position;
+        this.influencingPoints = new ArrayList<>();
+        this.parentNode = parentNode;
+        if (parentNode != null) {
+            parentNode.getChildren().add(this);
+            this.thickness = parentNode.endThickness;
+            this.endThickness = thicknessMethod.apply(thickness);
+        }
+        this.children = new ArrayList<>();
+
+        this.rootNode = parentNode == null;
+        this.nodeDepth = parentNode == null ? 0 : parentNode.nodeDepth + 1;
     }
     
     public TreeNode(double x, double y, double z, TreeNode parentNode) {
@@ -76,5 +91,16 @@ public class TreeNode {
 
     public List<TreeNode> getChildren() {
         return children;
+    }
+
+    public double getLength() {
+        if (parentNode == null) {
+            return 0;
+        }
+        return position.distanceTo(parentNode.position);
+    }
+
+    public int getNodeDepth() {
+        return nodeDepth;
     }
 }

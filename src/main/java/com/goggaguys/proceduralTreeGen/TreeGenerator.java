@@ -60,7 +60,7 @@ public class TreeGenerator {
             }
         }
         for (TreeNode treeNode : this.treeNodes) {
-            if (!treeNode.getInfluencingPoints().isEmpty()) {
+            if (!treeNode.getInfluencingPoints().isEmpty() && (!treeNode.isRootNode() || treeNode.getChildren().isEmpty())) {
                 TreeNode newTreeNode = this.addNewTreeNode(treeNode);
                 newTreeNodes.add(newTreeNode);
             }
@@ -74,13 +74,21 @@ public class TreeGenerator {
     }
     
     private TreeNode addNewTreeNode(TreeNode oldTreeNode) {
-        Vec3d growDirection = new Vec3d(0, 0, 0);
+        Vec3d growDirection = new Vec3d(0, 5, 0);
         for (AttractingPoint influencingNodes : oldTreeNode.getInfluencingPoints()) {
             growDirection = growDirection.add(influencingNodes.getPosition().subtract(oldTreeNode.getPosition()).normalize());
         }
         growDirection = growDirection.normalize();
         growDirection = growDirection.add(Math.random()-0.5, Math.random()-0.5, Math.random()-0.5);
-        return new TreeNode(oldTreeNode.getPosition().add(growDirection.multiply(this.segmentSize)), oldTreeNode);
+        return new TreeNode(oldTreeNode.getPosition().add(growDirection.multiply(this.segmentSize * ((double) 3 / (oldTreeNode.getNodeDepth() + 3)))), oldTreeNode, (thickness) -> {
+            if (thickness < this.treeNodes.get(0).getThickness() * 0.5) {
+                return 0.6*thickness;
+            }
+            if (thickness < this.treeNodes.get(0).getThickness() * 0.75) {
+                return 0.7*thickness;
+            }
+            return 0.9*thickness;
+        });
     }
 
     public static List<AttractingPoint> pointCloudGenerator(Vec3d center, double diameter, int quantity, double killDistance, boolean leafGenerating, double radiusOfInfluence) {
@@ -89,6 +97,20 @@ public class TreeGenerator {
         for (int i = 0; i < quantity; i++) {
             Vec3d point = new Vec3d(0, 0, 0);
             point = point.addRandom(random, (float) diameter);
+            point = point.add(center);
+            pointCloud.add(new AttractingPoint(point, radiusOfInfluence, killDistance, leafGenerating));
+        }
+        return pointCloud;
+    }
+
+    public static List<AttractingPoint> pointCloudGenerator(Vec3d center, double diameter, int quantity, double killDistance, boolean leafGenerating, double radiusOfInfluence, double distributionMean) {
+        List<AttractingPoint> pointCloud = new ArrayList<>();
+        Random random = Random.create();
+        for (int i = 0; i < quantity; i++) {
+            Vec3d point = new Vec3d(0, 0, 0);
+            point = point.addRandom(random, (float) diameter);
+            // Adjust the y-coordinate of the point according to the Gaussian distribution
+            point = point.add(0, random.nextGaussian() * diameter / 2 + distributionMean, 0);
             point = point.add(center);
             pointCloud.add(new AttractingPoint(point, radiusOfInfluence, killDistance, leafGenerating));
         }
@@ -104,6 +126,17 @@ public class TreeGenerator {
             }
         }
         return truncatedConeList;
+    }
+
+    public static List<AttractingPoint> trunkPointCloudGenerator(Vec3d center, double height, int quantity, double killDistance, boolean leafGenerating, double radiusOfInfluence) {
+        List<AttractingPoint> pointCloud = new ArrayList<>();
+        Random random = Random.create();
+        for (int i = 0; i < quantity; i++) {
+            Vec3d point = new Vec3d(0, i * (height / quantity), 0);
+            point = point.add(center);
+            pointCloud.add(new AttractingPoint(point, radiusOfInfluence, killDistance, leafGenerating));
+        }
+        return pointCloud;
     }
 
     public List<Vec3d> getLeafPositions() {

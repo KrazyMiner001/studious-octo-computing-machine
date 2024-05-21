@@ -2,7 +2,7 @@
   "type": "octocomputing:custom_tree_feature",
   "config": {
     "height": 150,
-    "iterations": 7,
+    "iterations": 10,
     "leafBlockId": "octocomputing:eternalleaves",
     "radius": 8,
     "woodBlockId": "octocomputing:eternalwood"

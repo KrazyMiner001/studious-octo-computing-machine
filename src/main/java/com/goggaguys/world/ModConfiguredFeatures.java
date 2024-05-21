@@ -119,7 +119,7 @@ public class ModConfiguredFeatures {
         register(context, CUSTOM_TREE_FEATURE_KEY, ModFeatures.CUSTOM_TREE_FEATURE, new CustomTreeFeatureConfig(
                 150,
                 8,
-                7,
+                10,
                 new Identifier(OctoComputing.MOD_ID, "eternalwood"),
                 new Identifier(OctoComputing.MOD_ID, "eternalleaves")
         ));

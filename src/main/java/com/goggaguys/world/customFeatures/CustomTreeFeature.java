@@ -2,6 +2,7 @@ package com.goggaguys.world.customFeatures;
 
 import com.goggaguys.proceduralTreeGen.AttractingPoint;
 import com.goggaguys.proceduralTreeGen.TreeGenerator;
+import com.goggaguys.shapes.Sphere;
 import com.goggaguys.shapes.TruncatedCone;
 import com.mojang.serialization.Codec;
 import net.minecraft.block.BlockState;
@@ -15,6 +16,7 @@ import net.minecraft.util.math.random.Random;
 import net.minecraft.world.StructureWorldAccess;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.util.FeatureContext;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -46,54 +48,14 @@ public class CustomTreeFeature extends Feature<CustomTreeFeatureConfig> {
         int trunkPointsCount = 10; // Adjust as needed
         int branchPointsCount = 25; // Adjust as needed
 
-        // Generate points for the trunk
-        List<AttractingPoint> trunkPoints = new ArrayList<>();
-        for (int i = 0; i < trunkPointsCount; i++) {
-            trunkPoints.add(new AttractingPoint(
-                    new Vec3d(0, i * ((double) height / 20), 0).addRandom(random, (float) height / 40),
-                    (double) height / 10,
-                    (double) height / 50,
-                    false // Trunk points do not have leaves
-            ));
-        }
-
-        // Generate points for the branches
-        List<AttractingPoint> branchPoints = TreeGenerator.pointCloudGenerator(
-                new Vec3d(0, 0.75 * height, 0),
-                0.6 * height,
-                branchPointsCount,
-                (double) height / 25,
-                true, // Branch points have leaves
-                (double) height / 12
-        );
-
-        // Combine the trunk points and branch points
-        List<AttractingPoint> attractingPoints = new ArrayList<>();
-        attractingPoints.addAll(trunkPoints);
-        attractingPoints.addAll(branchPoints);
-
-        TreeGenerator treeGenerator = new TreeGenerator(
-                5*radius,
-                attractingPoints,
-                radius
-        );
-        for (int i = 0; i < iterations; i++) {
-            treeGenerator.growTree();
-        }
+        TreeGenerator treeGenerator;
+        do {
+            treeGenerator = getTreeGenerator(height, trunkPointsCount, branchPointsCount, radius, iterations);
+        } while (treeGenerator.treeNodesAsTruncatedCones().size() < 3); // Ensure that the tree has branches
 
         List<BlockPos> leafBlockPositions = new ArrayList<>();
         for (Vec3d position : treeGenerator.getLeafPositions()) {
-            BlockPos initialPos = new BlockPos(
-                    (int) (Math.round(position.x) + origin.getX()),
-                    (int) (Math.round(position.y) + origin.getY()),
-                    (int) (Math.round(position.z) + origin.getZ()));
-            leafBlockPositions.add(initialPos);
-            leafBlockPositions.add(initialPos.up());
-            leafBlockPositions.add(initialPos.down());
-            leafBlockPositions.add(initialPos.east());
-            leafBlockPositions.add(initialPos.west());
-            leafBlockPositions.add(initialPos.south());
-            leafBlockPositions.add(initialPos.north());
+            leafBlockPositions.addAll(new Sphere(4, position.add(origin.toCenterPos())).containedBlocks());
         }
 
         for (BlockPos blockPos : leafBlockPositions) {
@@ -126,5 +88,43 @@ public class CustomTreeFeature extends Feature<CustomTreeFeatureConfig> {
         }
 
         return true;
+    }
+
+    private static @NotNull TreeGenerator getTreeGenerator(int height, int trunkPointsCount, int branchPointsCount, int radius, int iterations) {
+        // Generate points for the trunk
+        List<AttractingPoint> trunkPoints = TreeGenerator.trunkPointCloudGenerator(
+                new Vec3d(0, 0, 0),
+                0.5 * height,
+                trunkPointsCount,
+                (double) height / 50,
+                false, // Trunk points do not have leaves
+                (double) height / 10
+        );
+
+        // Generate points for the branches
+        List<AttractingPoint> branchPoints = TreeGenerator.pointCloudGenerator(
+                new Vec3d(0, 0.75 * height, 0),
+                0.6 * height,
+                branchPointsCount,
+                (double) height / 25,
+                true, // Branch points have leaves
+                (double) height / 12,
+                0.75 * height // Mean of the distribution is near the top of the tree
+        );
+
+        // Combine the trunk points and branch points
+        List<AttractingPoint> attractingPoints = new ArrayList<>();
+        attractingPoints.addAll(trunkPoints);
+        attractingPoints.addAll(branchPoints);
+
+        TreeGenerator treeGenerator = new TreeGenerator(
+                5* radius,
+                attractingPoints,
+                radius
+        );
+        for (int i = 0; i < iterations; i++) {
+            treeGenerator.growTree();
+        }
+        return treeGenerator;
     }
 }
