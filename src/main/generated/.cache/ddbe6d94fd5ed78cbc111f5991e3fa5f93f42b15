@@ -1,4 +1,4 @@
-// 1.20.6	2024-05-21T15:44:56.9663219	OctoComputing/Tags for minecraft:block
+// 1.20.6	2024-05-25T19:46:33.0803135	OctoComputing/Tags for minecraft:block
 2758c716f8089027335b8258ee0cef2ec2155d4d data\fabric\tags\blocks\needs_tool_level_4.json
 a1040edd23a550580fc31d231daf4144f9bc8be0 data\minecraft\tags\blocks\saplings.json
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data\octocomputing\tags\blocks\incorrect_for_chlorophyte_tool.json
@@ -11,8 +11,8 @@ f32582cefc76746af11bda82e9d854fae6101811 data\minecraft\tags\blocks\needs_diamon
 e737a85f9771142a41c77a74cfad33e9f8da5989 data\minecraft\tags\blocks\mineable\hoe.json
 5708a5744db4be2be29f5de44895bd4381f8d2a8 data\minecraft\tags\blocks\mineable\axe.json
 72c5d1ccd9051623a4798bb4e0d524ea2546fcce data\minecraft\tags\blocks\beacon_base_blocks.json
-8fbcdb0a49ce717de6dce38f60fcbf3e76139919 data\minecraft\tags\blocks\incorrect_for_iron_tool.json
 8fbcdb0a49ce717de6dce38f60fcbf3e76139919 data\minecraft\tags\blocks\incorrect_for_gold_tool.json
+8fbcdb0a49ce717de6dce38f60fcbf3e76139919 data\minecraft\tags\blocks\incorrect_for_iron_tool.json
 6bec103bf1545d124aa6e87f426bc6a43f298f84 data\fabric\tags\blocks\needs_tool_level_5.json
 8fbcdb0a49ce717de6dce38f60fcbf3e76139919 data\minecraft\tags\blocks\incorrect_for_diamond_tool.json
 5f7bb4a6db2b7ca5f44ef05763091c31d63773d1 data\minecraft\tags\blocks\incorrect_for_netherite_tool.json

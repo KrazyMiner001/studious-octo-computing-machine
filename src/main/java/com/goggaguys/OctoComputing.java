@@ -5,6 +5,7 @@ import com.goggaguys.blockentity.ModBlockEntities;
 import com.goggaguys.commands.ModCommands;
 import com.goggaguys.compat.Mods;
 import com.goggaguys.compat.geckolib.GeckoLib;
+import com.goggaguys.config.OctoComputingConfig;
 import com.goggaguys.effects.ModStatusEffects;
 import com.goggaguys.enchantments.ModEnchantments;
 import com.goggaguys.entity.ModEntities;
@@ -51,7 +52,7 @@ public class OctoComputing implements ModInitializer {
 	// That way, it's clear which mod wrote info, warnings, and errors.
 	public static final Logger LOGGER = LoggerFactory.getLogger("octocomputing");
 	public static final String MOD_ID = "octocomputing";
-
+	public static final OctoComputingConfig CONFIG = OctoComputingConfig.createAndLoad();
 
 	@Override
 	public void onInitialize() {

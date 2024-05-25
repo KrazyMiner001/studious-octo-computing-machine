@@ -1,5 +1,6 @@
 package com.goggaguys.world.customFeatures;
 
+import com.goggaguys.OctoComputing;
 import com.goggaguys.proceduralTreeGen.AttractingPoint;
 import com.goggaguys.proceduralTreeGen.TreeGenerator;
 import com.goggaguys.shapes.Sphere;
@@ -44,6 +45,16 @@ public class CustomTreeFeature extends Feature<CustomTreeFeatureConfig> {
         if (woodBlockState == null) throw new IllegalStateException(woodBlockId + " could not be parsed to a valid block identifier!");
         if (leafBlockId == null) throw new IllegalStateException(leafBlockState + " could not be parsed to a valid block identifier!");
 
+        if (!OctoComputing.CONFIG.fancyTree()) {
+            for (BlockPos pos : new Sphere((double) height / 3.5, origin.add(0, (int) (height * 0.80), 0).toCenterPos()).containedBlocks()) {
+                world.setBlockState(pos, leafBlockState, 3);
+            }
+            for (BlockPos pos : new TruncatedCone(origin.toCenterPos(), origin.add(0, height, 0).toCenterPos(), radius, 0).getBlocks()) {
+                world.setBlockState(pos, woodBlockState, 3);
+            }
+            return true;
+        }
+
         // Define the number of points for the trunk and branches
         int trunkPointsCount = 10; // Adjust as needed
         int branchPointsCount = 25; // Adjust as needed
@@ -53,6 +64,7 @@ public class CustomTreeFeature extends Feature<CustomTreeFeatureConfig> {
             treeGenerator = getTreeGenerator(height, trunkPointsCount, branchPointsCount, radius, iterations);
         } while (treeGenerator.treeNodesAsTruncatedCones().size() < 3); // Ensure that the tree has branches
 
+        /* Place leaves, might reimplement this later
         List<BlockPos> leafBlockPositions = new ArrayList<>();
         for (Vec3d position : treeGenerator.getLeafPositions()) {
             leafBlockPositions.addAll(new Sphere(4, position.add(origin.toCenterPos())).containedBlocks());
@@ -61,6 +73,7 @@ public class CustomTreeFeature extends Feature<CustomTreeFeatureConfig> {
         for (BlockPos blockPos : leafBlockPositions) {
             world.setBlockState(blockPos, leafBlockState, 3);
         }
+        */
 
         List<TruncatedCone> truncatedConeList = treeGenerator.treeNodesAsTruncatedCones();
         List<BlockPos> woodBlocks = new ArrayList<>();

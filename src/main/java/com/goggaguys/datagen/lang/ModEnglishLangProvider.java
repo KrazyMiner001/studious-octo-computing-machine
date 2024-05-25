@@ -136,6 +136,10 @@ public class ModEnglishLangProvider extends FabricLanguageProvider {
         translationBuilder.add(ModItemTags.LEAF_DOUBLE_COMPRESSED.id().toTranslationKey("tag"), "Double Compressed Leaves");
         translationBuilder.add(ModItemTags.MYSTERY_LOGS.id().toTranslationKey("tag"), "Mystery Logs");
 
+        translationBuilder.add("text.config." + OctoComputing.CONFIG.name() + ".title", "Octo Computing Config");
+        translationBuilder.add("text.config." + OctoComputing.CONFIG.name() + ".option." + OctoComputing.CONFIG.keys.fancyTree.asString(), "Fancy Tree");
+        translationBuilder.add("text.config." + OctoComputing.CONFIG.name() + ".option." + OctoComputing.CONFIG.keys.fancyTree.asString() + ".tooltip", "If true, the custom tree feature will generate a more complex tree.\nIf false, the custom tree feature will generate a simple tree.\n\nThe Fancy tree looks nicer but is slower to generate.\n\nDefault: true");
+
         translationBuilder.add(Util.createTranslationKey("item", new Identifier(OctoComputing.MOD_ID, "smithing_template.leafite_upgrade.applies_to")), "Netherite Equipment");
         translationBuilder.add(Util.createTranslationKey("item", new Identifier(OctoComputing.MOD_ID, "smithing_template.leafite_upgrade.ingredients")), "Leaf Core");
         translationBuilder.add(Util.createTranslationKey("upgrade", new Identifier(OctoComputing.MOD_ID, "leafite_upgrade")), "Leafite Upgrade");
