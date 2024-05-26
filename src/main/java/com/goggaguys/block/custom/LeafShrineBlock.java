@@ -1,5 +1,6 @@
 package com.goggaguys.block.custom;
 
+import com.goggaguys.blockentity.ImplementedInventory;
 import com.goggaguys.blockentity.custom.LeafShrineBlockEntity;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.block.Block;
@@ -78,15 +79,8 @@ public class LeafShrineBlock extends BlockWithEntity {
 
     @Override
     protected void onStateReplaced(BlockState state, World world, BlockPos pos, BlockState newState, boolean moved) {
+        ItemScatterer.onStateReplaced(state, newState, world, pos);
         super.onStateReplaced(state, world, pos, newState, moved);
-        if (state.hasBlockEntity() && !state.isOf(newState.getBlock())) {
-            Block block = world.getBlockState(pos).getBlock();
-            BlockEntity blockEntity = world.getBlockEntity(pos);
-            if (blockEntity instanceof Inventory inventory) {
-                ItemScatterer.spawn(world, pos, inventory);
-                world.updateComparators(pos, block);
-            }
-        }
     }
 
     @Override
