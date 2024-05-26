@@ -1,0 +1,12 @@
+{
+  "type": "octocomputing:leaf_shrine_recipe",
+  "inputCenter": { "item": "minecraft:gold_block"},
+  "inputNorth": { "item": "minecraft:gold_block"},
+  "inputSouth": { "item": "minecraft:gold_block"},
+  "inputEast": { "item": "minecraft:gold_block"},
+  "inputWest": { "item": "minecraft:gold_block"},
+  "id": "octocomputing:stone_bricks_from_gold_blocks",
+  "output": "minecraft:stone_bricks",
+  "outputAmount": 1,
+  "category": "misc"
+}

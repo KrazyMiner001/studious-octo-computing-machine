@@ -73,6 +73,10 @@ public class ModModelProvider extends FabricModelProvider {
                 .accept(createSingletonBlockState(ModBlocks.LEAF_SHRINE,
                         ModelIds.getBlockModelId(ModBlocks.LEAF_SHRINE)));
 
+        blockStateModelGenerator.blockStateCollector
+                .accept(createSingletonBlockState(ModBlocks.LEAF_PLINTH,
+                        ModelIds.getBlockModelId(ModBlocks.LEAF_PLINTH)));
+
         BlockStateModelGenerator.BlockTexturePool mystery_pool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.MYSTERY_PLANKS);
         BlockStateModelGenerator.BlockTexturePool transientwood_pool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.TRANSIENTWOOD_PLANKS);
         BlockStateModelGenerator.BlockTexturePool endergleam_pool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.ENDERGLEAM_PLANKS);

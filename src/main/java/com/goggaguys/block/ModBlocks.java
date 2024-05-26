@@ -81,6 +81,8 @@ public class ModBlocks {
 
     public static final Block LEAF_SHRINE = registerBlockAndItem("leaf_shrine",
             new LeafShrineBlock(Block.Settings.copy(Blocks.DEEPSLATE).solidBlock(Blocks::never).nonOpaque()));
+    public static final Block LEAF_PLINTH = registerBlockAndItem("leaf_plinth",
+            new LeafPlinthBlock(Block.Settings.copy(Blocks.DEEPSLATE).solidBlock(Blocks::never).nonOpaque()));
 
 
 

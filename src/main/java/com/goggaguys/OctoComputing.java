@@ -15,6 +15,7 @@ import com.goggaguys.item.ModDataComponentTypes;
 import com.goggaguys.item.ModItemGroups;
 import com.goggaguys.item.ModItemTags;
 import com.goggaguys.item.ModItems;
+import com.goggaguys.recipe.ModRecipes;
 import com.goggaguys.world.customFeatures.ModFeatures;
 import com.goggaguys.world.gen.ModWorldGeneration;
 import net.fabricmc.api.ModInitializer;
@@ -67,6 +68,7 @@ public class OctoComputing implements ModInitializer {
 		ModDataComponentTypes.register();
 		ModFeatures.registerModFeatures();
 		ModBlockEntities.registerModBlocksEntities();
+		ModRecipes.registerRecipes();
 
 		ItemGroupEvents.modifyEntriesEvent(ItemGroups.SPAWN_EGGS).register(content -> content.add(ModItems.LEAF_MONSTER_SPAWN_EGG));
 		ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS).register(content ->

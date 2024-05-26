@@ -17,11 +17,11 @@ import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
 import org.jetbrains.annotations.Nullable;
 
-public class LeafShrineBlockEntity extends BlockEntity implements ImplementedInventory {
+public class LeafPlinthBlockEntity extends BlockEntity implements ImplementedInventory {
     private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(1, ItemStack.EMPTY);
 
-    public LeafShrineBlockEntity(BlockPos pos, BlockState state) {
-        super(ModBlockEntities.LEAF_SHRINE_BLOCK_ENTITY, pos, state);
+    public LeafPlinthBlockEntity(BlockPos pos, BlockState state) {
+        super(ModBlockEntities.LEAF_PLINTH_BLOCK_ENTITY, pos, state);
     }
 
     @Override

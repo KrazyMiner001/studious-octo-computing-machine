@@ -3,6 +3,7 @@ package com.goggaguys.blockentity;
 import com.goggaguys.OctoComputing;
 import com.goggaguys.block.ModBlocks;
 import com.goggaguys.blockentity.custom.EndergleamBlockEntity;
+import com.goggaguys.blockentity.custom.LeafPlinthBlockEntity;
 import com.goggaguys.blockentity.custom.LeafShrineBlockEntity;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.BlockEntityType;
@@ -23,6 +24,10 @@ public class ModBlockEntities {
     public static BlockEntityType<LeafShrineBlockEntity> LEAF_SHRINE_BLOCK_ENTITY = registerBlockEntityType("leaf_shrine",
             BlockEntityType.Builder.create(LeafShrineBlockEntity::new,
                     ModBlocks.LEAF_SHRINE).build());
+
+    public static BlockEntityType<LeafPlinthBlockEntity> LEAF_PLINTH_BLOCK_ENTITY = registerBlockEntityType("leaf_plinth",
+            BlockEntityType.Builder.create(LeafPlinthBlockEntity::new,
+                    ModBlocks.LEAF_PLINTH).build());
 
     private static <T extends BlockEntity> BlockEntityType<T> registerBlockEntityType(String name, BlockEntityType<T> block) {
         return Registry.register(Registries.BLOCK_ENTITY_TYPE, new Identifier(OctoComputing.MOD_ID, name), block);
