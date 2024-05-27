@@ -2,12 +2,11 @@ package com.goggaguys.blockentity.renderers;
 
 import com.goggaguys.blockentity.custom.EndergleamBlockEntity;
 import com.goggaguys.renderlayers.ModRenderLayer;
-import net.minecraft.block.entity.BlockEntity;
-import net.minecraft.block.entity.EndPortalBlockEntity;
-import net.minecraft.client.render.*;
+import net.minecraft.client.render.RenderLayer;
+import net.minecraft.client.render.VertexConsumer;
+import net.minecraft.client.render.VertexConsumerProvider;
 import net.minecraft.client.render.block.entity.BlockEntityRenderer;
 import net.minecraft.client.render.block.entity.BlockEntityRendererFactory;
-import net.minecraft.client.render.block.entity.EndPortalBlockEntityRenderer;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.Direction;

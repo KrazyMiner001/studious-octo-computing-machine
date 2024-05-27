@@ -1,6 +1,5 @@
 package com.goggaguys.datagen;
 
-import com.goggaguys.OctoComputing;
 import com.goggaguys.block.ModBlocks;
 import com.goggaguys.block.ModProperties;
 import com.goggaguys.item.ModItems;

@@ -2,7 +2,6 @@ package com.goggaguys.datagen.lang;
 
 import com.goggaguys.OctoComputing;
 import com.goggaguys.block.ModBlocks;
-import com.goggaguys.effects.ModStatusEffects;
 import com.goggaguys.enchantments.ModEnchantments;
 import com.goggaguys.entity.ModEntities;
 import com.goggaguys.item.ModItemTags;

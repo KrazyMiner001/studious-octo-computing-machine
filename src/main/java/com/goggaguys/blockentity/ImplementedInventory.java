@@ -1,9 +1,10 @@
 package com.goggaguys.blockentity;
 
-import net.minecraft.entity.player.*;
-import net.minecraft.inventory.*;
-import net.minecraft.item.*;
-import net.minecraft.util.collection.*;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.inventory.Inventories;
+import net.minecraft.inventory.Inventory;
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.collection.DefaultedList;
 
 /**
  * A simple {@code Inventory} implementation with only default methods + an item list getter.

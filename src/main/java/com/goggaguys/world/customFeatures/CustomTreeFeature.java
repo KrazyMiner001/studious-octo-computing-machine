@@ -7,8 +7,6 @@ import com.goggaguys.shapes.Sphere;
 import com.goggaguys.shapes.TruncatedCone;
 import com.mojang.serialization.Codec;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
-import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.registry.Registries;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;

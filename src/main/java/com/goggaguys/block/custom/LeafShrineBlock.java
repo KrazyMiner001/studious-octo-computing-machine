@@ -1,28 +1,20 @@
 package com.goggaguys.block.custom;
 
-import com.goggaguys.blockentity.ImplementedInventory;
 import com.goggaguys.blockentity.ModBlockEntities;
-import com.goggaguys.blockentity.custom.LeafPlinthBlockEntity;
 import com.goggaguys.blockentity.custom.LeafShrineBlockEntity;
-import com.goggaguys.recipe.LeafShrineRecipe;
 import com.mojang.serialization.MapCodec;
-import net.minecraft.block.*;
+import net.minecraft.block.BlockRenderType;
+import net.minecraft.block.BlockState;
+import net.minecraft.block.BlockWithEntity;
+import net.minecraft.block.ShapeContext;
 import net.minecraft.block.entity.AbstractFurnaceBlockEntity;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.BlockEntityTicker;
 import net.minecraft.block.entity.BlockEntityType;
-import net.minecraft.entity.ItemEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.Inventory;
-import net.minecraft.inventory.SidedInventory;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
-import net.minecraft.particle.ParticleTypes;
-import net.minecraft.recipe.AbstractCookingRecipe;
-import net.minecraft.recipe.RecipeEntry;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.ItemScatterer;
-import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.shape.VoxelShape;
@@ -30,8 +22,6 @@ import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
-
-import java.util.Optional;
 
 public class LeafShrineBlock extends BlockWithEntity {
     public static final MapCodec<LeafShrineBlock> CODEC = createCodec(LeafShrineBlock::new);

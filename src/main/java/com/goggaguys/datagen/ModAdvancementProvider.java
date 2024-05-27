@@ -7,20 +7,18 @@ import com.goggaguys.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricAdvancementProvider;
 import net.minecraft.advancement.*;
-import net.minecraft.advancement.criterion.Criteria;
-import net.minecraft.advancement.criterion.Criterion;
 import net.minecraft.advancement.criterion.InventoryChangedCriterion;
 import net.minecraft.advancement.criterion.OnKilledCriterion;
-import net.minecraft.item.ItemConvertible;
 import net.minecraft.predicate.entity.EntityPredicate;
 import net.minecraft.predicate.item.ItemPredicate;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 
-import java.util.*;
+import java.util.List;
+import java.util.Map;
+import java.util.Optional;
 import java.util.concurrent.CompletableFuture;
-import java.util.concurrent.locks.Condition;
 import java.util.function.Consumer;
 
 public class ModAdvancementProvider extends FabricAdvancementProvider {

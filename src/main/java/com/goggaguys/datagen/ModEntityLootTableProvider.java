@@ -13,7 +13,6 @@ import net.minecraft.loot.entry.ItemEntry;
 import net.minecraft.loot.provider.number.ConstantLootNumberProvider;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryWrapper;
-import net.minecraft.util.Identifier;
 
 import java.util.concurrent.CompletableFuture;
 import java.util.function.BiConsumer;

@@ -1,7 +1,6 @@
 package com.goggaguys.proceduralTreeGen;
 
 import com.goggaguys.shapes.TruncatedCone;
-import net.minecraft.util.math.Position;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.math.random.Random;
 
