@@ -1,0 +1,21 @@
+{
+  "type": "octocomputing:leaf_shrine_recipe",
+  "category": "misc",
+  "craftingTime": 50,
+  "inputCenter": {
+    "item": "minecraft:gold_ingot"
+  },
+  "inputEast": {
+    "item": "minecraft:gold_ingot"
+  },
+  "inputNorth": {
+    "item": "minecraft:gold_ingot"
+  },
+  "inputSouth": {
+    "item": "minecraft:gold_ingot"
+  },
+  "inputWest": {
+    "item": "minecraft:gold_ingot"
+  },
+  "output": "minecraft:golden_shovel"
+}

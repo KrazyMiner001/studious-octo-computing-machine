@@ -3,6 +3,7 @@ package com.goggaguys.datagen;
 import com.goggaguys.block.ModBlocks;
 import com.goggaguys.item.ModItemTags;
 import com.goggaguys.item.ModItems;
+import com.goggaguys.recipe.LeafShrineRecipeJsonBuilder;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.minecraft.block.Blocks;
@@ -193,6 +194,15 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
                 .criterion(hasItem(Items.NETHERITE_INGOT), conditionsFromItem(Items.NETHERITE_INGOT))
                 .criterion(hasItem(ModItems.LEAF_CORE), conditionsFromItem(ModItems.LEAF_CORE))
                 .offerTo(exporter, getItemPath(ModItems.CHLOROPHYTE_INGOT));
+
+        LeafShrineRecipeJsonBuilder.create(RecipeCategory.MISC, Items.GOLDEN_SHOVEL, 1, 50)
+                .centerInput(Ingredient.ofItems(Items.GOLD_INGOT))
+                .northInput(Ingredient.ofItems(Items.GOLD_INGOT))
+                .eastInput(Ingredient.ofItems(Items.GOLD_INGOT))
+                .southInput(Ingredient.ofItems(Items.GOLD_INGOT))
+                .westInput(Ingredient.ofItems(Items.GOLD_INGOT))
+                .criterion("has_gold_ingot", conditionsFromItem(Items.GOLD_INGOT))
+                .offerTo(exporter, getItemPath(Items.GOLDEN_SHOVEL) + "_from_gold_ingot");
     }
 
     private static void offerToolRecipes(RecipeExporter exporter, TagKey<Item> ingredient,

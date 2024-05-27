@@ -79,15 +79,7 @@ public class LeafShrineBlock extends BlockWithEntity {
             }
         } else {
             if (!((Inventory) blockEntity).getStack(0).isEmpty()) {
-                boolean atLeastOneCraft = false;
-                boolean successfulCraft;
-                do {
-                    successfulCraft = blockEntity.craftItem();
-                    atLeastOneCraft = atLeastOneCraft || successfulCraft;
-                } while (successfulCraft);
-                if (atLeastOneCraft) {
-                    return ActionResult.SUCCESS;
-                }
+                return blockEntity.craftItem() ? ActionResult.SUCCESS : ActionResult.PASS;
             }
         }
         return ActionResult.PASS;
@@ -124,7 +116,6 @@ public class LeafShrineBlock extends BlockWithEntity {
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
         if (world.isClient) {
             return validateTicker(type, ModBlockEntities.LEAF_SHRINE_BLOCK_ENTITY, LeafShrineBlockEntity::clientTick);
-
         } else {
             return validateTicker(type, ModBlockEntities.LEAF_SHRINE_BLOCK_ENTITY, LeafShrineBlockEntity::serverTick);
         }

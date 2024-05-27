@@ -4,6 +4,7 @@ import com.goggaguys.blockentity.ImplementedInventory;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.network.RegistryByteBuf;
 import net.minecraft.network.codec.PacketCodec;
@@ -12,10 +13,9 @@ import net.minecraft.recipe.Recipe;
 import net.minecraft.recipe.RecipeSerializer;
 import net.minecraft.recipe.RecipeType;
 import net.minecraft.recipe.book.CraftingRecipeCategory;
+import net.minecraft.recipe.book.RecipeCategory;
 import net.minecraft.registry.RegistryWrapper;
-import net.minecraft.util.Identifier;
-import net.minecraft.util.shape.VoxelShape;
-import net.minecraft.util.shape.VoxelShapes;
+import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.world.World;
 
 public class LeafShrineRecipe implements Recipe<ImplementedInventory> {
@@ -25,18 +25,29 @@ public class LeafShrineRecipe implements Recipe<ImplementedInventory> {
     final Ingredient inputSouth;
     final Ingredient inputWest;
     final ItemStack output;
-    final Identifier id;
+    final int craftingTime;
     final CraftingRecipeCategory category;
 
-    public LeafShrineRecipe(Ingredient inputCenter, Ingredient inputNorth, Ingredient inputWestast, Ingredient inputSouth, Ingredient inputWest, ItemStack output, Identifier id, CraftingRecipeCategory category) {
+    public LeafShrineRecipe(Ingredient inputCenter, Ingredient inputNorth, Ingredient inputEast, Ingredient inputSouth, Ingredient inputWest, ItemStack output, int craftingTime, CraftingRecipeCategory category) {
         this.inputCenter = inputCenter;
         this.inputNorth = inputNorth;
-        this.inputEast = inputWestast;
+        this.inputEast = inputEast;
         this.inputSouth = inputSouth;
         this.inputWest = inputWest;
         this.output = output;
-        this.id = id;
+        this.craftingTime = craftingTime;
         this.category = category;
+    }
+
+    public LeafShrineRecipe(CraftingRecipeCategory category, DefaultedList<Ingredient> inputs, Item output, int outputCount, int craftingTime) {
+        this.category = category;
+        this.inputCenter = inputs.get(0);
+        this.inputNorth = inputs.get(1);
+        this.inputEast = inputs.get(2);
+        this.inputSouth = inputs.get(3);
+        this.inputWest = inputs.get(4);
+        this.output = new ItemStack(output, outputCount);
+        this.craftingTime = craftingTime;
     }
 
     public Ingredient getInputCenter() {
@@ -59,8 +70,8 @@ public class LeafShrineRecipe implements Recipe<ImplementedInventory> {
         return inputWest;
     }
 
-    public Identifier getId() {
-        return id;
+    public int getCraftingTime() {
+        return craftingTime;
     }
 
     @Override
@@ -97,11 +108,11 @@ public class LeafShrineRecipe implements Recipe<ImplementedInventory> {
                 Ingredient.DISALLOW_EMPTY_CODEC.fieldOf("inputEast").forGetter(LeafShrineRecipe::getInputEast),
                 Ingredient.DISALLOW_EMPTY_CODEC.fieldOf("inputSouth").forGetter(LeafShrineRecipe::getInputSouth),
                 Ingredient.DISALLOW_EMPTY_CODEC.fieldOf("inputWest").forGetter(LeafShrineRecipe::getInputWest),
-                Identifier.CODEC.fieldOf("id").forGetter(recipe -> recipe.id),
                 ItemStack.ITEM_CODEC.fieldOf("output").forGetter(recipe -> recipe.output.getRegistryEntry()),
                 Codec.INT.optionalFieldOf("outputAmount", 1).forGetter(recipe -> recipe.output.getCount()),
+                Codec.INT.optionalFieldOf("craftingTime", 20).forGetter(LeafShrineRecipe::getCraftingTime),
                 CraftingRecipeCategory.CODEC.fieldOf("category").orElse(CraftingRecipeCategory.MISC).forGetter(LeafShrineRecipe::getCategory)
-        ).apply(instance, (inputCenter, inputNorth, inputEast, inputSouth, inputWest, id, output, outputAmount, category) -> new LeafShrineRecipe(inputCenter, inputNorth, inputEast, inputSouth, inputWest, new ItemStack(output, outputAmount), id, category)));
+        ).apply(instance, (inputCenter, inputNorth, inputEast, inputSouth, inputWest, output, outputAmount, craftingTime, category) -> new LeafShrineRecipe(inputCenter, inputNorth, inputEast, inputSouth, inputWest, new ItemStack(output, outputAmount), craftingTime, category)));
 
         @Override
         public MapCodec<LeafShrineRecipe> codec() {
@@ -120,14 +131,13 @@ public class LeafShrineRecipe implements Recipe<ImplementedInventory> {
             Ingredient inputSouth = Ingredient.PACKET_CODEC.decode(buf);
             Ingredient inputWest = Ingredient.PACKET_CODEC.decode(buf);
 
-            Identifier id = buf.readIdentifier();
-
             ItemStack output = ItemStack.PACKET_CODEC.decode(buf);
             int outputAmount = buf.readInt();
+            int craftingTime = buf.readInt();
 
             CraftingRecipeCategory category = buf.readEnumConstant(CraftingRecipeCategory.class);
 
-            return new LeafShrineRecipe(inputCenter, inputNorth, inputEast, inputSouth, inputWest, new ItemStack(output.getRegistryEntry(), outputAmount), id, category);
+            return new LeafShrineRecipe(inputCenter, inputNorth, inputEast, inputSouth, inputWest, new ItemStack(output.getRegistryEntry(), outputAmount), craftingTime, category);
         }
 
         public void write(RegistryByteBuf buf, LeafShrineRecipe recipe) {
@@ -137,10 +147,9 @@ public class LeafShrineRecipe implements Recipe<ImplementedInventory> {
             Ingredient.PACKET_CODEC.encode(buf, recipe.inputSouth);
             Ingredient.PACKET_CODEC.encode(buf, recipe.inputWest);
 
-            buf.writeIdentifier(recipe.id);
-
             ItemStack.PACKET_CODEC.encode(buf, recipe.output);
             buf.writeInt(recipe.output.getCount());
+            buf.writeInt(recipe.craftingTime);
 
             buf.writeEnumConstant(recipe.getCategory());
         }

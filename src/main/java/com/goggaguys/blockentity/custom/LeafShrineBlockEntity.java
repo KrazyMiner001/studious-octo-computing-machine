@@ -82,7 +82,7 @@ public class LeafShrineBlockEntity extends BlockEntity implements ImplementedInv
     }
 
     public boolean craftItem() {
-        if (craftingTime == 0) {
+        if (craftingTime != 0) {
             return false;
         }
         LeafShrineBlockEntity blockEntity = this;
@@ -132,16 +132,15 @@ public class LeafShrineBlockEntity extends BlockEntity implements ImplementedInv
 
         if (match.isPresent()) {
             currentRecipe = match.get();
-            craftingTime = 100; //Todo: put crafting time in the json for the recipe
+            craftingTime = match.get().getCraftingTime();
             return true;
         }
         return false;
     }
 
     public static void serverTick(@NotNull World world, BlockPos pos, BlockState blockState, LeafShrineBlockEntity leafShrineBlockEntity) {
-        if (leafShrineBlockEntity.craftingTime != 0) {
+        if (leafShrineBlockEntity.craftingTime > 0) {
             leafShrineBlockEntity.craftingTime--;
-            world.addParticle(ParticleTypes.HAPPY_VILLAGER, pos.getX() + 0.5, pos.getY() + 1.5, pos.getZ() + 0.5, 0, 0, 0);
 
             BlockEntity northPlinth = world.getBlockEntity(pos.north(2));
             if (!(northPlinth instanceof LeafPlinthBlockEntity northPlinthBlockEntity)) {
