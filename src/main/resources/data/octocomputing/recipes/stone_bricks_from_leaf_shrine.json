@@ -7,6 +7,6 @@
   "inputWest": { "item": "minecraft:gold_block"},
   "output": "minecraft:stone_bricks",
   "outputAmount": 1,
-  "craftingTime": 40,
+  "craftingTime": 200,
   "category": "misc"
 }

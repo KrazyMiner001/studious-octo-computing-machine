@@ -7,6 +7,7 @@ import com.goggaguys.blockentity.renderers.LeafPlinthBlockEntityRenderer;
 import com.goggaguys.blockentity.renderers.LeafShrineBlockEntityRenderer;
 import com.goggaguys.entity.ModEntities;
 import com.goggaguys.entity.client.*;
+import com.goggaguys.networking.ModS2CPacketReciever;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry;
@@ -38,6 +39,8 @@ public class OctoComputingClient implements ClientModInitializer {
 				ModBlocks.LEAF_SHRINE,
 				ModBlocks.LEAF_PLINTH
 		);
+
+		ModS2CPacketReciever.registerS2CReceivers();
 
 		BlockEntityRendererFactories.register(ModBlockEntities.ENDERGLEAM_BLOCK_ENTITY, EndergleamBlockEntityRenderer::new);
 		BlockEntityRendererFactories.register(ModBlockEntities.LEAF_SHRINE_BLOCK_ENTITY, LeafShrineBlockEntityRenderer::new);

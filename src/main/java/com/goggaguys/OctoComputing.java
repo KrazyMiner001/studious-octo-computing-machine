@@ -15,14 +15,18 @@ import com.goggaguys.item.ModDataComponentTypes;
 import com.goggaguys.item.ModItemGroups;
 import com.goggaguys.item.ModItemTags;
 import com.goggaguys.item.ModItems;
+import com.goggaguys.networking.ModS2CPacketSender;
+import com.goggaguys.networking.ModS2CPackets;
 import com.goggaguys.recipe.ModRecipes;
 import com.goggaguys.world.customFeatures.ModFeatures;
 import com.goggaguys.world.gen.ModWorldGeneration;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
 import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
+import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.fabricmc.fabric.api.loot.v2.LootTableEvents;
+import net.fabricmc.fabric.api.networking.v1.PayloadTypeRegistry;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.fabricmc.fabric.api.registry.FuelRegistry;
 import net.fabricmc.fabric.api.registry.StrippableBlockRegistry;
@@ -43,6 +47,7 @@ import net.minecraft.loot.function.SetCountLootFunction;
 import net.minecraft.loot.provider.number.BinomialLootNumberProvider;
 import net.minecraft.loot.provider.number.ConstantLootNumberProvider;
 import net.minecraft.predicate.item.ItemPredicate;
+import net.minecraft.server.MinecraftServer;
 import net.minecraft.world.Heightmap;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -54,6 +59,7 @@ public class OctoComputing implements ModInitializer {
 	public static final Logger LOGGER = LoggerFactory.getLogger("octocomputing");
 	public static final String MOD_ID = "octocomputing";
 	public static final OctoComputingConfig CONFIG = OctoComputingConfig.createAndLoad();
+	public static MinecraftServer SERVER;
 
 	@Override
 	public void onInitialize() {
@@ -109,6 +115,12 @@ public class OctoComputing implements ModInitializer {
 		FuelRegistry.INSTANCE.add(ModBlocks.STRIPPED_MYSTERY_WOOD, 300);
 		FuelRegistry.INSTANCE.add(ModBlocks.MYSTERY_PLANKS, 300);
 		FuelRegistry.INSTANCE.add(ModBlocks.MYSTERY_SAPLING, 100);
+
+		ServerLifecycleEvents.SERVER_STARTED.register(server -> SERVER = server);
+		ServerLifecycleEvents.SERVER_STOPPED.register(server -> SERVER = null);
+
+		PayloadTypeRegistry.playS2C().register(ModS2CPackets.PlayLeafShrineCraftingInProgressParticlePacket.PACKET_ID, ModS2CPackets.PlayLeafShrineCraftingInProgressParticlePacket.PACKET_CODEC);
+		PayloadTypeRegistry.playS2C().register(ModS2CPackets.PlayLeafShrineCraftingFinishedParticlePacket.PACKET_ID, ModS2CPackets.PlayLeafShrineCraftingFinishedParticlePacket.PACKET_CODEC);
 
 		FabricDefaultAttributeRegistry.register(ModEntities.LEAF_MONSTER, LeafMonsterEntity.createLeafMonsterAttributes());
 		FabricDefaultAttributeRegistry.register(ModEntities.LEAF_GOD, LeafGodEntity.createLeafGodAttributes());
