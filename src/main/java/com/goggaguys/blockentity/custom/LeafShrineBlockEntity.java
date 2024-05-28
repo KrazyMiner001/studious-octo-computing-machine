@@ -15,10 +15,12 @@ import net.minecraft.nbt.NbtList;
 import net.minecraft.network.listener.ClientPlayPacketListener;
 import net.minecraft.network.packet.Packet;
 import net.minecraft.network.packet.s2c.play.BlockEntityUpdateS2CPacket;
+import net.minecraft.particle.ParticleTypes;
 import net.minecraft.recipe.RecipeEntry;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Direction;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -180,7 +182,36 @@ public class LeafShrineBlockEntity extends BlockEntity implements ImplementedInv
     }
 
     public static void clientTick(@NotNull World world, BlockPos blockPos, BlockState blockState, LeafShrineBlockEntity leafShrineBlockEntity) {
+        int craftingTime = leafShrineBlockEntity.craftingTime;
+        if (craftingTime > 0) {
+            leafShrineBlockEntity.spawnCraftingProgressParticles();
 
+            if (craftingTime == 1) {
+                leafShrineBlockEntity.spawnFinishedCraftingParticles();
+            }
+        }
+    }
+
+    public void spawnCraftingProgressParticles() {
+        World world = this.getWorld();
+        BlockPos blockPos = this.getPos();
+        int craftingTime = this.craftingTime;
+
+        int initialCraftingTime = this.currentRecipe.getCraftingTime();
+        double craftingProgress = (double) (initialCraftingTime - craftingTime) / initialCraftingTime;
+
+        assert world != null;
+        world.addParticle(ParticleTypes.HAPPY_VILLAGER, blockPos.getX() + 0.5 + Direction.NORTH.getOffsetX()*2*craftingProgress, blockPos.getY() + 1.5, blockPos.getZ() + 0.5 + Direction.NORTH.getOffsetZ()*2*craftingProgress, -Direction.NORTH.getOffsetX(), 0, -Direction.NORTH.getOffsetZ());
+        world.addParticle(ParticleTypes.HAPPY_VILLAGER, blockPos.getX() + 0.5 + Direction.EAST.getOffsetX()*2*craftingProgress, blockPos.getY() + 1.5, blockPos.getZ() + 0.5 + Direction.EAST.getOffsetZ()*2*craftingProgress, -Direction.EAST.getOffsetX(), 0, -Direction.EAST.getOffsetZ());
+        world.addParticle(ParticleTypes.HAPPY_VILLAGER, blockPos.getX() + 0.5 + Direction.SOUTH.getOffsetX()*2*craftingProgress, blockPos.getY() + 1.5, blockPos.getZ() + 0.5 + Direction.SOUTH.getOffsetZ()*2*craftingProgress, -Direction.SOUTH.getOffsetX(), 0, -Direction.SOUTH.getOffsetZ());
+        world.addParticle(ParticleTypes.HAPPY_VILLAGER, blockPos.getX() + 0.5 + Direction.WEST.getOffsetX()*2*craftingProgress, blockPos.getY() + 1.5, blockPos.getZ() + 0.5 + Direction.WEST.getOffsetZ()*2*craftingProgress, -Direction.WEST.getOffsetX(), 0, -Direction.WEST.getOffsetZ());
+    }
+
+    public void spawnFinishedCraftingParticles() {
+        World world = this.getWorld();
+        BlockPos blockPos = this.getPos();
+        assert world != null;
+        world.addParticle(ParticleTypes.EXPLOSION, blockPos.getX() + 0.5, blockPos.getY() + 1.5, blockPos.getZ() + 0.5, 0, 0, 0);
     }
 
 
