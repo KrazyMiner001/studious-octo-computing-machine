@@ -1,5 +1,6 @@
 package com.goggaguys.recipe;
 
+import com.goggaguys.OctoComputing;
 import com.goggaguys.blockentity.ImplementedInventory;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.MapCodec;
@@ -79,11 +80,26 @@ public class LeafShrineRecipe implements Recipe<ImplementedInventory> {
         return craftingTime;
     }
 
+    public Identifier getId() {
+        return OctoComputing.SERVER.getRecipeManager().listAllOfType(Type.INSTANCE).stream().filter(r -> r.value().equals(this)).findFirst().orElseThrow(() -> new IllegalStateException("Recipe not found")).id();
+    }
+
     @Override
     public boolean matches(ImplementedInventory inventory, World world) {
         if (inventory.size() < 5)
             return false;
         return inputCenter.test(inventory.getStack(0)) && inputNorth.test(inventory.getStack(1)) && inputEast.test(inventory.getStack(2)) && inputSouth.test(inventory.getStack(3)) && inputWest.test(inventory.getStack(4));
+    }
+
+    @Override
+    public DefaultedList<Ingredient> getIngredients() {
+        DefaultedList<Ingredient> ingredients = DefaultedList.of();
+        ingredients.add(inputCenter);
+        ingredients.add(inputNorth);
+        ingredients.add(inputEast);
+        ingredients.add(inputSouth);
+        ingredients.add(inputWest);
+        return ingredients;
     }
 
     @Override
@@ -98,6 +114,10 @@ public class LeafShrineRecipe implements Recipe<ImplementedInventory> {
 
     @Override
     public ItemStack getResult(RegistryWrapper.WrapperLookup registriesLookup) {
+        return output;
+    }
+
+    public ItemStack getOutput() {
         return output;
     }
 

@@ -22,6 +22,9 @@
 		],
 		"fabric-datagen": [
 			"com.goggaguys.OctoComputingDataGenerator"
+		],
+		"emi": [
+			"com.goggaguys.compat.emi.OctoComputingEmiPlugin"
 		]
 	},
 	"mixins": [
