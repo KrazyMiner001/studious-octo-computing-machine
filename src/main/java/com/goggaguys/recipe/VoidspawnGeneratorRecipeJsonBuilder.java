@@ -50,17 +50,17 @@ public class VoidspawnGeneratorRecipeJsonBuilder implements CraftingRecipeJsonBu
         return new VoidspawnGeneratorRecipeJsonBuilder(category, output, count, craftingTime);
     }
 
-    public VoidspawnGeneratorRecipeJsonBuilder input(ItemConvertible itemProvider) {
-        return this.input(Ingredient.ofItems(itemProvider));
+    public VoidspawnGeneratorRecipeJsonBuilder catalyst(ItemConvertible itemProvider) {
+        return this.catalyst(Ingredient.ofItems(itemProvider));
     }
 
-    public VoidspawnGeneratorRecipeJsonBuilder input(Ingredient ingredient) {
-        this.inputs.set(0, ingredient);
+    public VoidspawnGeneratorRecipeJsonBuilder catalyst(Ingredient ingredient) {
+        this.inputs.add(0, ingredient);
         return this;
     }
 
-    public VoidspawnGeneratorRecipeJsonBuilder input(TagKey<Item> tag) {
-        return this.input(Ingredient.fromTag(tag));
+    public VoidspawnGeneratorRecipeJsonBuilder catalyst(TagKey<Item> tag) {
+        return this.catalyst(Ingredient.fromTag(tag));
     }
 
     public VoidspawnGeneratorRecipeJsonBuilder fuel(ItemConvertible itemProvider) {
@@ -68,7 +68,7 @@ public class VoidspawnGeneratorRecipeJsonBuilder implements CraftingRecipeJsonBu
     }
 
     public VoidspawnGeneratorRecipeJsonBuilder fuel(Ingredient ingredient) {
-        this.inputs.set(1, ingredient);
+        this.inputs.add(1, ingredient);
         return this;
     }
 

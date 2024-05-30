@@ -1,0 +1,12 @@
+{
+  "type": "octocomputing:voidspawn_generator_recipe",
+  "catalyst": {
+    "item": "minecraft:netherite_ingot"
+  },
+  "category": "misc",
+  "craftingTime": 600,
+  "fuel": {
+    "item": "minecraft:blaze_powder"
+  },
+  "output": "minecraft:acacia_slab"
+}

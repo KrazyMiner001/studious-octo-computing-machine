@@ -37,8 +37,6 @@ public class VoidspawnGeneratorScreenHandler extends ScreenHandler {
         this.addSlot(new Slot(inventory, 1, 80, 17));
         this.addSlot(new Slot(inventory, 2, 98, 17));
 
-
-
         //The player inventory
         for (m = 0; m < 3; ++m) {
             for (l = 0; l < 9; ++l) {
@@ -50,6 +48,16 @@ public class VoidspawnGeneratorScreenHandler extends ScreenHandler {
             this.addSlot(new Slot(playerInventory, m, 8 + m * 18, 142));
         }
 
+    }
+
+    @Override
+    public boolean canInsertIntoSlot(Slot slot) {
+        return slot.getIndex() != 3;
+    }
+
+    @Override
+    public boolean canInsertIntoSlot(ItemStack stack, Slot slot) {
+        return slot.getIndex() != 3;
     }
 
     @Override

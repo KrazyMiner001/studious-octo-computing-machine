@@ -1,10 +1,12 @@
 package com.goggaguys.block.custom;
 
+import com.goggaguys.blockentity.ModBlockEntities;
 import com.goggaguys.blockentity.custom.VoidspawnGeneratorBlockEntity;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.block.BlockRenderType;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.BlockWithEntity;
+import net.minecraft.block.entity.AbstractFurnaceBlockEntity;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.BlockEntityTicker;
 import net.minecraft.block.entity.BlockEntityType;
@@ -35,7 +37,16 @@ public class VoidspawnGeneratorBlock extends BlockWithEntity {
     @Nullable
     @Override
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-        return super.getTicker(world, state, type);
+        if (world.isClient) {
+            return validateTicker(type, ModBlockEntities.VOIDSPAWN_GENERATOR_BLOCK_ENTITY, VoidspawnGeneratorBlockEntity::clientTick);
+        } else {
+            return validateTicker(type, ModBlockEntities.VOIDSPAWN_GENERATOR_BLOCK_ENTITY, VoidspawnGeneratorBlockEntity::serverTick);
+        }
+    }
+
+    @Nullable
+    protected static <T extends BlockEntity> BlockEntityTicker<T> validateTicker(World world, BlockEntityType<T> givenType, BlockEntityType<? extends AbstractFurnaceBlockEntity> expectedType) {
+        return world.isClient ? null : validateTicker(givenType, expectedType, AbstractFurnaceBlockEntity::tick);
     }
 
     @Override

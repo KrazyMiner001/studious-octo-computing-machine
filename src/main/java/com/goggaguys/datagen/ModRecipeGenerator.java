@@ -4,6 +4,8 @@ import com.goggaguys.block.ModBlocks;
 import com.goggaguys.item.ModItemTags;
 import com.goggaguys.item.ModItems;
 import com.goggaguys.recipe.LeafShrineRecipeJsonBuilder;
+import com.goggaguys.recipe.VoidspawnGeneratorRecipe;
+import com.goggaguys.recipe.VoidspawnGeneratorRecipeJsonBuilder;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.minecraft.block.Blocks;
@@ -203,6 +205,15 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
                 .westInput(Ingredient.ofItems(Items.GOLD_INGOT))
                 .criterion("has_gold_ingot", conditionsFromItem(Items.GOLD_INGOT))
                 .offerTo(exporter, getItemPath(Items.GOLDEN_SHOVEL) + "_from_gold_ingot");
+
+        VoidspawnGeneratorRecipeJsonBuilder.create(RecipeCategory.MISC, Items.ACACIA_SLAB, 1, 600)
+                .catalyst(Items.NETHERITE_INGOT)
+                .fuel(Items.BLAZE_POWDER)
+                .criterion("has_netherite_ingot", conditionsFromItem(Items.NETHERITE_INGOT))
+                .criterion("has_blaze_powder", conditionsFromItem(Items.BLAZE_POWDER))
+                .offerTo(exporter, getItemPath(Items.ACACIA_SLAB) + "_from_blaze_powder");
+
+
     }
 
     private static void offerToolRecipes(RecipeExporter exporter, TagKey<Item> ingredient,

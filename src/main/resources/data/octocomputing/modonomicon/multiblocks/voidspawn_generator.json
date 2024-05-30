@@ -96,7 +96,7 @@
    "mapping": {
      "C": {
        "type": "modonomicon:block",
-       "block": "minecraft:crying obsidian"
+       "block": "minecraft:crying_obsidian"
      },
      "O": {
        "type": "modonomicon:block",
@@ -104,11 +104,11 @@
      },
      "P": {
        "type": "modonomicon:block",
-       "block": "minecraft:polished blackstone"
+       "block": "minecraft:polished_blackstone"
      },
      "B": {
        "type": "modonomicon:block",
-       "block": "minecraft:blackstone bricks"
+       "block": "minecraft:polished_blackstone_bricks"
      },
      "H": {
        "type": "modonomicon:block",
@@ -116,19 +116,19 @@
      },
      "0": {
        "type": "modonomicon:block",
-       "block": "octocomputing:voidspawn generator"
+       "block": "octocomputing:voidspawn_generator"
      },
      "T": {
        "type": "modonomicon:block",
-       "block": "minecraft:deepslate tiles"
+       "block": "minecraft:deepslate_tiles"
      },
      "A": {
        "type": "modonomicon:block",
-       "block": "minecraft:amethyst block"
+       "block": "minecraft:amethyst_block"
      },
      "D": {
        "type": "modonomicon:block",
-       "block": "minecraft:polished deepslate"
+       "block": "minecraft:polished_deepslate"
     },
      " ": {
        "type": "modonomicon:any"

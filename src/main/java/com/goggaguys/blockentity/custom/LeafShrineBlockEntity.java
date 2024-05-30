@@ -35,7 +35,7 @@ import java.util.Optional;
 
 public class LeafShrineBlockEntity extends BlockEntity implements ImplementedInventory {
     private int craftingTime = 0;
-    private LeafShrineRecipe currentRecipe;
+    private RecipeEntry<LeafShrineRecipe> currentRecipe;
     private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(1, ItemStack.EMPTY);
 
     public LeafShrineBlockEntity(BlockPos pos, BlockState state) {
@@ -67,10 +67,10 @@ public class LeafShrineBlockEntity extends BlockEntity implements ImplementedInv
         if (nbt.contains("CurrentRecipe")) {
             String recipeString = nbt.getString("CurrentRecipe");
             if (!recipeString.isEmpty() && OctoComputing.SERVER != null) {
-                Optional<Object> optionalRecipe = OctoComputing.SERVER.getRecipeManager().get(new Identifier(recipeString)).map(RecipeEntry::value);
+                Optional<RecipeEntry<?>> optionalRecipe = OctoComputing.SERVER.getRecipeManager().get(new Identifier(recipeString));
                 if (optionalRecipe.isPresent()) {
-                    if (optionalRecipe.get() instanceof LeafShrineRecipe recipe) {
-                        this.currentRecipe = recipe;
+                    if (optionalRecipe.get().value() instanceof LeafShrineRecipe recipe) {
+                        this.currentRecipe = new RecipeEntry<>(new Identifier(recipeString), recipe);
                     };
                 }
             }
@@ -84,9 +84,7 @@ public class LeafShrineBlockEntity extends BlockEntity implements ImplementedInv
         nbt.putShort("CraftingTime", (short) this.craftingTime);
         assert world != null;
         if (currentRecipe != null) {
-            world.getRecipeManager().listAllOfType(LeafShrineRecipe.Type.INSTANCE).stream()
-                    .filter(recipe -> recipe.value() == this.currentRecipe)
-                    .findFirst().ifPresent(recipe -> nbt.putString("CurrentRecipe", recipe.id().toString()));
+            nbt.putString("CurrentRecipe", currentRecipe.id().toString());
         }
     }
 
@@ -155,7 +153,7 @@ public class LeafShrineBlockEntity extends BlockEntity implements ImplementedInv
             return false;
         }
         ImplementedInventory inventory = ImplementedInventory.of(items);
-        Optional<LeafShrineRecipe> match = world.getRecipeManager().getFirstMatch(LeafShrineRecipe.Type.INSTANCE, inventory, world).map(RecipeEntry::value);
+        Optional<RecipeEntry<LeafShrineRecipe>> match = world.getRecipeManager().getFirstMatch(LeafShrineRecipe.Type.INSTANCE, inventory, world);
 
         if (match.isPresent()) {
             currentRecipe = match.get();
@@ -170,7 +168,7 @@ public class LeafShrineBlockEntity extends BlockEntity implements ImplementedInv
         if (leafShrineBlockEntity.currentRecipe == null) {
             return;
         }
-        if (leafShrineBlockEntity.craftingTime < leafShrineBlockEntity.currentRecipe.getCraftingTime()) {
+        if (leafShrineBlockEntity.craftingTime < leafShrineBlockEntity.currentRecipe.value().getCraftingTime()) {
             leafShrineBlockEntity.craftingTime++;
             ModS2CPacketSender.sendLeafShrineCraftingInProgressParticlePacket(world, pos);
 
@@ -199,8 +197,8 @@ public class LeafShrineBlockEntity extends BlockEntity implements ImplementedInv
                 return;
             }
 
-            if (leafShrineBlockEntity.craftingTime == leafShrineBlockEntity.currentRecipe.getCraftingTime() && leafShrineBlockEntity.currentRecipe != null) {
-                ItemStack result = leafShrineBlockEntity.currentRecipe.getResult(null).copy();
+            if (leafShrineBlockEntity.craftingTime == leafShrineBlockEntity.currentRecipe.value().getCraftingTime() && leafShrineBlockEntity.currentRecipe != null) {
+                ItemStack result = leafShrineBlockEntity.currentRecipe.value().getResult(null).copy();
                 world.spawnEntity(new ItemEntity(world, pos.getX() + 0.5, pos.getY() + 1.5, pos.getZ() + 0.5, result));
                 for (int i = 0; i < 5; i++) {
                     switch (i) {
@@ -225,10 +223,10 @@ public class LeafShrineBlockEntity extends BlockEntity implements ImplementedInv
         if (blockEntity != null) {
             int craftingTime = blockEntity.craftingTime;
             if (blockEntity.currentRecipe != null) {
-                if (craftingTime < blockEntity.currentRecipe.getCraftingTime()){
+                if (craftingTime < blockEntity.currentRecipe.value().getCraftingTime()){
                     blockEntity.spawnCraftingProgressParticles();
 
-                    if (craftingTime == blockEntity.currentRecipe.getCraftingTime()) {
+                    if (craftingTime == blockEntity.currentRecipe.value().getCraftingTime()) {
                         blockEntity.spawnFinishedCraftingParticles();
                     }
                 }
@@ -240,7 +238,7 @@ public class LeafShrineBlockEntity extends BlockEntity implements ImplementedInv
         BlockPos blockPos = this.getPos();
 
         if (currentRecipe != null && world != null) {
-            int initialCraftingTime = this.currentRecipe.getCraftingTime();
+            int initialCraftingTime = this.currentRecipe.value().getCraftingTime();
             double craftingProgress = (double) this.craftingTime / initialCraftingTime;
 
             world.addParticle(ParticleTypes.HAPPY_VILLAGER, blockPos.getX() + 0.5 + Direction.NORTH.getOffsetX()*2*(1-craftingProgress), blockPos.getY() + 1, blockPos.getZ() + 0.5 + Direction.NORTH.getOffsetZ()*2*(1-craftingProgress), 0, 0, 0);
