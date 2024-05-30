@@ -5,16 +5,21 @@ import com.goggaguys.blockentity.ModBlockEntities;
 import com.goggaguys.blockentity.renderers.EndergleamBlockEntityRenderer;
 import com.goggaguys.blockentity.renderers.LeafPlinthBlockEntityRenderer;
 import com.goggaguys.blockentity.renderers.LeafShrineBlockEntityRenderer;
+import com.goggaguys.blockentity.renderers.VoidspawnGeneratorBlockEntityRenderer;
+import com.goggaguys.blockentity.screen.ModHandledScreens;
 import com.goggaguys.entity.ModEntities;
 import com.goggaguys.entity.client.*;
 import com.goggaguys.networking.ModS2CPacketReciever;
 import net.fabricmc.api.ClientModInitializer;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.client.render.block.entity.BlockEntityRendererFactories;
 
+@Environment(EnvType.CLIENT)
 public class OctoComputingClient implements ClientModInitializer {
 	@Override
 	public void onInitializeClient() {
@@ -39,12 +44,19 @@ public class OctoComputingClient implements ClientModInitializer {
 				ModBlocks.LEAF_SHRINE,
 				ModBlocks.LEAF_PLINTH
 		);
+		BlockRenderLayerMap.INSTANCE.putBlocks(
+				RenderLayer.getTranslucent(),
+
+				ModBlocks.VOIDSPAWN_GENERATOR
+		);
 
 		ModS2CPacketReciever.registerS2CReceivers();
+		ModHandledScreens.registerScreenHandlers();
 
 		BlockEntityRendererFactories.register(ModBlockEntities.ENDERGLEAM_BLOCK_ENTITY, EndergleamBlockEntityRenderer::new);
 		BlockEntityRendererFactories.register(ModBlockEntities.LEAF_SHRINE_BLOCK_ENTITY, LeafShrineBlockEntityRenderer::new);
 		BlockEntityRendererFactories.register(ModBlockEntities.LEAF_PLINTH_BLOCK_ENTITY, LeafPlinthBlockEntityRenderer::new);
+		BlockEntityRendererFactories.register(ModBlockEntities.VOIDSPAWN_GENERATOR_BLOCK_ENTITY, VoidspawnGeneratorBlockEntityRenderer::new);
 
 		EntityRendererRegistry.register(ModEntities.LEAF_MONSTER, LeafMonsterEntityRenderer::new);
 		EntityModelLayerRegistry.registerModelLayer(ModModelLayers.LEAF_MONSTER, LeafMonsterEntityModel::getTexturedModelData);

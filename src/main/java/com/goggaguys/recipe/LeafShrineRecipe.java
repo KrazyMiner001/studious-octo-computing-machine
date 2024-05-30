@@ -9,20 +9,16 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.network.RegistryByteBuf;
 import net.minecraft.network.codec.PacketCodec;
-import net.minecraft.network.codec.PacketCodecs;
-import net.minecraft.recipe.*;
+import net.minecraft.recipe.Ingredient;
+import net.minecraft.recipe.Recipe;
+import net.minecraft.recipe.RecipeSerializer;
+import net.minecraft.recipe.RecipeType;
 import net.minecraft.recipe.book.CraftingRecipeCategory;
-import net.minecraft.registry.Registry;
-import net.minecraft.registry.RegistryKey;
-import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.RegistryWrapper;
+import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.collection.DefaultedList;
-import net.minecraft.util.dynamic.Codecs;
 import net.minecraft.world.World;
-
-import java.util.Optional;
-import java.util.stream.Stream;
 
 public class LeafShrineRecipe implements Recipe<ImplementedInventory> {
     final Ingredient inputCenter;
@@ -43,6 +39,10 @@ public class LeafShrineRecipe implements Recipe<ImplementedInventory> {
         this.output = output;
         this.craftingTime = craftingTime;
         this.category = category;
+    }
+
+    public LeafShrineRecipe(Ingredient inputCenter, Ingredient inputNorth, Ingredient inputEast, Ingredient inputSouth, Ingredient inputWest, RegistryEntry<Item> output, int outputAmount, int craftingTime, CraftingRecipeCategory category) {
+        this(inputCenter, inputNorth, inputEast, inputSouth, inputWest, new ItemStack(output, outputAmount), craftingTime, category);
     }
 
     public LeafShrineRecipe(CraftingRecipeCategory category, DefaultedList<Ingredient> inputs, Item output, int outputCount, int craftingTime) {
@@ -137,7 +137,7 @@ public class LeafShrineRecipe implements Recipe<ImplementedInventory> {
                 Codec.INT.optionalFieldOf("outputAmount", 1).forGetter(recipe -> recipe.output.getCount()),
                 Codec.INT.optionalFieldOf("craftingTime", 20).forGetter(LeafShrineRecipe::getCraftingTime),
                 CraftingRecipeCategory.CODEC.fieldOf("category").orElse(CraftingRecipeCategory.MISC).forGetter(LeafShrineRecipe::getCategory)
-        ).apply(instance, (inputCenter, inputNorth, inputEast, inputSouth, inputWest, output, outputAmount, craftingTime, category) -> new LeafShrineRecipe(inputCenter, inputNorth, inputEast, inputSouth, inputWest, new ItemStack(output, outputAmount), craftingTime, category)));
+        ).apply(instance, LeafShrineRecipe::new));
 
         @Override
         public MapCodec<LeafShrineRecipe> codec() {

@@ -2,6 +2,7 @@ package com.goggaguys;
 
 import com.goggaguys.block.ModBlocks;
 import com.goggaguys.blockentity.ModBlockEntities;
+import com.goggaguys.blockentity.screen.ModScreenHandlers;
 import com.goggaguys.commands.ModCommands;
 import com.goggaguys.compat.Mods;
 import com.goggaguys.compat.geckolib.GeckoLib;
@@ -76,6 +77,7 @@ public class OctoComputing implements ModInitializer {
 		ModBlockEntities.registerModBlocksEntities();
 		ModRecipes.registerRecipes();
 		ModStatistics.registerStatistics();
+		ModScreenHandlers.registerScreenHandlers();
 
 		ItemGroupEvents.modifyEntriesEvent(ItemGroups.SPAWN_EGGS).register(content -> content.add(ModItems.LEAF_MONSTER_SPAWN_EGG));
 		ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS).register(content ->

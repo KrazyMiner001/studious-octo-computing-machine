@@ -55,9 +55,7 @@ public class LeafShrineRecipeJsonBuilder implements CraftingRecipeJsonBuilder {
     }
 
     public LeafShrineRecipeJsonBuilder centerInput(ItemConvertible itemProvider) {
-        this.centerInput(Ingredient.ofItems(itemProvider));
-
-        return this;
+        return this.centerInput(Ingredient.ofItems(itemProvider));
     }
 
     public LeafShrineRecipeJsonBuilder centerInput(Ingredient ingredient) {
@@ -161,7 +159,7 @@ public class LeafShrineRecipeJsonBuilder implements CraftingRecipeJsonBuilder {
 
     private void validate(Identifier recipeId) {
         if (this.advancementBuilder.isEmpty()) {
-            throw new IllegalStateException("No way of obtaining recipe " + String.valueOf(recipeId));
+            throw new IllegalStateException("No way of obtaining recipe " + recipeId);
         }
     }
 }

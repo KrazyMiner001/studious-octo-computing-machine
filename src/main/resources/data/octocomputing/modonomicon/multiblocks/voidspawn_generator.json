@@ -1,0 +1,137 @@
+{
+  "type": "modonomicon:dense",
+  "pattern": [
+    [
+      "         ",
+      "    C    ",
+      "         ",
+      "  C   C  ",
+      "         ",
+      "         ",
+      "         ",
+      "  C   C  ",
+      "         ",
+      "    C    ",
+      "         "
+    ],
+    [
+       "         ",
+       "    O    ",
+       "         ",
+       "  O   O  ",
+       "         ",
+       "         ",
+       "         ",
+       "  O   O  ",
+       "         ",
+       "    O    ",
+       "         "
+    ],
+     [
+       "         ",
+       "    O    ",
+       "         ",
+       "  O   O  ",
+       "    P    ",
+       "   PBP   ",
+       "    P    ",
+       "  O   O  ",
+       "         ",
+       "    O    ",
+       "         "
+     ],
+     [
+       "         ",
+       "    O    ",
+       "         ",
+       "  O   O  ",
+       "    H    ",
+       "   H H   ",
+       "    H    ",
+       "  O   O  ",
+       "         ",
+       "    O    ",
+       "         "
+     ],
+     [
+       "         ",
+       "    O    ",
+       "         ",
+       "  O   O  ",
+       "    H    ",
+       "   H0H   ",
+       "    H    ",
+       "  O   O  ",
+       "         ",
+       "    O    ",
+       "         "
+     ],
+     [
+       "         ",
+       "    O    ",
+       "         ",
+       "  O   O  ",
+       "    H    ",
+       "   H H   ",
+       "    H    ",
+       "  O   O  ",
+       "         ",
+       "    O    ",
+       "         "
+     ],
+     [
+       "    T    ",
+       "   TAT   ",
+       "TTTDDDTTT",
+       " TADDDAT ",
+       " TDDPDDT ",
+       " TDPBPDT ",
+       " TDDPDDT ",
+       " TADDDAT ",
+       "TTTDDDTTT",
+       "   TAT   ",
+       "    T    "
+     ]
+  ],
+   "mapping": {
+     "C": {
+       "type": "modonomicon:block",
+       "block": "minecraft:crying obsidian"
+     },
+     "O": {
+       "type": "modonomicon:block",
+       "block": "minecraft:obsidian"
+     },
+     "P": {
+       "type": "modonomicon:block",
+       "block": "minecraft:polished blackstone"
+     },
+     "B": {
+       "type": "modonomicon:block",
+       "block": "minecraft:blackstone bricks"
+     },
+     "H": {
+       "type": "modonomicon:block",
+       "block": "minecraft:chain"
+     },
+     "0": {
+       "type": "modonomicon:block",
+       "block": "octocomputing:voidspawn generator"
+     },
+     "T": {
+       "type": "modonomicon:block",
+       "block": "minecraft:deepslate tiles"
+     },
+     "A": {
+       "type": "modonomicon:block",
+       "block": "minecraft:amethyst block"
+     },
+     "D": {
+       "type": "modonomicon:block",
+       "block": "minecraft:polished deepslate"
+    },
+     " ": {
+       "type": "modonomicon:any"
+     }
+  }
+}

@@ -84,6 +84,9 @@ public class ModBlocks {
     public static final Block LEAF_PLINTH = registerBlockAndItem("leaf_plinth",
             new LeafPlinthBlock(Block.Settings.copy(Blocks.DEEPSLATE).solidBlock(Blocks::never).nonOpaque()));
 
+    public static final Block VOIDSPAWN_GENERATOR = registerBlockAndItem("voidspawn_generator",
+            new VoidspawnGeneratorBlock(Block.Settings.copy(Blocks.DEEPSLATE).solidBlock(Blocks::never).nonOpaque()));
+
 
 
     private static Block registerBlockAndItem(String name, Block block) {

@@ -38,6 +38,12 @@ repositories {
 		name = "TerraformersMC"
 		url = "https://maven.terraformersmc.com/"
 	}
+	maven {
+		url "https://dl.cloudsmith.io/public/klikli-dev/mods/maven/"
+		content {
+			includeGroup "com.klikli_dev"
+		}
+	}
 }
 
 loom {
@@ -84,6 +90,8 @@ dependencies {
 
 	modCompileOnly "dev.emi:emi-fabric:${emi_version}:api"
 	modLocalRuntime "dev.emi:emi-fabric:${emi_version}"
+
+	modImplementation "com.klikli_dev:modonomicon-${minecraft_version}-fabric:${modonomicon_version}"
 
 	// Uncomment the following line to enable the deprecated Fabric API modules. 
 	// These are included in the Fabric API production distribution and allow you to update your mod to the latest modules at a later more convenient time.

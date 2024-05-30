@@ -218,6 +218,9 @@ public class ModItems {
     public static final Item LEAF_PICKER = registerItem("leaf_picker",
             new LeafPicker());
 
+    public static final Item CORRUPTED_CORE = registerItem("corrupted_core",
+            new Item(new Item.Settings().rarity(Rarity.UNCOMMON)));
+
 
 
     private static Item registerItem(String name, Item item) {
