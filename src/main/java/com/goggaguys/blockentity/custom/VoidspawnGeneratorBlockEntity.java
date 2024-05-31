@@ -36,7 +36,11 @@ public class VoidspawnGeneratorBlockEntity extends BlockEntity implements Implem
     private final PropertyDelegate propertyDelegate = new PropertyDelegate() {
         @Override
         public int get(int index) {
-            return 0;
+            return switch (index) {
+                case 0 -> craftingTime;
+                case 1 -> currentRecipe != null ? currentRecipe.value().getCraftingTime() : -1;
+                default -> 0;
+            };
         }
 
         @Override
@@ -45,7 +49,7 @@ public class VoidspawnGeneratorBlockEntity extends BlockEntity implements Implem
 
         @Override
         public int size() {
-            return 0;
+            return 2;
         }
     };
     private RecipeEntry<VoidspawnGeneratorRecipe> currentRecipe;
@@ -69,7 +73,7 @@ public class VoidspawnGeneratorBlockEntity extends BlockEntity implements Implem
     @Nullable
     @Override
     public ScreenHandler createMenu(int syncId, PlayerInventory playerInventory, PlayerEntity player) {
-        return new VoidspawnGeneratorScreenHandler(syncId, playerInventory, this);
+        return new VoidspawnGeneratorScreenHandler(syncId, playerInventory, this, this.propertyDelegate);
     }
 
     @Override
@@ -116,6 +120,7 @@ public class VoidspawnGeneratorBlockEntity extends BlockEntity implements Implem
                                 || (voidspawnGeneratorBlockEntity.inventory.get(2).getItem() == optionalRecipeEntry.get().value().getOutput().getItem()
                                 && voidspawnGeneratorBlockEntity.inventory.get(2).getCount() <= voidspawnGeneratorBlockEntity.inventory.get(2).getMaxCount() - optionalRecipeEntry.get().value().getOutput().getCount()))) {
                 voidspawnGeneratorBlockEntity.currentRecipe = optionalRecipeEntry.get();
+                voidspawnGeneratorBlockEntity.removeStack(1, 1);
             } else {
                 return;
             };
@@ -124,7 +129,6 @@ public class VoidspawnGeneratorBlockEntity extends BlockEntity implements Implem
         if (voidspawnGeneratorBlockEntity.craftingTime >= voidspawnGeneratorBlockEntity.currentRecipe.value().getCraftingTime()) {
             voidspawnGeneratorBlockEntity.craftingTime = 0;
             voidspawnGeneratorBlockEntity.setStack(2, voidspawnGeneratorBlockEntity.currentRecipe.value().getResult(world.getRegistryManager()).copyWithCount(voidspawnGeneratorBlockEntity.inventory.get(2).getCount() + voidspawnGeneratorBlockEntity.currentRecipe.value().getOutput().getCount()));
-            voidspawnGeneratorBlockEntity.removeStack(1, 1);
             voidspawnGeneratorBlockEntity.currentRecipe = null;
         }
     }
