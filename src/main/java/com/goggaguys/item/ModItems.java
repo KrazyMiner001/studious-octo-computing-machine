@@ -221,6 +221,12 @@ public class ModItems {
     public static final Item CORRUPTED_CORE = registerItem("corrupted_core",
             new Item(new Item.Settings().rarity(Rarity.UNCOMMON)));
 
+    public static final Item PHYLLONOMICON = registerItem("phyllonomicon",
+            new Phyllonomicon(new Item.Settings()));
+
+    public static final Item LEAF_BLOWER = registerItem("leaf_blower",
+            new LeafBlower());
+
 
 
     private static Item registerItem(String name, Item item) {

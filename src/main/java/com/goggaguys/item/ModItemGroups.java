@@ -19,7 +19,7 @@ public class ModItemGroups {
     private static final ItemGroup MAIN = FabricItemGroup.builder()
             .icon(() -> new ItemStack(ModItems.MIXED_LEAF))
             .entries((context, entries) -> {
-                entries.add(ModItems.MIXED_LEAF, ItemGroup.StackVisibility.PARENT_TAB_ONLY);
+                entries.add(ModItems.PHYLLONOMICON, ItemGroup.StackVisibility.PARENT_TAB_ONLY);
                 ItemGroupParent parent = ModItemGroups.MAIN;
                 for (ItemSubGroup subGroup : parent.fractal$getChildren()) {
                     entries.addAll(subGroup.getSearchTabStacks(), ItemGroup.StackVisibility.SEARCH_TAB_ONLY);
@@ -169,6 +169,7 @@ public class ModItemGroups {
                 entries.add(ModBlocks.LEAF_SHRINE);
                 entries.add(ModBlocks.LEAF_PLINTH);
                 entries.add(ModBlocks.LEAF_PEDESTAL);
+                entries.add(ModBlocks.VOIDSPAWN_GENERATOR);
             })
     ).build();
 
@@ -206,6 +207,10 @@ public class ModItemGroups {
                 entries.add(ModBlocks.ENDERGLEAM_WOOD);
                 entries.add(ModBlocks.STRIPPED_ENDERGLEAM_LOG);
                 entries.add(ModBlocks.STRIPPED_ENDERGLEAM_WOOD);
+                entries.add(ModBlocks.LEAF_SHRINE);
+                entries.add(ModBlocks.LEAF_PLINTH);
+                entries.add(ModBlocks.LEAF_PEDESTAL);
+                entries.add(ModBlocks.VOIDSPAWN_GENERATOR);
             })
     ).build();
 
