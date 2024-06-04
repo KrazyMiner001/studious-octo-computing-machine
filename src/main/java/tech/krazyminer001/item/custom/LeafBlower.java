@@ -4,6 +4,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.registry.tag.BlockTags;
+import net.minecraft.stat.Stats;
 import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.util.math.BlockPos;
@@ -30,6 +31,7 @@ public class LeafBlower extends Item {
             }
             return true;
         }));
+        user.incrementStat(Stats.USED.getOrCreateStat(this));
         return TypedActionResult.success(user.getStackInHand(hand));
     }
 }
