@@ -1,7 +1,7 @@
 package tech.krazyminer001.blockentity.renderers;
 
 import tech.krazyminer001.blockentity.custom.EndergleamBlockEntity;
-import tech.krazyminer001.renderlayers.ModRenderLayer;
+import tech.krazyminer001.renderlayer.ModRenderLayer;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.client.render.VertexConsumer;
 import net.minecraft.client.render.VertexConsumerProvider;

@@ -1,4 +1,4 @@
-package tech.krazyminer001.utilities;
+package tech.krazyminer001.utility;
 
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;

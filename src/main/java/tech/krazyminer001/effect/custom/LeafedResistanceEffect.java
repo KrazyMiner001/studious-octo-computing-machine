@@ -1,4 +1,4 @@
-package tech.krazyminer001.effects.custom;
+package tech.krazyminer001.effect.custom;
 
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffect;

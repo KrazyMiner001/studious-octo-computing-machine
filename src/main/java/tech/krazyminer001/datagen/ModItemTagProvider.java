@@ -3,7 +3,7 @@ package tech.krazyminer001.datagen;
 import tech.krazyminer001.block.ModBlocks;
 import tech.krazyminer001.item.ModItemTags;
 import tech.krazyminer001.item.ModItems;
-import tech.krazyminer001.utilities.Util;
+import tech.krazyminer001.utility.Util;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.minecraft.item.Item;

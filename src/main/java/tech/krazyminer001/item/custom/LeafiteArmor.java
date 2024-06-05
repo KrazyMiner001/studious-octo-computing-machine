@@ -1,6 +1,6 @@
 package tech.krazyminer001.item.custom;
 
-import tech.krazyminer001.effects.ModStatusEffects;
+import tech.krazyminer001.effect.ModStatusEffects;
 import tech.krazyminer001.item.ModArmorMaterials;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.effect.StatusEffectInstance;
@@ -9,7 +9,7 @@ import net.minecraft.item.ArmorItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
-import tech.krazyminer001.utilities.Util;
+import tech.krazyminer001.utility.Util;
 
 public class LeafiteArmor extends ArmorItem {
     public LeafiteArmor(Type type) {

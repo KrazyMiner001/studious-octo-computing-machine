@@ -1,7 +1,7 @@
 package tech.krazyminer001.entity.custom;
 
 import tech.krazyminer001.damagetype.ModDamageTypes;
-import tech.krazyminer001.effects.ModStatusEffects;
+import tech.krazyminer001.effect.ModStatusEffects;
 import tech.krazyminer001.entity.ModEntities;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;

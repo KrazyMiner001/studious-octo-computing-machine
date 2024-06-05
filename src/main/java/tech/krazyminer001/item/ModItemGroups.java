@@ -2,7 +2,7 @@ package tech.krazyminer001.item;
 
 import tech.krazyminer001.OctoComputing;
 import tech.krazyminer001.block.ModBlocks;
-import tech.krazyminer001.utilities.Util;
+import tech.krazyminer001.utility.Util;
 import de.dafuqs.fractal.api.ItemSubGroup;
 import de.dafuqs.fractal.interfaces.ItemGroupParent;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;

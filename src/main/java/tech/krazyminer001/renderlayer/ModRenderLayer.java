@@ -1,4 +1,4 @@
-package tech.krazyminer001.renderlayers;
+package tech.krazyminer001.renderlayer;
 
 import tech.krazyminer001.blockentity.renderers.EndergleamBlockEntityRenderer;
 import net.minecraft.client.render.RenderLayer;

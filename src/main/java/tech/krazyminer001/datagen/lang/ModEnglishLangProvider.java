@@ -2,7 +2,7 @@ package tech.krazyminer001.datagen.lang;
 
 import tech.krazyminer001.OctoComputing;
 import tech.krazyminer001.block.ModBlocks;
-import tech.krazyminer001.enchantments.ModEnchantments;
+import tech.krazyminer001.enchantment.ModEnchantments;
 import tech.krazyminer001.entity.ModEntities;
 import tech.krazyminer001.item.ModItemTags;
 import tech.krazyminer001.item.ModItems;

@@ -1,8 +1,8 @@
-package tech.krazyminer001.effects;
+package tech.krazyminer001.effect;
 
 import tech.krazyminer001.OctoComputing;
-import tech.krazyminer001.effects.custom.LeafedResistanceEffect;
-import tech.krazyminer001.effects.custom.LeafedStatusEffect;
+import tech.krazyminer001.effect.custom.LeafedResistanceEffect;
+import tech.krazyminer001.effect.custom.LeafedStatusEffect;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;

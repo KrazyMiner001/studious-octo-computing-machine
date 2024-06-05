@@ -1,4 +1,4 @@
-package tech.krazyminer001.commands;
+package tech.krazyminer001.command;
 
 import com.mojang.brigadier.tree.LiteralCommandNode;
 import net.minecraft.server.command.ServerCommandSource;

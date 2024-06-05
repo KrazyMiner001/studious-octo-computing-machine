@@ -1,8 +1,8 @@
 package tech.krazyminer001.item.custom;
 
-import tech.krazyminer001.effects.ModStatusEffects;
+import tech.krazyminer001.effect.ModStatusEffects;
 import tech.krazyminer001.item.ModArmorMaterials;
-import tech.krazyminer001.utilities.Util;
+import tech.krazyminer001.utility.Util;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.player.PlayerEntity;

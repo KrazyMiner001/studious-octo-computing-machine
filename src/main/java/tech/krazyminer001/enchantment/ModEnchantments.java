@@ -1,4 +1,4 @@
-package tech.krazyminer001.enchantments;
+package tech.krazyminer001.enchantment;
 
 import tech.krazyminer001.OctoComputing;
 import net.minecraft.enchantment.Enchantment;

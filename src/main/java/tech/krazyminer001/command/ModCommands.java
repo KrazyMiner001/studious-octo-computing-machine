@@ -1,4 +1,4 @@
-package tech.krazyminer001.commands;
+package tech.krazyminer001.command;
 
 import tech.krazyminer001.OctoComputing;
 import tech.krazyminer001.proceduralTreeGen.AttractingPoint;
