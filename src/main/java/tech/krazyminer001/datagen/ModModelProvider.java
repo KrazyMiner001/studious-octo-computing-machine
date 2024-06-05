@@ -4,7 +4,7 @@ import tech.krazyminer001.block.ModBlocks;
 import tech.krazyminer001.block.ModProperties;
 import tech.krazyminer001.item.ModItems;
 import tech.krazyminer001.model.ModItemModelGenerator;
-import tech.krazyminer001.utilities.CompressedChainMap;
+import tech.krazyminer001.utilities.Util;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
 import net.minecraft.data.client.*;
@@ -87,9 +87,9 @@ public class ModModelProvider extends FabricModelProvider {
 
         ModItemModelGenerator modItemModelGenerator = new ModItemModelGenerator(itemModelGenerator.writer);
 
-        for (Item i : CompressedChainMap.compressedChainMap.regularToCompressed.keySet()) {
-            Item compressed = CompressedChainMap.compressedChainMap.regularToCompressed.get(i);
-            Item doubleCompressed = CompressedChainMap.compressedChainMap.compressedToDoubleCompressed.get(compressed);
+        for (Item i : Util.regularToCompressed.keySet()) {
+            Item compressed = Util.regularToCompressed.get(i);
+            Item doubleCompressed = Util.compressedToDoubleCompressed.get(compressed);
             modItemModelGenerator.registerCompressedChain(i, compressed, doubleCompressed);
         }
 
@@ -97,8 +97,6 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.CHLOROPHYTE_DEBRIS, Models.GENERATED);
         itemModelGenerator.register(ModItems.CHLOROPHYTE_INGOT, Models.GENERATED);
         itemModelGenerator.register(ModItems.LEAFITE_UPGRADE_SMITHING_TEMPLATE, Models.GENERATED);
-
-        itemModelGenerator.register(ModItems.LEAF_PICKER, Models.HANDHELD);
 
         itemModelGenerator.register(ModItems.LEAF_MONSTER_SPAWN_EGG,
                 new Model(Optional.of(new Identifier("item/template_spawn_egg")), Optional.empty()));

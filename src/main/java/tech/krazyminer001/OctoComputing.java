@@ -19,6 +19,7 @@ import tech.krazyminer001.item.ModItems;
 import tech.krazyminer001.networking.ModS2CPackets;
 import tech.krazyminer001.recipe.ModRecipes;
 import tech.krazyminer001.statistic.ModStatistics;
+import tech.krazyminer001.utilities.Util;
 import tech.krazyminer001.world.customFeatures.ModFeatures;
 import tech.krazyminer001.world.gen.ModWorldGeneration;
 import net.fabricmc.api.ModInitializer;
@@ -146,10 +147,24 @@ public class OctoComputing implements ModInitializer {
 		LootTableEvents.MODIFY.register((lootTableRegistryKey, builder, source) -> {
 			if (source.isBuiltin() && leafBlock.getLootTableKey() == lootTableRegistryKey) {
 				LootPool.Builder leafPoolBuilder = LootPool.builder()
-						.rolls(BinomialLootNumberProvider.create(125, 0.2f))
+						.rolls(BinomialLootNumberProvider.create(40, 0.2f))
 						.with(ItemEntry.builder(leafItem))
 						.conditionally(MatchToolLootCondition.builder(ItemPredicate.Builder.create().items(ModItems.LEAF_PICKER)))
-						.apply(SetCountLootFunction.builder(ConstantLootNumberProvider.create(5)));
+						.apply(SetCountLootFunction.builder(ConstantLootNumberProvider.create(1)));
+
+				Item compressedLeafItem = Util.regularToCompressed.getOrDefault(leafItem, Items.AIR);
+				LootPool.Builder compressedLeafPoolBuilder = LootPool.builder()
+						.rolls(BinomialLootNumberProvider.create(20, 0.2f))
+						.with(ItemEntry.builder(compressedLeafItem))
+						.conditionally(MatchToolLootCondition.builder(ItemPredicate.Builder.create().items(ModItems.LEAF_PICKER)))
+						.apply(SetCountLootFunction.builder(ConstantLootNumberProvider.create(1)));
+
+				Item doubleCompressedLeafItem = Util.compressedToDoubleCompressed.getOrDefault(compressedLeafItem, Items.AIR);
+				LootPool.Builder doubleCompressedLeafPoolBuilder = LootPool.builder()
+						.rolls(BinomialLootNumberProvider.create(5, 0.2f))
+						.with(ItemEntry.builder(doubleCompressedLeafItem))
+						.conditionally(MatchToolLootCondition.builder(ItemPredicate.Builder.create().items(ModItems.LEAF_PICKER)))
+						.apply(SetCountLootFunction.builder(ConstantLootNumberProvider.create(1)));
 
 				LootPool.Builder mysteryLeafPoolBuilder = LootPool.builder()
 						.rolls(ConstantLootNumberProvider.create(1))
@@ -158,6 +173,8 @@ public class OctoComputing implements ModInitializer {
 						.conditionally(MatchToolLootCondition.builder(ItemPredicate.Builder.create().items(ModItems.LEAF_PICKER)));
 
 				builder.pool(leafPoolBuilder);
+				builder.pool(compressedLeafPoolBuilder);
+				builder.pool(doubleCompressedLeafPoolBuilder);
 				builder.pool(mysteryLeafPoolBuilder);
 			}
 		});

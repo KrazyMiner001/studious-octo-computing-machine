@@ -2,7 +2,7 @@ package tech.krazyminer001.item;
 
 import tech.krazyminer001.OctoComputing;
 import tech.krazyminer001.block.ModBlocks;
-import tech.krazyminer001.utilities.CompressedChainMap;
+import tech.krazyminer001.utilities.Util;
 import de.dafuqs.fractal.api.ItemSubGroup;
 import de.dafuqs.fractal.interfaces.ItemGroupParent;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
@@ -36,10 +36,10 @@ public class ModItemGroups {
             Text.translatable("itemGroup.octocomputing.leaves")
     ).entries(
             ((displayContext, entries) -> {
-                CompressedChainMap.compressedChainMap.regularToCompressed.keySet().forEach((Item item) -> {
+                Util.regularToCompressed.keySet().forEach((Item item) -> {
                     entries.add(item);
-                    entries.add(CompressedChainMap.compressedChainMap.regularToCompressed.get(item));
-                    entries.add(CompressedChainMap.compressedChainMap.compressedToDoubleCompressed.get(CompressedChainMap.compressedChainMap.regularToCompressed.get(item)));
+                    entries.add(Util.regularToCompressed.get(item));
+                    entries.add(Util.compressedToDoubleCompressed.get(Util.regularToCompressed.get(item)));
                 });
             })
     ).build();

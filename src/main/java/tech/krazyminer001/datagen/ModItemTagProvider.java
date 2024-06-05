@@ -3,7 +3,7 @@ package tech.krazyminer001.datagen;
 import tech.krazyminer001.block.ModBlocks;
 import tech.krazyminer001.item.ModItemTags;
 import tech.krazyminer001.item.ModItems;
-import tech.krazyminer001.utilities.CompressedChainMap;
+import tech.krazyminer001.utilities.Util;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.minecraft.item.Item;
@@ -20,13 +20,13 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
     @Override
     protected void configure(RegistryWrapper.WrapperLookup arg) {
         getOrCreateTagBuilder(ModItemTags.LEAF)
-                .add(CompressedChainMap.compressedChainMap.regularToCompressed.keySet().toArray(new Item[]{}));
+                .add(Util.regularToCompressed.keySet().toArray(new Item[]{}));
 
         getOrCreateTagBuilder(ModItemTags.LEAF_COMPRESSED)
-                .add(CompressedChainMap.compressedChainMap.regularToCompressed.values().toArray(new Item[]{}));
+                .add(Util.regularToCompressed.values().toArray(new Item[]{}));
 
         getOrCreateTagBuilder(ModItemTags.LEAF_DOUBLE_COMPRESSED)
-                .add(CompressedChainMap.compressedChainMap.compressedToDoubleCompressed.values().toArray(new Item[]{}));
+                .add(Util.compressedToDoubleCompressed.values().toArray(new Item[]{}));
 
         getOrCreateTagBuilder(ItemTags.PLANKS)
                 .add(ModBlocks.MYSTERY_PLANKS.asItem());
