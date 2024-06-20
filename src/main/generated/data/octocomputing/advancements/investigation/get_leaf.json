@@ -1,0 +1,33 @@
+{
+  "criteria": {
+    "collected_leaf": {
+      "conditions": {
+        "items": [
+          {
+            "items": "#octocomputing:leaf_double_compressed"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "advancements.octocomputing.investigation.get_leaf.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "octocomputing:mixed_leaf"
+    },
+    "show_toast": false,
+    "title": {
+      "translate": "advancements.octocomputing.investigation.get_leaf.title"
+    }
+  },
+  "requirements": [
+    [
+      "collected_leaf"
+    ]
+  ]
+}

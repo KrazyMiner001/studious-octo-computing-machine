@@ -1,14 +1,10 @@
 {
   "criteria": {
-    "collected_leaf": {
+    "crafted_leaf_picker": {
       "conditions": {
-        "items": [
-          {
-            "items": "#octocomputing:leaf_double_compressed"
-          }
-        ]
+        "recipe_id": "octocomputing:leaf_picker"
       },
-      "trigger": "minecraft:inventory_changed"
+      "trigger": "minecraft:recipe_crafted"
     }
   },
   "display": {
@@ -19,7 +15,7 @@
     },
     "icon": {
       "count": 1,
-      "id": "octocomputing:mixed_leaf"
+      "id": "octocomputing:leaf_picker"
     },
     "show_toast": false,
     "title": {
@@ -28,7 +24,7 @@
   },
   "requirements": [
     [
-      "collected_leaf"
+      "crafted_leaf_picker"
     ]
   ]
 }

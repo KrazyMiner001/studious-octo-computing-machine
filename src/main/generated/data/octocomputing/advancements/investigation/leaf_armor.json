@@ -1,5 +1,5 @@
 {
-  "parent": "octocomputing:investigation/root",
+  "parent": "octocomputing:investigation/get_leaf",
   "criteria": {
     "compressed_leaf_armor": {
       "conditions": {

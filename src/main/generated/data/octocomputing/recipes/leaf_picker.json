@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "P": {
+      "tag": "minecraft:planks"
+    },
+    "S": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    "SSS",
+    "PPP",
+    " S "
+  ],
+  "result": {
+    "count": 1,
+    "id": "octocomputing:leaf_picker"
+  }
+}

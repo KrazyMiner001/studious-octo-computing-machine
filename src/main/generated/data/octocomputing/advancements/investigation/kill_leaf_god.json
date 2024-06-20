@@ -1,5 +1,5 @@
 {
-  "parent": "octocomputing:investigation/root",
+  "parent": "octocomputing:investigation/get_leaf",
   "criteria": {
     "killed_leaf_god": {
       "conditions": {

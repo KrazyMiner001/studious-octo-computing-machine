@@ -1,5 +1,6 @@
 package tech.krazyminer001.datagen;
 
+import net.minecraft.registry.tag.ItemTags;
 import tech.krazyminer001.block.ModBlocks;
 import tech.krazyminer001.item.ModItemTags;
 import tech.krazyminer001.item.ModItems;
@@ -178,6 +179,15 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
                 .criterion(hasItem(ModBlocks.LEAFSTONE_BLOCK), conditionsFromItem(ModBlocks.LEAFSTONE_BLOCK))
                 .criterion(hasItem(Items.ENCHANTED_GOLDEN_APPLE), conditionsFromItem(Items.ENCHANTED_GOLDEN_APPLE))
                 .offerTo(exporter, getItemPath(ModItems.TOKEN_OF_THE_LEAF_GOD));
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, ModItems.LEAF_PICKER)
+                .pattern("SSS")
+                .pattern("PPP")
+                .pattern(" S ")
+                .input('S', Items.STICK)
+                .input('P', ItemTags.PLANKS)
+                .criterion(hasItem(Items.STICK), conditionsFromItem(Items.STICK))
+                .offerTo(exporter, getItemPath(ModItems.LEAF_PICKER));
 
         offerSmithingTemplateCopyingRecipe(exporter, ModItems.LEAFITE_UPGRADE_SMITHING_TEMPLATE, ModItems.DOUBLE_COMPRESSED_MYSTERY_LEAF);
 
