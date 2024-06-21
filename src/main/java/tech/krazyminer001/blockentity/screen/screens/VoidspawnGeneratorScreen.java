@@ -10,9 +10,11 @@ import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 
+import static tech.krazyminer001.utility.Util.of;
+
 public class VoidspawnGeneratorScreen extends HandledScreen<VoidspawnGeneratorScreenHandler> {
     //A path to the gui texture. In this example we use the texture from the dispenser
-    private static final Identifier TEXTURE = new Identifier(OctoComputing.MOD_ID, "textures/gui/container/voidspawn_generator.png");
+    private static final Identifier TEXTURE = of("textures/gui/container/voidspawn_generator.png");
     protected int backgroundHeight = 188;
 
     public VoidspawnGeneratorScreen(VoidspawnGeneratorScreenHandler handler, PlayerInventory inventory, Text title) {
@@ -31,7 +33,7 @@ public class VoidspawnGeneratorScreen extends HandledScreen<VoidspawnGeneratorSc
         int x = (width - backgroundWidth) / 2;
         int y = (height - backgroundHeight) / 2;
         context.drawTexture(TEXTURE, x, y, 0, 0, backgroundWidth, backgroundHeight);
-        context.drawGuiTexture(new Identifier(OctoComputing.MOD_ID, "container/voidspawn_generator/progress"), 60, 31, 0, 0, x + 83, y + 10, (int) (getScreenHandler().getCraftingProgress()*60), 31);
+        context.drawGuiTexture(of("container/voidspawn_generator/progress"), 60, 31, 0, 0, x + 83, y + 10, (int) (getScreenHandler().getCraftingProgress()*60), 31);
     }
 
     @Override

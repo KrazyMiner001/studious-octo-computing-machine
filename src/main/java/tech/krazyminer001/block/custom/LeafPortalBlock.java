@@ -4,7 +4,6 @@ import tech.krazyminer001.block.ModBlocks;
 import tech.krazyminer001.entity.ModEntities;
 import tech.krazyminer001.world.dimension.ModDimensions;
 import com.mojang.serialization.MapCodec;
-import net.fabricmc.fabric.api.dimension.v1.FabricDimensions;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.Entity;
@@ -52,7 +51,7 @@ public class LeafPortalBlock extends Block {
         if (world instanceof ServerWorld
                 && !entity.hasVehicle()
                 && !entity.hasPassengers()
-                && entity.canUsePortals()
+                && entity.canUsePortals(true)
                 && entity.isSneaking()) {
 
             RegistryKey<World> currentWorldKey = world.getRegistryKey();
@@ -71,7 +70,7 @@ public class LeafPortalBlock extends Block {
                         if (entity instanceof PlayerEntity) {
 
                         }
-                        FabricDimensions.teleport(entity, targetWorld, new TeleportTarget(Vec3d.ofCenter(portalPos), Vec3d.ZERO, entity.getYaw(), entity.getPitch()));
+                        entity.teleportTo(new TeleportTarget(targetWorld, Vec3d.ofCenter(portalPos), Vec3d.ZERO, entity.getYaw(), entity.getPitch(), (entity1) -> {}));
                         entity.setPortalCooldown(entity.getDefaultPortalCooldown() * 2);
                     }
                 }
@@ -87,7 +86,7 @@ public class LeafPortalBlock extends Block {
                             targetWorld.setBlockState(portalPos, ModBlocks.LEAF_PORTAL.getDefaultState().with(AXIS, Direction.Axis.X));
                         }
 
-                        FabricDimensions.teleport(entity, targetWorld, new TeleportTarget(Vec3d.ofCenter(portalPos), Vec3d.ZERO, entity.getYaw(), entity.getPitch()));
+                        entity.teleportTo(new TeleportTarget(targetWorld, Vec3d.ofCenter(portalPos), Vec3d.ZERO, entity.getYaw(), entity.getPitch(), (entity1) -> {}));
                         entity.setPortalCooldown(entity.getDefaultPortalCooldown() * 2);
                     }
                 }

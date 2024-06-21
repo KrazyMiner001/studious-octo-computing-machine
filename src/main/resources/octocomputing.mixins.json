@@ -10,8 +10,8 @@
     "defaultRequire": 1
   },
   "client": [
-    "ItemRendererAccessor",
-    "ItemRendererMixin",
-    "ModelLoaderMixin"
+//    "ItemRendererAccessor",
+//    "ItemRendererMixin",
+//    "ModelLoaderMixin"
   ]
 }

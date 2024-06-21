@@ -22,6 +22,8 @@ import net.minecraft.world.gen.placementmodifier.PlacementModifier;
 
 import java.util.ArrayList;
 import java.util.List;
+import static tech.krazyminer001.utility.Util.of;
+
 
 public class ModPlacedFeatures {
     public static final RegistryKey<PlacedFeature> MYSTERY_TREE_PLACED_KEY = registerKey("mystery_tree_placed");
@@ -70,7 +72,7 @@ public class ModPlacedFeatures {
     }
 
     public static RegistryKey<PlacedFeature> registerKey(String name) {
-        return RegistryKey.of(RegistryKeys.PLACED_FEATURE, new Identifier(OctoComputing.MOD_ID, name));
+        return RegistryKey.of(RegistryKeys.PLACED_FEATURE, of(name));
     }
 
     private static void register(Registerable<PlacedFeature> context, RegistryKey<PlacedFeature> key, RegistryEntry<ConfiguredFeature<?, ?>> configuration,

@@ -1,7 +1,7 @@
 package tech.krazyminer001.item.custom;
 
 import tech.krazyminer001.entity.ModEntities;
-import net.minecraft.client.item.TooltipType;
+import net.minecraft.item.tooltip.TooltipType;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.SpawnReason;
 import net.minecraft.entity.player.PlayerEntity;

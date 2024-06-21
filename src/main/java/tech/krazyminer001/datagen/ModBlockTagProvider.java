@@ -58,14 +58,14 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.LEAF_ORE)
                 .add(ModBlocks.LEAFSTONE_BLOCK);
 
-        getOrCreateTagBuilder(TagKey.of(RegistryKeys.BLOCK, new Identifier("fabric", "needs_tool_level_4")))
+        getOrCreateTagBuilder(TagKey.of(RegistryKeys.BLOCK, Identifier.of("fabric", "needs_tool_level_4")))
                 .add(ModBlocks.DEEPSLATE_LEAF_ORE);
 
-        getOrCreateTagBuilder(TagKey.of(RegistryKeys.BLOCK, new Identifier("fabric", "needs_tool_level_5")))
+        getOrCreateTagBuilder(TagKey.of(RegistryKeys.BLOCK, Identifier.of("fabric", "needs_tool_level_5")))
                 .add(ModBlocks.EXTRATERRESTRIAL_LEAF_DEBRIS)
                 .add(ModBlocks.CHLOROPHYTE_BLOCK);
 
-        getOrCreateTagBuilder(TagKey.of(RegistryKeys.BLOCK, new Identifier("fabric", "needs_tool_level_6")));
+        getOrCreateTagBuilder(TagKey.of(RegistryKeys.BLOCK, Identifier.of("fabric", "needs_tool_level_6")));
 
         getOrCreateTagBuilder(BlockTags.LOGS_THAT_BURN)
                 .add(ModBlocks.MYSTERY_LOG)
@@ -77,36 +77,36 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.MYSTERY_PLANKS);
 
         getOrCreateTagBuilder(BlockTags.INCORRECT_FOR_WOODEN_TOOL)
-                .addTag(TagKey.of(RegistryKeys.BLOCK, new Identifier("fabric", "needs_tool_level_6")))
-                .addTag(TagKey.of(RegistryKeys.BLOCK, new Identifier("fabric", "needs_tool_level_5")))
-                .addTag(TagKey.of(RegistryKeys.BLOCK, new Identifier("fabric", "needs_tool_level_4")));
+                .addTag(TagKey.of(RegistryKeys.BLOCK, Identifier.of("fabric", "needs_tool_level_6")))
+                .addTag(TagKey.of(RegistryKeys.BLOCK, Identifier.of("fabric", "needs_tool_level_5")))
+                .addTag(TagKey.of(RegistryKeys.BLOCK, Identifier.of("fabric", "needs_tool_level_4")));
 
         getOrCreateTagBuilder(BlockTags.INCORRECT_FOR_GOLD_TOOL)
-                .addTag(TagKey.of(RegistryKeys.BLOCK, new Identifier("fabric", "needs_tool_level_6")))
-                .addTag(TagKey.of(RegistryKeys.BLOCK, new Identifier("fabric", "needs_tool_level_5")))
-                .addTag(TagKey.of(RegistryKeys.BLOCK, new Identifier("fabric", "needs_tool_level_4")));
+                .addTag(TagKey.of(RegistryKeys.BLOCK, Identifier.of("fabric", "needs_tool_level_6")))
+                .addTag(TagKey.of(RegistryKeys.BLOCK, Identifier.of("fabric", "needs_tool_level_5")))
+                .addTag(TagKey.of(RegistryKeys.BLOCK, Identifier.of("fabric", "needs_tool_level_4")));
 
         getOrCreateTagBuilder(BlockTags.INCORRECT_FOR_STONE_TOOL)
-                .addTag(TagKey.of(RegistryKeys.BLOCK, new Identifier("fabric", "needs_tool_level_6")))
-                .addTag(TagKey.of(RegistryKeys.BLOCK, new Identifier("fabric", "needs_tool_level_5")))
-                .addTag(TagKey.of(RegistryKeys.BLOCK, new Identifier("fabric", "needs_tool_level_4")));
+                .addTag(TagKey.of(RegistryKeys.BLOCK, Identifier.of("fabric", "needs_tool_level_6")))
+                .addTag(TagKey.of(RegistryKeys.BLOCK, Identifier.of("fabric", "needs_tool_level_5")))
+                .addTag(TagKey.of(RegistryKeys.BLOCK, Identifier.of("fabric", "needs_tool_level_4")));
 
         getOrCreateTagBuilder(BlockTags.INCORRECT_FOR_IRON_TOOL)
-                .addTag(TagKey.of(RegistryKeys.BLOCK, new Identifier("fabric", "needs_tool_level_6")))
-                .addTag(TagKey.of(RegistryKeys.BLOCK, new Identifier("fabric", "needs_tool_level_5")))
-                .addTag(TagKey.of(RegistryKeys.BLOCK, new Identifier("fabric", "needs_tool_level_4")));
+                .addTag(TagKey.of(RegistryKeys.BLOCK, Identifier.of("fabric", "needs_tool_level_6")))
+                .addTag(TagKey.of(RegistryKeys.BLOCK, Identifier.of("fabric", "needs_tool_level_5")))
+                .addTag(TagKey.of(RegistryKeys.BLOCK, Identifier.of("fabric", "needs_tool_level_4")));
 
         getOrCreateTagBuilder(BlockTags.INCORRECT_FOR_DIAMOND_TOOL)
-                .addTag(TagKey.of(RegistryKeys.BLOCK, new Identifier("fabric", "needs_tool_level_6")))
-                .addTag(TagKey.of(RegistryKeys.BLOCK, new Identifier("fabric", "needs_tool_level_5")))
-                .addTag(TagKey.of(RegistryKeys.BLOCK, new Identifier("fabric", "needs_tool_level_4")));
+                .addTag(TagKey.of(RegistryKeys.BLOCK, Identifier.of("fabric", "needs_tool_level_6")))
+                .addTag(TagKey.of(RegistryKeys.BLOCK, Identifier.of("fabric", "needs_tool_level_5")))
+                .addTag(TagKey.of(RegistryKeys.BLOCK, Identifier.of("fabric", "needs_tool_level_4")));
 
         getOrCreateTagBuilder(BlockTags.INCORRECT_FOR_NETHERITE_TOOL)
-                .addTag(TagKey.of(RegistryKeys.BLOCK, new Identifier("fabric", "needs_tool_level_6")))
-                .addTag(TagKey.of(RegistryKeys.BLOCK, new Identifier("fabric", "needs_tool_level_5")));
+                .addTag(TagKey.of(RegistryKeys.BLOCK, Identifier.of("fabric", "needs_tool_level_6")))
+                .addTag(TagKey.of(RegistryKeys.BLOCK, Identifier.of("fabric", "needs_tool_level_5")));
 
         getOrCreateTagBuilder(ModBlockTags.INCORRECT_FOR_LEAFITE_TOOL)
-                .addTag(TagKey.of(RegistryKeys.BLOCK, new Identifier("fabric", "needs_tool_level_6")));
+                .addTag(TagKey.of(RegistryKeys.BLOCK, Identifier.of("fabric", "needs_tool_level_6")));
 
         getOrCreateTagBuilder(ModBlockTags.INCORRECT_FOR_CHLOROPHYTE_TOOL);
     }

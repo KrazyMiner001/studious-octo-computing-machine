@@ -15,6 +15,8 @@ import net.minecraft.world.gen.noise.NoiseRouter;
 import net.minecraft.world.gen.surfacebuilder.MaterialRules;
 
 import java.util.List;
+import static tech.krazyminer001.utility.Util.of;
+
 
 public class ModNoiseBuilders {
     private static final MaterialRules.MaterialRule GRASS_BLOCK = MaterialRules.block(Blocks.GRASS_BLOCK.getDefaultState());
@@ -53,8 +55,8 @@ public class ModNoiseBuilders {
     }
 
     private static NoiseRouter createNoiseRouter(RegistryEntryLookup<DensityFunction> densityFunctions, RegistryEntryLookup<DoublePerlinNoiseSampler.NoiseParameters> noise, DensityFunction finalDensity) {
-        DensityFunction shiftX = getFunction(densityFunctions, RegistryKey.of(RegistryKeys.DENSITY_FUNCTION, new Identifier("shift_x")));
-        DensityFunction shiftZ = getFunction(densityFunctions, RegistryKey.of(RegistryKeys.DENSITY_FUNCTION, new Identifier("shift_z")));
+        DensityFunction shiftX = getFunction(densityFunctions, RegistryKey.of(RegistryKeys.DENSITY_FUNCTION, Identifier.of("shift_x")));
+        DensityFunction shiftZ = getFunction(densityFunctions, RegistryKey.of(RegistryKeys.DENSITY_FUNCTION, Identifier.of("shift_z")));
         DensityFunction temperature = DensityFunctionTypes.shiftedNoise(shiftX, shiftZ, 0.25, noise.getOrThrow(ModNoises.TEMPERATURE));
         DensityFunction vegetation = DensityFunctionTypes.shiftedNoise(shiftX, shiftZ, 0.25, noise.getOrThrow(ModNoises.VEGETATION));
         return new NoiseRouter(
@@ -76,7 +78,7 @@ public class ModNoiseBuilders {
     }
 
     private static DensityFunction buildFinalDensity(RegistryEntryLookup<DensityFunction> densityFunctions) {
-        DensityFunction density = getFunction(densityFunctions, RegistryKey.of(RegistryKeys.DENSITY_FUNCTION, new Identifier(OctoComputing.MOD_ID,"base_3d_noise_leafy")));
+        DensityFunction density = getFunction(densityFunctions, RegistryKey.of(RegistryKeys.DENSITY_FUNCTION, of("base_3d_noise_leafy")));
         density = DensityFunctionTypes.add(density, DensityFunctionTypes.constant(-0.13));
         density = slide(density, 320, 128, 72, 0, -0.2, 8, 40, -0.1);
         density = DensityFunctionTypes.add(density, DensityFunctionTypes.constant(-0.05));

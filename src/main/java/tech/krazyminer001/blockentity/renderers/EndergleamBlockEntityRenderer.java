@@ -13,7 +13,7 @@ import net.minecraft.util.math.Direction;
 import org.joml.Matrix4f;
 
 public class EndergleamBlockEntityRenderer <T extends EndergleamBlockEntity> implements BlockEntityRenderer<T> {
-    public static final Identifier PORTAL_TEXTURE = new Identifier("textures/entity/end_portal.png");
+    public static final Identifier PORTAL_TEXTURE = Identifier.of("textures/entity/end_portal.png");
 
     public EndergleamBlockEntityRenderer(BlockEntityRendererFactory.Context context) {
 
@@ -38,10 +38,10 @@ public class EndergleamBlockEntityRenderer <T extends EndergleamBlockEntity> imp
 
     private void renderSide(T entity, Matrix4f model, VertexConsumer vertices, float x1, float x2, float y1, float y2, float z1, float z2, float z3, float z4, Direction side) {
         if (entity.shouldDrawSide(side)) {
-            vertices.vertex(model, x1, y1, z1).next();
-            vertices.vertex(model, x2, y1, z2).next();
-            vertices.vertex(model, x2, y2, z3).next();
-            vertices.vertex(model, x1, y2, z4).next();
+            vertices.vertex(model, x1, y1, z1);
+            vertices.vertex(model, x2, y1, z2);
+            vertices.vertex(model, x2, y2, z3);
+            vertices.vertex(model, x1, y2, z4);
         }
 
     }

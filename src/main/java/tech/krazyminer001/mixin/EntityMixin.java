@@ -1,5 +1,7 @@
 package tech.krazyminer001.mixin;
 
+import net.minecraft.world.TeleportTarget;
+import org.spongepowered.asm.mixin.Unique;
 import tech.krazyminer001.world.biome.ModBiomeTags;
 import com.google.common.collect.ImmutableList;
 import net.minecraft.entity.Entity;
@@ -45,6 +47,7 @@ public class EntityMixin {
         }
     }
 
+    @Unique
     @Nullable
     private static Entity entityFell(Entity entity) {
         World serverWorld = entity.getWorld();
@@ -55,8 +58,7 @@ public class EntityMixin {
                 List<Entity> passengers = entity.getPassengerList();
                 serverWorld.getProfiler().push("leafy_fall");
                 entity.resetPortalCooldown();
-                Entity target = entity.moveToWorld(destination);
-                entity.teleport(destination, entity.getX(), entity.getY(), entity.getZ(), new HashSet<>(), entity.getYaw(), entity.getPitch());
+                Entity target = entity.teleportTo(new TeleportTarget(destination, entity.getBlockPos().toCenterPos(), entity.getVelocity(), entity.getYaw(), entity.getPitch(), (entity1) -> {}));
                 serverWorld.getProfiler().pop();
 
                 if (target != null && !passengers.isEmpty()) {

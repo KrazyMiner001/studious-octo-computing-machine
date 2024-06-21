@@ -69,8 +69,8 @@ public class LeafMonsterEntityModel<T extends LeafMonsterEntity> extends SingleP
     }
 
     @Override
-    public void render(MatrixStack matrices, VertexConsumer vertexConsumer, int light, int overlay, float red, float green, float blue, float alpha) {
-        leafEntity.render(matrices, vertexConsumer, light, overlay, red, green, blue, alpha);
+    public void render(MatrixStack matrices, VertexConsumer vertices, int light, int overlay, int color) {
+        leafEntity.render(matrices, vertices, light, overlay, color);
     }
 
     @Override

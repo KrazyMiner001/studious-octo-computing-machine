@@ -6,6 +6,8 @@ import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.noise.DoublePerlinNoiseSampler;
+import static tech.krazyminer001.utility.Util.of;
+
 
 public class ModNoises {
     public static final RegistryKey<DoublePerlinNoiseSampler.NoiseParameters> TEMPERATURE = registerKey("temperature");
@@ -24,6 +26,6 @@ public class ModNoises {
 
 
     private static RegistryKey<DoublePerlinNoiseSampler.NoiseParameters> registerKey(String name) {
-        return RegistryKey.of(RegistryKeys.NOISE_PARAMETERS, new Identifier(OctoComputing.MOD_ID, name));
+        return RegistryKey.of(RegistryKeys.NOISE_PARAMETERS, of(name));
     }
 }

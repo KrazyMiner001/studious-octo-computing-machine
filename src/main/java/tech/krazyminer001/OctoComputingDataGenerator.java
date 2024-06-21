@@ -1,11 +1,24 @@
 package tech.krazyminer001;
 
+import tech.krazyminer001.block.ModBlocks;
+import tech.krazyminer001.blockentity.ModBlockEntities;
+import tech.krazyminer001.blockentity.screen.ModScreenHandlers;
+import tech.krazyminer001.command.ModCommands;
 import tech.krazyminer001.damagetype.ModDamageTypes;
 import tech.krazyminer001.datagen.*;
 import tech.krazyminer001.datagen.lang.ModEnglishLangProvider;
+import tech.krazyminer001.effect.ModStatusEffects;
+import tech.krazyminer001.enchantment.ModEnchantments;
+import tech.krazyminer001.entity.ModEntities;
+import tech.krazyminer001.item.ModDataComponentTypes;
+import tech.krazyminer001.item.ModItemGroups;
+import tech.krazyminer001.item.ModItems;
+import tech.krazyminer001.recipe.ModRecipes;
+import tech.krazyminer001.statistic.ModStatistics;
 import tech.krazyminer001.world.ModConfiguredFeatures;
 import tech.krazyminer001.world.ModPlacedFeatures;
 import tech.krazyminer001.world.biome.ModBiomes;
+import tech.krazyminer001.world.customFeatures.ModFeatures;
 import tech.krazyminer001.world.dimension.ModDimensions;
 import tech.krazyminer001.world.noise.ModDensityFunctions;
 import tech.krazyminer001.world.noise.ModNoiseSettings;
@@ -35,6 +48,7 @@ public class OctoComputingDataGenerator implements DataGeneratorEntrypoint {
         pack.addProvider(ModEnglishLangProvider::new);
         pack.addProvider(ModWorldGenerator::new);
         pack.addProvider(ModAdvancementProvider::new);
+        pack.addProvider(ModEnchantmentProvider::new);
     }
 
     @Override
@@ -47,5 +61,6 @@ public class OctoComputingDataGenerator implements DataGeneratorEntrypoint {
         registryBuilder.addRegistry(RegistryKeys.NOISE_PARAMETERS, ModNoises::bootstrap);
         registryBuilder.addRegistry(RegistryKeys.DENSITY_FUNCTION, ModDensityFunctions::bootstrap);
         registryBuilder.addRegistry(RegistryKeys.CHUNK_GENERATOR_SETTINGS, ModNoiseSettings::bootstrap);
+        registryBuilder.addRegistry(RegistryKeys.ENCHANTMENT, ModEnchantments::bootstrap);
     }
 }

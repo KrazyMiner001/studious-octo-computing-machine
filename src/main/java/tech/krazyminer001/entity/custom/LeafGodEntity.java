@@ -1,5 +1,7 @@
 package tech.krazyminer001.entity.custom;
 
+import net.minecraft.predicate.DamagePredicate;
+import net.minecraft.server.world.ServerWorld;
 import tech.krazyminer001.damagetype.ModDamageTypeTags;
 import tech.krazyminer001.item.ModItems;
 import tech.krazyminer001.item.custom.LeafiteSword;
@@ -179,8 +181,9 @@ public class LeafGodEntity extends HostileEntity implements RangedAttackMob {
         return leafGodNavigation;
     }
 
-    protected void dropEquipment(DamageSource source, int lootingMultiplier, boolean allowDrops) {
-        super.dropEquipment(source, lootingMultiplier, allowDrops);
+    @Override
+    protected void dropEquipment(ServerWorld world, DamageSource source, boolean causedByPlayer) {
+        super.dropEquipment(world, source, causedByPlayer);
         ItemEntity itemEntity = this.dropItem(ModItems.BROKEN_LEAF_CORE);
         if (itemEntity != null) {
             itemEntity.setCovetedItem();

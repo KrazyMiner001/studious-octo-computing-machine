@@ -9,6 +9,8 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.math.noise.DoublePerlinNoiseSampler;
 import net.minecraft.world.gen.chunk.ChunkGeneratorSettings;
 import net.minecraft.world.gen.densityfunction.DensityFunction;
+import static tech.krazyminer001.utility.Util.of;
+
 
 public class ModNoiseSettings {
     public static final RegistryKey<ChunkGeneratorSettings> LEAFY = registerKey("leafy");
@@ -20,6 +22,6 @@ public class ModNoiseSettings {
     }
 
     public static RegistryKey<ChunkGeneratorSettings> registerKey(String name) {
-        return RegistryKey.of(RegistryKeys.CHUNK_GENERATOR_SETTINGS, new Identifier(OctoComputing.MOD_ID, name));
+        return RegistryKey.of(RegistryKeys.CHUNK_GENERATOR_SETTINGS, of(name));
     }
 }

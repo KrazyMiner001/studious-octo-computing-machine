@@ -1,5 +1,6 @@
 package tech.krazyminer001.blockentity.custom;
 
+import net.minecraft.recipe.input.CraftingRecipeInput;
 import tech.krazyminer001.OctoComputing;
 import tech.krazyminer001.blockentity.ImplementedInventory;
 import tech.krazyminer001.blockentity.ModBlockEntities;
@@ -64,11 +65,11 @@ public class LeafShrineBlockEntity extends BlockEntity implements ImplementedInv
         if (nbt.contains("CurrentRecipe")) {
             String recipeString = nbt.getString("CurrentRecipe");
             if (!recipeString.isEmpty() && OctoComputing.SERVER != null) {
-                Optional<RecipeEntry<?>> optionalRecipe = OctoComputing.SERVER.getRecipeManager().get(new Identifier(recipeString));
+                Optional<RecipeEntry<?>> optionalRecipe = OctoComputing.SERVER.getRecipeManager().get(Identifier.of(recipeString));
                 if (optionalRecipe.isPresent()) {
                     if (optionalRecipe.get().value() instanceof LeafShrineRecipe recipe) {
-                        this.currentRecipe = new RecipeEntry<>(new Identifier(recipeString), recipe);
-                    };
+                        this.currentRecipe = new RecipeEntry<>(Identifier.of(recipeString), recipe);
+                    }
                 }
             }
         }

@@ -1,6 +1,7 @@
 package tech.krazyminer001.damagetype;
 
 import tech.krazyminer001.OctoComputing;
+import static tech.krazyminer001.utility.Util.of;
 import net.minecraft.entity.damage.DamageType;
 import net.minecraft.registry.Registerable;
 import net.minecraft.registry.RegistryKey;
@@ -17,7 +18,7 @@ public class ModDamageTypes {
     public static final RegistryKey<DamageType> LEAF = registerKey(new DamageType("leaf", 0f));
 
     private static RegistryKey<DamageType> registerKey(DamageType source) {
-        RegistryKey<DamageType> type = RegistryKey.of(RegistryKeys.DAMAGE_TYPE, new Identifier(OctoComputing.MOD_ID, source.msgId()));
+        RegistryKey<DamageType> type = RegistryKey.of(RegistryKeys.DAMAGE_TYPE, of(source.msgId()));
         TYPES.put(type, source);
         return type;
     }

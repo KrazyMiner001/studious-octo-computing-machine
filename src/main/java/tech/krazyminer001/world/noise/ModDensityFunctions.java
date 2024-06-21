@@ -7,12 +7,14 @@ import net.minecraft.registry.RegistryKeys;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.noise.InterpolatedNoiseSampler;
 import net.minecraft.world.gen.densityfunction.DensityFunction;
+import static tech.krazyminer001.utility.Util.of;
+
 
 public class ModDensityFunctions {
     public static final RegistryKey<DensityFunction> BASE_3D_NOISE_LEAFY = registerKey("base_3d_noise_leafy");
 
     private static RegistryKey<DensityFunction> registerKey(String name) {
-        return RegistryKey.of(RegistryKeys.DENSITY_FUNCTION, new Identifier(OctoComputing.MOD_ID, name));
+        return RegistryKey.of(RegistryKeys.DENSITY_FUNCTION, of(name));
     }
 
     public static void bootstrap(Registerable<DensityFunction> context) {

@@ -3,6 +3,7 @@ package tech.krazyminer001.block;
 import tech.krazyminer001.OctoComputing;
 import tech.krazyminer001.block.custom.*;
 import tech.krazyminer001.world.tree.ModSaplingGenerators;
+import static tech.krazyminer001.utility.Util.of;
 import net.minecraft.block.*;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
@@ -91,15 +92,15 @@ public class ModBlocks {
 
     private static Block registerBlockAndItem(String name, Block block) {
         registerBlockItem(name, block);
-        return Registry.register(Registries.BLOCK, new Identifier(OctoComputing.MOD_ID, name), block);
+        return Registry.register(Registries.BLOCK, of(name), block);
     }
 
     private static Block registerBlock(String name, Block block) {
-        return Registry.register(Registries.BLOCK, new Identifier(OctoComputing.MOD_ID, name), block);
+        return Registry.register(Registries.BLOCK, of(name), block);
     }
 
     private static Item registerBlockItem(String name, Block block) {
-        return Registry.register(Registries.ITEM, new Identifier(OctoComputing.MOD_ID, name),
+        return Registry.register(Registries.ITEM, of(name),
                 new BlockItem(block, new Item.Settings()));
     }
 

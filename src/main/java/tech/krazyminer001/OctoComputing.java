@@ -8,7 +8,6 @@ import tech.krazyminer001.compat.Mods;
 import tech.krazyminer001.compat.geckolib.GeckoLib;
 import tech.krazyminer001.config.OctoComputingConfig;
 import tech.krazyminer001.effect.ModStatusEffects;
-import tech.krazyminer001.enchantment.ModEnchantments;
 import tech.krazyminer001.entity.ModEntities;
 import tech.krazyminer001.entity.custom.LeafGodEntity;
 import tech.krazyminer001.entity.custom.LeafMonsterEntity;
@@ -70,7 +69,6 @@ public class OctoComputing implements ModInitializer {
 		ModItemGroups.registerItemGroups();
 		ModBlocks.registerModBlocks();
 		ModEntities.registerModEntities();
-		ModEnchantments.registerModEnchantments();
 		ModStatusEffects.registerModStatusEffects();
 		ModCommands.register();
 		ModDataComponentTypes.register();

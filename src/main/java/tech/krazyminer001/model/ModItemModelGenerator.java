@@ -14,11 +14,13 @@ import java.util.Map;
 import java.util.Optional;
 import java.util.function.BiConsumer;
 import java.util.function.Supplier;
+import static tech.krazyminer001.utility.Util.of;
+
 
 public class ModItemModelGenerator extends ItemModelGenerator {
     private static final List<TrimMaterial> TRIM_MATERIALS;
-    private static final Identifier COMPRESSED_OVERLAY = new Identifier(OctoComputing.MOD_ID ,"item/compressed");
-    private static final Identifier DOUBLE_COMPRESSED_OVERLAY = new Identifier(OctoComputing.MOD_ID ,"item/double_compressed");
+    private static final Identifier COMPRESSED_OVERLAY = of("item/compressed");
+    private static final Identifier DOUBLE_COMPRESSED_OVERLAY = of("item/double_compressed");
 
     public ModItemModelGenerator(BiConsumer<Identifier, Supplier<JsonElement>> writer) {
         super(writer);
@@ -69,7 +71,7 @@ public class ModItemModelGenerator extends ItemModelGenerator {
             String trimMaterialAppliedName = trimMaterial.getAppliedName(armor.getMaterial().value());
             Identifier trimId = this.suffixTrim(armorModelId, trimMaterialAppliedName);
             String armorTrimmedName = armor.getType().getName() + "_trim_" + trimMaterialAppliedName;
-            Identifier armorTrimmedId = (new Identifier(armorTrimmedName)).withPrefixedPath("trims/items/");
+            Identifier armorTrimmedId = (Identifier.of(armorTrimmedName)).withPrefixedPath("trims/items/");
             this.uploadArmor(trimId, armorTextureId, armorTrimmedId);
         }
     }
@@ -79,7 +81,7 @@ public class ModItemModelGenerator extends ItemModelGenerator {
             String trimMaterialAppliedName = trimMaterial.getAppliedName(armor.getMaterial().value());
             Identifier trimId = this.suffixTrim(armorModelId, trimMaterialAppliedName);
             String armorTrimmedName = armor.getType().getName() + "_trim_" + trimMaterialAppliedName;
-            Identifier armorTrimmedId = (new Identifier(armorTrimmedName)).withPrefixedPath("trims/items/");
+            Identifier armorTrimmedId = (Identifier.of(armorTrimmedName)).withPrefixedPath("trims/items/");
             this.uploadArmor(trimId, armorTextureId, armorTrimmedId, overlayId);
         }
     }
@@ -115,6 +117,6 @@ public class ModItemModelGenerator extends ItemModelGenerator {
     public static final Model HANDHELD_TWO_LAYERS;
 
     static {
-        HANDHELD_TWO_LAYERS = new Model(Optional.of(new Identifier("item/handheld")), Optional.empty(), TextureKey.LAYER0, TextureKey.LAYER1);
+        HANDHELD_TWO_LAYERS = new Model(Optional.of(Identifier.of("item/handheld")), Optional.empty(), TextureKey.LAYER0, TextureKey.LAYER1);
     }
 }

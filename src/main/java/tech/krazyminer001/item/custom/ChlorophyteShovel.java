@@ -1,9 +1,9 @@
 package tech.krazyminer001.item.custom;
 
+import net.minecraft.item.tooltip.TooltipType;
 import tech.krazyminer001.item.ModToolMaterial;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
-import net.minecraft.client.item.TooltipType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;

@@ -15,18 +15,20 @@ import net.minecraft.util.Util;
 import tech.krazyminer001.item.custom.*;
 
 import java.util.List;
+import static tech.krazyminer001.utility.Util.of;
+
 
 public class ModItems {
-    private static final Identifier EMPTY_ARMOR_SLOT_HELMET_TEXTURE = new Identifier("item/empty_armor_slot_helmet");
-    private static final Identifier EMPTY_ARMOR_SLOT_CHESTPLATE_TEXTURE = new Identifier("item/empty_armor_slot_chestplate");
-    private static final Identifier EMPTY_ARMOR_SLOT_LEGGINGS_TEXTURE = new Identifier("item/empty_armor_slot_leggings");
-    private static final Identifier EMPTY_ARMOR_SLOT_BOOTS_TEXTURE = new Identifier("item/empty_armor_slot_boots");
-    private static final Identifier EMPTY_SLOT_HOE_TEXTURE = new Identifier("item/empty_slot_hoe");
-    private static final Identifier EMPTY_SLOT_AXE_TEXTURE = new Identifier("item/empty_slot_axe");
-    private static final Identifier EMPTY_SLOT_SWORD_TEXTURE = new Identifier("item/empty_slot_sword");
-    private static final Identifier EMPTY_SLOT_SHOVEL_TEXTURE = new Identifier("item/empty_slot_shovel");
-    private static final Identifier EMPTY_SLOT_PICKAXE_TEXTURE = new Identifier("item/empty_slot_pickaxe");
-    private static final Identifier EMPTY_SLOT_INGOT_TEXTURE = new Identifier("item/empty_slot_ingot");
+    private static final Identifier EMPTY_ARMOR_SLOT_HELMET_TEXTURE = Identifier.of("item/empty_armor_slot_helmet");
+    private static final Identifier EMPTY_ARMOR_SLOT_CHESTPLATE_TEXTURE = Identifier.of("item/empty_armor_slot_chestplate");
+    private static final Identifier EMPTY_ARMOR_SLOT_LEGGINGS_TEXTURE = Identifier.of("item/empty_armor_slot_leggings");
+    private static final Identifier EMPTY_ARMOR_SLOT_BOOTS_TEXTURE = Identifier.of("item/empty_armor_slot_boots");
+    private static final Identifier EMPTY_SLOT_HOE_TEXTURE = Identifier.of("item/empty_slot_hoe");
+    private static final Identifier EMPTY_SLOT_AXE_TEXTURE = Identifier.of("item/empty_slot_axe");
+    private static final Identifier EMPTY_SLOT_SWORD_TEXTURE = Identifier.of("item/empty_slot_sword");
+    private static final Identifier EMPTY_SLOT_SHOVEL_TEXTURE = Identifier.of("item/empty_slot_shovel");
+    private static final Identifier EMPTY_SLOT_PICKAXE_TEXTURE = Identifier.of("item/empty_slot_pickaxe");
+    private static final Identifier EMPTY_SLOT_INGOT_TEXTURE = Identifier.of("item/empty_slot_ingot");
 
     public static final Item OAK_LEAF = registerItem("oak_leaf", new Item(new Item.Settings()));
     public static final Item COMPRESSED_OAK_LEAF = registerItem("compressed_oak_leaf", new Item(new Item.Settings()));
@@ -143,9 +145,9 @@ public class ModItems {
     public static final Item LEAF_CORE = registerLeafCore();
     private static Item registerLeafCore() {
         if (Mods.GECKOLIB.isLoaded()) {
-            return Registry.register(Registries.ITEM, new Identifier(OctoComputing.MOD_ID, "leaf_core"), new AnimatedLeafCore(new Item.Settings().rarity(Rarity.RARE)));
+            return Registry.register(Registries.ITEM, of("leaf_core"), new AnimatedLeafCore(new Item.Settings().rarity(Rarity.RARE)));
         }
-        return Registry.register(Registries.ITEM, new Identifier(OctoComputing.MOD_ID, "leaf_core"), new Item(new Item.Settings().rarity(Rarity.RARE)));
+        return Registry.register(Registries.ITEM, of("leaf_core"), new Item(new Item.Settings().rarity(Rarity.RARE)));
     }
     public static final Item CHLOROPHYTE_DEBRIS = registerItem("chlorophyte_debris",
             new Item(new Item.Settings()));
@@ -156,21 +158,21 @@ public class ModItems {
 
     public static final Item LEAFITE_UPGRADE_SMITHING_TEMPLATE = registerItem("leafite_upgrade_smithing_template",
             new SmithingTemplateItem(
-                    Text.translatable(Util.createTranslationKey("item", new Identifier(OctoComputing.MOD_ID, "smithing_template.leafite_upgrade.applies_to"))).formatted(Formatting.BLUE),
-                    Text.translatable(Util.createTranslationKey("item", new Identifier(OctoComputing.MOD_ID, "smithing_template.leafite_upgrade.ingredients"))).formatted(Formatting.BLUE),
-                    Text.translatable(Util.createTranslationKey("upgrade", new Identifier(OctoComputing.MOD_ID, "leafite_upgrade"))).formatted(Formatting.GRAY),
-                    Text.translatable(Util.createTranslationKey("item", new Identifier(OctoComputing.MOD_ID ,"smithing_template.leafite_upgrade.base_slot_description"))),
-                    Text.translatable(Util.createTranslationKey("item", new Identifier(OctoComputing.MOD_ID ,"smithing_template.leafite_upgrade.additions_slot_description"))),
+                    Text.translatable(Util.createTranslationKey("item", of("smithing_template.leafite_upgrade.applies_to"))).formatted(Formatting.BLUE),
+                    Text.translatable(Util.createTranslationKey("item", of("smithing_template.leafite_upgrade.ingredients"))).formatted(Formatting.BLUE),
+                    Text.translatable(Util.createTranslationKey("upgrade", of("leafite_upgrade"))).formatted(Formatting.GRAY),
+                    Text.translatable(Util.createTranslationKey("item", Identifier.of(OctoComputing.MOD_ID ,"smithing_template.leafite_upgrade.base_slot_description"))),
+                    Text.translatable(Util.createTranslationKey("item", Identifier.of(OctoComputing.MOD_ID ,"smithing_template.leafite_upgrade.additions_slot_description"))),
                     List.of(EMPTY_ARMOR_SLOT_HELMET_TEXTURE, EMPTY_SLOT_SWORD_TEXTURE, EMPTY_ARMOR_SLOT_CHESTPLATE_TEXTURE, EMPTY_SLOT_PICKAXE_TEXTURE, EMPTY_ARMOR_SLOT_LEGGINGS_TEXTURE, EMPTY_SLOT_AXE_TEXTURE, EMPTY_ARMOR_SLOT_BOOTS_TEXTURE, EMPTY_SLOT_HOE_TEXTURE, EMPTY_SLOT_SHOVEL_TEXTURE),
                     List.of(EMPTY_SLOT_INGOT_TEXTURE)
             ));
     public static final Item CHLOROPHYTE_UPGRADE_SMITHING_TEMPLATE = registerItem("chlorophyte_upgrade_smithing_template",
             new SmithingTemplateItem(
-                    Text.translatable(Util.createTranslationKey("item", new Identifier(OctoComputing.MOD_ID, "smithing_template.chlorophyte_upgrade.applies_to"))).formatted(Formatting.BLUE),
-                    Text.translatable(Util.createTranslationKey("item", new Identifier(OctoComputing.MOD_ID, "smithing_template.chlorophyte_upgrade.ingredients"))).formatted(Formatting.BLUE),
-                    Text.translatable(Util.createTranslationKey("upgrade", new Identifier(OctoComputing.MOD_ID, "chlorophyte_upgrade"))).formatted(Formatting.GRAY),
-                    Text.translatable(Util.createTranslationKey("item", new Identifier(OctoComputing.MOD_ID ,"smithing_template.chlorophyte_upgrade.base_slot_description"))),
-                    Text.translatable(Util.createTranslationKey("item", new Identifier(OctoComputing.MOD_ID ,"smithing_template.chlorophyte_upgrade.additions_slot_description"))),
+                    Text.translatable(Util.createTranslationKey("item", of("smithing_template.chlorophyte_upgrade.applies_to"))).formatted(Formatting.BLUE),
+                    Text.translatable(Util.createTranslationKey("item", of("smithing_template.chlorophyte_upgrade.ingredients"))).formatted(Formatting.BLUE),
+                    Text.translatable(Util.createTranslationKey("upgrade", of("chlorophyte_upgrade"))).formatted(Formatting.GRAY),
+                    Text.translatable(Util.createTranslationKey("item", Identifier.of(OctoComputing.MOD_ID ,"smithing_template.chlorophyte_upgrade.base_slot_description"))),
+                    Text.translatable(Util.createTranslationKey("item", Identifier.of(OctoComputing.MOD_ID ,"smithing_template.chlorophyte_upgrade.additions_slot_description"))),
                     List.of(EMPTY_ARMOR_SLOT_HELMET_TEXTURE, EMPTY_SLOT_SWORD_TEXTURE, EMPTY_ARMOR_SLOT_CHESTPLATE_TEXTURE, EMPTY_SLOT_PICKAXE_TEXTURE, EMPTY_ARMOR_SLOT_LEGGINGS_TEXTURE, EMPTY_SLOT_AXE_TEXTURE, EMPTY_ARMOR_SLOT_BOOTS_TEXTURE, EMPTY_SLOT_HOE_TEXTURE, EMPTY_SLOT_SHOVEL_TEXTURE),
                     List.of(EMPTY_SLOT_INGOT_TEXTURE)
             ));
@@ -230,7 +232,7 @@ public class ModItems {
 
 
     private static Item registerItem(String name, Item item) {
-        return Registry.register(Registries.ITEM, new Identifier(OctoComputing.MOD_ID, name), item);
+        return Registry.register(Registries.ITEM, of(name), item);
     }
 
     public static void registerModItems() {

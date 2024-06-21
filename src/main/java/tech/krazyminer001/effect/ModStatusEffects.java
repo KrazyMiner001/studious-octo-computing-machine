@@ -8,6 +8,7 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.util.Identifier;
+import static tech.krazyminer001.utility.Util.of;
 
 public class ModStatusEffects {
     public static final RegistryEntry<StatusEffect> LEAFED_EFFECT = registerEffect("leafed",
@@ -17,7 +18,7 @@ public class ModStatusEffects {
             new LeafedResistanceEffect());
 
     private static RegistryEntry<StatusEffect> registerEffect(String name, StatusEffect effect) {
-        return Registry.registerReference(Registries.STATUS_EFFECT, new Identifier(OctoComputing.MOD_ID, name), effect);
+        return Registry.registerReference(Registries.STATUS_EFFECT, of(name), effect);
     }
 
     public static void registerModStatusEffects() {

@@ -2,7 +2,6 @@ package tech.krazyminer001.datagen.lang;
 
 import tech.krazyminer001.OctoComputing;
 import tech.krazyminer001.block.ModBlocks;
-import tech.krazyminer001.enchantment.ModEnchantments;
 import tech.krazyminer001.entity.ModEntities;
 import tech.krazyminer001.item.ModItemTags;
 import tech.krazyminer001.item.ModItems;
@@ -13,6 +12,7 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.Util;
 
 import java.util.concurrent.CompletableFuture;
+import static tech.krazyminer001.utility.Util.of;
 
 public class ModEnglishLangProvider extends FabricLanguageProvider {
     public ModEnglishLangProvider(FabricDataOutput dataGenerator, CompletableFuture<RegistryWrapper.WrapperLookup> registryLookup) {
@@ -92,9 +92,6 @@ public class ModEnglishLangProvider extends FabricLanguageProvider {
         translationBuilder.add(ModBlocks.DEEPSLATE_LEAF_ORE, "Deepslate Leaf Ore");
         translationBuilder.add(ModBlocks.LEAFSTONE_BLOCK, "Leafstone Block");
 
-        translationBuilder.add(ModEnchantments.LEAF_PROTECTION, "Leaf Protection");
-        translationBuilder.add(ModEnchantments.GARDEN_SHEARS, "Garden Shears");
-
 
 
         translationBuilder.add(ModEntities.LEAF_MONSTER, "Leaf Monster");
@@ -128,7 +125,7 @@ public class ModEnglishLangProvider extends FabricLanguageProvider {
         translationBuilder.add("itemGroup.octocomputing.functional", "Functional");
         translationBuilder.add("itemGroup.octocomputing.blocks", "Blocks");
 
-        translationBuilder.add(new Identifier("death.attack", "leaf"), "%1$s leafed too much");
+        translationBuilder.add(Identifier.of("death.attack", "leaf"), "%1$s leafed too much");
 
         translationBuilder.add(ModItemTags.LEAF.id().toTranslationKey("tag"), "Leaves");
         translationBuilder.add(ModItemTags.LEAF_COMPRESSED.id().toTranslationKey("tag"), "Compressed Leaves");
@@ -139,17 +136,17 @@ public class ModEnglishLangProvider extends FabricLanguageProvider {
         translationBuilder.add("text.config." + OctoComputing.CONFIG.name() + ".option." + OctoComputing.CONFIG.keys.fancyTree.asString(), "Fancy Tree");
         translationBuilder.add("text.config." + OctoComputing.CONFIG.name() + ".option." + OctoComputing.CONFIG.keys.fancyTree.asString() + ".tooltip", "If true, the custom tree feature will generate a more complex tree.\nIf false, the custom tree feature will generate a simple tree.\n\nThe Fancy tree looks nicer but is slower to generate.\n\nDefault: true");
 
-        translationBuilder.add(Util.createTranslationKey("item", new Identifier(OctoComputing.MOD_ID, "smithing_template.leafite_upgrade.applies_to")), "Netherite Equipment");
-        translationBuilder.add(Util.createTranslationKey("item", new Identifier(OctoComputing.MOD_ID, "smithing_template.leafite_upgrade.ingredients")), "Leaf Core");
-        translationBuilder.add(Util.createTranslationKey("upgrade", new Identifier(OctoComputing.MOD_ID, "leafite_upgrade")), "Leafite Upgrade");
-        translationBuilder.add(Util.createTranslationKey("item", new Identifier(OctoComputing.MOD_ID ,"smithing_template.leafite_upgrade.base_slot_description")), "Add netherite armor, weapon, or tool");
-        translationBuilder.add(Util.createTranslationKey("item", new Identifier(OctoComputing.MOD_ID ,"smithing_template.leafite_upgrade.additions_slot_description")),"Add Leaf Core");
+        translationBuilder.add(Util.createTranslationKey("item", of("smithing_template.leafite_upgrade.applies_to")), "Netherite Equipment");
+        translationBuilder.add(Util.createTranslationKey("item", of("smithing_template.leafite_upgrade.ingredients")), "Leaf Core");
+        translationBuilder.add(Util.createTranslationKey("upgrade", of("leafite_upgrade")), "Leafite Upgrade");
+        translationBuilder.add(Util.createTranslationKey("item", of("smithing_template.leafite_upgrade.base_slot_description")), "Add netherite armor, weapon, or tool");
+        translationBuilder.add(Util.createTranslationKey("item", of("smithing_template.leafite_upgrade.additions_slot_description")),"Add Leaf Core");
 
-        translationBuilder.add(Util.createTranslationKey("item", new Identifier(OctoComputing.MOD_ID, "smithing_template.chlorophyte_upgrade.applies_to")), "Leafite Equipment");
-        translationBuilder.add(Util.createTranslationKey("item", new Identifier(OctoComputing.MOD_ID, "smithing_template.chlorophyte_upgrade.ingredients")), "Chlorophyte Ingot");
-        translationBuilder.add(Util.createTranslationKey("upgrade", new Identifier(OctoComputing.MOD_ID, "chlorophyte_upgrade")), "Chlorophyte Upgrade");
-        translationBuilder.add(Util.createTranslationKey("item", new Identifier(OctoComputing.MOD_ID ,"smithing_template.chlorophyte_upgrade.base_slot_description")), "Add leafite armor, weapon, or tool");
-        translationBuilder.add(Util.createTranslationKey("item", new Identifier(OctoComputing.MOD_ID ,"smithing_template.chlorophyte_upgrade.additions_slot_description")),"Add Chlorophyte ingot");
+        translationBuilder.add(Util.createTranslationKey("item", of("smithing_template.chlorophyte_upgrade.applies_to")), "Leafite Equipment");
+        translationBuilder.add(Util.createTranslationKey("item", of("smithing_template.chlorophyte_upgrade.ingredients")), "Chlorophyte Ingot");
+        translationBuilder.add(Util.createTranslationKey("upgrade", of("chlorophyte_upgrade")), "Chlorophyte Upgrade");
+        translationBuilder.add(Util.createTranslationKey("item", of("smithing_template.chlorophyte_upgrade.base_slot_description")), "Add leafite armor, weapon, or tool");
+        translationBuilder.add(Util.createTranslationKey("item", of("smithing_template.chlorophyte_upgrade.additions_slot_description")),"Add Chlorophyte ingot");
     }
 
     private static void leafTranslations(TranslationBuilder translationBuilder) {

@@ -16,6 +16,8 @@ import net.minecraft.util.Util;
 import java.util.EnumMap;
 import java.util.List;
 import java.util.function.Supplier;
+import static tech.krazyminer001.utility.Util.of;
+
 
 public class ModArmorMaterials extends ArmorMaterials {
     public static final RegistryEntry<ArmorMaterial> LEAF;
@@ -25,7 +27,7 @@ public class ModArmorMaterials extends ArmorMaterials {
     public static final RegistryEntry<ArmorMaterial> CHLOROPHYTE;
 
     private static RegistryEntry<ArmorMaterial> register(String id, EnumMap<ArmorItem.Type, Integer> defense, int enchantability, RegistryEntry<SoundEvent> equipSound, float toughness, float knockbackResistance, Supplier<Ingredient> repairIngredient) {
-        List<ArmorMaterial.Layer> list = List.of(new ArmorMaterial.Layer(new Identifier(id)));
+        List<ArmorMaterial.Layer> list = List.of(new ArmorMaterial.Layer(Identifier.of(id)));
         return register(id, defense, enchantability, equipSound, toughness, knockbackResistance, repairIngredient, list);
     }
 
@@ -37,7 +39,7 @@ public class ModArmorMaterials extends ArmorMaterials {
             enumMap.put(type, defense.get(type));
         }
 
-        return Registry.registerReference(Registries.ARMOR_MATERIAL, new Identifier(OctoComputing.MOD_ID, id), new ArmorMaterial(enumMap, enchantability, equipSound, repairIngredient, layers, toughness, knockbackResistance));
+        return Registry.registerReference(Registries.ARMOR_MATERIAL, of(id), new ArmorMaterial(enumMap, enchantability, equipSound, repairIngredient, layers, toughness, knockbackResistance));
     }
 
     static {
