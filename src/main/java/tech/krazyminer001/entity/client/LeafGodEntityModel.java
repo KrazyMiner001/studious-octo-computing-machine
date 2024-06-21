@@ -528,9 +528,10 @@ public class LeafGodEntityModel<T extends LeafGodEntity> extends SinglePartEntit
 		this.updateAnimation(entity.leafGodCoreSpin, ModAnimations.CORE_SPIN, ageInTicks);
 		this.updateAnimation(entity.leafGodAnimationState, ModAnimations.LEAF_GOD_OUTER_LEAVES_SPIN, ageInTicks);
 	}
+
 	@Override
-	public void render(MatrixStack matrices, VertexConsumer vertexConsumer, int light, int overlay, float red, float green, float blue, float alpha) {
-		leaf_god.render(matrices, vertexConsumer, light, overlay, red, green, blue, alpha);
+	public void render(MatrixStack matrices, VertexConsumer vertices, int light, int overlay, int color) {
+		leaf_god.render(matrices, vertices, light, overlay, color);
 	}
 
 	@Override

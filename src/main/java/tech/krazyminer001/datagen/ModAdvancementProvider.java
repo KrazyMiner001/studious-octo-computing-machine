@@ -39,7 +39,7 @@ public class ModAdvancementProvider extends FabricAdvancementProvider {
                                 ModItems.LEAF_PICKER.getDefaultStack(),
                                 Text.translatable("advancements.octocomputing.investigation.root.title"),
                                 Text.translatable("advancements.octocomputing.investigation.root.description"),
-                                Optional.of(new Identifier(OctoComputing.MOD_ID, "textures/gui/advancements/background/investigation.png")),
+                                Optional.of(of("textures/gui/advancements/background/investigation.png")),
                                 AdvancementFrame.TASK,
                                 false,
                                 false,
@@ -59,7 +59,7 @@ public class ModAdvancementProvider extends FabricAdvancementProvider {
         ));
 
         consumer.accept(new AdvancementEntry(
-                new Identifier(OctoComputing.MOD_ID, "investigation/get_leaf"),
+                of("investigation/get_leaf"),
                 new Advancement(
                         Optional.empty(),
                         Optional.of(new AdvancementDisplay(
@@ -94,7 +94,7 @@ public class ModAdvancementProvider extends FabricAdvancementProvider {
         consumer.accept(new AdvancementEntry(
                 of("investigation/get_mixed_leaf"),
                 new Advancement(
-                        Optional.of(new Identifier(OctoComputing.MOD_ID, "investigation/get_leaf")),
+                        Optional.of(of("investigation/get_leaf")),
                         Optional.of(new AdvancementDisplay(
                                 ModItems.MIXED_LEAF.getDefaultStack(),
                                 Text.translatable("advancements.octocomputing.investigation.get_mixed_leaf.title"),
@@ -123,9 +123,9 @@ public class ModAdvancementProvider extends FabricAdvancementProvider {
         ));
 
         consumer.accept(new AdvancementEntry(
-                new Identifier(OctoComputing.MOD_ID, "investigation/leaf_armor"),
+                of("investigation/leaf_armor"),
                 new Advancement(
-                        Optional.of(new Identifier(OctoComputing.MOD_ID, "investigation/get_leaf")),
+                        Optional.of(of("investigation/get_leaf")),
                         Optional.of(new AdvancementDisplay(
                                 ModItems.LEAF_CHESTPLATE.getDefaultStack(),
                                 Text.translatable("advancements.octocomputing.leaf_armor.title"),
@@ -168,9 +168,9 @@ public class ModAdvancementProvider extends FabricAdvancementProvider {
         ));
 
         consumer.accept(new AdvancementEntry(
-                new Identifier(OctoComputing.MOD_ID, "investigation/mine_leafstone"),
+                of("investigation/mine_leafstone"),
                 new Advancement(
-                        Optional.of(new Identifier(OctoComputing.MOD_ID, "investigation/get_leaf")),
+                        Optional.of(of("investigation/get_leaf")),
                         Optional.of(new AdvancementDisplay(
                                 ModItems.LEAFSTONE.getDefaultStack(),
                                 Text.translatable("advancements.octocomputing.mine_leafstone.title"),
@@ -200,9 +200,9 @@ public class ModAdvancementProvider extends FabricAdvancementProvider {
         ));
 
         consumer.accept(new AdvancementEntry(
-                new Identifier(OctoComputing.MOD_ID, "investigation/kill_leaf_god"),
+                of("investigation/kill_leaf_god"),
                 new Advancement(
-                        Optional.of(new Identifier(OctoComputing.MOD_ID, "investigation/get_leaf")),
+                        Optional.of(of("investigation/get_leaf")),
                         Optional.of(new AdvancementDisplay(
                                 ModItems.LEAF_CORE.getDefaultStack(),
                                 Text.translatable("advancements.octocomputing.kill_leaf_god.title"),

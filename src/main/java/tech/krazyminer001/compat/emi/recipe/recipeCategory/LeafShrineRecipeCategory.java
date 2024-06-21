@@ -8,14 +8,15 @@ import dev.emi.emi.api.stack.EmiStack;
 import net.minecraft.util.Identifier;
 
 import java.util.Comparator;
+import static tech.krazyminer001.utility.Util.of;
 
 public class LeafShrineRecipeCategory extends EmiRecipeCategory {
 
     public LeafShrineRecipeCategory() {
-        super(new Identifier(OctoComputing.MOD_ID, "leaf_shrine"), EmiStack.of(ModBlocks.LEAF_SHRINE), EmiStack.of(ModBlocks.LEAF_SHRINE));
+        super(of("leaf_shrine"), EmiStack.of(ModBlocks.LEAF_SHRINE), EmiStack.of(ModBlocks.LEAF_SHRINE));
     }
 
     public LeafShrineRecipeCategory(Comparator<EmiRecipe> sorter) {
-        super(new Identifier(OctoComputing.MOD_ID, "leaf_shrine"), EmiStack.of(ModBlocks.LEAF_SHRINE), EmiStack.of(ModBlocks.LEAF_SHRINE), sorter);
+        super(of("leaf_shrine"), EmiStack.of(ModBlocks.LEAF_SHRINE), EmiStack.of(ModBlocks.LEAF_SHRINE), sorter);
     }
 }

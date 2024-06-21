@@ -79,7 +79,7 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
                 .input(ModItems.MANGROVE_LEAF)
                 .input(ModItems.CHERRY_LEAF)
                 .criterion("has_leaf", conditionsFromTag(ModItemTags.LEAF))
-                .offerTo(exporter, new Identifier(getRecipeName(ModItems.MIXED_LEAF) + "_from_mixing_leaves"));
+                .offerTo(exporter, Identifier.of(getRecipeName(ModItems.MIXED_LEAF) + "_from_mixing_leaves"));
 
         ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.COMPRESSED_MIXED_LEAF)
                 .input(ModItems.COMPRESSED_OAK_LEAF)
@@ -92,7 +92,7 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
                 .input(ModItems.COMPRESSED_MANGROVE_LEAF)
                 .input(ModItems.COMPRESSED_CHERRY_LEAF)
                 .criterion("has_compressed_leaf", conditionsFromTag(ModItemTags.LEAF_COMPRESSED))
-                .offerTo(exporter, new Identifier(getRecipeName(ModItems.COMPRESSED_MIXED_LEAF) + "_from_mixing_compressed_leaves"));
+                .offerTo(exporter, Identifier.of(getRecipeName(ModItems.COMPRESSED_MIXED_LEAF) + "_from_mixing_compressed_leaves"));
 
         ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.DOUBLE_COMPRESSED_MIXED_LEAF)
                 .input(ModItems.DOUBLE_COMPRESSED_OAK_LEAF)
@@ -105,7 +105,7 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
                 .input(ModItems.DOUBLE_COMPRESSED_MANGROVE_LEAF)
                 .input(ModItems.DOUBLE_COMPRESSED_CHERRY_LEAF)
                 .criterion("has_double_compressed_leaf", conditionsFromTag(ModItemTags.LEAF_DOUBLE_COMPRESSED))
-                .offerTo(exporter, new Identifier(getRecipeName(ModItems.DOUBLE_COMPRESSED_MIXED_LEAF) + "_from_mixing_double_compressed_leaves"));
+                .offerTo(exporter, Identifier.of(getRecipeName(ModItems.DOUBLE_COMPRESSED_MIXED_LEAF) + "_from_mixing_double_compressed_leaves"));
 
         makeSaplingRecipe(exporter, ModBlocks.MYSTERY_SAPLING.asItem(), ModItems.COMPRESSED_MYSTERY_LEAF);
         makeSaplingRecipe(exporter, Blocks.OAK_SAPLING.asItem(), ModItems.COMPRESSED_OAK_LEAF);
@@ -235,7 +235,7 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
                 .input('I', ingredient)
                 .input('S', Items.STICK)
                 .criterion("has_item_from_tag_" + ingredient, conditionsFromTag(ingredient))
-                .offerTo(exporter, new Identifier(getRecipeName(sword)));
+                .offerTo(exporter, Identifier.of(getRecipeName(sword)));
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, pickaxe)
                 .pattern("III")
@@ -244,7 +244,7 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
                 .input('I', ingredient)
                 .input('S', Items.STICK)
                 .criterion("has_item_from_tag_" + ingredient, conditionsFromTag(ingredient))
-                .offerTo(exporter, new Identifier(getRecipeName(pickaxe)));
+                .offerTo(exporter, Identifier.of(getRecipeName(pickaxe)));
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, axe)
                 .pattern("II")
@@ -253,7 +253,7 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
                 .input('I', ingredient)
                 .input('S', Items.STICK)
                 .criterion("has_item_from_tag_" + ingredient, conditionsFromTag(ingredient))
-                .offerTo(exporter, new Identifier(getRecipeName(axe)));
+                .offerTo(exporter, Identifier.of(getRecipeName(axe)));
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, shovel)
                 .pattern("I")
@@ -262,7 +262,7 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
                 .input('I', ingredient)
                 .input('S', Items.STICK)
                 .criterion("has_item_from_tag_" + ingredient, conditionsFromTag(ingredient))
-                .offerTo(exporter, new Identifier(getRecipeName(shovel)));
+                .offerTo(exporter, Identifier.of(getRecipeName(shovel)));
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, hoe)
                 .pattern("II")
@@ -271,7 +271,7 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
                 .input('I', ingredient)
                 .input('S', Items.STICK)
                 .criterion("has_item_from_tag_" + ingredient, conditionsFromTag(ingredient))
-                .offerTo(exporter, new Identifier(getRecipeName(hoe)));
+                .offerTo(exporter, Identifier.of(getRecipeName(hoe)));
     }
 
     private static void offerLeafUpgradeRecipe(RecipeExporter exporter, Item baseItem, Item resultItem, RecipeCategory category) {
@@ -294,7 +294,7 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
                 .input('S', Items.STICK)
                 .criterion(hasItem(Items.STICK), conditionsFromItem(Items.STICK))
                 .criterion(hasItem(leaf), conditionsFromItem(leaf))
-                .offerTo(exporter, new Identifier(getRecipeName(sapling)));
+                .offerTo(exporter, Identifier.of(getRecipeName(sapling)));
     }
 
     private static void reversibleCompactingRecipesBetter(RecipeExporter exporter, Item baseItem, Item compactItem)
@@ -308,7 +308,7 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
                 .pattern("L L")
                 .input('L', armorIngredient)
                 .criterion("has_" + armorIngredient.id().getPath(), conditionsFromTag(armorIngredient))
-                .offerTo(exporter, new Identifier(getRecipeName(helmet)));
+                .offerTo(exporter, Identifier.of(getRecipeName(helmet)));
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, chestplate)
                 .pattern("L L")
@@ -316,7 +316,7 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
                 .pattern("LLL")
                 .input('L', armorIngredient)
                 .criterion("has_" + armorIngredient.id().getPath(), conditionsFromTag(armorIngredient))
-                .offerTo(exporter, new Identifier(getRecipeName(chestplate)));
+                .offerTo(exporter, Identifier.of(getRecipeName(chestplate)));
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, leggings)
                 .pattern("LLL")
@@ -324,14 +324,14 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
                 .pattern("L L")
                 .input('L', armorIngredient)
                 .criterion("has_" + armorIngredient.id().getPath(), conditionsFromTag(armorIngredient))
-                .offerTo(exporter, new Identifier(getRecipeName(leggings)));
+                .offerTo(exporter, Identifier.of(getRecipeName(leggings)));
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, boots)
                 .pattern("L L")
                 .pattern("L L")
                 .input('L', armorIngredient)
                 .criterion("has_" + armorIngredient.id().getPath(), conditionsFromTag(armorIngredient))
-                .offerTo(exporter, new Identifier(getRecipeName(boots)));
+                .offerTo(exporter, Identifier.of(getRecipeName(boots)));
     }
 
 }

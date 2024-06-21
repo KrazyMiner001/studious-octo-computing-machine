@@ -14,10 +14,12 @@ import net.minecraft.world.biome.GenerationSettings;
 import net.minecraft.world.biome.SpawnSettings;
 import net.minecraft.world.gen.GenerationStep;
 import net.minecraft.world.gen.feature.DefaultBiomeFeatures;
+import static tech.krazyminer001.utility.Util.of;
+
 
 public class ModBiomes {
     public static final RegistryKey<Biome> LEAF_BIOME = RegistryKey.of(RegistryKeys.BIOME,
-            new Identifier(OctoComputing.MOD_ID, "leaf_biome"));
+            of("leaf_biome"));
 
     public static void bootstrap(Registerable<Biome> context) {
         context.register(LEAF_BIOME, leafBiome(context));

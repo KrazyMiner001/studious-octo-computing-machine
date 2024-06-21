@@ -12,6 +12,8 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 
+import static tech.krazyminer001.utility.Util.of;
+
 public class ModBlockEntities {
     public static BlockEntityType<EndergleamBlockEntity> ENDERGLEAM_BLOCK_ENTITY = registerBlockEntityType("endergleam",
             BlockEntityType.Builder.create(EndergleamBlockEntity::new,
@@ -35,7 +37,7 @@ public class ModBlockEntities {
                     ModBlocks.VOIDSPAWN_GENERATOR).build());
 
     private static <T extends BlockEntity> BlockEntityType<T> registerBlockEntityType(String name, BlockEntityType<T> block) {
-        return Registry.register(Registries.BLOCK_ENTITY_TYPE, new Identifier(OctoComputing.MOD_ID, name), block);
+        return Registry.register(Registries.BLOCK_ENTITY_TYPE, of(name), block);
     }
 
     public static void registerModBlocksEntities() {

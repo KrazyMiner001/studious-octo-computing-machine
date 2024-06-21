@@ -60,6 +60,6 @@ public abstract class Util {
     }
 
     public static Identifier of(String path) {
-        return new Identifier(OctoComputing.MOD_ID, path);
+        return Identifier.of(OctoComputing.MOD_ID, path);
     }
 }

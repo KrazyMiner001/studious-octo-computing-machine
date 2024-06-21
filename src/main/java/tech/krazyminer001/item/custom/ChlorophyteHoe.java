@@ -1,8 +1,8 @@
 package tech.krazyminer001.item.custom;
 
+import net.minecraft.item.tooltip.TooltipType;
 import tech.krazyminer001.item.ModToolMaterial;
 import com.mojang.datafixers.util.Pair;
-import net.minecraft.client.item.TooltipType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.HoeItem;
 import net.minecraft.item.Item;

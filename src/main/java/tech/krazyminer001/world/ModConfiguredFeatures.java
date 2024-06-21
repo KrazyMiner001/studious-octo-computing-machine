@@ -25,6 +25,8 @@ import net.minecraft.world.gen.trunk.CherryTrunkPlacer;
 import net.minecraft.world.gen.trunk.UpwardsBranchingTrunkPlacer;
 
 import java.util.List;
+import static tech.krazyminer001.utility.Util.of;
+
 
 public class ModConfiguredFeatures {
     public static final RegistryKey<ConfiguredFeature<?, ?>> STONE_LEAF_ORE_KEY = registerKey("stone_leaf_ore");
@@ -120,13 +122,13 @@ public class ModConfiguredFeatures {
                 150,
                 8,
                 15,
-                new Identifier(OctoComputing.MOD_ID, "eternalwood"),
-                new Identifier(OctoComputing.MOD_ID, "eternalleaves")
+                of("eternalwood"),
+                of("eternalleaves")
         ));
     }
 
     public static RegistryKey<ConfiguredFeature<?, ?>> registerKey(String name) {
-        return RegistryKey.of(RegistryKeys.CONFIGURED_FEATURE, new Identifier(OctoComputing.MOD_ID, name));
+        return RegistryKey.of(RegistryKeys.CONFIGURED_FEATURE, of(name));
     }
 
     private static <FC extends FeatureConfig, F extends Feature<FC>> void register(Registerable<ConfiguredFeature<?, ?>> context, RegistryKey<ConfiguredFeature<?, ?>> key, F feature, FC configuration) {

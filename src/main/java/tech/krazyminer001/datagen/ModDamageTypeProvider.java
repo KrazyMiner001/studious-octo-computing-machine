@@ -14,6 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
+import static tech.krazyminer001.utility.Util.of;
 
 public class ModDamageTypeProvider implements DataProvider {
     public ModDamageTypeProvider(FabricDataOutput generator, CompletableFuture<RegistryWrapper.WrapperLookup> registryLookup) {
@@ -31,7 +32,7 @@ public class ModDamageTypeProvider implements DataProvider {
     public CompletableFuture<?> run(DataWriter writer) {
         List<CompletableFuture<?>> futures = new ArrayList<>();
         ModDamageTypes.sources().forEach(type ->
-                futures.add(DataProvider.writeCodecToPath(writer, registryLookup, DamageType.CODEC, type, path.resolveJson(new Identifier(OctoComputing.MOD_ID, type.msgId())))));
+                futures.add(DataProvider.writeCodecToPath(writer, registryLookup, DamageType.CODEC, type, path.resolveJson(of(type.msgId())))));
         return CompletableFuture.allOf(futures.toArray(new CompletableFuture[0]));
     }
 

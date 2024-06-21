@@ -7,9 +7,10 @@ import net.minecraft.client.render.entity.EntityRendererFactory;
 import net.minecraft.client.render.entity.MobEntityRenderer;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.util.Identifier;
+import static tech.krazyminer001.utility.Util.of;
 
 public class LeafMonsterEntityRenderer extends MobEntityRenderer<LeafMonsterEntity, LeafMonsterEntityModel<LeafMonsterEntity>> {
-    private static final Identifier TEXTURE = new Identifier(OctoComputing.MOD_ID, "textures/entity/leaf_monster.png");
+    private static final Identifier TEXTURE = of("textures/entity/leaf_monster.png");
 
     public LeafMonsterEntityRenderer(EntityRendererFactory.Context context) {
         super(context, new LeafMonsterEntityModel<>(context.getPart(ModModelLayers.LEAF_MONSTER)), 0.6f);

@@ -13,9 +13,11 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
+import static tech.krazyminer001.utility.Util.of;
+
 
 public class ModItemGroups {
-    private static final Identifier GROUP_ID = new Identifier(OctoComputing.MOD_ID, "main");
+    private static final Identifier GROUP_ID = of("main");
     private static final ItemGroup MAIN = FabricItemGroup.builder()
             .icon(() -> new ItemStack(ModItems.MIXED_LEAF))
             .entries((context, entries) -> {
@@ -32,7 +34,7 @@ public class ModItemGroups {
 
     private static ItemGroup LEAVES = new ItemSubGroup.Builder(
             MAIN,
-            new Identifier(OctoComputing.MOD_ID, "leaves"),
+            of("leaves"),
             Text.translatable("itemGroup.octocomputing.leaves")
     ).entries(
             ((displayContext, entries) -> {
@@ -46,7 +48,7 @@ public class ModItemGroups {
 
     private static ItemGroup EQUIPMENT = new ItemSubGroup.Builder(
             MAIN,
-            new Identifier(OctoComputing.MOD_ID, "equipment"),
+            of("equipment"),
             Text.translatable("itemGroup.octocomputing.equipment")
     ).entries(
             ((displayContext, entries) -> {
@@ -104,7 +106,7 @@ public class ModItemGroups {
 
     private static ItemGroup RESOURCES = new ItemSubGroup.Builder(
             MAIN,
-            new Identifier(OctoComputing.MOD_ID, "resources"),
+            of("resources"),
             Text.translatable("itemGroup.octocomputing.resources")
     ).entries(
             ((displayContext, entries) -> {
@@ -124,7 +126,7 @@ public class ModItemGroups {
 
     private static ItemGroup NATURAL = new ItemSubGroup.Builder(
             MAIN,
-            new Identifier(OctoComputing.MOD_ID, "natural"),
+            of("natural"),
             Text.translatable("itemGroup.octocomputing.natural")
     ).entries(
             ((displayContext, entries) -> {
@@ -162,7 +164,7 @@ public class ModItemGroups {
 
     private static ItemGroup FUNCTIONAL = new ItemSubGroup.Builder(
             MAIN,
-            new Identifier(OctoComputing.MOD_ID, "functional"),
+            of("functional"),
             Text.translatable("itemGroup.octocomputing.functional")
     ).entries(
             ((displayContext, entries) -> {
@@ -175,7 +177,7 @@ public class ModItemGroups {
 
     private static ItemGroup BLOCKS = new ItemSubGroup.Builder(
             MAIN,
-            new Identifier(OctoComputing.MOD_ID, "blocks"),
+            of("blocks"),
             Text.translatable("itemGroup.octocomputing.blocks")
     ).entries(
             ((displayContext, entries) -> {

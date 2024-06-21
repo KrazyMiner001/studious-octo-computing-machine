@@ -4,6 +4,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.Inventories;
 import net.minecraft.inventory.Inventory;
 import net.minecraft.item.ItemStack;
+import net.minecraft.recipe.input.RecipeInput;
 import net.minecraft.util.collection.DefaultedList;
 
 /**
@@ -11,7 +12,7 @@ import net.minecraft.util.collection.DefaultedList;
  * <p>
  * Originally by Juuz
  */
-public interface ImplementedInventory extends Inventory {
+public interface ImplementedInventory extends Inventory, RecipeInput {
 
     /**
      * Retrieves the item list of this inventory.
@@ -144,4 +145,9 @@ public interface ImplementedInventory extends Inventory {
 
     }
 
+    @Override
+    default ItemStack getStackInSlot(int slot) {return getStack(slot);}
+
+    @Override
+    default int getSize() {return size();}
 }

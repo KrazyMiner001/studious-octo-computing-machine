@@ -1,5 +1,9 @@
 package tech.krazyminer001.entity.custom;
 
+import net.minecraft.enchantment.EnchantmentHelper;
+import net.minecraft.entity.damage.DamageSource;
+import net.minecraft.server.world.ServerWorld;
+import net.minecraft.util.math.Vec3d;
 import tech.krazyminer001.damagetype.ModDamageTypes;
 import tech.krazyminer001.effect.ModStatusEffects;
 import tech.krazyminer001.entity.ModEntities;
@@ -18,12 +22,9 @@ public class LeafProjectileEntity extends ExplosiveProjectileEntity {
     public LeafProjectileEntity(EntityType<? extends LeafProjectileEntity> entityType, World world) {
         super(entityType, world);
     }
-    public LeafProjectileEntity(double x, double y, double z, double directionX, double directionY, double directionZ, World world) {
-        super(ModEntities.LEAF_PROJECTILE, x, y, z, directionX, directionY, directionZ, world);
-    }
 
     public LeafProjectileEntity(World world, LivingEntity owner, double directionX, double directionY, double directionZ) {
-        super(ModEntities.LEAF_PROJECTILE, owner, directionX, directionY, directionZ, world);
+        super(ModEntities.LEAF_PROJECTILE, owner, new Vec3d(directionX, directionY, directionZ), world);
     }
 //
 //    public LeafProjectileEntity(EntityType<? extends LeafProjectileEntity> entityType, World world) {
@@ -53,9 +54,10 @@ public class LeafProjectileEntity extends ExplosiveProjectileEntity {
             Entity owner = this.getOwner();
             boolean entityHit;
             if (owner instanceof LivingEntity ownerLivingEntity) {
-                entityHit = hitEntity.damage(this.getDamageSources().create(ModDamageTypes.LEAF), 20.0F);
+                DamageSource damageSource = this.getDamageSources().create(ModDamageTypes.LEAF);
+                entityHit = hitEntity.damage(damageSource, 20f);
                 if (entityHit && hitEntity.isAlive()) {
-                    this.applyDamageEffects(ownerLivingEntity, hitEntity);
+                    EnchantmentHelper.onTargetDamaged((ServerWorld) getWorld(), hitEntity, damageSource);
                 } else if (entityHit) {
                     ownerLivingEntity.heal(7.5f);
                 }

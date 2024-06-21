@@ -5,9 +5,11 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 import net.minecraft.world.gen.feature.Feature;
+import static tech.krazyminer001.utility.Util.of;
+
 
 public class ModFeatures {
-    public static final Identifier CUSTOM_TREE_FEATURE_ID = new Identifier(OctoComputing.MOD_ID, "custom_tree_feature");
+    public static final Identifier CUSTOM_TREE_FEATURE_ID = of("custom_tree_feature");
     public static final CustomTreeFeature CUSTOM_TREE_FEATURE = register(CUSTOM_TREE_FEATURE_ID,
             new CustomTreeFeature(CustomTreeFeatureConfig.CODEC));
 

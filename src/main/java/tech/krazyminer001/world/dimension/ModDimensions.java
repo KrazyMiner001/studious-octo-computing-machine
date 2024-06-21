@@ -15,18 +15,20 @@ import net.minecraft.world.dimension.DimensionTypes;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.OptionalLong;
+import static tech.krazyminer001.utility.Util.of;
+
 
 public class ModDimensions {
     private static final Map<RegistryKey<DimensionOptions>, DimensionOptions> DIMENSION_OPTIONS = new HashMap<>();
     public static final RegistryKey<DimensionOptions> LEAF_KEY = optionsRegistryKey("leaf");
     public static final RegistryKey<World> LEAF_LEVEL_KEY = RegistryKey.of(RegistryKeys.WORLD,
-            new Identifier(OctoComputing.MOD_ID, "leaf"));
+            of("leaf"));
     public static final RegistryKey<DimensionType> LEAF_DIM_TYPE = RegistryKey.of(RegistryKeys.DIMENSION_TYPE,
-            new Identifier(OctoComputing.MOD_ID, "leaf_type"));
+            of("leaf_type"));
 
     private static RegistryKey<DimensionOptions> optionsRegistryKey (String name) {
         return RegistryKey.of(RegistryKeys.DIMENSION,
-                new Identifier(OctoComputing.MOD_ID, name));
+                of(name));
     }
 
     public static void bootstrapType(Registerable<DimensionType> context) {

@@ -29,8 +29,9 @@ public class LeafProjectileEntityModel extends EntityModel<Entity> {
 		this.leaf_projectile.yaw = yaw * 0.017453292F;
 		this.leaf_projectile.pitch = pitch * 0.017453292F;
 	}
+
 	@Override
-	public void render(MatrixStack matrices, VertexConsumer vertexConsumer, int light, int overlay, float red, float green, float blue, float alpha) {
-		leaf_projectile.render(matrices, vertexConsumer, light, overlay, red, green, blue, alpha);
+	public void render(MatrixStack matrices, VertexConsumer vertices, int light, int overlay, int color) {
+		leaf_projectile.render(matrices, vertices, light, overlay, color);
 	}
 }

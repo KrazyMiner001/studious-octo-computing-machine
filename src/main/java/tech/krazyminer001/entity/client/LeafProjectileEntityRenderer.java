@@ -13,8 +13,12 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 
+import java.awt.*;
+
+import static tech.krazyminer001.utility.Util.of;
+
 public class LeafProjectileEntityRenderer extends EntityRenderer<LeafProjectileEntity> {
-    private static final Identifier TEXTURE = new Identifier(OctoComputing.MOD_ID, "textures/entity/leaf_projectile.png");
+    private static final Identifier TEXTURE = of("textures/entity/leaf_projectile.png");
     private final LeafProjectileEntityModel model;
 
     public LeafProjectileEntityRenderer(EntityRendererFactory.Context context) {
@@ -40,7 +44,7 @@ public class LeafProjectileEntityRenderer extends EntityRenderer<LeafProjectileE
         float j = MathHelper.lerp(g, leafProjectileEntity.prevPitch, leafProjectileEntity.getPitch());
         VertexConsumer vertexConsumer = vertexConsumerProvider.getBuffer(this.model.getLayer(this.getTexture(leafProjectileEntity)));
         this.model.setHeadRotation(0.0F, h, j);
-        this.model.render(matrixStack, vertexConsumer, i, OverlayTexture.DEFAULT_UV, 1.0F, 1.0F, 1.0F, 1.0F);
+        this.model.render(matrixStack, vertexConsumer, i, OverlayTexture.DEFAULT_UV, 0xFFFFFF);
         matrixStack.pop();
         super.render(leafProjectileEntity, f, g, matrixStack, vertexConsumerProvider, i);
     }

@@ -19,6 +19,7 @@ import java.util.Optional;
 
 import static net.minecraft.data.client.BlockStateModelGenerator.createSingletonBlockState;
 import static net.minecraft.data.client.BlockStateModelGenerator.createSouthDefaultHorizontalRotationStates;
+import static tech.krazyminer001.utility.Util.of;
 
 public class ModModelProvider extends FabricModelProvider {
     public ModModelProvider(FabricDataOutput output) {
@@ -99,7 +100,7 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.LEAFITE_UPGRADE_SMITHING_TEMPLATE, Models.GENERATED);
 
         itemModelGenerator.register(ModItems.LEAF_MONSTER_SPAWN_EGG,
-                new Model(Optional.of(new Identifier("item/template_spawn_egg")), Optional.empty()));
+                new Model(Optional.of(Identifier.of("item/template_spawn_egg")), Optional.empty()));
 
         modItemModelGenerator.registerCompressedArmorChain(
                 (ArmorItem) ModItems.LEAF_HELMET,

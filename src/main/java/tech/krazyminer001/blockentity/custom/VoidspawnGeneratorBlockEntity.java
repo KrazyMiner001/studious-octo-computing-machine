@@ -27,6 +27,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import tech.krazyminer001.utility.Util;
 
 import java.util.Optional;
 
@@ -95,10 +96,10 @@ public class VoidspawnGeneratorBlockEntity extends BlockEntity implements Implem
         if (nbt.contains("CurrentRecipe")) {
             String recipeString = nbt.getString("CurrentRecipe");
             if (!recipeString.isEmpty() && OctoComputing.SERVER != null) {
-                Optional<RecipeEntry<?>> optionalRecipe = OctoComputing.SERVER.getRecipeManager().get(new Identifier(recipeString));
+                Optional<RecipeEntry<?>> optionalRecipe = OctoComputing.SERVER.getRecipeManager().get(Identifier.of(recipeString));
                 if (optionalRecipe.isPresent()) {
                     if (optionalRecipe.get().value() instanceof VoidspawnGeneratorRecipe recipe) {
-                        this.currentRecipe = new RecipeEntry<>(new Identifier(recipeString), recipe);
+                        this.currentRecipe = new RecipeEntry<>(Identifier.of(recipeString), recipe);
                     };
                 }
             }
@@ -106,7 +107,7 @@ public class VoidspawnGeneratorBlockEntity extends BlockEntity implements Implem
     }
 
     public static void serverTick(@NotNull World world, BlockPos pos, BlockState blockState, VoidspawnGeneratorBlockEntity voidspawnGeneratorBlockEntity) {
-        Multiblock multiblock = ModonomiconAPI.get().getMultiblock(new Identifier(OctoComputing.MOD_ID, "voidspawn_generator"));
+        Multiblock multiblock = ModonomiconAPI.get().getMultiblock(Util.of("voidspawn_generator"));
         BlockRotation rotation = multiblock.validate(world, pos);
         if (rotation == null) {
             return;
