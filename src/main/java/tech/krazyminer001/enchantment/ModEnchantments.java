@@ -79,7 +79,7 @@ public class ModEnchantments {
     }
 
     private static void register(Registerable<Enchantment> context, RegistryKey<Enchantment> key, Enchantment.Builder enchantmentBuilder) {
-        context.register(key, enchantmentBuilder.build(key.getRegistry()));
+        context.register(key, enchantmentBuilder.build(key.getValue()));
     }
 
     public static RegistryKey<Enchantment> registerKey(String name) {

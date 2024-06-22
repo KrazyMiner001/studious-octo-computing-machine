@@ -1,7 +1,7 @@
 {
   "anvil_cost": 2,
   "description": {
-    "translate": "enchantment.minecraft.enchantment"
+    "translate": "enchantment.octocomputing.garden_shears"
   },
   "effects": {
     "minecraft:damage": [
