@@ -22,6 +22,8 @@ public class ModEnglishLangProvider extends FabricLanguageProvider {
     public void generateTranslations(RegistryWrapper.WrapperLookup registryLookup, TranslationBuilder translationBuilder) {
         leafTranslations(translationBuilder);
 
+        translationBuilder.add(Identifier.of("emi.category.octocomputing.leaf_shrine"), "Leaf Shrine");
+
         translationBuilder.add(ModItems.LEAFSTONE, "Leafstone");
         translationBuilder.add(ModItems.LEAF_CORE, "Leaf Core");
         translationBuilder.add(ModItems.BROKEN_LEAF_CORE, "Broken Leaf Core");
