@@ -7,12 +7,15 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.recipe.input.RecipeInput;
 import net.minecraft.util.collection.DefaultedList;
 
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Target;
+
 /**
  * A simple {@code Inventory} implementation with only default methods + an item list getter.
  * <p>
  * Originally by Juuz
  */
-public interface ImplementedInventory extends Inventory, RecipeInput {
+public interface ImplementedInventory extends Inventory {
 
     /**
      * Retrieves the item list of this inventory.
@@ -47,7 +50,7 @@ public interface ImplementedInventory extends Inventory, RecipeInput {
      *
      * @return true if this inventory has only empty stacks, false otherwise.
      */
-    @Override
+    @Override()
     default boolean isEmpty() {
         for (int i = 0; i < size(); i++) {
             ItemStack stack = getStack(i);
@@ -144,10 +147,4 @@ public interface ImplementedInventory extends Inventory, RecipeInput {
     default void inventoryChanged() {
 
     }
-
-    @Override
-    default ItemStack getStackInSlot(int slot) {return getStack(slot);}
-
-    @Override
-    default int getSize() {return size();}
 }

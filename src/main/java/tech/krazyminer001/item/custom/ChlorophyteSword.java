@@ -15,7 +15,7 @@ import java.util.List;
 
 public class ChlorophyteSword extends SwordItem {
     public ChlorophyteSword() {
-        super(ModToolMaterial.CHLOROPHYTE, new Item.Settings().attributeModifiers(SwordItem.createAttributeModifiers(ModToolMaterial.CHLOROPHYTE, 7, -1)));
+        super(ModToolMaterial.CHLOROPHYTE, new Settings().attributeModifiers(SwordItem.createAttributeModifiers(ModToolMaterial.CHLOROPHYTE, 7, -1)));
     }
 
     @Override

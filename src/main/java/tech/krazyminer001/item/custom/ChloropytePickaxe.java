@@ -25,7 +25,7 @@ import java.util.Set;
 
 public class ChloropytePickaxe extends PickaxeItem implements ActivatableItem {
     public ChloropytePickaxe() {
-        super(ModToolMaterial.CHLOROPHYTE, new Item.Settings().attributeModifiers(PickaxeItem.createAttributeModifiers(ModToolMaterial.CHLOROPHYTE, 1, -1.5f)));
+        super(ModToolMaterial.CHLOROPHYTE, new Settings().attributeModifiers(PickaxeItem.createAttributeModifiers(ModToolMaterial.CHLOROPHYTE, 1, -1.5f)));
     }
 
     @Override

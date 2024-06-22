@@ -27,6 +27,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import tech.krazyminer001.recipe.VoidspawnGeneratorRecipeInput;
 import tech.krazyminer001.utility.Util;
 
 import java.util.Optional;
@@ -113,9 +114,10 @@ public class VoidspawnGeneratorBlockEntity extends BlockEntity implements Implem
             return;
         }
         if (voidspawnGeneratorBlockEntity.currentRecipe == null) {
-            var optionalRecipeEntry = world.getRecipeManager().getFirstMatch(VoidspawnGeneratorRecipe.Type.INSTANCE, voidspawnGeneratorBlockEntity, world);
+            VoidspawnGeneratorRecipeInput voidspawnGeneratorRecipeInput = VoidspawnGeneratorRecipeInput.of(voidspawnGeneratorBlockEntity.inventory);
+            var optionalRecipeEntry = world.getRecipeManager().getFirstMatch(VoidspawnGeneratorRecipe.Type.INSTANCE, voidspawnGeneratorRecipeInput, world);
             if (optionalRecipeEntry.isPresent()
-                            && optionalRecipeEntry.get().value().matches(voidspawnGeneratorBlockEntity, world)
+                            && optionalRecipeEntry.get().value().matches(voidspawnGeneratorRecipeInput, world)
                             && (voidspawnGeneratorBlockEntity.inventory.get(2).isEmpty()
                                 || (voidspawnGeneratorBlockEntity.inventory.get(2).getItem() == optionalRecipeEntry.get().value().getOutput().getItem()
                                 && voidspawnGeneratorBlockEntity.inventory.get(2).getCount() <= voidspawnGeneratorBlockEntity.inventory.get(2).getMaxCount() - optionalRecipeEntry.get().value().getOutput().getCount()))) {
@@ -137,4 +139,8 @@ public class VoidspawnGeneratorBlockEntity extends BlockEntity implements Implem
 
     }
 
+    @Override
+    public boolean isEmpty() {
+        return ImplementedInventory.super.isEmpty();
     }
+}

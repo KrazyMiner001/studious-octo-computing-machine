@@ -13,7 +13,7 @@ import tech.krazyminer001.utility.Util;
 
 public class LeafiteArmor extends ArmorItem {
     public LeafiteArmor(Type type) {
-        super(ModArmorMaterials.LEAFITE, type, new Item.Settings().maxDamage(type.getMaxDamage(50)));
+        super(ModArmorMaterials.LEAFITE, type, new Settings().maxDamage(type.getMaxDamage(50)));
     }
 
     @Override

@@ -18,7 +18,7 @@ import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.world.World;
 
-public class VoidspawnGeneratorRecipe implements Recipe<VoidspawnGeneratorBlockEntity> {
+public class VoidspawnGeneratorRecipe implements Recipe<VoidspawnGeneratorRecipeInput> {
     final Ingredient catalyst;
     final Ingredient fuel;
     final ItemStack output;
@@ -66,13 +66,13 @@ public class VoidspawnGeneratorRecipe implements Recipe<VoidspawnGeneratorBlockE
     }
 
     @Override
-    public boolean matches(VoidspawnGeneratorBlockEntity inventory, World world) {
-        if (inventory.size() < 3) return false;
-        return catalyst.test(inventory.getStack(0)) && fuel.test(inventory.getStack(1));
+    public boolean matches(VoidspawnGeneratorRecipeInput inventory, World world) {
+        if (inventory.getSize() < 3) return false;
+        return catalyst.test(inventory.getStackInSlot(0)) && fuel.test(inventory.getStackInSlot(1));
     }
 
     @Override
-    public ItemStack craft(VoidspawnGeneratorBlockEntity inventory, RegistryWrapper.WrapperLookup lookup) {
+    public ItemStack craft(VoidspawnGeneratorRecipeInput inventory, RegistryWrapper.WrapperLookup lookup) {
         return ItemStack.EMPTY;
     }
 
@@ -98,7 +98,7 @@ public class VoidspawnGeneratorRecipe implements Recipe<VoidspawnGeneratorBlockE
 
     public static class Type implements RecipeType<VoidspawnGeneratorRecipe> {
         private Type() {}
-        public static final VoidspawnGeneratorRecipe.Type INSTANCE = new VoidspawnGeneratorRecipe.Type();
+        public static final Type INSTANCE = new Type();
 
         public static final String ID = "voidspawn_generator_recipe";
     }

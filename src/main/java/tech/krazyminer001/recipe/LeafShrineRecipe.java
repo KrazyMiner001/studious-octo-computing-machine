@@ -19,8 +19,9 @@ import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.world.World;
+import tech.krazyminer001.blockentity.custom.LeafShrineBlockEntity;
 
-public class LeafShrineRecipe implements Recipe<ImplementedInventory> {
+public class LeafShrineRecipe implements Recipe<LeafShrineRecipeInput> {
     final Ingredient inputCenter;
     final Ingredient inputNorth;
     final Ingredient inputEast;
@@ -85,10 +86,10 @@ public class LeafShrineRecipe implements Recipe<ImplementedInventory> {
     }
 
     @Override
-    public boolean matches(ImplementedInventory inventory, World world) {
-        if (inventory.size() < 5)
+    public boolean matches(LeafShrineRecipeInput inventory, World world) {
+        if (inventory.getSize() < 5)
             return false;
-        return inputCenter.test(inventory.getStack(0)) && inputNorth.test(inventory.getStack(1)) && inputEast.test(inventory.getStack(2)) && inputSouth.test(inventory.getStack(3)) && inputWest.test(inventory.getStack(4));
+        return inputCenter.test(inventory.getStackInSlot(0)) && inputNorth.test(inventory.getStackInSlot(1)) && inputEast.test(inventory.getStackInSlot(2)) && inputSouth.test(inventory.getStackInSlot(3)) && inputWest.test(inventory.getStackInSlot(4));
     }
 
     @Override
@@ -103,7 +104,7 @@ public class LeafShrineRecipe implements Recipe<ImplementedInventory> {
     }
 
     @Override
-    public ItemStack craft(ImplementedInventory inventory, RegistryWrapper.WrapperLookup lookup) {
+    public ItemStack craft(LeafShrineRecipeInput inventory, RegistryWrapper.WrapperLookup lookup) {
         return ItemStack.EMPTY;
     }
 

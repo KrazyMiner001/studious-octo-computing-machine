@@ -11,7 +11,7 @@ import net.minecraft.world.World;
 
 public class LeafPicker extends Item {
     public LeafPicker() {
-        super(new Item.Settings().maxDamage(750));
+        super(new Settings().maxDamage(750));
     }
 
     public boolean postMine(ItemStack stack, World world, BlockState state, BlockPos pos, LivingEntity miner) {

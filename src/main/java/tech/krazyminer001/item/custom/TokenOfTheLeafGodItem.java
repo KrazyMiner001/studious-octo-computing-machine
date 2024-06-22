@@ -20,7 +20,7 @@ import java.util.List;
 
 public class TokenOfTheLeafGodItem extends Item {
     public TokenOfTheLeafGodItem() {
-        super(new Item.Settings());
+        super(new Settings());
     }
 
     @Override

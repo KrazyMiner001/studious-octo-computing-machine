@@ -3,6 +3,7 @@ package tech.krazyminer001.world;
 import tech.krazyminer001.OctoComputing;
 import tech.krazyminer001.block.ModBlocks;
 import net.minecraft.registry.Registerable;
+import net.minecraft.registry.RegistryEntryLookup;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.entry.RegistryEntry;

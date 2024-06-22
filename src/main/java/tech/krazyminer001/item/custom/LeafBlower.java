@@ -13,7 +13,7 @@ import net.minecraft.world.World;
 
 public class LeafBlower extends Item {
     public LeafBlower() {
-        super(new Item.Settings().maxCount(1));
+        super(new Settings().maxCount(1));
     }
 
     @Override

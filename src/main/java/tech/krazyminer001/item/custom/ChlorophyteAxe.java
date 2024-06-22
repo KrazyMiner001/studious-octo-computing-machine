@@ -22,7 +22,7 @@ import java.util.List;
 
 public class ChlorophyteAxe extends AxeItem implements ActivatableItem {
     public ChlorophyteAxe() {
-        super(ModToolMaterial.CHLOROPHYTE, new Item.Settings().attributeModifiers(AxeItem.createAttributeModifiers(ModToolMaterial.CHLOROPHYTE, 7, -2.0f)));
+        super(ModToolMaterial.CHLOROPHYTE, new Settings().attributeModifiers(AxeItem.createAttributeModifiers(ModToolMaterial.CHLOROPHYTE, 7, -2.0f)));
     }
 
     @Override

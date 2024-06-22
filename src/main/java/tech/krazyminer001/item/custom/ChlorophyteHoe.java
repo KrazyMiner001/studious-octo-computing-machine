@@ -25,7 +25,7 @@ import java.util.function.Predicate;
 
 public class ChlorophyteHoe extends HoeItem implements ActivatableItem {
     public ChlorophyteHoe() {
-        super(ModToolMaterial.CHLOROPHYTE, new Item.Settings().attributeModifiers(HoeItem.createAttributeModifiers(ModToolMaterial.CHLOROPHYTE, 1, 0.5f)));
+        super(ModToolMaterial.CHLOROPHYTE, new Settings().attributeModifiers(HoeItem.createAttributeModifiers(ModToolMaterial.CHLOROPHYTE, 1, 0.5f)));
     }
 
     private static Set<BlockPos> getNearbyBlocks(World world, BlockPos pos) {

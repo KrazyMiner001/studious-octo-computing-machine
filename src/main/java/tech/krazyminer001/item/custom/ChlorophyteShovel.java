@@ -25,7 +25,7 @@ import java.util.Set;
 
 public class ChlorophyteShovel extends ShovelItem implements ActivatableItem{
     public ChlorophyteShovel() {
-        super(ModToolMaterial.CHLOROPHYTE, new Item.Settings().attributeModifiers(ShovelItem.createAttributeModifiers(ModToolMaterial.CHLOROPHYTE, 1, -2.0f)));
+        super(ModToolMaterial.CHLOROPHYTE, new Settings().attributeModifiers(ShovelItem.createAttributeModifiers(ModToolMaterial.CHLOROPHYTE, 1, -2.0f)));
     }
 
     @Override

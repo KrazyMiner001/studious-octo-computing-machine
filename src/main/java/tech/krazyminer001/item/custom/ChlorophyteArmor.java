@@ -16,7 +16,7 @@ import net.minecraft.world.World;
 public class ChlorophyteArmor extends ArmorItem {
     private boolean hasFlightBuff = false;
     public ChlorophyteArmor(Type type) {
-        super(ModArmorMaterials.CHLOROPHYTE, type, new Item.Settings().maxDamage(type.getMaxDamage(75)));
+        super(ModArmorMaterials.CHLOROPHYTE, type, new Settings().maxDamage(type.getMaxDamage(75)));
     }
 
     @Override

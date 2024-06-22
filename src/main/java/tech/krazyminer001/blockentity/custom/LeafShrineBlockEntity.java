@@ -1,6 +1,5 @@
 package tech.krazyminer001.blockentity.custom;
 
-import net.minecraft.recipe.input.CraftingRecipeInput;
 import tech.krazyminer001.OctoComputing;
 import tech.krazyminer001.blockentity.ImplementedInventory;
 import tech.krazyminer001.blockentity.ModBlockEntities;
@@ -28,6 +27,7 @@ import net.minecraft.util.math.Direction;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import tech.krazyminer001.recipe.LeafShrineRecipeInput;
 
 import java.util.Optional;
 
@@ -150,7 +150,7 @@ public class LeafShrineBlockEntity extends BlockEntity implements ImplementedInv
         } else {
             return false;
         }
-        ImplementedInventory inventory = ImplementedInventory.of(items);
+        LeafShrineRecipeInput inventory = LeafShrineRecipeInput.of(items);
         Optional<RecipeEntry<LeafShrineRecipe>> match = world.getRecipeManager().getFirstMatch(LeafShrineRecipe.Type.INSTANCE, inventory, world);
 
         if (match.isPresent()) {
@@ -251,5 +251,10 @@ public class LeafShrineBlockEntity extends BlockEntity implements ImplementedInv
         if (world != null) {
             world.addParticle(ParticleTypes.EXPLOSION, blockPos.getX() + 0.5, blockPos.getY() + 1.5, blockPos.getZ() + 0.5, 0, 0, 0);
         }
+    }
+
+    @Override
+    public boolean isEmpty() {
+        return ImplementedInventory.super.isEmpty();
     }
 }
