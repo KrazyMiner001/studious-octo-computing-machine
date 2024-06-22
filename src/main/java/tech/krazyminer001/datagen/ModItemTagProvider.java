@@ -20,13 +20,13 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
     @Override
     protected void configure(RegistryWrapper.WrapperLookup arg) {
         getOrCreateTagBuilder(ModItemTags.LEAF)
-                .add(Util.regularToCompressed.keySet().toArray(new Item[]{}));
+                .add(Util.regularToCompressedMap().keySet().toArray(new Item[]{}));
 
         getOrCreateTagBuilder(ModItemTags.LEAF_COMPRESSED)
-                .add(Util.regularToCompressed.values().toArray(new Item[]{}));
+                .add(Util.regularToCompressedMap().values().toArray(new Item[]{}));
 
         getOrCreateTagBuilder(ModItemTags.LEAF_DOUBLE_COMPRESSED)
-                .add(Util.compressedToDoubleCompressed.values().toArray(new Item[]{}));
+                .add(Util.compressedToDoubleCompressedMap().values().toArray(new Item[]{}));
 
         getOrCreateTagBuilder(ItemTags.PLANKS)
                 .add(ModBlocks.MYSTERY_PLANKS.asItem());

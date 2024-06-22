@@ -16,8 +16,8 @@ public abstract class Util {
     public static final Map<Item, Item> regularToCompressed = regularToCompressedMap();
     public static final Map<Item, Item> compressedToDoubleCompressed = compressedToDoubleCompressedMap();
 
-    private static Map<Item, Item> regularToCompressedMap() {
-        Map<Item, Item> map = new HashMap<>();
+    public static Map<Item, Item> regularToCompressedMap() {
+       Map<Item, Item> map = new HashMap<>();
        map.put(ModItems.OAK_LEAF, ModItems.COMPRESSED_OAK_LEAF);
        map.put(ModItems.SPRUCE_LEAF, ModItems.COMPRESSED_SPRUCE_LEAF);
        map.put(ModItems.BIRCH_LEAF, ModItems.COMPRESSED_BIRCH_LEAF);
@@ -31,7 +31,7 @@ public abstract class Util {
        map.put(ModItems.MIXED_LEAF, ModItems.COMPRESSED_MIXED_LEAF);
        return map;
     }
-    private static Map<Item, Item> compressedToDoubleCompressedMap() {
+    public static Map<Item, Item> compressedToDoubleCompressedMap() {
         Map<Item, Item> map = new HashMap<>();
         map.put(ModItems.COMPRESSED_OAK_LEAF, ModItems.DOUBLE_COMPRESSED_OAK_LEAF);
         map.put(ModItems.COMPRESSED_SPRUCE_LEAF, ModItems.DOUBLE_COMPRESSED_SPRUCE_LEAF);
