@@ -150,14 +150,14 @@ public class OctoComputing implements ModInitializer {
 						.conditionally(MatchToolLootCondition.builder(ItemPredicate.Builder.create().items(ModItems.LEAF_PICKER)))
 						.apply(SetCountLootFunction.builder(ConstantLootNumberProvider.create(1)));
 
-				Item compressedLeafItem = Util.regularToCompressed.getOrDefault(leafItem, Items.AIR);
+				Item compressedLeafItem = Util.regularToCompressedMap().getOrDefault(leafItem, Items.AIR);
 				LootPool.Builder compressedLeafPoolBuilder = LootPool.builder()
 						.rolls(BinomialLootNumberProvider.create(20, 0.2f))
 						.with(ItemEntry.builder(compressedLeafItem))
 						.conditionally(MatchToolLootCondition.builder(ItemPredicate.Builder.create().items(ModItems.LEAF_PICKER)))
 						.apply(SetCountLootFunction.builder(ConstantLootNumberProvider.create(1)));
 
-				Item doubleCompressedLeafItem = Util.compressedToDoubleCompressed.getOrDefault(compressedLeafItem, Items.AIR);
+				Item doubleCompressedLeafItem = Util.compressedToDoubleCompressedMap().getOrDefault(compressedLeafItem, Items.AIR);
 				LootPool.Builder doubleCompressedLeafPoolBuilder = LootPool.builder()
 						.rolls(BinomialLootNumberProvider.create(5, 0.2f))
 						.with(ItemEntry.builder(doubleCompressedLeafItem))

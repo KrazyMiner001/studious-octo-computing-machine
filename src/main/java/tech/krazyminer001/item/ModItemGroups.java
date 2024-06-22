@@ -38,10 +38,10 @@ public class ModItemGroups {
             Text.translatable("itemGroup.octocomputing.leaves")
     ).entries(
             ((displayContext, entries) -> {
-                Util.regularToCompressed.keySet().forEach((Item item) -> {
+                Util.regularToCompressedMap().keySet().forEach((Item item) -> {
                     entries.add(item);
-                    entries.add(Util.regularToCompressed.get(item));
-                    entries.add(Util.compressedToDoubleCompressed.get(Util.regularToCompressed.get(item)));
+                    entries.add(Util.regularToCompressedMap().get(item));
+                    entries.add(Util.compressedToDoubleCompressedMap().get(Util.regularToCompressedMap().get(item)));
                 });
             })
     ).build();
