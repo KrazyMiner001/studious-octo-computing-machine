@@ -16,13 +16,13 @@ import org.spongepowered.asm.mixin.injection.ModifyVariable;
 import static tech.krazyminer001.utility.Util.of;
 
 
-//@Mixin(ItemRenderer.class)
-//public abstract class ItemRendererMixin {
-//    @ModifyVariable(method = "renderItem*", at = @At(value = "HEAD"), argsOnly = true)
-//    public BakedModel useLeafCoreAnimatedModel(BakedModel value, ItemStack stack, ModelTransformationMode renderMode, boolean leftHanded, MatrixStack matrices, VertexConsumerProvider vertexConsumers, int light, int overlay) {
-//        if (stack.isOf(ModItems.LEAF_CORE) && Mods.GECKOLIB.isLoaded()) {
-//            return ((ItemRendererAccessor) this).octocomputing$getModels().getModelManager().getModel(new ModelIdentifier(of("animated_leaf_core"), "inventory"));
-//        }
-//        return value;
-//    }
-//}
+@Mixin(ItemRenderer.class)
+public abstract class ItemRendererMixin {
+    @ModifyVariable(method = "renderItem(Lnet/minecraft/item/ItemStack;Lnet/minecraft/client/render/model/json/ModelTransformationMode;ZLnet/minecraft/client/util/math/MatrixStack;Lnet/minecraft/client/render/VertexConsumerProvider;IILnet/minecraft/client/render/model/BakedModel;)V", at = @At(value = "HEAD"), argsOnly = true)
+    public BakedModel useLeafCoreAnimatedModel(BakedModel value, ItemStack stack, ModelTransformationMode renderMode, boolean leftHanded, MatrixStack matrices, VertexConsumerProvider vertexConsumers, int light, int overlay) {
+        if (stack.isOf(ModItems.LEAF_CORE) && Mods.GECKOLIB.isLoaded()) {
+            return ((ItemRendererAccessor) this).octocomputing$getModels().getModelManager().getModel(new ModelIdentifier(of("animated_leaf_core"), "inventory"));
+        }
+        return value;
+    }
+}
